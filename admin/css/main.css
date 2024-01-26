@@ -1,0 +1,11 @@
+.custom-text {
+    text-align: center;
+}
+
+td.highlight {
+    background-color: whitesmoke !important;
+}
+
+.dtSelected {
+    background-color: rgba(8,158,96,0.11);
+}

@@ -54,7 +54,7 @@ session_start();
                             header("Location: frmHora.php");
                         }else if($idTipoUsuario == "2" || $idTipoUsuario == "3" || $idTipoUsuario == "4"){
                             header("Location: ./admin_cliente/");
-                        }else if($idTipoUsuario == "5"){
+                        }else if($idTipoUsuario == "105"){
                             header("Location: ./admin/");
                         }else{
                             echo "<script>
@@ -101,7 +101,7 @@ session_start();
     </body>
     <footer>
         <div class="footer">
-            Developed by: Ticoworks. 2016-2023
+            Developed by: Ticoworks. 2016-2024
         </div>
         <div class="footer-padding"></div>
     </footer>

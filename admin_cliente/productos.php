@@ -4,7 +4,7 @@
 <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de <?php echo $SESSION_nombreEmpresa?></h1>
-        <p class="mb-4">Puede agregar peoductos a su lista</p>
+        <p class="mb-4">Puede agregar productos a su lista</p>
     
     
 <!-- Inicio de Tabla -->
@@ -74,7 +74,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formPersonas">
+        <form id="formProductos">
             <div class="modal-body">
                 <div class="form-group">
                     <label for="newid" class="col-form-label">Cédula: *</label>
@@ -109,44 +109,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <input type="email" pattern="[^@\s]+@[^@\s]+.[^@\s]" placeholder="Formato: usuario@dominio.sufijo" class="form-control" id="correo">
                 </div>
                 <div class="form-group">
-                    <label for="nombretipoUsuario" class="col-form-label">Tipo de Usuario: *</label>
-                    <select class="form-control" id="nombretipoUsuario">
-                        <option selected disabled value="">Elija un tipo de usuario.</option>
-                        <?php
-                            $consulta = "SELECT * FROM tipoUsuario
-                                        WHERE idTipoUsuario < 50
-                                        ORDER BY idTipoUsuario ASC";
-                            $resultadotipoUsuario = $conexion->prepare($consulta);
-                            $resultadotipoUsuario->execute();
-                            $datatipoUsuario=$resultadotipoUsuario->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($datatipoUsuario as $dattipoUsuario) {
-                                echo "<option value=" . $dattipoUsuario['idTipoUsuario'] . ">" . $dattipoUsuario['nombretipoUsuario'] . "</option>";
-                            }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label for="wsVerif" class="col-form-label">Recibir notificaciones por WhatsApp:</label>
                     <input type="checkbox" class="custom-checkbox" id="wsVerif" name="wsVerif" value="yes">
-                </div>
-
-                <input type="hidden" id="idEmpresa" value= <?php echo $SESSION_idEmpresa ; ?>>
-
-                <div class="form-group">
-                    <label for="lugarTrabajo" class="col-form-label">Lugar de Trabajo: *</label>
-                    <select class="form-control" id="lugarTrabajo">
-                        <option selected disabled value="">Elija el lugar de trabajo del usuario.</option>
-                        <?php
-                            $consulta = "SELECT * FROM lugarTrabajo
-                                        ORDER BY idLugarTrabajo asc";
-                            $resultadoEmpresa = $conexion->prepare($consulta);
-                            $resultadoEmpresa->execute();
-                            $dataEmpresa=$resultadoEmpresa->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($dataEmpresa as $datEmpresa) {
-                                echo "<option value='" . $datEmpresa['idLugarTrabajo'] . "'>" . $datEmpresa['nombreLugarTrabajo'] . "</option>";
-                            }
-                        ?>
-                    </select>
                 </div>
             </div>
             <div class="modal-footer">

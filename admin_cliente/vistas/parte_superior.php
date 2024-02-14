@@ -105,7 +105,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Usuarios</span>
+                    <span>Productos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">

@@ -1,9 +1,9 @@
 <?php
 try {
-  $host = "51.222.14.197";
-  $usuario = "tw-dbusr";
-  $clave = "5paE2Tuznc2z7HhhMGR8";
-  $bd="AsistenciaTW";
+  $host = "51.222.207.182";
+  $usuario = "rchemuser";
+  $clave = "gseeHI02TI8DRzoWkOap";
+  $bd="regixchem";
   $conexion = mysqli_connect($host, $usuario, $clave, $bd);
 
   // Check connection

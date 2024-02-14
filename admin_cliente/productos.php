@@ -3,8 +3,8 @@
 <!--INICIO del cont principal-->
 <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Lista de Usuarios de <?php echo $SESSION_nombreEmpresa?></h1>
-        <p class="mb-4">Detalle de los usuarios actuales</p>
+        <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de <?php echo $SESSION_nombreEmpresa?></h1>
+        <p class="mb-4">Puede agregar peoductos a su lista</p>
     
     
 <!-- Inicio de Tabla -->
@@ -14,44 +14,26 @@ include_once './bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT usuarios.cedula,
-                    usuarios.nombre,
-                    usuarios.apellido1,
-                    usuarios.apellido2,
-                    usuarios.telefono,
-                    usuarios.correo,
-                    tipoUsuario.nombretipoUsuario,
-                    usuarios.wsNotif,
-                    empresa.nombreEmpresa,
-                    lugarTrabajo.nombreLugarTrabajo FROM usuarios
-            inner join tipoUsuario on usuarios.idTipoUsuario=tipoUsuario.idTipoUsuario
-            inner join empresa on usuarios.idEmpresa=empresa.idEmpresa
-            inner join lugarTrabajo on usuarios.idLugarTrabajo=lugarTrabajo.idLugarTrabajo
-            where usuarios.idEmpresa=$SESSION_idEmpresa";
+$consulta = "SELECT * FROM vista_productos_reducida";
             
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="card-header py-3">
-            <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
+            <div class="col-lg-12">
+            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
             </div>    
-    </div>    
+    </div>
 <div class="card-body">
                     <div class="table-responsive">        
-                        <table id="tablaPersonas" class="table table-bordered" style="width:100%">
+                        <table id="tablaProductos" class="table table-bordered" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Cédula</th>
                                 <th>Nombre</th>
-                                <th>Primer Apellido</th>                                
-                                <th>Segundo Apellido</th>
-                                <th>Teléfono</th>
-                                <th>E-mail</th>
-                                <th>Tipo de Usuario</th>
-                                <th>Recibir WhatsApp</th>
-                                <th>Lugar de Trabajo</th>
+                                <th>Grupo</th>
+                                <th>Uso</th>                                
+                                <th>Fabricante</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -60,25 +42,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['cedula'] ?></td>
-                                <td><?php echo $dat['nombre'] ?></td>
-                                <td><?php echo $dat['apellido1'] ?></td>
-                                <td><?php echo $dat['apellido2'] ?></td>
-                                <td id='phoneTD' class='text-center'><?php echo $dat['telefono'] ?></td>
-                                <td><?php echo $dat['correo'] ?></td>
-                                <td><?php echo $dat['nombretipoUsuario'] ?></td>
-                                <?php
-                                    if ($dat['wsNotif'] == 0) {
-                                    ?>
-                                    <td id='notifTD' class='text-center'>No</td>
-                                    <?php
-                                } else {
-                                    ?>
-                                    <td id='notifTD' class='text-center'>Sí</td>
-                                    <?php
-                                    }
-                                ?>
-                                <td><?php echo $dat['nombreLugarTrabajo'] ?></td>
+                                <td><?php echo $dat['Nombre'] ?></td>
+                                <td><?php echo $dat['Grupo'] ?></td>
+                                <td><?php echo $dat['Uso'] ?></td>
+                                <td><?php echo $dat['Fabricante'] ?></td>
                                 <td></td>
                             </tr>
                             <?php
@@ -87,15 +54,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>
                         <tfoot class="text-center">
                             <tr>
-                                <th>Cédula</th>
                                 <th>Nombre</th>
-                                <th>Primer Apellido</th>                                
-                                <th>Segundo Apellido</th>
-                                <th>Teléfono</th>
-                                <th>E-mail</th>
-                                <th>Tipo de Usuario</th>
-                                <th>Recibir WhatsApp</th>
-                                <th>Lugar de Trabajo</th>
+                                <th>Grupo</th>
+                                <th>Uso</th>                                
+                                <th>Fabricante</th>
                                 <th>Acciones</th>
                             </tr>
                         </tfoot>     
@@ -112,7 +74,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formPersonas">    
+        <form id="formPersonas">
             <div class="modal-body">
                 <div class="form-group">
                     <label for="newid" class="col-form-label">Cédula: *</label>

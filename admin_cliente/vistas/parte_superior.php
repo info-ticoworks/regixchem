@@ -110,7 +110,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Administración:</h6>
-                        <a class="collapse-item" href="usuarios.php">Lista de Usuarios</a>
+                        <a class="collapse-item" href="productos.php">Lista de Productos</a>
                     </div>
                 </div>
             </li>

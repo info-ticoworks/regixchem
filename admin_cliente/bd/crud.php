@@ -6,6 +6,7 @@ $conexion = $objeto->Conectar();
 
 // Recepción de los datos enviados mediante POST desde el JS   
 $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
+$nombreGrupo = (isset($_POST['nombreGrupo'])) ? $_POST['nombreGrupo'] : '';
 $apellido1 = (isset($_POST['apellido1'])) ? $_POST['apellido1'] : '';
 $apellido2 = (isset($_POST['apellido2'])) ? $_POST['apellido2'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';

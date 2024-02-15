@@ -9,18 +9,16 @@ $(document).ready(function(){
         "data":null,
         "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
-
-    //    "createdRow": function(row, data, dataIndex) {
-    //         if ( data[4] ) {
-    //             $(row).addClass( 'text-center' );
-    //         }
-    //         if ( data[7] ) {
-    //             $(row).addClass( 'text-center' );
-    //         }
-    //     },
-
+       "createdRow": function(row, data, dataIndex) {
+            if ( data[0] ) {
+                $(row).addClass( 'text-center' );
+            }
+            // if ( data[7] ) {
+            //     $(row).addClass( 'text-center' );
+            // }
+        },
     responsive: "true",
-    order: [[2,'asc']],
+    order: [[0,'asc']], //Establece la columna que será el orden de los productos.
     dom: 'Bfrtilp',       
     buttons:[
         {
@@ -84,29 +82,38 @@ $(document).ready(function(){
         $("#formProductos").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
-        $(".modal-title").text("Nueva Producto");            
+        $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
         //Seteo de algunas opciones al presionar el botón de Nuevo
-        document.getElementById('pass1').required = true;
-        document.getElementById('pass1').placeholder = 'Campo Obligatorio *';
-        document.getElementById('pass2').required = true;
-        document.getElementById('pass2').placeholder = 'Campo Obligatorio *';
-        document.getElementById('wsVerif').checked = false;
-        document.getElementById('nombretipoUsuario').value = '';
-        document.getElementById('nombretipoUsuario').required = true;
-        document.getElementById('lugarTrabajo').required = true;
-        document.getElementById('lugarTrabajo').value = '';
+        document.getElementById('nombre').placeholder = 'Campo Obligatorio *';
+        document.getElementById('nombre').value = '';
+        document.getElementById('nombreGrupo').selectedIndex = 0;
+        document.getElementById('nombreUso').selectedIndex = 0;
+        
+        // document.getElementById('nombreGrupo').required = true;
+        // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';
+        // document.getElementById('nombreUso').required = true;
+        // document.getElementById('pass2').required = true;
+        // document.getElementById('pass2').placeholder = 'Campo Obligatorio *';
+        // document.getElementById('wsVerif').checked = false;
+        // document.getElementById('nombretipoUsuario').value = '';
+        // document.getElementById('nombretipoUsuario').required = true;
+        // document.getElementById('lugarTrabajo').required = true;
+        // document.getElementById('lugarTrabajo').value = '';
         id=null;
-        opcion = 1; //alta
+        opcion = 1; //Nuevo Producto
     });    
     
     var fila; //Capturar la fila para editar o borrar el registro
     
     //botón EDITAR    
     $(document).on("click", ".btnEditar", function(){
+        $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
-        // id = parseInt(fila.find('td:eq(0)').text());
-        // nombre = fila.find('td:eq(1)').text();
+        id = parseInt(fila.find('td:eq(0)').text());
+        nombre = fila.find('td:eq(1)').text();
+        nombreGrupo = fila.find('td:eq(2)').text();
+        nombreUso = fila.find('td:eq(3)').text();
         // apellido1 = fila.find('td:eq(2)').text();
         // apellido2 = fila.find('td:eq(3)').text();
         // pass1 = '';
@@ -120,16 +127,24 @@ $(document).ready(function(){
         //     document.getElementById('wsVerif').checked = false;
         // }
         // lugarTrabajo = fila.find('td:eq(8)').text();
-        // //Seteo de algunas opciones al presionar el botón de Editar
-        // document.getElementById('newid').autofocus = false;
+        //Seteo de algunas opciones al presionar el botón de Editar
+        //document.getElementById('newid').autofocus = false;
         // document.getElementById('pass1').required = false;
         // document.getElementById('pass1').placeholder = 'Cambiar contraseña';
         // document.getElementById('pass2').required = false;
         // document.getElementById('pass2').placeholder = 'Repetir nueva contraseña';
         // document.getElementById('nombretipoUsuario').required = true;
         // document.getElementById('lugarTrabajo').required = true;
-        // $("#newid").val(id);
-        // $("#nombre").val(nombre);
+        $("#newid").val(id);
+        $("#nombre").val(nombre);
+        var selectednombreGrupo = nombreGrupo;
+        $('#nombreGrupo option').map(function () {
+        if ($(this).text() == selectednombreGrupo) return this;
+        }).attr('selected', 'selected');
+        var selectednombreUso = nombreUso;
+        $('#nombreUso option').map(function () {
+        if ($(this).text() == selectednombreUso) return this;
+        }).attr('selected', 'selected');
         // $("#apellido1").val(apellido1);
         // $("#apellido2").val(apellido2);
         // $("#pass1").val(pass1);
@@ -145,7 +160,7 @@ $(document).ready(function(){
         // $('#lugarTrabajo option').map(function () {
         //     if ($(this).text() == selectedLugarTrabajo) return this;
         // }).attr('selected', 'selected');
-        opcion = 2; //editar
+        opcion = 2; //Editar Producto
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Producto");            
@@ -193,7 +208,7 @@ $(document).ready(function(){
         })
     });
     
-    //submit USUARIOS
+    //Submit Productos
     $("#formProductos").submit(function(e){
         e.preventDefault();
         newid = $.trim($("#newid").val());

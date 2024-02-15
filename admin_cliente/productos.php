@@ -30,6 +30,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <table id="tablaProductos" class="table table-bordered" style="width:100%">
                         <thead class="text-center">
                             <tr>
+                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
@@ -42,6 +43,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
+                                <td><?php echo $dat['ID'] ?></td>
                                 <td><?php echo $dat['Nombre'] ?></td>
                                 <td><?php echo $dat['Grupo'] ?></td>
                                 <td><?php echo $dat['Uso'] ?></td>
@@ -54,6 +56,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>
                         <tfoot class="text-center">
                             <tr>
+                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
@@ -76,13 +79,45 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <form id="formProductos">
             <div class="modal-body">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="newid" class="col-form-label">Cédula: *</label>
                     <input type="number" placeholder="Digitar ID tal y como aparece en la cédula." class="form-control" id="newid" required>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="nombre" class="col-form-label">Nombre: *</label>
                     <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreGrupo" class="col-form-label">Grupo: *</label>
+                    <select class="form-control" id="nombreGrupo">
+                        <option selected disabled value="">Elija un grupo.</option>
+                        <?php
+                            $consulta = "SELECT * FROM grupo
+                                        ORDER BY idGrupo asc";
+                            $resultadoGrupo = $conexion->prepare($consulta);
+                            $resultadoGrupo->execute();
+                            $dataGrupo=$resultadoGrupo->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataGrupo as $datGrupo) {
+                                echo "<option value=" . $datGrupo['idGrupo'] . ">" . $datGrupo['nombreGrupo'] . "</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nombreUso" class="col-form-label">Uso: *</label>
+                    <select class="form-control" id="nombreUso">
+                        <option selected disabled value="">Elija un Uso.</option>
+                        <?php
+                            $consulta = "SELECT * FROM uso
+                                        ORDER BY idUso asc";
+                            $resultadoGrupo = $conexion->prepare($consulta);
+                            $resultadoGrupo->execute();
+                            $dataGrupo=$resultadoGrupo->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataGrupo as $datGrupo) {
+                                echo "<option value=" . $datGrupo['idUso'] . ">" . $datGrupo['nombreUso'] . "</option>";
+                            }
+                        ?>
+                    </select>
                 </div>
                     <div class="form-group">
                     <label for="apellido1" class="col-form-label">Primer Apellido: *</label>

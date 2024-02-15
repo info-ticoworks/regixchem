@@ -89,6 +89,7 @@ $(document).ready(function(){
         document.getElementById('nombre').value = '';
         document.getElementById('nombreGrupo').selectedIndex = 0;
         document.getElementById('nombreUso').selectedIndex = 0;
+        document.getElementById('nombreFabricante').selectedIndex = 0;
         
         // document.getElementById('nombreGrupo').required = true;
         // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';
@@ -114,6 +115,7 @@ $(document).ready(function(){
         nombre = fila.find('td:eq(1)').text();
         nombreGrupo = fila.find('td:eq(2)').text();
         nombreUso = fila.find('td:eq(3)').text();
+        nombreFabricante = fila.find('td:eq(4)').text();
         // apellido1 = fila.find('td:eq(2)').text();
         // apellido2 = fila.find('td:eq(3)').text();
         // pass1 = '';
@@ -144,6 +146,10 @@ $(document).ready(function(){
         var selectednombreUso = nombreUso;
         $('#nombreUso option').map(function () {
         if ($(this).text() == selectednombreUso) return this;
+        }).attr('selected', 'selected');
+        var selectednombreFabricante = nombreFabricante;
+        $('#nombreFabricante option').map(function () {
+        if ($(this).text() == selectednombreFabricante) return this;
         }).attr('selected', 'selected');
         // $("#apellido1").val(apellido1);
         // $("#apellido2").val(apellido2);

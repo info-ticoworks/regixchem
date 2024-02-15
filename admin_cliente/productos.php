@@ -119,6 +119,22 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="nombreFabricante" class="col-form-label">Fabricante: *</label>
+                    <select class="form-control" id="nombreFabricante">
+                        <option selected disabled value="">Elija un Fabricante.</option>
+                        <?php
+                            $consulta = "SELECT * FROM fabricante
+                                        ORDER BY idFabricante asc";
+                            $resultadoGrupo = $conexion->prepare($consulta);
+                            $resultadoGrupo->execute();
+                            $dataGrupo=$resultadoGrupo->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataGrupo as $datGrupo) {
+                                echo "<option value=" . $datGrupo['idFabricante'] . ">" . $datGrupo['nombreFabricante'] . "</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
                     <div class="form-group">
                     <label for="apellido1" class="col-form-label">Primer Apellido: *</label>
                     <input type="text" class="form-control" id="apellido1" required>

@@ -85,28 +85,41 @@ $(document).ready(function(){
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
 
-        $('#nombreClase1').change(function(){
-            var idClase = $(this).val();
-            $.ajax({
-            url: "bd/getCategoria.php",
-            type: 'POST',
-            data: {clase:idClase},
-            dataType: 'json',
-            success:function(response){
-            var len = response.length;
-            $("#nombreCategoria1").empty();
-                for( var i = 0; i<len; i++){
-                    var idCat = response[i]["idCategoriaPeligro"];
-                    var nombreCat = response[i]["nombreCategoriaPeligro"];
-                    console.log(idCat);
-                    console.log(nombreCat);
-                    $("#nombreCategoria1").append("<option value='"+idCat+"'>"+nombreCat+"</option>");
-                }
-            }
-            });
-            console.log(idClase);
+		$('#nombreClase1').change(function(){
+			cargarCategoria1();
             $('#nombreCategoria1').removeAttr('disabled');
-        });
+            $("#nombreCategoria1").val(0);
+            $("#nombreCategoria1").val(0).change();
+            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+		});
+
+        function cargarCategoria1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat1.php",
+                data:"cat1=" + $('#nombreClase1').val(),
+                success:function(r){
+                    $('#nombreCategoria1').html(r);
+                }
+            });
+        }
+
+        $('#nombreCategoria1').change(function(){
+			cargarPalabraAdvertencia1();
+            $('#nombrePalabraAdvertencia1').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia1").val(0);
+		});
+
+        function cargarPalabraAdvertencia1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad1.php",
+                data:"palad1=" + $('#nombreCategoria1').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia1').html(r);
+                }
+            });
+        }
 
 
 

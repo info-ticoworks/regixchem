@@ -77,13 +77,44 @@ $(document).ready(function(){
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
 
-    //Botón NUEVO USUARIO
+    //Botón NUEVO PRODUCTO
     $("#btnNuevo").click(function(){
         $("#formProductos").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
+
+        $('#nombreClase1').change(function(){
+            var idClase = $(this).val();
+            $.ajax({
+            url: "bd/getCategoria.php",
+            type: 'POST',
+            data: {clase:idClase},
+            dataType: 'json',
+            success:function(response){
+            var len = response.length;
+            $("#nombreCategoria1").empty();
+                for( var i = 0; i<len; i++){
+                    var idCat = response[i]["idCategoriaPeligro"];
+                    var nombreCat = response[i]["nombreCategoriaPeligro"];
+                    console.log(idCat);
+                    console.log(nombreCat);
+                    $("#nombreCategoria1").append("<option value='"+idCat+"'>"+nombreCat+"</option>");
+                }
+            }
+            });
+            console.log(idClase);
+            $('#nombreCategoria1').removeAttr('disabled');
+        });
+
+
+
+
+            
+
+
+
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('nombre').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombre').value = '';

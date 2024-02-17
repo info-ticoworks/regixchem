@@ -83,10 +83,12 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <label for="newid" class="col-form-label">Cédula: *</label>
                     <input type="number" placeholder="Digitar ID tal y como aparece en la cédula." class="form-control" id="newid" required>
                 </div> -->
+
                 <div class="form-group">
                     <label for="nombre" class="col-form-label">Nombre: *</label>
                     <input type="text" class="form-control" id="nombre" required>
                 </div>
+
                 <div class="form-group">
                     <label for="nombreGrupo" class="col-form-label">Grupo: *</label>
                     <select class="form-control" id="nombreGrupo">
@@ -103,6 +105,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         ?>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="nombreUso" class="col-form-label">Uso: *</label>
                     <select class="form-control" id="nombreUso">
@@ -110,15 +113,16 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <?php
                             $consulta = "SELECT * FROM uso
                                         ORDER BY idUso asc";
-                            $resultadoGrupo = $conexion->prepare($consulta);
-                            $resultadoGrupo->execute();
-                            $dataGrupo=$resultadoGrupo->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($dataGrupo as $datGrupo) {
-                                echo "<option value=" . $datGrupo['idUso'] . ">" . $datGrupo['nombreUso'] . "</option>";
+                            $resultadoUso = $conexion->prepare($consulta);
+                            $resultadoUso->execute();
+                            $dataUso=$resultadoUso->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataUso as $datUso) {
+                                echo "<option value=" . $datUso['idUso'] . ">" . $datUso['nombreUso'] . "</option>";
                             }
                         ?>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="nombreFabricante" class="col-form-label">Fabricante: *</label>
                     <select class="form-control" id="nombreFabricante">
@@ -126,15 +130,44 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <?php
                             $consulta = "SELECT * FROM fabricante
                                         ORDER BY idFabricante asc";
-                            $resultadoGrupo = $conexion->prepare($consulta);
-                            $resultadoGrupo->execute();
-                            $dataGrupo=$resultadoGrupo->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($dataGrupo as $datGrupo) {
-                                echo "<option value=" . $datGrupo['idFabricante'] . ">" . $datGrupo['nombreFabricante'] . "</option>";
+                            $resultadoFabricante = $conexion->prepare($consulta);
+                            $resultadoFabricante->execute();
+                            $dataFabricante=$resultadoFabricante->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataFabricante as $datFabricante) {
+                                echo "<option value=" . $datFabricante['idFabricante'] . ">" . $datFabricante['nombreFabricante'] . "</option>";
                             }
                         ?>
                     </select>
                 </div>
+
+                <div class="clases">
+
+                <div class="form-group">
+                    <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
+                    <select class="form-control" id="nombreClase1">
+                        <option selected disabled value="">Elija una clase.</option>
+                        <?php
+                            $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                        ORDER BY idClasePeligro asc";
+                            $resultadoClase1 = $conexion->prepare($consulta);
+                            $resultadoClase1->execute();
+                            $dataClase1=$resultadoClase1->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataClase1 as $datClase1) {
+                                echo "<option value=" . $datClase1['idClasePeligro'] . ">" . $datClase1['nombreClasePeligro'] . "</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombreCategoria1" class="col-form-label">Categoría de Peligro: *</label>
+                    <select class="form-control" id="nombreCategoria1" disabled>
+                        <option selected disabled value="">Elija una categoría.</option>
+                    </select>
+                </div>
+
+                <div>
+
                     <div class="form-group">
                     <label for="apellido1" class="col-form-label">Primer Apellido: *</label>
                     <input type="text" class="form-control" id="apellido1" required>

@@ -4,7 +4,7 @@ $ind1=$_POST['ind1'];
 	$sql="SELECT DISTINCT idIndicacion,
 			 nombreIndicacion
 		FROM vista_categoria_peligro
-		WHERE idPalabraAdvertencia = $ind1";
+		WHERE idClasepeligro = $ind1";
 	$result=mysqli_query($conexion,$sql);
 	$cadena="<option selected disabled value=''>Elija una Indicación.</option>";
 	while ($ver=mysqli_fetch_row($result)) {

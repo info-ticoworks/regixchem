@@ -145,7 +145,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <div class="form-group">
                         <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
                         <select class="form-control" id="nombreClase1">
-                            <option selected disabled value="">Elija una clase de peligro.</option>
+                            <option selected disabled value='0'>Elija una clase de peligro.</option>
                             <?php
                                 $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
                                             ORDER BY idClasePeligro asc";
@@ -162,14 +162,21 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <div class="form-group">
         		        <label for='nombreCategoria1' class='col-form-label'>Categoría de Peligro: *</label>
         		        <select class='form-control' id='nombreCategoria1' disabled>
-				        <option selected disabled value=''>Elija una categoría de peligro.</option>
+				        <option selected disabled value='0'>Elija una categoría de peligro.</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-        		        <label for='nombrePalabraAdvertencia1' class='col-form-label'>Categoría de Peligro: *</label>
+        		        <label for='nombrePalabraAdvertencia1' class='col-form-label'>Palabra de Advertencia: *</label>
         		        <select class='form-control' id='nombrePalabraAdvertencia1' disabled>
-				        <option selected disabled value=''>Elija una palabra de advertencia.</option>
+				        <option selected disabled value='0'>Elija una palabra de advertencia.</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+        		        <label for='nombreIndicacion1' class='col-form-label'>Indicación: *</label>
+        		        <select class='form-control' id='nombreIndicacion1' disabled>
+				        <option selected disabled value='0'>Elija una Indicación.</option>
                         </select>
                     </div>
 

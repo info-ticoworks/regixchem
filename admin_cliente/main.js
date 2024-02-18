@@ -87,10 +87,11 @@ $(document).ready(function(){
 
 		$('#nombreClase1').change(function(){
 			cargarCategoria1();
+            $('#nombreCategoria1').val(0).change();
             $('#nombreCategoria1').removeAttr('disabled');
-            $("#nombreCategoria1").val(0).change();
+            $('#nombrePalabraAdvertencia1').val(0).change();
             $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
-            $("#nombreIndicacion1").val(0).change();
+            $('#nombreIndicacion1').val(0).change();
             $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
@@ -107,15 +108,17 @@ $(document).ready(function(){
 
         $('#nombreCategoria1').change(function(){
 			cargarPalabraAdvertencia1();
+            $('#nombrePalabraAdvertencia1').val(0);
             $('#nombrePalabraAdvertencia1').removeAttr('disabled');
-            $("#nombrePalabraAdvertencia1").val(0);
+            $('#nombreIndicacion1').val(0).change();
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
         function cargarPalabraAdvertencia1(){
             $.ajax({
                 type:"POST",
                 url:"bd/palad1.php",
-                data:"palad1=" + $('#nombreCategoria1').val(),
+                data:"palad1=" + $('#nombreClase1').val(),
                 success:function(r){
                     $('#nombrePalabraAdvertencia1').html(r);
                 }
@@ -124,15 +127,15 @@ $(document).ready(function(){
 
         $('#nombrePalabraAdvertencia1').change(function(){
 			cargarIndicacion1();
+            $('#nombreIndicacion1').val(0).change();
             $('#nombreIndicacion1').removeAttr('disabled');
-            $("#nombreIndicacion1").val(0);
 		});
 
         function cargarIndicacion1(){
             $.ajax({
                 type:"POST",
                 url:"bd/ind1.php",
-                data:"ind1=" + $('#nombrePalabraAdvertencia1').val(),
+                data:"ind1=" + $('#nombreClase1').val(),
                 success:function(r){
                     $('#nombreIndicacion1').html(r);
                 }

@@ -88,9 +88,10 @@ $(document).ready(function(){
 		$('#nombreClase1').change(function(){
 			cargarCategoria1();
             $('#nombreCategoria1').removeAttr('disabled');
-            $("#nombreCategoria1").val(0);
             $("#nombreCategoria1").val(0).change();
             $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+            $("#nombreIndicacion1").val(0).change();
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
         function cargarCategoria1(){
@@ -121,10 +122,26 @@ $(document).ready(function(){
             });
         }
 
+        $('#nombrePalabraAdvertencia1').change(function(){
+			cargarIndicacion1();
+            $('#nombreIndicacion1').removeAttr('disabled');
+            $("#nombreIndicacion1").val(0);
+		});
+
+        function cargarIndicacion1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind1.php",
+                data:"ind1=" + $('#nombrePalabraAdvertencia1').val(),
+                success:function(r){
+                    $('#nombreIndicacion1').html(r);
+                }
+            });
+        }
 
 
 
-            
+
 
 
 

@@ -332,8 +332,7 @@ $(document).ready(function(){
                 url: "bd/crud.php",
                 type: "POST",
                 dataType: "json",
-                data: {idProducto:idProducto,
-                        nombreProducto:nombreProducto,
+                data: {nombreProducto:nombreProducto,
                         idGrupo:idGrupo,
                         idUso:idUso,
                         idFabricante:idFabricante,
@@ -346,11 +345,11 @@ $(document).ready(function(){
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);
-                    id = data[0].idProducto;
-                    nombreProducto = data[0].nombreProducto;
-                    nombreGrupo = data[0].nombreGrupo;
-                    nombreUso = data[0].nombreUso;
-                    nombreFabricante = data[0].nombreFabricante;
+                    id = data[0].ID;
+                    nombreProducto = data[0].Nombre;
+                    nombreGrupo = data[0].Grupo;
+                    nombreUso = data[0].Uso;
+                    nombreFabricante = data[0].Fabricante;
                     if(opcion == 1){
                         tablaProductos.row.add([id,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
                         //var row =  $("#tablaProductos").DataTable().row.add(addrow).select().draw().node();
@@ -379,7 +378,7 @@ $(document).ready(function(){
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Ocurrio un error! El ID '+ newid +' ya existe o los datos son erróneos.',
+                        text: 'Ocurrio un error! El producto ya existe o los datos son erróneos.',
                         footer: '<a href="">Why do I have this issue?</a>',
                         timer: 3000
                     })

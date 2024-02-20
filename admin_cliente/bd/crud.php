@@ -33,12 +33,11 @@ switch($opcion){
                                             '$idCategoria1',
                                             '$idPalabraAdvertencia1',
                                             '$idIndicacion1',
-                                            '$idPictograma1') ";			
+                                            '$idPictograma1')";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 
-        $consulta = "SELECT ID, Nombre, Grupo, Uso, Fabricante FROM vista_productos_reducida
-                    where cedula = '$newid' ORDER BY cedula DESC";
+        $consulta = "SELECT ID, Nombre, Grupo, Uso, Fabricante FROM vista_productos_reducida ORDER BY ID DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);

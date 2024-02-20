@@ -85,6 +85,12 @@ $(document).ready(function(){
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
 
+        $('#btnClase1').on('click', function() {
+            $('#clase1').show();
+            $('#btnClase1').hide();
+            $('#btnEliminarClase1').show();
+          } );
+
 		$('#nombreClase1').change(function(){
 			cargarCategoria1();
             $('#nombreCategoria1').val(0).change();
@@ -108,7 +114,11 @@ $(document).ready(function(){
 
         $('#nombreCategoria1').change(function(){
 			cargarPalabraAdvertencia1();
-            $('#nombrePalabraAdvertencia1').val(0);
+            c = $.trim($("#nombreCategoria1").val());
+            if (c > 0) {
+                cargarPictograma1();
+            };
+            $('#nombrePalabraAdvertencia1').val(0).change();
             $('#nombrePalabraAdvertencia1').removeAttr('disabled');
             $('#nombreIndicacion1').val(0).change();
             $('#nombreIndicacion1').prop('disabled', 'disabled');
@@ -121,6 +131,17 @@ $(document).ready(function(){
                 data:"palad1=" + $('#nombreClase1').val(),
                 success:function(r){
                     $('#nombrePalabraAdvertencia1').html(r);
+                }
+            });
+        }
+
+        function cargarPictograma1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict1.php",
+                data:"pict1=" + $('#nombreCategoria1').val(),
+                success:function(r){
+                    idPictograma1 = r;
                 }
             });
         }
@@ -142,18 +163,26 @@ $(document).ready(function(){
             });
         }
 
-
-
-
-
-
+        $('#btnEliminarClase1').on('click', function() {
+            $('#clase1').hide();
+            $('#btnClase1').show();
+            $('#btnEliminarClase1').hide();
+            $('#nombreClase1').val(0).change();
+            $('#nombreCategoria1').val(0).change();
+            $('#nombreCategoria1').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia1').val(0).change();
+            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+            $('#nombreIndicacion1').val(0).change();
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
+          } );
 
         //Seteo de algunas opciones al presionar el botón de Nuevo
-        document.getElementById('nombre').placeholder = 'Campo Obligatorio *';
-        document.getElementById('nombre').value = '';
+        document.getElementById('nombreProducto').placeholder = 'Campo Obligatorio *';
+        document.getElementById('nombreProducto').value = '';
         document.getElementById('nombreGrupo').selectedIndex = 0;
         document.getElementById('nombreUso').selectedIndex = 0;
         document.getElementById('nombreFabricante').selectedIndex = 0;
+        document.getElementById('clase1').style.display = 'none';
         
         // document.getElementById('nombreGrupo').required = true;
         // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';
@@ -281,71 +310,66 @@ $(document).ready(function(){
     //Submit Productos
     $("#formProductos").submit(function(e){
         e.preventDefault();
-        newid = $.trim($("#newid").val());
-        nombre = $.trim($("#nombre").val());
-        apellido1 = $.trim($("#apellido1").val());
-        apellido2 = $.trim($("#apellido2").val());
-        pass1 = $.trim($("#pass1").val());
-        pass2 = $.trim($("#pass2").val());
-        telefono = $.trim($("#telefono").val());
-        correo = $.trim($("#correo").val());
-        idTipoUsuario = $.trim($('#nombretipoUsuario').val());
-        console.log(idTipoUsuario);
-        console.log(id);
-        console.log(newid);
-        wsNotif = '';
-        x = document.getElementById("wsVerif").checked;
-        if (x == false) {
-            wsNotif = 0;
-        } else {
-            wsNotif = 1;
-        }
-        idEmpresa = $.trim($('#idEmpresa').val());
-        idLugarTrabajo = $.trim($('#lugarTrabajo').val());
-        if (pass1 == pass2){
+        // newid = $.trim($("#newid").val());
+        nombreProducto = $.trim($('#nombreProducto').val());
+        idGrupo = $.trim($("#nombreGrupo").val());
+        idUso = $.trim($("#nombreUso").val());
+        idFabricante = $.trim($("#nombreFabricante").val());
+        idClase1 = $.trim($("#nombreClase1").val());
+        idCategoria1 = $.trim($("#nombreCategoria1").val());
+        idPalabraAdvertencia1 = $.trim($("#nombrePalabraAdvertencia1").val());
+        idIndicacion1 = $.trim($("#nombreIndicacion1").val());
+        console.log('Nombre de Producto: ' , nombreProducto);
+        console.log('Id de Grupo: ' , idGrupo);
+        console.log('Id de Uso: ' , idUso);
+        console.log('Id de Fabricante: ' , idFabricante);
+        console.log('Id de Clase de Peligro 1: ' , idClase1);
+        console.log('Id de Categoria 1: ' , idCategoria1);
+        console.log('Id de Palabra de Advertencia 1: ' , idPalabraAdvertencia1);
+        console.log('Id de Indicacion 1: ' , idIndicacion1);
+        console.log('Id de Pictograma 1: ' , idPictograma1);
             $.ajax({
                 url: "bd/crud.php",
                 type: "POST",
                 dataType: "json",
-                data: {id:id, newid:newid, nombre:nombre, apellido1:apellido1, apellido2:apellido2, pass1:pass1, pass2:pass2, telefono:telefono, correo:correo, idTipoUsuario:idTipoUsuario, wsNotif:wsNotif, idEmpresa:idEmpresa, idLugarTrabajo:idLugarTrabajo,opcion:opcion},
+                data: {idProducto:idProducto,
+                        nombreProducto:nombreProducto,
+                        idGrupo:idGrupo,
+                        idUso:idUso,
+                        idFabricante:idFabricante,
+                        idClase1:idClase1,
+                        idCategoria1:idCategoria1,
+                        idPalabraAdvertencia1:idPalabraAdvertencia1,
+                        idIndicacion1:idIndicacion1,
+                        idPictograma1:idPictograma1,
+                        opcion:opcion},
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);
-                    id = data[0].cedula;
-                    nombre = data[0].nombre;
-                    apellido1 = data[0].apellido1;
-                    apellido2 = data[0].apellido2;
-                    telefono = data[0].telefono;
-                    correo = data[0].correo;
-                    nombretipoUsuario = data[0].nombretipoUsuario;
-                    wsNotif = data[0].wsNotif;
-                    if (wsNotif == 0) {
-                        wsVerif = 'No';
-                    } else {
-                        wsVerif = 'Sí';
-                    }
-                    nombreEmpresa = data[0].nombreEmpresa;
-                    nombreLugarTrabajo = data[0].nombreLugarTrabajo;
-                    console.log(wsVerif);
+                    id = data[0].idProducto;
+                    nombreProducto = data[0].nombreProducto;
+                    nombreGrupo = data[0].nombreGrupo;
+                    nombreUso = data[0].nombreUso;
+                    nombreFabricante = data[0].nombreFabricante;
                     if(opcion == 1){
-                        tablaProductos.row.add([id,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,nombreLugarTrabajo]).draw();
+                        tablaProductos.row.add([id,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
                         //var row =  $("#tablaProductos").DataTable().row.add(addrow).select().draw().node();
                         //setTimeout(function(){$("#tablaProductos").DataTable().row(row).deselect();}, 5000);
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'El usuario '+ nombre +' '+ apellido1 +' fue creado exitosamente',
+                            title: 'El producto '+ nombreProducto +' fue creado exitosamente',
                             showConfirmButton: false,
                             timer: 2000
                         })
                     }else{
-                        tablaProductos.row(fila).data([id,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,nombreLugarTrabajo]).draw();
-                        $('td:eq(4)').css( 'text-align', 'center' );
-                        $('td:eq(7)').css( 'text-align', 'center' );
+                        tablaProductos.row(fila).data([id,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
+                        // $('td:eq(4)').css( 'text-align', 'center' );
+                        // $('td:eq(7)').css( 'text-align', 'center' );
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'El usuario '+ nombre +' '+ apellido1 +' fue editado exitosamente.',
+                            title: 'El producto '+ nombreProducto +' fue editado exitosamente.',
                             showConfirmButton: false,
                             timer: 2000
                         })
@@ -362,15 +386,6 @@ $(document).ready(function(){
                 }      
             });
             $("#modalCRUD").modal("hide");
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Lo sentimos...',
-                text: 'Las contraseñas no coinciden.',
-                footer: 'Favor revisar la información y volver a intentar',
-                timer: 3000
-            })
-        }  
     });
     
     //tabla MARCAS

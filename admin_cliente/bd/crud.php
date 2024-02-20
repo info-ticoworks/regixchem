@@ -5,32 +5,39 @@ $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
 // Recepción de los datos enviados mediante POST desde el JS   
-$nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-$nombreGrupo = (isset($_POST['nombreGrupo'])) ? $_POST['nombreGrupo'] : '';
-$apellido1 = (isset($_POST['apellido1'])) ? $_POST['apellido1'] : '';
-$apellido2 = (isset($_POST['apellido2'])) ? $_POST['apellido2'] : '';
-$opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
-$id = (isset($_POST['id'])) ? $_POST['id'] : '';
-$newid = (isset($_POST['newid'])) ? $_POST['newid'] : '';
-$pass1 = (isset($_POST['pass1'])) ? $_POST['pass1'] : '';
-$pass2 = (isset($_POST['pass2'])) ? $_POST['pass2'] : '';
-$telefono = (isset($_POST['telefono'])) ? $_POST['telefono'] : '';
-$correo = (isset($_POST['correo'])) ? $_POST['correo'] : '';
-$pass = password_hash($pass2,PASSWORD_DEFAULT);
-$idTipoUsuario = (isset($_POST['idTipoUsuario'])) ? $_POST['idTipoUsuario'] : '';
-$wsNotif = (isset($_POST['wsNotif'])) ? $_POST['wsNotif'] : '';
-$idEmpresa = (isset($_POST['idEmpresa'])) ? $_POST['idEmpresa'] : '';
-$idLugarTrabajo = (isset($_POST['idLugarTrabajo'])) ? $_POST['idLugarTrabajo'] : '';
+$nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
+$idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
+$idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
+$idFabricante = (isset($_POST['idFabricante'])) ? $_POST['idFabricante'] : '';
+$idClase1 = (isset($_POST['idClase1'])) ? $_POST['idClase1'] : '';
+$idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
+$idPalabraAdvertencia1 = (isset($_POST['idPalabraAdvertencia1'])) ? $_POST['idPalabraAdvertencia1'] : '';
+$idIndicacion1 = (isset($_POST['idIndicacion1'])) ? $_POST['idIndicacion1'] : '';
+$idPictograma1 = (isset($_POST['idPictograma1'])) ? $_POST['idPictograma1'] : '';
 switch($opcion){
     case 1: //alta
-        $consulta = "INSERT INTO usuarios (cedula, nombre, apellido1, apellido2, pass, telefono, correo, idTipoUsuario, wsNotif, idEmpresa, idLugarTrabajo) VALUES('$newid', '$nombre', '$apellido1', '$apellido2', '$pass', '$telefono', '$correo', '$idTipoUsuario', '$wsNotif', '$idEmpresa', '$idLugarTrabajo') ";			
+        $consulta = "INSERT INTO producto (nombreProducto,
+                                            idGrupo,
+                                            idUso,
+                                            idFabricante,
+                                            idClase1,
+                                            idCategoria1,
+                                            idPalabraAdvertencia1,
+                                            idIndicacion1,
+                                            idPictograma1) VALUES(
+                                            '$nombreProducto',
+                                            '$idGrupo',
+                                            '$idUso',
+                                            '$idFabricante',
+                                            '$idClase1',
+                                            '$idCategoria1',
+                                            '$idPalabraAdvertencia1',
+                                            '$idIndicacion1',
+                                            '$idPictograma1') ";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 
-        $consulta = "SELECT cedula, nombre, apellido1, apellido2, telefono, correo, nombretipoUsuario, wsNotif, nombreEmpresa, nombreLugarTrabajo FROM usuarios
-                    inner join tipoUsuario on usuarios.idTipoUsuario=tipoUsuario.idTipoUsuario
-                    inner join empresa on usuarios.idEmpresa=empresa.idEmpresa
-                    inner join lugarTrabajo on usuarios.idLugarTrabajo=lugarTrabajo.idLugarTrabajo
+        $consulta = "SELECT ID, Nombre, Grupo, Uso, Fabricante FROM vista_productos_reducida
                     where cedula = '$newid' ORDER BY cedula DESC";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();

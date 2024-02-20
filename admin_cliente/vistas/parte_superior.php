@@ -38,7 +38,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TW-Asistencia</title>
+    <title>Regixchem</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

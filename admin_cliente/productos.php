@@ -43,11 +43,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['ID'] ?></td>
-                                <td><?php echo $dat['Nombre'] ?></td>
-                                <td><?php echo $dat['Grupo'] ?></td>
-                                <td><?php echo $dat['Uso'] ?></td>
-                                <td><?php echo $dat['Fabricante'] ?></td>
+                                <td><?php echo $dat['idProducto'] ?></td>
+                                <td><?php echo $dat['nombreProducto'] ?></td>
+                                <td><?php echo $dat['nombreGrupo'] ?></td>
+                                <td><?php echo $dat['nombreUso'] ?></td>
+                                <td><?php echo $dat['nombreFabricante'] ?></td>
                                 <td></td>
                             </tr>
                             <?php

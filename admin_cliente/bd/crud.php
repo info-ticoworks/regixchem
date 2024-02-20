@@ -1,10 +1,12 @@
-<?php
 
+<?php
+//echo "Hola";
 include_once '../bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-// Recepción de los datos enviados mediante POST desde el JS   
+// Recepción de los datos enviados mediante POST desde el JS
+$id = (isset($_POST['id'])) ? $_POST['id'] : '';
 $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
@@ -14,16 +16,17 @@ $idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
 $idPalabraAdvertencia1 = (isset($_POST['idPalabraAdvertencia1'])) ? $_POST['idPalabraAdvertencia1'] : '';
 $idIndicacion1 = (isset($_POST['idIndicacion1'])) ? $_POST['idIndicacion1'] : '';
 $idPictograma1 = (isset($_POST['idPictograma1'])) ? $_POST['idPictograma1'] : '';
+$opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 switch($opcion){
     case 1: //alta
         $consulta = "INSERT INTO producto (nombreProducto,
                                             idGrupo,
                                             idUso,
                                             idFabricante,
-                                            idClase1,
-                                            idCategoria1,
-                                            idPalabraAdvertencia1,
-                                            idIndicacion1,
+                                            idClasePeligro,
+                                            idCategoriaPeligro1,
+                                            idPalabraAdvertencia,
+                                            idIndicacion,
                                             idPictograma1) VALUES(
                                             '$nombreProducto',
                                             '$idGrupo',
@@ -37,7 +40,7 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 
-        $consulta = "SELECT ID, Nombre, Grupo, Uso, Fabricante FROM vista_productos_reducida ORDER BY ID DESC LIMIT 1";
+        $consulta = "SELECT idProducto, nombreProducto, nombreGrupo, nombreUso, nombreFabricante FROM vista_productos_reducida ORDER BY idProducto DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -72,12 +75,11 @@ switch($opcion){
             break;   
         }
     case 3://baja
-        $consulta = "DELETE FROM usuarios WHERE cedula='$id'";		
+        $consulta = "DELETE FROM producto WHERE idProducto='$id'";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);                          
-        break;        
+        break;
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en formato json a JS
 $conexion = NULL;
-

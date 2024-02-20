@@ -8,17 +8,17 @@ session_start();
         <meta charset="UFT-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Página Principal</title>
+        <title>Regixchem</title>
         <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </head>
-    <body>   
-        <img class="tw-logo" src="./image/logo1.png">
+    <body>
+        <img class="logo" src="./image/logo1.png">
         <form action="index.php" class="form-box" method="POST">
         <h3 class="form-sub-title">Te damos la bienvenida!</h3>
-        <h3 class="form-sub-title">Inicia Sesion y registra tu asistencia.</h3>
+        <h3 class="form-sub-title">Inicia Sesión.</h3>
         <input type="text" placeholder="Cédula" name="ced" id="ced" autofocus>
         <input type="password" placeholder="Contraseña" name="passc" id="passc">
         <input type="submit" value="Ingresar" name="btverificar" id="btverificar">
@@ -53,7 +53,7 @@ session_start();
                         if($idTipoUsuario == "1"){
                             header("Location: frmHora.php");
                         }else if($idTipoUsuario == "2" || $idTipoUsuario == "3" || $idTipoUsuario == "4"){
-                            header("Location: ./admin_cliente/");
+                            header("Location: ./admin_cliente/productos.php");
                         }else if($idTipoUsuario == "105"){
                             header("Location: ./admin/");
                         }else{

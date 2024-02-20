@@ -9,16 +9,13 @@ $(document).ready(function(){
         "data":null,
         "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
-       "createdRow": function(row, data, dataIndex) {
-            if ( data[0] ) {
-                $(row).addClass( 'text-center' );
-            }
-            // if ( data[7] ) {
-            //     $(row).addClass( 'text-center' );
-            // }
-        },
+    //    "createdRow": function(row, data, dataIndex) {
+    //         if ( data[0] ) {
+    //             $(row).addClass( 'text-center' );
+    //         }
+    //     },
     responsive: "true",
-    order: [[0,'asc']], //Establece la columna que será el orden de los productos.
+    //order: [[0,'asc']], //Establece la columna que será el orden de los productos.
     dom: 'Bfrtilp',       
     buttons:[
         {
@@ -194,7 +191,7 @@ $(document).ready(function(){
         // document.getElementById('nombretipoUsuario').required = true;
         // document.getElementById('lugarTrabajo').required = true;
         // document.getElementById('lugarTrabajo').value = '';
-        id=null;
+        //id=null;
         opcion = 1; //Nuevo Producto
     });    
     
@@ -271,7 +268,7 @@ $(document).ready(function(){
     $(document).on("click", ".btnBorrar", function(){    
         fila = $(this);
         id = parseInt($(this).closest("tr").find('td:eq(0)').text());
-        nombreProducto = $(this).closest("tr").find('td:eq(0)').text();
+        nombreProducto = $(this).closest("tr").find('td:eq(1)').text();
         opcion = 3 //borrar
         Swal.fire({
             title: 'Está seguro que desea eliminar el producto '+ nombreProducto +'?',
@@ -292,16 +289,19 @@ $(document).ready(function(){
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'El producto '+ nombre +' '+ apellido1 +' fue eliminado con éxito',
+                                title: 'El producto "'+ nombreProducto +'" fue eliminado con éxito',
                                 showConfirmButton: false,
                                 timer: 2000
                             })
                         },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                            // alert("Status: " + textStatus); alert("Error: " + errorThrown);
-                            console.log("Status: " + textStatus);
-                            console.log("Error: " + errorThrown);
-                        }
+                        // error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        //     // alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                        //     console.log("Status: " + textStatus);
+                        //     console.log("Error: " + errorThrown);
+                        // }
+                        error: function(textStatus, errorThrown) {
+                            console.log(textStatus, errorThrown);
+                          }
                     });
                 }
         })
@@ -345,44 +345,43 @@ $(document).ready(function(){
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);
-                    id = data[0].ID;
-                    nombreProducto = data[0].Nombre;
-                    nombreGrupo = data[0].Grupo;
-                    nombreUso = data[0].Uso;
-                    nombreFabricante = data[0].Fabricante;
+                    idProducto = data[0].idProducto;
+                    nombreProducto = data[0].nombreProducto;
+                    nombreGrupo = data[0].nombreGrupo;
+                    nombreUso = data[0].nombreUso;
+                    nombreFabricante = data[0].nombreFabricante;
                     if(opcion == 1){
-                        tablaProductos.row.add([id,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
-                        //var row =  $("#tablaProductos").DataTable().row.add(addrow).select().draw().node();
-                        //setTimeout(function(){$("#tablaProductos").DataTable().row(row).deselect();}, 5000);
+                        tablaProductos.row.add([idProducto,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'El producto '+ nombreProducto +' fue creado exitosamente',
+                            title: 'El producto "'+ nombreProducto +'" fue creado exitosamente',
                             showConfirmButton: false,
                             timer: 2000
                         })
                     }else{
                         tablaProductos.row(fila).data([id,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
-                        // $('td:eq(4)').css( 'text-align', 'center' );
-                        // $('td:eq(7)').css( 'text-align', 'center' );
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'El producto '+ nombreProducto +' fue editado exitosamente.',
+                            title: 'El producto "'+ nombreProducto +'" fue editado exitosamente.',
                             showConfirmButton: false,
                             timer: 2000
                         })
                     }            
                 },
-                error: function() {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Ocurrio un error! El producto ya existe o los datos son erróneos.',
-                        footer: '<a href="">Why do I have this issue?</a>',
-                        timer: 3000
-                    })
-                }      
+                error: function(textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                  }
+                // error: function() {
+                //     Swal.fire({
+                //         icon: 'error',
+                //         title: 'Oops...',
+                //         text: 'Ocurrio un error! El producto ya existe o los datos son erróneos.',
+                //         footer: '<a href="">Why do I have this issue?</a>',
+                //         timer: 3000
+                //     })
+                // }   
             });
             $("#modalCRUD").modal("hide");
     });

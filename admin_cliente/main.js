@@ -86,6 +86,12 @@ $(document).ready(function(){
             $('#clase1').show();
             $('#btnClase1').hide();
             $('#btnEliminarClase1').show();
+            $('#btnClase2').show();
+          } );
+
+          $('#btnClase2').on('click', function() {
+
+            $('#btnEliminarClase1').show();
           } );
 
 		$('#nombreClase1').change(function(){
@@ -171,15 +177,18 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
             $('#nombreIndicacion1').val(0).change();
             $('#nombreIndicacion1').prop('disabled', 'disabled');
+            $('#btnClase2').hide();
           } );
 
         //Seteo de algunas opciones al presionar el botón de Nuevo
+        document.getElementById('cas').placeholder = 'Chemical Abstracts Service Number *';
         document.getElementById('nombreProducto').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombreProducto').value = '';
         document.getElementById('nombreGrupo').selectedIndex = 0;
         document.getElementById('nombreUso').selectedIndex = 0;
         document.getElementById('nombreFabricante').selectedIndex = 0;
         document.getElementById('clase1').style.display = 'none';
+        document.getElementById('btnClase2').style.display = 'none';
         
         // document.getElementById('nombreGrupo').required = true;
         // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';
@@ -267,11 +276,11 @@ $(document).ready(function(){
     //botón BORRAR
     $(document).on("click", ".btnBorrar", function(){    
         fila = $(this);
-        id = parseInt($(this).closest("tr").find('td:eq(0)').text());
+        cas = $(this).closest("tr").find('td:eq(0)').text();
         nombreProducto = $(this).closest("tr").find('td:eq(1)').text();
         opcion = 3 //borrar
         Swal.fire({
-            title: 'Está seguro que desea eliminar el producto '+ nombreProducto +'?',
+            title: 'Está seguro que desea eliminar el producto "'+ nombreProducto +'"?',
             showDenyButton: false,
             showCancelButton: true,
             confirmButtonText: 'Eliminar',
@@ -283,7 +292,7 @@ $(document).ready(function(){
                         url: "bd/crud.php",
                         type: "POST",
                         dataType: "json",
-                        data: {opcion:opcion, id:id},
+                        data: {opcion:opcion, cas:cas},
                         success: function(){
                             tablaProductos.row(fila.parents('tr')).remove().draw();
                             Swal.fire({
@@ -311,6 +320,7 @@ $(document).ready(function(){
     $("#formProductos").submit(function(e){
         e.preventDefault();
         // newid = $.trim($("#newid").val());
+        cas = $.trim($("#cas").val());
         nombreProducto = $.trim($('#nombreProducto').val());
         idGrupo = $.trim($("#nombreGrupo").val());
         idUso = $.trim($("#nombreUso").val());
@@ -319,6 +329,7 @@ $(document).ready(function(){
         idCategoria1 = $.trim($("#nombreCategoria1").val());
         idPalabraAdvertencia1 = $.trim($("#nombrePalabraAdvertencia1").val());
         idIndicacion1 = $.trim($("#nombreIndicacion1").val());
+        console.log('CAS: ' , cas);
         console.log('Nombre de Producto: ' , nombreProducto);
         console.log('Id de Grupo: ' , idGrupo);
         console.log('Id de Uso: ' , idUso);
@@ -332,7 +343,9 @@ $(document).ready(function(){
                 url: "bd/crud.php",
                 type: "POST",
                 dataType: "json",
-                data: {nombreProducto:nombreProducto,
+                data: {opcion:opcion,
+                        cas:cas,
+                        nombreProducto:nombreProducto,
                         idGrupo:idGrupo,
                         idUso:idUso,
                         idFabricante:idFabricante,
@@ -340,18 +353,17 @@ $(document).ready(function(){
                         idCategoria1:idCategoria1,
                         idPalabraAdvertencia1:idPalabraAdvertencia1,
                         idIndicacion1:idIndicacion1,
-                        idPictograma1:idPictograma1,
-                        opcion:opcion},
+                        idPictograma1:idPictograma1},
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);
-                    idProducto = data[0].idProducto;
+                    cas = data[0].cas;
                     nombreProducto = data[0].nombreProducto;
                     nombreGrupo = data[0].nombreGrupo;
                     nombreUso = data[0].nombreUso;
                     nombreFabricante = data[0].nombreFabricante;
                     if(opcion == 1){
-                        tablaProductos.row.add([idProducto,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
+                        tablaProductos.row.add([cas,nombreProducto,nombreGrupo,nombreUso,nombreFabricante]).draw();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',

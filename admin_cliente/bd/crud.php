@@ -6,7 +6,7 @@ $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
 // Recepción de los datos enviados mediante POST desde el JS
-$id = (isset($_POST['id'])) ? $_POST['id'] : '';
+$cas = (isset($_POST['cas'])) ? $_POST['cas'] : '';
 $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
@@ -19,15 +19,17 @@ $idPictograma1 = (isset($_POST['idPictograma1'])) ? $_POST['idPictograma1'] : ''
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 switch($opcion){
     case 1: //alta
-        $consulta = "INSERT INTO producto (nombreProducto,
+        $consulta = "INSERT INTO producto (cas,
+                                            nombreProducto,
                                             idGrupo,
                                             idUso,
                                             idFabricante,
-                                            idClasePeligro,
+                                            idClasePeligro1,
                                             idCategoriaPeligro1,
-                                            idPalabraAdvertencia,
-                                            idIndicacion,
+                                            idPalabraAdvertencia1,
+                                            idIndicacion1,
                                             idPictograma1) VALUES(
+                                            '$cas',
                                             '$nombreProducto',
                                             '$idGrupo',
                                             '$idUso',
@@ -40,7 +42,7 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 
-        $consulta = "SELECT idProducto, nombreProducto, nombreGrupo, nombreUso, nombreFabricante FROM vista_productos_reducida ORDER BY idProducto DESC LIMIT 1";
+        $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante FROM vista_productos_reducida ORDER BY cas DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -75,7 +77,7 @@ switch($opcion){
             break;   
         }
     case 3://baja
-        $consulta = "DELETE FROM producto WHERE idProducto='$id'";		
+        $consulta = "DELETE FROM producto WHERE cas='$cas'";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);                          

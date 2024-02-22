@@ -30,7 +30,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <table id="tablaProductos" class="table table-bordered" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>ID</th>
+                                <th>CAS</th>
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
@@ -43,7 +43,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['idProducto'] ?></td>
+                                <td><?php echo $dat['cas'] ?></td>
                                 <td><?php echo $dat['nombreProducto'] ?></td>
                                 <td><?php echo $dat['nombreGrupo'] ?></td>
                                 <td><?php echo $dat['nombreUso'] ?></td>
@@ -56,7 +56,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         </tbody>
                         <tfoot class="text-center">
                             <tr>
-                                <th>ID</th>
+                                <th>CAS</th>
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
@@ -83,6 +83,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <label for="newid" class="col-form-label">Cédula: *</label>
                     <input type="number" placeholder="Digitar ID tal y como aparece en la cédula." class="form-control" id="newid" required>
                 </div> -->
+
+                <div class="form-group">
+                    <label for="cas" class="col-form-label">CAS: *</label>
+                    <input type="text" class="form-control" id="cas" required>
+                </div>
 
                 <div class="form-group">
                     <label for="nombreProducto" class="col-form-label">Nombre: *</label>
@@ -142,7 +147,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="clases">
                     <button class="btn btn-success" type="button" id="btnClase1">Agregar Clase de Peligro</button>
-                    <div class="clase1" id='clase1'>
+                    <div class="clase-box" id='clase1'>
+                    <label for="clase1" class="col-form-label">Datos de la clase de peligro #1</label>
                         <div class="form-group">
                             <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
                             <select class="form-control" id="nombreClase1">
@@ -179,6 +185,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <button class="btn btn-danger" type="button" id="btnEliminarClase1">Eliminar Clase de Peligro</button>
                     </div>
+                    <button class="btn btn-success" type="button" id="btnClase2">Agregar otra clase de Peligro</button>
                 </div>
             </div>
             <div class="modal-footer">

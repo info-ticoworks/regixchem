@@ -77,7 +77,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">TW-Asistencia <sup></sup>
+                <div class="sidebar-brand-text mx-3">Regixchem <sup></sup>
                 </div>
             </a>
 

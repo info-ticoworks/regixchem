@@ -10,8 +10,13 @@ $cas = (isset($_POST['cas'])) ? $_POST['cas'] : '';
 $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
-$idFabricante = (isset($_POST['idFabricante'])) ? $_POST['idFabricante'] : '';
+$nombreFabricante = (isset($_POST['nombreFabricante'])) ? $_POST['nombreFabricante'] : '';
 $idClase1 = (isset($_POST['idClase1'])) ? $_POST['idClase1'] : '';
+
+//$idClase1Post = NULL;
+
+//echo $idClase1Post;
+
 $idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
 $idPalabraAdvertencia1 = (isset($_POST['idPalabraAdvertencia1'])) ? $_POST['idPalabraAdvertencia1'] : '';
 $idIndicacion1 = (isset($_POST['idIndicacion1'])) ? $_POST['idIndicacion1'] : '';
@@ -23,22 +28,22 @@ switch($opcion){
                                             nombreProducto,
                                             idGrupo,
                                             idUso,
-                                            idFabricante,
+                                            nombreFabricante,
                                             idClasePeligro1,
                                             idCategoriaPeligro1,
                                             idPalabraAdvertencia1,
                                             idIndicacion1,
-                                            idPictograma1) VALUES(
+                                            idPictograma1) VALUES (
                                             '$cas',
                                             '$nombreProducto',
-                                            '$idGrupo',
-                                            '$idUso',
-                                            '$idFabricante',
-                                            '$idClase1',
-                                            '$idCategoria1',
-                                            '$idPalabraAdvertencia1',
-                                            '$idIndicacion1',
-                                            '$idPictograma1')";			
+                                            $idGrupo,
+                                            $idUso,
+                                            '$nombreFabricante',
+                                            $idClase1,
+                                            $idCategoria1,
+                                            $idPalabraAdvertencia1,
+                                            $idIndicacion1,
+                                            $idPictograma1)";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
 

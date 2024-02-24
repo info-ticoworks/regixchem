@@ -96,7 +96,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="form-group">
                     <label for="nombreGrupo" class="col-form-label">Grupo: *</label>
-                    <select class="form-control" id="nombreGrupo">
+                    <select class="form-control" id="nombreGrupo" required>
                         <option selected disabled value="">Elija un grupo.</option>
                         <?php
                             $consulta = "SELECT * FROM grupo
@@ -113,7 +113,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="form-group">
                     <label for="nombreUso" class="col-form-label">Uso: *</label>
-                    <select class="form-control" id="nombreUso">
+                    <select class="form-control" id="nombreUso" required>
                         <option selected disabled value="">Elija un Uso.</option>
                         <?php
                             $consulta = "SELECT * FROM uso
@@ -130,19 +130,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="form-group">
                     <label for="nombreFabricante" class="col-form-label">Fabricante: *</label>
-                    <select class="form-control" id="nombreFabricante">
-                        <option selected disabled value="">Elija un Fabricante.</option>
-                        <?php
-                            $consulta = "SELECT * FROM fabricante
-                                        ORDER BY idFabricante asc";
-                            $resultadoFabricante = $conexion->prepare($consulta);
-                            $resultadoFabricante->execute();
-                            $dataFabricante=$resultadoFabricante->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($dataFabricante as $datFabricante) {
-                                echo "<option value=" . $datFabricante['idFabricante'] . ">" . $datFabricante['nombreFabricante'] . "</option>";
-                            }
-                        ?>
-                    </select>
+                    <input type="text" class="form-control" id="nombreFabricante" required>
                 </div>
 
                 <div class="clases">
@@ -152,7 +140,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <div class="form-group">
                             <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
                             <select class="form-control" id="nombreClase1">
-                                <option selected disabled value='0'>Elija una clase de peligro.</option>
+                                <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
                                                 ORDER BY idClasePeligro asc";
@@ -168,19 +156,19 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <div class="form-group">
         		            <label for='nombreCategoria1' class='col-form-label'>Categoría de Peligro: *</label>
         		            <select class='form-control' id='nombreCategoria1' disabled>
-				            <option selected disabled value='0'>Elija una categoría de peligro.</option>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
                             </select>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia1' class='col-form-label'>Palabra de Advertencia: *</label>
         		            <select class='form-control' id='nombrePalabraAdvertencia1' disabled>
-				            <option selected disabled value='0'>Elija una palabra de advertencia.</option>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
                             </select>
                         </div>
                         <div class="form-group">
         		            <label for='nombreIndicacion1' class='col-form-label'>Indicación: *</label>
         		            <select class='form-control' id='nombreIndicacion1' disabled>
-				            <option selected disabled value='0'>Elija una Indicación.</option>
+				            <option selected disabled value="">Elija una Indicación.</option>
                             </select>
                         </div>
                         <button class="btn btn-danger" type="button" id="btnEliminarClase1">Eliminar Clase de Peligro</button>
@@ -189,7 +177,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="btnCancelar" class="btn btn-light" data-dismiss="modal">Cancelar</button>
                 <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
             </div>
         </form>    

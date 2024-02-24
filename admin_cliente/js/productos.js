@@ -81,26 +81,36 @@ $(document).ready(function(){
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
+        $('#btnClase1').show();
+        idPictograma1 = 0;
 
         $('#btnClase1').on('click', function() {
             $('#clase1').show();
             $('#btnClase1').hide();
             $('#btnEliminarClase1').show();
             $('#btnClase2').show();
-          } );
+            $('#nombreClase1').prop('selectedIndex', 0);
+            $('#nombreClase1 option').removeAttr("selected");
+            $('#nombreClase1').removeAttr('selected');
+            $('#nombreClase1').removeAttr('disabled');
+            $("#nombreClase1").attr("required","required");
+            $('#nombreCategoria1').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
+        });
 
-          $('#btnClase2').on('click', function() {
-
+        $('#btnClase2').on('click', function() {
             $('#btnEliminarClase1').show();
-          } );
+        });
 
 		$('#nombreClase1').change(function(){
 			cargarCategoria1();
-            $('#nombreCategoria1').val(0).change();
+            $('#nombreCategoria1').prop('selectedIndex', 0);
             $('#nombreCategoria1').removeAttr('disabled');
-            $('#nombrePalabraAdvertencia1').val(0).change();
+            $("#nombreCategoria1").attr("required","required");
+            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
-            $('#nombreIndicacion1').val(0).change();
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
             $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
@@ -121,9 +131,10 @@ $(document).ready(function(){
             if (c > 0) {
                 cargarPictograma1();
             };
-            $('#nombrePalabraAdvertencia1').val(0).change();
+            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia1').removeAttr('disabled');
-            $('#nombreIndicacion1').val(0).change();
+            $("#nombrePalabraAdvertencia1").attr("required","required");
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
             $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
@@ -151,8 +162,9 @@ $(document).ready(function(){
 
         $('#nombrePalabraAdvertencia1').change(function(){
 			cargarIndicacion1();
-            $('#nombreIndicacion1').val(0).change();
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
             $('#nombreIndicacion1').removeAttr('disabled');
+            $("#nombreIndicacion1").attr("required","required");
 		});
 
         function cargarIndicacion1(){
@@ -167,17 +179,23 @@ $(document).ready(function(){
         }
 
         $('#btnEliminarClase1').on('click', function() {
-            $('#clase1').hide();
             $('#btnClase1').show();
             $('#btnEliminarClase1').hide();
-            $('#nombreClase1').val(0).change();
-            $('#nombreCategoria1').val(0).change();
-            $('#nombreCategoria1').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia1').val(0).change();
-            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
-            $('#nombreIndicacion1').val(0).change();
-            $('#nombreIndicacion1').prop('disabled', 'disabled');
             $('#btnClase2').hide();
+            $('#nombreClase1').prop('selectedIndex', 0);
+            $('#nombreClase1').prop('disabled', 'disabled');
+            $('#nombreClase1').removeAttr('required');
+            $('#nombreCategoria1').prop('selectedIndex', 0);
+            $('#nombreCategoria1').prop('disabled', 'disabled');
+            $('#nombreCategoria1').removeAttr('required');
+            $('#nombrePalabraAdvertencia').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia1').removeAttr('required');
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
+            $('#nombreIndicacion1').removeAttr('required');
+            $idPictograma1 = 0;
+            $('#clase1').hide();
           } );
 
         //Seteo de algunas opciones al presionar el botón de Nuevo
@@ -185,8 +203,9 @@ $(document).ready(function(){
         document.getElementById('nombreProducto').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombreProducto').value = '';
         document.getElementById('nombreGrupo').selectedIndex = 0;
-        document.getElementById('nombreUso').selectedIndex = 0;
-        document.getElementById('nombreFabricante').selectedIndex = 0;
+        document.getElementById('nombreUso').selectedIndex = 1;
+        document.getElementById('nombreFabricante').placeholder = 'Campo Obligatorio *';
+        document.getElementById('nombreFabricante').value = '';
         document.getElementById('clase1').style.display = 'none';
         document.getElementById('btnClase2').style.display = 'none';
         
@@ -201,8 +220,13 @@ $(document).ready(function(){
         // document.getElementById('lugarTrabajo').required = true;
         // document.getElementById('lugarTrabajo').value = '';
         //id=null;
+
+        $('#btnCancelar').on('click', function() {
+            $("#formProductos").trigger("reset");
+        });
+
         opcion = 1; //Nuevo Producto
-    });    
+    });
     
     var fila; //Capturar la fila para editar o borrar el registro
     
@@ -210,7 +234,7 @@ $(document).ready(function(){
     $(document).on("click", ".btnEditar", function(){
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
-        id = parseInt(fila.find('td:eq(0)').text());
+        cas = parseInt(fila.find('td:eq(0)').text());
         nombre = fila.find('td:eq(1)').text();
         nombreGrupo = fila.find('td:eq(2)').text();
         nombreUso = fila.find('td:eq(3)').text();
@@ -320,40 +344,85 @@ $(document).ready(function(){
     $("#formProductos").submit(function(e){
         e.preventDefault();
         // newid = $.trim($("#newid").val());
+
+        idClase1 = 0;
+        idCategoria1 = 0;
+        idPalabraAdvertencia1 = 0;
+        idIndicacion1 = 0;
+
         cas = $.trim($("#cas").val());
         nombreProducto = $.trim($('#nombreProducto').val());
         idGrupo = $.trim($("#nombreGrupo").val());
         idUso = $.trim($("#nombreUso").val());
-        idFabricante = $.trim($("#nombreFabricante").val());
-        idClase1 = $.trim($("#nombreClase1").val());
-        idCategoria1 = $.trim($("#nombreCategoria1").val());
-        idPalabraAdvertencia1 = $.trim($("#nombrePalabraAdvertencia1").val());
-        idIndicacion1 = $.trim($("#nombreIndicacion1").val());
+        nombreFabricante = $.trim($("#nombreFabricante").val());
+        const opClase1 = document.getElementById("nombreClase1");
+        if (opClase1.selectedIndex === 0 || opClase1.selectedIndex === '') {
+            idClase1 = 'NULL';
+        } else {
+            idClase1 = $.trim($("#nombreClase1").val());
+        }
+        const opCategoria1 = document.getElementById("nombreCategoria1");
+        if (opCategoria1.selectedIndex === 0) {
+            idCategoria1 = 'NULL';
+        } else {
+            idCategoria1 = $.trim($("#nombreCategoria1").val());
+        }
+        const opPalabraAdvertencia1 = document.getElementById("nombrePalabraAdvertencia1");
+        if (opPalabraAdvertencia1.selectedIndex === 0) {
+            idPalabraAdvertencia1 = 'NULL';
+        } else {
+            idPalabraAdvertencia1 = $.trim($("#nombrePalabraAdvertencia1").val());
+        }
+        const opIndicacion1 = document.getElementById("nombreIndicacion1");
+        if (opIndicacion1.selectedIndex === 0) {
+            idIndicacion1 = 'NULL';
+        } else {
+            idIndicacion1 = $.trim($("#nombreIndicacion1").val());
+        }
+        
+        if (idPictograma1 === 0) {
+            idPictograma1 = 'NULL';
+        }
+
         console.log('CAS: ' , cas);
         console.log('Nombre de Producto: ' , nombreProducto);
         console.log('Id de Grupo: ' , idGrupo);
         console.log('Id de Uso: ' , idUso);
-        console.log('Id de Fabricante: ' , idFabricante);
+        console.log('Nombre del Fabricante: ' , nombreFabricante);
         console.log('Id de Clase de Peligro 1: ' , idClase1);
         console.log('Id de Categoria 1: ' , idCategoria1);
         console.log('Id de Palabra de Advertencia 1: ' , idPalabraAdvertencia1);
         console.log('Id de Indicacion 1: ' , idIndicacion1);
         console.log('Id de Pictograma 1: ' , idPictograma1);
+
+        jsonData = {opcion:opcion,
+            cas:cas,
+            nombreProducto:nombreProducto,
+            idGrupo:idGrupo,
+            idUso:idUso,
+            nombreFabricante:nombreFabricante,
+            idClase1:idClase1,
+            idCategoria1:idCategoria1,
+            idPalabraAdvertencia1:idPalabraAdvertencia1,
+            idIndicacion1:idIndicacion1,
+            idPictograma1:idPictograma1}
+
             $.ajax({
                 url: "bd/crud.php",
                 type: "POST",
+                //contentType: 'application/json',
                 dataType: "json",
                 data: {opcion:opcion,
-                        cas:cas,
-                        nombreProducto:nombreProducto,
-                        idGrupo:idGrupo,
-                        idUso:idUso,
-                        idFabricante:idFabricante,
-                        idClase1:idClase1,
-                        idCategoria1:idCategoria1,
-                        idPalabraAdvertencia1:idPalabraAdvertencia1,
-                        idIndicacion1:idIndicacion1,
-                        idPictograma1:idPictograma1},
+                    cas:cas,
+                    nombreProducto:nombreProducto,
+                    idGrupo:idGrupo,
+                    idUso:idUso,
+                    nombreFabricante:nombreFabricante,
+                    idClase1:idClase1,
+                    idCategoria1:idCategoria1,
+                    idPalabraAdvertencia1:idPalabraAdvertencia1,
+                    idIndicacion1:idIndicacion1,
+                    idPictograma1:idPictograma1},
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);
@@ -384,6 +453,13 @@ $(document).ready(function(){
                 },
                 error: function(textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Ocurrio un error! El producto ya existe o los datos son erróneos.',
+                    footer: '<a href="">Why do I have this issue?</a>',
+                    timer: 3000
+                    })
                   }
                 // error: function() {
                 //     Swal.fire({
@@ -398,154 +474,5 @@ $(document).ready(function(){
             $("#modalCRUD").modal("hide");
     });
     
-    //tabla MARCAS
-    tablaMarcas = $("#tablaMarcas").DataTable({
-        "columnDefs":[{
-         "targets": -1,
-         "data":null,
-         "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-success btnMarcasDetalles'>Detalles</button></div></div>"
-        },
-        {
-            target: 0,
-            visible: false,
-        },
-        {
-            target: 7,
-            visible: false,
-        },
-        {
-            target: 8,
-            visible: false,
-        },
-        {
-            target: 9,
-            visible: false,
-        }],
- 
-     responsive: "true",
-     order: [[0,'desc']],
-     dom: 'Bfrtilp',       
-     buttons:[
-         {
-             extend:    'excelHtml5',
-             text:      '<i class="fas fa-file-excel"></i> ',
-             titleAttr: 'Exportar a Excel',
-             className: 'btn btn-success'
-         },
-         {
-             extend:    'print',
-             text:      '<i class="fa fa-print"></i> ',
-             titleAttr: 'Imprimir',
-             className: 'btn btn-info'
-         },
-     ],
- 
-         //Para cambiar el lenguaje a español
-     "language": {
-             "lengthMenu": "Mostrar _MENU_ registros",
-             "zeroRecords": "No se encontraron resultados",
-             "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-             "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-             "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-             "sSearch": "Buscar:",
-             "oPaginate": {
-                 "sFirst": "Primero",
-                 "sLast":"Último",
-                 "sNext":"Siguiente",
-                 "sPrevious": "Anterior"
-              },
-              "sProcessing":"Procesando...",
-         }
-    });
 
-    //Highlight de filas Tabla de Marcas
-    tablaMarcas.on('mouseenter', 'tr', function(){
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
-    });
-
-    //botón DETALLE DE MARCAS
-    $(document).on("click", ".btnMarcasDetalles", function(){
-        fila = $(this).closest("tr");
-        id = parseInt(fila.find('td:eq(0)').text());
-        idMarca = parseInt(tablaMarcas.cell(fila,0).data());
-        ubicacion = tablaMarcas.cell(fila,7).data();
-        if (tablaMarcas.cell(fila,8).data()) {
-            lati = parseFloat(tablaMarcas.cell(fila,8).data());
-        } else {
-            lati = 0;
-        }
-        lngi = parseFloat(tablaMarcas.cell(fila,9).data());
-        nombre = fila.find('td:eq(1)').text();
-        apellido1 = fila.find('td:eq(2)').text();
-        apellido2 = fila.find('td:eq(3)').text();
-        fecha = fila.find('td:eq(4)').text();
-        hora = fila.find('td:eq(5)').text();
-        tipoMarca = fila.find('td:eq(6)').text();
-        lugarTrabajo = tablaMarcas.cell(fila,11).data();
-
-        //Seteo de algunas opciones al presionar el botón de Editar
-        document.getElementById('newid').innerHTML = id;
-        document.getElementById('nombre').innerHTML = nombre;
-        document.getElementById('apellido1').innerHTML = apellido1;
-        document.getElementById('apellido2').innerHTML = apellido2;
-        document.getElementById('fecha').innerHTML = fecha;
-        document.getElementById('hora').innerHTML = hora;
-        document.getElementById('tipoMarca').innerHTML = tipoMarca;
-        document.getElementById('lugarTrabajo').innerHTML = lugarTrabajo;
-        document.getElementById('noMap').innerHTML = 'Esta marca no registra ninguna ubicación.';
-        //$("#newid").val(id);
-        //$("#nombre").val(nombre);
-        //$("#apellido1").val(apellido1);
-        // $("#apellido2").val(apellido2);
-        // $("#fecha").val(fecha);
-        // $("#hora").val(hora);
-        $("#ubicacion").val(ubicacion);
-        $("#lat").val(lati);
-        $("#lng").val(lngi);
-        $(".modal-header").css("background-color", "#4e73df");
-        $(".modal-header").css("color", "white");
-        $(".modal-title").text("Detalles de marca.");            
-        $("#modalMarcas").modal("show");
-        console.log("Edición de Usuario - Paso 1...");
-    });
-
-    let map;
-
-    async function initMap() {
-        // Current Location
-        const current_location = { lat: lati, lng: lngi };
-        //@ts-ignore
-        const { Map } = await google.maps.importLibrary("maps");
-        map = new Map(document.getElementById("map"), {
-            center: current_location,
-            zoom: 16,
-        });
-        // The marker, positioned at current location
-        const marker = new google.maps.Marker({
-            position: current_location,
-            map: map,
-        });
-    }
-
-    //Autofocus al presionar el botón Nuevo
-    $('#modalCRUD').on('shown.bs.modal', function() {
-        // get the locator for an input in your modal. Here I'm focusing on
-        // the element with the id of myInput
-        $('#newid').focus()
-    });
-
-        //Autofocus al presionar el botón Nuevo
-    $('#modalMarcas').on('shown.bs.modal', function() {
-        console.log(lati);
-        if (lati === 0) {
-            document.getElementById("map").hidden = true;
-            document.getElementById("noMap").hidden = false;
-        } else {
-            document.getElementById("map").hidden = false;
-            document.getElementById("noMap").hidden = true;
-            initMap();
-        }
-    });
-    
 });

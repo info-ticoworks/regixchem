@@ -81,8 +81,12 @@ $(document).ready(function(){
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
-        $('#btnClase1').show();
         idPictograma1 = 0;
+
+
+
+
+        //Funciones de los botones para mostrar y esconder Clases
 
         $('#btnClase1').on('click', function() {
             $('#clase1').show();
@@ -100,10 +104,117 @@ $(document).ready(function(){
         });
 
         $('#btnClase2').on('click', function() {
-            $('#btnEliminarClase1').show();
+            $('#clase2').show();
+            $('#btnClase2').hide();
+            $('#btnEliminarClase2').show();
+            $('#btnClase3').show();
+            $('#nombreClase2').prop('selectedIndex', 0);
+            $('#nombreClase2 option').removeAttr("selected");
+            $('#nombreClase2').removeAttr('selected');
+            $('#nombreClase2').removeAttr('disabled');
+            $("#nombreClase2").attr("required","required");
+            $('#nombreCategoria2').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
+            $('#nombreIndicacion2').prop('selectedIndex', 0);
         });
 
-		$('#nombreClase1').change(function(){
+        $('#btnEliminarClase1').on('click', function() {
+            $('#btnClase1').show();
+            $('#btnEliminarClase1').hide();
+            $('#btnClase2').hide();
+            $('#nombreClase1').prop('selectedIndex', 0);
+            $('#nombreClase1').prop('disabled', 'disabled');
+            $('#nombreClase1').removeAttr('required');
+            $('#nombreCategoria1').prop('selectedIndex', 0);
+            $('#nombreCategoria1').prop('disabled', 'disabled');
+            $('#nombreCategoria1').removeAttr('required');
+            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia1').removeAttr('required');
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
+            $('#nombreIndicacion1').removeAttr('required');
+            $idPictograma1 = 0;
+            $('#clase1').hide();
+        });
+
+        $('#btnEliminarClase2').on('click', function() {
+            $('#btnClase2').show();
+            $('#btnEliminarClase2').hide();
+            $('#btnClase3').hide();
+            $('#nombreClase2').prop('selectedIndex', 0);
+            $('#nombreClase2').prop('disabled', 'disabled');
+            $('#nombreClase2').removeAttr('required');
+            $('#nombreCategoria2').prop('selectedIndex', 0);
+            $('#nombreCategoria2').prop('disabled', 'disabled');
+            $('#nombreCategoria2').removeAttr('required');
+            $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia2').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia2').removeAttr('required');
+            $('#nombreIndicacion2').prop('selectedIndex', 0);
+            $('#nombreIndicacion2').prop('disabled', 'disabled');
+            $('#nombreIndicacion2').removeAttr('required');
+            $idPictograma2 = 0;
+            $('#clase2').hide();
+        });
+
+
+
+
+
+        //Funciones de carga de Select
+
+        function cargarCategoria1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase1').val(),
+                success:function(r){
+                    $('#nombreCategoria1').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase1').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia1').html(r);
+                }
+            });
+        }
+
+        function cargarPictograma1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria1').val(),
+                success:function(r){
+                    idPictograma1 = r;
+                }
+            });
+        }
+
+        function cargarIndicacion1(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase1').val(),
+                success:function(r){
+                    $('#nombreIndicacion1').html(r);
+                }
+            });
+        }
+
+
+
+
+
+        //Funciones al cambiar opciones de Select
+
+        $('#nombreClase1').change(function(){
 			cargarCategoria1();
             $('#nombreCategoria1').prop('selectedIndex', 0);
             $('#nombreCategoria1').removeAttr('disabled');
@@ -113,17 +224,6 @@ $(document).ready(function(){
             $('#nombreIndicacion1').prop('selectedIndex', 0);
             $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
-
-        function cargarCategoria1(){
-            $.ajax({
-                type:"POST",
-                url:"bd/cat1.php",
-                data:"cat1=" + $('#nombreClase1').val(),
-                success:function(r){
-                    $('#nombreCategoria1').html(r);
-                }
-            });
-        }
 
         $('#nombreCategoria1').change(function(){
 			cargarPalabraAdvertencia1();
@@ -138,28 +238,6 @@ $(document).ready(function(){
             $('#nombreIndicacion1').prop('disabled', 'disabled');
 		});
 
-        function cargarPalabraAdvertencia1(){
-            $.ajax({
-                type:"POST",
-                url:"bd/palad1.php",
-                data:"palad1=" + $('#nombreClase1').val(),
-                success:function(r){
-                    $('#nombrePalabraAdvertencia1').html(r);
-                }
-            });
-        }
-
-        function cargarPictograma1(){
-            $.ajax({
-                type:"POST",
-                url:"bd/pict1.php",
-                data:"pict1=" + $('#nombreCategoria1').val(),
-                success:function(r){
-                    idPictograma1 = r;
-                }
-            });
-        }
-
         $('#nombrePalabraAdvertencia1').change(function(){
 			cargarIndicacion1();
             $('#nombreIndicacion1').prop('selectedIndex', 0);
@@ -167,36 +245,8 @@ $(document).ready(function(){
             $("#nombreIndicacion1").attr("required","required");
 		});
 
-        function cargarIndicacion1(){
-            $.ajax({
-                type:"POST",
-                url:"bd/ind1.php",
-                data:"ind1=" + $('#nombreClase1').val(),
-                success:function(r){
-                    $('#nombreIndicacion1').html(r);
-                }
-            });
-        }
 
-        $('#btnEliminarClase1').on('click', function() {
-            $('#btnClase1').show();
-            $('#btnEliminarClase1').hide();
-            $('#btnClase2').hide();
-            $('#nombreClase1').prop('selectedIndex', 0);
-            $('#nombreClase1').prop('disabled', 'disabled');
-            $('#nombreClase1').removeAttr('required');
-            $('#nombreCategoria1').prop('selectedIndex', 0);
-            $('#nombreCategoria1').prop('disabled', 'disabled');
-            $('#nombreCategoria1').removeAttr('required');
-            $('#nombrePalabraAdvertencia').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia1').removeAttr('required');
-            $('#nombreIndicacion1').prop('selectedIndex', 0);
-            $('#nombreIndicacion1').prop('disabled', 'disabled');
-            $('#nombreIndicacion1').removeAttr('required');
-            $idPictograma1 = 0;
-            $('#clase1').hide();
-          } );
+
 
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('cas').placeholder = 'Chemical Abstracts Service Number *';
@@ -207,7 +257,11 @@ $(document).ready(function(){
         document.getElementById('nombreFabricante').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombreFabricante').value = '';
         document.getElementById('clase1').style.display = 'none';
+        document.getElementById('clase2').style.display = 'none';
+        //document.getElementById('btnClase1').style.display = 'none';
         document.getElementById('btnClase2').style.display = 'none';
+        document.getElementById('btnClase3').style.display = 'none';
+
         
         // document.getElementById('nombreGrupo').required = true;
         // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';

@@ -134,6 +134,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="clases">
+
+                    <!-- Clase 1 -->
                     <button class="btn btn-success" type="button" id="btnClase1">Agregar Clase de Peligro</button>
                     <div class="clase-box" id='clase1'>
                     <label for="clase1" class="col-form-label">Datos de la clase de peligro #1</label>
@@ -174,6 +176,66 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <button class="btn btn-danger" type="button" id="btnEliminarClase1">Eliminar Clase de Peligro</button>
                     </div>
                     <button class="btn btn-success" type="button" id="btnClase2">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 2 -->
+
+                    <div class="clase-box" id='clase2'>
+                        <label for="clase2" class="col-form-label">Datos de la clase de peligro #2</label>
+                        <div class="form-group">
+                            <label for="nombreClase2" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase2">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase1 = $conexion->prepare($consulta);
+                                    $resultadoClase1->execute();
+                                    $dataClase1=$resultadoClase1->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase1 as $datClase1) {
+                                        echo "<option value=" . $datClase1['idClasePeligro'] . ">" . $datClase1['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria2' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria2' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia2' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia2' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion2' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion2' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-danger" type="button" id="btnEliminarClase2">Eliminar Clase de Peligro</button>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase3">Agregar otra clase de Peligro</button>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 </div>
             </div>
             <div class="modal-footer">

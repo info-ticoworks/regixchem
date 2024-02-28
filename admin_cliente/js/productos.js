@@ -96,7 +96,7 @@ $(document).ready(function(){
 
         //Inicio Funciones de los botones para agregar Clases
 
-        $('#btnClase1').on('click', function() {
+        function btnClase1(){
             $('#clase1').show();
             $('#btnClase1').hide();
             $('#btnEliminarClase1').show();
@@ -110,9 +110,9 @@ $(document).ready(function(){
             $('#nombreIndicacion1').prop('selectedIndex', 0);
             $('#btnClase2').show();
             $('#modalCRUD').animate({scrollTop:500}, 'slow');
-        });
+        }
 
-        $('#btnClase2').on('click', function() {
+        function btnClase2(){
             $('#btnEliminarClase1').hide();
             $('#clase2').show();
             $('#btnClase2').hide();
@@ -127,9 +127,9 @@ $(document).ready(function(){
             $('#nombreIndicacion2').prop('selectedIndex', 0);
             $('#btnClase3').show();
             $('#modalCRUD').animate({scrollTop:1000}, 'slow');
-        });
+        }
 
-        $('#btnClase3').on('click', function() {
+        function btnClase3(){
             $('#btnEliminarClase2').hide();
             $('#clase3').show();
             $('#btnClase3').hide();
@@ -144,9 +144,9 @@ $(document).ready(function(){
             $('#nombreIndicacion3').prop('selectedIndex', 0);
             $('#btnClase4').show();
             $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+        }
 
-        $('#btnClase4').on('click', function() {
+        function btnClase4(){
             $('#btnEliminarClase3').hide();
             $('#clase4').show();
             $('#btnClase4').hide();
@@ -160,10 +160,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
             $('#nombreIndicacion4').prop('selectedIndex', 0);
             $('#btnClase5').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:2000}, 'slow');
+        }
 
-        $('#btnClase5').on('click', function() {
+        function btnClase5(){
             $('#btnEliminarClase4').hide();
             $('#clase5').show();
             $('#btnClase5').hide();
@@ -177,10 +177,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
             $('#nombreIndicacion5').prop('selectedIndex', 0);
             $('#btnClase6').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:2500}, 'slow');
+        }
 
-        $('#btnClase6').on('click', function() {
+        function btnClase6(){
             $('#btnEliminarClase5').hide();
             $('#clase6').show();
             $('#btnClase6').hide();
@@ -194,10 +194,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
             $('#nombreIndicacion6').prop('selectedIndex', 0);
             $('#btnClase7').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:3000}, 'slow');
+        }
 
-        $('#btnClase7').on('click', function() {
+        function btnClase7(){
             $('#btnEliminarClase6').hide();
             $('#clase7').show();
             $('#btnClase7').hide();
@@ -211,10 +211,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
             $('#nombreIndicacion7').prop('selectedIndex', 0);
             $('#btnClase8').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:3500}, 'slow');
+        }
 
-        $('#btnClase8').on('click', function() {
+        function btnClase8(){
             $('#btnEliminarClase7').hide();
             $('#clase8').show();
             $('#btnClase8').hide();
@@ -228,10 +228,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
             $('#nombreIndicacion8').prop('selectedIndex', 0);
             $('#btnClase9').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:4000}, 'slow');
+        }
 
-        $('#btnClase9').on('click', function() {
+        function btnClase9(){
             $('#btnEliminarClase8').hide();
             $('#clase9').show();
             $('#btnClase9').hide();
@@ -245,10 +245,10 @@ $(document).ready(function(){
             $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
             $('#nombreIndicacion9').prop('selectedIndex', 0);
             $('#btnClase10').show();
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
-        });
+            $('#modalCRUD').animate({scrollTop:4500}, 'slow');
+        }
 
-        $('#btnClase10').on('click', function() {
+        function btnClase10(){
             $('#btnEliminarClase9').hide();
             $('#clase10').show();
             $('#btnClase10').hide();
@@ -261,14 +261,56 @@ $(document).ready(function(){
             $('#nombreCategoria10').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
             $('#nombreIndicacion10').prop('selectedIndex', 0);
-            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+            $('#modalCRUD').animate({scrollTop:5000}, 'slow');
+        }
+
+        $('#btnClase1').on('click', function() {
+            btnClase1();
+        });
+
+        $('#btnClase2').on('click', function() {
+            btnClase2();
+        });
+
+        $('#btnClase3').on('click', function() {
+            btnClase3();
+        });
+
+        $('#btnClase4').on('click', function() {
+            btnClase4();
+        });
+
+        $('#btnClase5').on('click', function() {
+            btnClase5();
+        });
+
+        $('#btnClase6').on('click', function() {
+            btnClase6();
+        });
+
+        $('#btnClase7').on('click', function() {
+            btnClase7();
+        });
+
+        $('#btnClase8').on('click', function() {
+            btnClase8();
+        });
+
+        $('#btnClase9').on('click', function() {
+            btnClase9();
+        });
+
+        $('#btnClase10').on('click', function() {
+            btnClase10();
         });
 
         //Final Funciones de los botones para agregar Clases
 
         //Inicio Funciones de los botones para eliminar Clases
 
-        $('#btnEliminarClase1').on('click', function() {
+        //Funciones
+
+        function btnEliminarClase1(){
             $('#btnClase1').fadeIn(1000);
             $('#btnEliminarClase1').hide();
             $('#nombreClase1').prop('selectedIndex', 0);
@@ -286,9 +328,9 @@ $(document).ready(function(){
             $('#clase1').slideUp(600);
             $('#btnClase2').slideUp(500);
             $idPictograma1 = 0;
-        });
+        }
 
-        $('#btnEliminarClase2').on('click', function() {
+        function btnEliminarClase2(){
             $('#btnEliminarClase1').show();
             $('#btnClase2').fadeIn(1000);
             $('#btnEliminarClase2').hide();
@@ -307,9 +349,9 @@ $(document).ready(function(){
             $('#clase2').slideUp(600);
             $('#btnClase3').slideUp(500);
             $idPictograma2 = 0;
-        });
+        }
 
-        $('#btnEliminarClase3').on('click', function() {
+        function btnEliminarClase3(){
             $('#btnEliminarClase2').show();
             $('#btnClase3').fadeIn(1000);
             $('#btnEliminarClase3').hide();
@@ -328,9 +370,9 @@ $(document).ready(function(){
             $('#clase3').slideUp(600);
             $('#btnClase4').slideUp(500);
             $idPictograma3 = 0;
-        });
+        }
 
-        $('#btnEliminarClase4').on('click', function() {
+        function btnEliminarClase4(){
             $('#btnEliminarClase3').show();
             $('#btnClase4').fadeIn(1000);
             $('#btnEliminarClase4').hide();
@@ -349,9 +391,9 @@ $(document).ready(function(){
             $('#clase4').slideUp(600);
             $('#btnClase5').slideUp(500);
             $idPictograma4 = 0;
-        });
+        }
 
-        $('#btnEliminarClase5').on('click', function() {
+        function btnEliminarClase5(){
             $('#btnEliminarClase4').show();
             $('#btnClase5').fadeIn(1000);
             $('#btnEliminarClase5').hide();
@@ -370,9 +412,9 @@ $(document).ready(function(){
             $('#clase5').slideUp(600);
             $('#btnClase6').slideUp(600);
             $idPictograma5 = 0;
-        });
+        }
 
-        $('#btnEliminarClase6').on('click', function() {
+        function btnEliminarClase6(){
             $('#btnEliminarClase5').show();
             $('#btnClase6').fadeIn(1000);
             $('#btnEliminarClase6').hide();
@@ -391,9 +433,9 @@ $(document).ready(function(){
             $('#clase6').slideUp(700);
             $('#btnClase7').slideUp(700);
             $idPictograma6 = 0;
-        });
+        }
 
-        $('#btnEliminarClase7').on('click', function() {
+        function btnEliminarClase7(){
             $('#btnEliminarClase6').show();
             $('#btnClase7').fadeIn(1000);
             $('#btnEliminarClase7').hide();
@@ -412,9 +454,9 @@ $(document).ready(function(){
             $('#clase7').slideUp(800);
             $('#btnClase8').slideUp(800);
             $idPictograma7 = 0;
-        });
+        }
 
-        $('#btnEliminarClase8').on('click', function() {
+        function btnEliminarClase8(){
             $('#btnEliminarClase7').show();
             $('#btnClase8').fadeIn(1000);
             $('#btnEliminarClase8').hide();
@@ -433,9 +475,9 @@ $(document).ready(function(){
             $('#clase8').slideUp(900);
             $('#btnClase9').slideUp(900);
             $idPictograma8 = 0;
-        });
+        }
 
-        $('#btnEliminarClase9').on('click', function() {
+        function btnEliminarClase9(){
             $('#btnEliminarClase8').show();
             $('#btnClase9').fadeIn(1000);
             $('#btnEliminarClase9').hide();
@@ -454,9 +496,9 @@ $(document).ready(function(){
             $('#clase9').slideUp(900);
             $('#btnClase10').slideUp(900);
             $idPictograma9 = 0;
-        });
+        }
 
-        $('#btnEliminarClase10').on('click', function() {
+        function btnEliminarClase10(){
             $('#btnEliminarClase9').show();
             $('#btnClase10').fadeIn(1000);
             $('#btnEliminarClase10').hide();
@@ -474,11 +516,54 @@ $(document).ready(function(){
             $('#nombreIndicacion10').removeAttr('required');
             $('#clase10').slideUp(900);
             $idPictograma10 = 0;
+        }
+
+
+        //Botones
+
+        $('#btnEliminarClase1').on('click', function() {
+            btnEliminarClase1();
+        });
+
+        $('#btnEliminarClase2').on('click', function() {
+            btnEliminarClase2();
+        });
+
+        $('#btnEliminarClase3').on('click', function() {
+            btnEliminarClase3();
+        });
+
+        $('#btnEliminarClase4').on('click', function() {
+            btnEliminarClase4();
+        });
+
+        $('#btnEliminarClase5').on('click', function() {
+            btnEliminarClase5();
+        });
+
+        $('#btnEliminarClase6').on('click', function() {
+            btnEliminarClase6();
+        });
+
+        $('#btnEliminarClase7').on('click', function() {
+            btnEliminarClase7();
+        });
+
+        $('#btnEliminarClase8').on('click', function() {
+            btnEliminarClase8();
+        });
+
+        $('#btnEliminarClase9').on('click', function() {
+            btnEliminarClase9();
+        });
+
+        $('#btnEliminarClase10').on('click', function() {
+            btnEliminarClase10();
         });
 
         //Final Funciones de los botones para eliminar Clases
 
-        
+
         //Inicio Funciones de carga de Select
 
         //Carga de Categorías
@@ -1294,8 +1379,19 @@ $(document).ready(function(){
         document.getElementById('btnClase9').style.display = 'none';
         document.getElementById('btnClase10').style.display = 'none';
 
+        //Botón Cancelar
         $('#btnCancelar').on('click', function() {
             $("#formProductos").trigger("reset");
+            btnEliminarClase1();
+            btnEliminarClase2();
+            btnEliminarClase3();
+            btnEliminarClase4();
+            btnEliminarClase5();
+            btnEliminarClase6();
+            btnEliminarClase7();
+            btnEliminarClase8();
+            btnEliminarClase9();
+            btnEliminarClase10();
         });
 
         opcion = 1; //Nuevo Producto

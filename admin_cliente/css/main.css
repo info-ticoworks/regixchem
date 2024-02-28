@@ -24,12 +24,24 @@ td.highlight {
 }
 
 .clase-box {
-    width: auto;
+    display: none;
+    width: 100%;
     border: 1px solid #000000;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
     animation: fadeIn 1.5s;
+}
+
+.clase-box-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clase-box-titulo {
+    font-size: 25px;
 }
 
 .modal {

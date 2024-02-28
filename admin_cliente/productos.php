@@ -21,10 +21,11 @@ $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="card-header py-3">
-            <div class="col-lg-12">
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
-            </div>    
-    </div>
+    <div class="col-lg-12">
+        <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
+    </div>    
+</div>
+
 <div class="card-body">
                     <div class="table-responsive">        
                         <table id="tablaProductos" class="table table-bordered" style="width:100%">
@@ -66,7 +67,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         </tfoot>     
                        </table>                    
                     </div>
-                </div> 
+</div> 
       
 <!--Modal para CRUD-->
 <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,12 +78,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formProductos">
+            <form id="formProductos">
             <div class="modal-body">
-                <!-- <div class="form-group">
-                    <label for="newid" class="col-form-label">Cédula: *</label>
-                    <input type="number" placeholder="Digitar ID tal y como aparece en la cédula." class="form-control" id="newid" required>
-                </div> -->
 
                 <div class="form-group">
                     <label for="cas" class="col-form-label">CAS: *</label>
@@ -133,12 +130,16 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <input type="text" class="form-control" id="nombreFabricante" required>
                 </div>
 
+                <!-- Clases de Peligro -->
                 <div class="clases">
 
                     <!-- Clase 1 -->
                     <button class="btn btn-success" type="button" id="btnClase1">Agregar Clase de Peligro</button>
-                    <div class="clase-box" id='clase1'>
-                    <label for="clase1" class="col-form-label">Datos de la clase de peligro #1</label>
+                        <div class="clase-box" id='clase1'>
+                            <div class="clase-box-top">
+                                <label class="clase-box-titulo">Datos de la clase de peligro #1</label>
+                                <button class="btn btn-danger" type="button" id="btnEliminarClase1">Eliminar</button>
+                            </div>
                         <div class="form-group">
                             <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
                             <select class="form-control" id="nombreClase1">
@@ -173,13 +174,15 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 				            <option selected disabled value="">Elija una Indicación.</option>
                             </select>
                         </div>
-                        <button class="btn btn-danger" type="button" id="btnEliminarClase1">Eliminar Clase de Peligro</button>
-                    </div>
+                        </div>
                     <button class="btn btn-success" type="button" id="btnClase2">Agregar otra clase de Peligro</button>
 
                     <!-- Clase 2 -->
                     <div class="clase-box" id='clase2'>
-                        <label for="clase2" class="col-form-label">Datos de la clase de peligro #2</label>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #2</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase2">Eliminar</button>
+                        </div>
                         <div class="form-group">
                             <label for="nombreClase2" class="col-form-label">Clase de Peligro: *</label>
                             <select class="form-control" id="nombreClase2">
@@ -187,11 +190,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
                                                 ORDER BY idClasePeligro asc";
-                                    $resultadoClase1 = $conexion->prepare($consulta);
-                                    $resultadoClase1->execute();
-                                    $dataClase1=$resultadoClase1->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach($dataClase1 as $datClase1) {
-                                        echo "<option value=" . $datClase1['idClasePeligro'] . ">" . $datClase1['nombreClasePeligro'] . "</option>";
+                                    $resultadoClase2 = $conexion->prepare($consulta);
+                                    $resultadoClase2->execute();
+                                    $dataClase2=$resultadoClase2->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase2 as $datClase2) {
+                                        echo "<option value=" . $datClase2['idClasePeligro'] . ">" . $datClase2['nombreClasePeligro'] . "</option>";
                                     }
                                 ?>
                             </select>
@@ -214,13 +217,15 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 				            <option selected disabled value="">Elija una Indicación.</option>
                             </select>
                         </div>
-                        <button class="btn btn-danger" type="button" id="btnEliminarClase2">Eliminar Clase de Peligro</button>
                     </div>
                     <button class="btn btn-success" type="button" id="btnClase3">Agregar otra clase de Peligro</button>
 
                     <!-- Clase 3 -->
                     <div class="clase-box" id='clase3'>
-                        <label for="clase3" class="col-form-label">Datos de la clase de peligro #3</label>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #3</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase3">Eliminar</button>
+                        </div>
                         <div class="form-group">
                             <label for="nombreClase3" class="col-form-label">Clase de Peligro: *</label>
                             <select class="form-control" id="nombreClase3">
@@ -228,11 +233,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
                                                 ORDER BY idClasePeligro asc";
-                                    $resultadoClase1 = $conexion->prepare($consulta);
-                                    $resultadoClase1->execute();
-                                    $dataClase1=$resultadoClase1->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach($dataClase1 as $datClase1) {
-                                        echo "<option value=" . $datClase1['idClasePeligro'] . ">" . $datClase1['nombreClasePeligro'] . "</option>";
+                                    $resultadoClase3 = $conexion->prepare($consulta);
+                                    $resultadoClase3->execute();
+                                    $dataClase3=$resultadoClase3->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase3 as $datClase3) {
+                                        echo "<option value=" . $datClase3['idClasePeligro'] . ">" . $datClase3['nombreClasePeligro'] . "</option>";
                                     }
                                 ?>
                             </select>
@@ -255,33 +260,317 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 				            <option selected disabled value="">Elija una Indicación.</option>
                             </select>
                         </div>
-                        <button class="btn btn-danger" type="button" id="btnEliminarClase3">Eliminar Clase de Peligro</button>
                     </div>
                     <button class="btn btn-success" type="button" id="btnClase4">Agregar otra clase de Peligro</button>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+                    <!-- Clase 4 -->
+                    <div class="clase-box" id='clase4'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #4</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase4">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase4" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase4">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase4 = $conexion->prepare($consulta);
+                                    $resultadoClase4->execute();
+                                    $dataClase4=$resultadoClase4->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase4 as $datClase4) {
+                                        echo "<option value=" . $datClase4['idClasePeligro'] . ">" . $datClase4['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria4' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria4' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia4' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia4' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion4' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion4' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase5">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 5 -->
+                    <div class="clase-box" id='clase5'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #5</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase5">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase5" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase5">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase5 = $conexion->prepare($consulta);
+                                    $resultadoClase5->execute();
+                                    $dataClase5=$resultadoClase5->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase5 as $datClase5) {
+                                        echo "<option value=" . $datClase5['idClasePeligro'] . ">" . $datClase5['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria5' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria5' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia5' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia5' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion5' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion5' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase6">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 6 -->
+                    <div class="clase-box" id='clase6'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #6</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase6">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase6" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase6">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase6 = $conexion->prepare($consulta);
+                                    $resultadoClase6->execute();
+                                    $dataClase6=$resultadoClase6->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase6 as $datClase6) {
+                                        echo "<option value=" . $datClase6['idClasePeligro'] . ">" . $datClase6['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria6' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria6' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia6' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia6' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion6' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion6' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase7">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 7 -->
+                    <div class="clase-box" id='clase7'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #7</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase7">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase7" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase7">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase7 = $conexion->prepare($consulta);
+                                    $resultadoClase7->execute();
+                                    $dataClase7=$resultadoClase7->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase7 as $datClase7) {
+                                        echo "<option value=" . $datClase7['idClasePeligro'] . ">" . $datClase7['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria7' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria7' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia7' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia7' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion7' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion7' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase8">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 8 -->
+                    <div class="clase-box" id='clase8'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #8</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase8">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase8" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase8">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase8 = $conexion->prepare($consulta);
+                                    $resultadoClase8->execute();
+                                    $dataClase8=$resultadoClase8->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase8 as $datClase8) {
+                                        echo "<option value=" . $datClase8['idClasePeligro'] . ">" . $datClase8['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria8' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria8' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia8' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia8' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion8' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion8' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase9">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 9 -->
+                    <div class="clase-box" id='clase9'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #9</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase9">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase9" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase9">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase9 = $conexion->prepare($consulta);
+                                    $resultadoClase9->execute();
+                                    $dataClase9=$resultadoClase9->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase9 as $datClase9) {
+                                        echo "<option value=" . $datClase9['idClasePeligro'] . ">" . $datClase9['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria9' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria9' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia9' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia9' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion9' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion9' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="button" id="btnClase10">Agregar otra clase de Peligro</button>
+
+                    <!-- Clase 10 -->
+                    <div class="clase-box" id='clase10'>
+                        <div class="clase-box-top">
+                            <label class="clase-box-titulo">Datos de la clase de peligro #10</label>
+                            <button class="btn btn-danger" type="button" id="btnEliminarClase10">Eliminar</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreClase10" class="col-form-label">Clase de Peligro: *</label>
+                            <select class="form-control" id="nombreClase10">
+                                <option selected disabled value="">Elija una clase de peligro.</option>
+                                <?php
+                                    $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
+                                                ORDER BY idClasePeligro asc";
+                                    $resultadoClase10 = $conexion->prepare($consulta);
+                                    $resultadoClase10->execute();
+                                    $dataClase10=$resultadoClase10->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($dataClase10 as $datClase10) {
+                                        echo "<option value=" . $datClase10['idClasePeligro'] . ">" . $datClase10['nombreClasePeligro'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreCategoria10' class='col-form-label'>Categoría de Peligro: *</label>
+        		            <select class='form-control' id='nombreCategoria10' disabled>
+				            <option selected disabled value="">Elija una categoría de peligro.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombrePalabraAdvertencia10' class='col-form-label'>Palabra de Advertencia: *</label>
+        		            <select class='form-control' id='nombrePalabraAdvertencia10' disabled>
+				            <option selected disabled value="">Elija una palabra de advertencia.</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+        		            <label for='nombreIndicacion10' class='col-form-label'>Indicación: *</label>
+        		            <select class='form-control' id='nombreIndicacion10' disabled>
+				            <option selected disabled value="">Elija una Indicación.</option>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" id="btnCancelar" class="btn btn-light" data-dismiss="modal">Cancelar</button>
                 <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
             </div>
-        </form>    
+            </form>    
         </div>
     </div>
 </div>  

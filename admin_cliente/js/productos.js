@@ -74,7 +74,7 @@ $(document).ready(function(){
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
 
-    //Botón NUEVO PRODUCTO
+    //Botón Nuevo Producto
     $("#btnNuevo").click(function(){
         $("#formProductos").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
@@ -85,17 +85,21 @@ $(document).ready(function(){
         idPictograma1 = 0;
         idPictograma2 = 0;
         idPictograma3 = 0;
+        idPictograma4 = 0;
+        idPictograma5 = 0;
+        idPictograma6 = 0;
+        idPictograma7 = 0;
+        idPictograma8 = 0;
+        idPictograma9 = 0;
+        idPictograma10 = 0;
 
 
-
-
-        //Funciones de los botones para mostrar y esconder Clases
+        //Inicio Funciones de los botones para agregar Clases
 
         $('#btnClase1').on('click', function() {
             $('#clase1').show();
             $('#btnClase1').hide();
             $('#btnEliminarClase1').show();
-            $('#btnClase2').show();
             $('#nombreClase1').prop('selectedIndex', 0);
             $('#nombreClase1 option').removeAttr("selected");
             $('#nombreClase1').removeAttr('selected');
@@ -104,6 +108,7 @@ $(document).ready(function(){
             $('#nombreCategoria1').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
             $('#nombreIndicacion1').prop('selectedIndex', 0);
+            $('#btnClase2').show();
             $('#modalCRUD').animate({scrollTop:500}, 'slow');
         });
 
@@ -112,7 +117,6 @@ $(document).ready(function(){
             $('#clase2').show();
             $('#btnClase2').hide();
             $('#btnEliminarClase2').show();
-            $('#btnClase3').show();
             $('#nombreClase2').prop('selectedIndex', 0);
             $('#nombreClase2 option').removeAttr("selected");
             $('#nombreClase2').removeAttr('selected');
@@ -121,6 +125,7 @@ $(document).ready(function(){
             $('#nombreCategoria2').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
             $('#nombreIndicacion2').prop('selectedIndex', 0);
+            $('#btnClase3').show();
             $('#modalCRUD').animate({scrollTop:1000}, 'slow');
         });
 
@@ -129,7 +134,6 @@ $(document).ready(function(){
             $('#clase3').show();
             $('#btnClase3').hide();
             $('#btnEliminarClase3').show();
-            $('#btnClase4').show();
             $('#nombreClase3').prop('selectedIndex', 0);
             $('#nombreClase3 option').removeAttr("selected");
             $('#nombreClase3').removeAttr('selected');
@@ -138,13 +142,135 @@ $(document).ready(function(){
             $('#nombreCategoria3').prop('selectedIndex', 0);
             $('#nombrePalabraAdvertencia3').prop('selectedIndex', 0);
             $('#nombreIndicacion3').prop('selectedIndex', 0);
+            $('#btnClase4').show();
             $('#modalCRUD').animate({scrollTop:1500}, 'slow');
         });
+
+        $('#btnClase4').on('click', function() {
+            $('#btnEliminarClase3').hide();
+            $('#clase4').show();
+            $('#btnClase4').hide();
+            $('#btnEliminarClase4').show();
+            $('#nombreClase4').prop('selectedIndex', 0);
+            $('#nombreClase4 option').removeAttr("selected");
+            $('#nombreClase4').removeAttr('selected');
+            $('#nombreClase4').removeAttr('disabled');
+            $("#nombreClase4").attr("required","required");
+            $('#nombreCategoria4').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#btnClase5').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase5').on('click', function() {
+            $('#btnEliminarClase4').hide();
+            $('#clase5').show();
+            $('#btnClase5').hide();
+            $('#btnEliminarClase5').show();
+            $('#nombreClase5').prop('selectedIndex', 0);
+            $('#nombreClase5 option').removeAttr("selected");
+            $('#nombreClase5').removeAttr('selected');
+            $('#nombreClase5').removeAttr('disabled');
+            $("#nombreClase5").attr("required","required");
+            $('#nombreCategoria5').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#btnClase6').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase6').on('click', function() {
+            $('#btnEliminarClase5').hide();
+            $('#clase6').show();
+            $('#btnClase6').hide();
+            $('#btnEliminarClase6').show();
+            $('#nombreClase6').prop('selectedIndex', 0);
+            $('#nombreClase6 option').removeAttr("selected");
+            $('#nombreClase6').removeAttr('selected');
+            $('#nombreClase6').removeAttr('disabled');
+            $("#nombreClase6").attr("required","required");
+            $('#nombreCategoria6').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#btnClase7').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase7').on('click', function() {
+            $('#btnEliminarClase6').hide();
+            $('#clase7').show();
+            $('#btnClase7').hide();
+            $('#btnEliminarClase7').show();
+            $('#nombreClase7').prop('selectedIndex', 0);
+            $('#nombreClase7 option').removeAttr("selected");
+            $('#nombreClase7').removeAttr('selected');
+            $('#nombreClase7').removeAttr('disabled');
+            $("#nombreClase7").attr("required","required");
+            $('#nombreCategoria7').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#btnClase8').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase8').on('click', function() {
+            $('#btnEliminarClase7').hide();
+            $('#clase8').show();
+            $('#btnClase8').hide();
+            $('#btnEliminarClase8').show();
+            $('#nombreClase8').prop('selectedIndex', 0);
+            $('#nombreClase8 option').removeAttr("selected");
+            $('#nombreClase8').removeAttr('selected');
+            $('#nombreClase8').removeAttr('disabled');
+            $("#nombreClase8").attr("required","required");
+            $('#nombreCategoria8').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#btnClase9').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase9').on('click', function() {
+            $('#btnEliminarClase8').hide();
+            $('#clase9').show();
+            $('#btnClase9').hide();
+            $('#btnEliminarClase9').show();
+            $('#nombreClase9').prop('selectedIndex', 0);
+            $('#nombreClase9 option').removeAttr("selected");
+            $('#nombreClase9').removeAttr('selected');
+            $('#nombreClase9').removeAttr('disabled');
+            $("#nombreClase9").attr("required","required");
+            $('#nombreCategoria9').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#btnClase10').show();
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        $('#btnClase10').on('click', function() {
+            $('#btnEliminarClase9').hide();
+            $('#clase10').show();
+            $('#btnClase10').hide();
+            $('#btnEliminarClase10').show();
+            $('#nombreClase10').prop('selectedIndex', 0);
+            $('#nombreClase10 option').removeAttr("selected");
+            $('#nombreClase10').removeAttr('selected');
+            $('#nombreClase10').removeAttr('disabled');
+            $("#nombreClase10").attr("required","required");
+            $('#nombreCategoria10').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#modalCRUD').animate({scrollTop:1500}, 'slow');
+        });
+
+        //Final Funciones de los botones para agregar Clases
+
+        //Inicio Funciones de los botones para eliminar Clases
 
         $('#btnEliminarClase1').on('click', function() {
             $('#btnClase1').fadeIn(1000);
             $('#btnEliminarClase1').hide();
-            $('#btnClase2').slideUp(500);
             $('#nombreClase1').prop('selectedIndex', 0);
             $('#nombreClase1').prop('disabled', 'disabled');
             $('#nombreClase1').removeAttr('required');
@@ -158,6 +284,7 @@ $(document).ready(function(){
             $('#nombreIndicacion1').prop('disabled', 'disabled');
             $('#nombreIndicacion1').removeAttr('required');
             $('#clase1').slideUp(600);
+            $('#btnClase2').slideUp(500);
             $idPictograma1 = 0;
         });
 
@@ -165,7 +292,6 @@ $(document).ready(function(){
             $('#btnEliminarClase1').show();
             $('#btnClase2').fadeIn(1000);
             $('#btnEliminarClase2').hide();
-            $('#btnClase3').slideUp(500);
             $('#nombreClase2').prop('selectedIndex', 0);
             $('#nombreClase2').prop('disabled', 'disabled');
             $('#nombreClase2').removeAttr('required');
@@ -179,6 +305,7 @@ $(document).ready(function(){
             $('#nombreIndicacion2').prop('disabled', 'disabled');
             $('#nombreIndicacion2').removeAttr('required');
             $('#clase2').slideUp(600);
+            $('#btnClase3').slideUp(500);
             $idPictograma2 = 0;
         });
 
@@ -186,7 +313,6 @@ $(document).ready(function(){
             $('#btnEliminarClase2').show();
             $('#btnClase3').fadeIn(1000);
             $('#btnEliminarClase3').hide();
-            $('#btnClase4').slideUp(500);
             $('#nombreClase3').prop('selectedIndex', 0);
             $('#nombreClase3').prop('disabled', 'disabled');
             $('#nombreClase3').removeAttr('required');
@@ -200,14 +326,160 @@ $(document).ready(function(){
             $('#nombreIndicacion3').prop('disabled', 'disabled');
             $('#nombreIndicacion3').removeAttr('required');
             $('#clase3').slideUp(600);
+            $('#btnClase4').slideUp(500);
             $idPictograma3 = 0;
         });
 
+        $('#btnEliminarClase4').on('click', function() {
+            $('#btnEliminarClase3').show();
+            $('#btnClase4').fadeIn(1000);
+            $('#btnEliminarClase4').hide();
+            $('#nombreClase4').prop('selectedIndex', 0);
+            $('#nombreClase4').prop('disabled', 'disabled');
+            $('#nombreClase4').removeAttr('required');
+            $('#nombreCategoria4').prop('selectedIndex', 0);
+            $('#nombreCategoria4').prop('disabled', 'disabled');
+            $('#nombreCategoria4').removeAttr('required');
+            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia4').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia4').removeAttr('required');
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').prop('disabled', 'disabled');
+            $('#nombreIndicacion4').removeAttr('required');
+            $('#clase4').slideUp(600);
+            $('#btnClase5').slideUp(500);
+            $idPictograma4 = 0;
+        });
 
+        $('#btnEliminarClase5').on('click', function() {
+            $('#btnEliminarClase4').show();
+            $('#btnClase5').fadeIn(1000);
+            $('#btnEliminarClase5').hide();
+            $('#nombreClase5').prop('selectedIndex', 0);
+            $('#nombreClase5').prop('disabled', 'disabled');
+            $('#nombreClase5').removeAttr('required');
+            $('#nombreCategoria5').prop('selectedIndex', 0);
+            $('#nombreCategoria5').prop('disabled', 'disabled');
+            $('#nombreCategoria5').removeAttr('required');
+            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia5').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia5').removeAttr('required');
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').prop('disabled', 'disabled');
+            $('#nombreIndicacion5').removeAttr('required');
+            $('#clase5').slideUp(600);
+            $('#btnClase6').slideUp(600);
+            $idPictograma5 = 0;
+        });
 
+        $('#btnEliminarClase6').on('click', function() {
+            $('#btnEliminarClase5').show();
+            $('#btnClase6').fadeIn(1000);
+            $('#btnEliminarClase6').hide();
+            $('#nombreClase6').prop('selectedIndex', 0);
+            $('#nombreClase6').prop('disabled', 'disabled');
+            $('#nombreClase6').removeAttr('required');
+            $('#nombreCategoria6').prop('selectedIndex', 0);
+            $('#nombreCategoria6').prop('disabled', 'disabled');
+            $('#nombreCategoria6').removeAttr('required');
+            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia6').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia6').removeAttr('required');
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').prop('disabled', 'disabled');
+            $('#nombreIndicacion6').removeAttr('required');
+            $('#clase6').slideUp(700);
+            $('#btnClase7').slideUp(700);
+            $idPictograma6 = 0;
+        });
 
+        $('#btnEliminarClase7').on('click', function() {
+            $('#btnEliminarClase6').show();
+            $('#btnClase7').fadeIn(1000);
+            $('#btnEliminarClase7').hide();
+            $('#nombreClase7').prop('selectedIndex', 0);
+            $('#nombreClase7').prop('disabled', 'disabled');
+            $('#nombreClase7').removeAttr('required');
+            $('#nombreCategoria7').prop('selectedIndex', 0);
+            $('#nombreCategoria7').prop('disabled', 'disabled');
+            $('#nombreCategoria7').removeAttr('required');
+            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia7').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia7').removeAttr('required');
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').prop('disabled', 'disabled');
+            $('#nombreIndicacion7').removeAttr('required');
+            $('#clase7').slideUp(800);
+            $('#btnClase8').slideUp(800);
+            $idPictograma7 = 0;
+        });
 
-        //Funciones de carga de Select
+        $('#btnEliminarClase8').on('click', function() {
+            $('#btnEliminarClase7').show();
+            $('#btnClase8').fadeIn(1000);
+            $('#btnEliminarClase8').hide();
+            $('#nombreClase8').prop('selectedIndex', 0);
+            $('#nombreClase8').prop('disabled', 'disabled');
+            $('#nombreClase8').removeAttr('required');
+            $('#nombreCategoria8').prop('selectedIndex', 0);
+            $('#nombreCategoria8').prop('disabled', 'disabled');
+            $('#nombreCategoria8').removeAttr('required');
+            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia8').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia8').removeAttr('required');
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').prop('disabled', 'disabled');
+            $('#nombreIndicacion8').removeAttr('required');
+            $('#clase8').slideUp(900);
+            $('#btnClase9').slideUp(900);
+            $idPictograma8 = 0;
+        });
+
+        $('#btnEliminarClase9').on('click', function() {
+            $('#btnEliminarClase8').show();
+            $('#btnClase9').fadeIn(1000);
+            $('#btnEliminarClase9').hide();
+            $('#nombreClase9').prop('selectedIndex', 0);
+            $('#nombreClase9').prop('disabled', 'disabled');
+            $('#nombreClase9').removeAttr('required');
+            $('#nombreCategoria9').prop('selectedIndex', 0);
+            $('#nombreCategoria9').prop('disabled', 'disabled');
+            $('#nombreCategoria9').removeAttr('required');
+            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia9').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia9').removeAttr('required');
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').prop('disabled', 'disabled');
+            $('#nombreIndicacion9').removeAttr('required');
+            $('#clase9').slideUp(900);
+            $('#btnClase10').slideUp(900);
+            $idPictograma9 = 0;
+        });
+
+        $('#btnEliminarClase10').on('click', function() {
+            $('#btnEliminarClase9').show();
+            $('#btnClase10').fadeIn(1000);
+            $('#btnEliminarClase10').hide();
+            $('#nombreClase10').prop('selectedIndex', 0);
+            $('#nombreClase10').prop('disabled', 'disabled');
+            $('#nombreClase10').removeAttr('required');
+            $('#nombreCategoria10').prop('selectedIndex', 0);
+            $('#nombreCategoria10').prop('disabled', 'disabled');
+            $('#nombreCategoria10').removeAttr('required');
+            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia10').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia10').removeAttr('required');
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').prop('disabled', 'disabled');
+            $('#nombreIndicacion10').removeAttr('required');
+            $('#clase10').slideUp(900);
+            $idPictograma10 = 0;
+        });
+
+        //Final Funciones de los botones para eliminar Clases
+
+        
+        //Inicio Funciones de carga de Select
 
         //Carga de Categorías
 
@@ -240,6 +512,83 @@ $(document).ready(function(){
                 data:"cat=" + $('#nombreClase3').val(),
                 success:function(r){
                     $('#nombreCategoria3').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria4(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase4').val(),
+                success:function(r){
+                    $('#nombreCategoria4').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria5(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase5').val(),
+                success:function(r){
+                    $('#nombreCategoria5').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria6(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase6').val(),
+                success:function(r){
+                    $('#nombreCategoria6').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria7(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase7').val(),
+                success:function(r){
+                    $('#nombreCategoria7').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria8(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase8').val(),
+                success:function(r){
+                    $('#nombreCategoria8').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria9(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase9').val(),
+                success:function(r){
+                    $('#nombreCategoria9').html(r);
+                }
+            });
+        }
+
+        function cargarCategoria10(){
+            $.ajax({
+                type:"POST",
+                url:"bd/cat.php",
+                data:"cat=" + $('#nombreClase10').val(),
+                success:function(r){
+                    $('#nombreCategoria10').html(r);
                 }
             });
         }
@@ -279,6 +628,83 @@ $(document).ready(function(){
             });
         }
 
+        function cargarPalabraAdvertencia4(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase4').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia4').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia5(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase5').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia5').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia6(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase6').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia6').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia7(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase7').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia7').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia8(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase8').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia8').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia9(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase9').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia9').html(r);
+                }
+            });
+        }
+
+        function cargarPalabraAdvertencia10(){
+            $.ajax({
+                type:"POST",
+                url:"bd/palad.php",
+                data:"palad=" + $('#nombreClase10').val(),
+                success:function(r){
+                    $('#nombrePalabraAdvertencia10').html(r);
+                }
+            });
+        }
+
         //Carga de Pictogramas
 
         function cargarPictograma1(){
@@ -310,6 +736,83 @@ $(document).ready(function(){
                 data:"pict=" + $('#nombreCategoria3').val(),
                 success:function(r){
                     idPictograma3 = r;
+                }
+            });
+        }
+
+        function cargarPictograma4(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria4').val(),
+                success:function(r){
+                    idPictograma4 = r;
+                }
+            });
+        }
+
+        function cargarPictograma5(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria5').val(),
+                success:function(r){
+                    idPictograma5 = r;
+                }
+            });
+        }
+
+        function cargarPictograma6(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria6').val(),
+                success:function(r){
+                    idPictograma6 = r;
+                }
+            });
+        }
+
+        function cargarPictograma7(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria7').val(),
+                success:function(r){
+                    idPictograma7 = r;
+                }
+            });
+        }
+
+        function cargarPictograma8(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria8').val(),
+                success:function(r){
+                    idPictograma8 = r;
+                }
+            });
+        }
+
+        function cargarPictograma9(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria9').val(),
+                success:function(r){
+                    idPictograma9 = r;
+                }
+            });
+        }
+
+        function cargarPictograma10(){
+            $.ajax({
+                type:"POST",
+                url:"bd/pict.php",
+                data:"pict=" + $('#nombreCategoria10').val(),
+                success:function(r){
+                    idPictograma10 = r;
                 }
             });
         }
@@ -349,11 +852,88 @@ $(document).ready(function(){
             });
         }
 
+        function cargarIndicacion4(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase4').val(),
+                success:function(r){
+                    $('#nombreIndicacion4').html(r);
+                }
+            });
+        }
 
+        function cargarIndicacion5(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase5').val(),
+                success:function(r){
+                    $('#nombreIndicacion5').html(r);
+                }
+            });
+        }
 
+        function cargarIndicacion6(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase6').val(),
+                success:function(r){
+                    $('#nombreIndicacion6').html(r);
+                }
+            });
+        }
 
+        function cargarIndicacion7(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase7').val(),
+                success:function(r){
+                    $('#nombreIndicacion7').html(r);
+                }
+            });
+        }
 
-        //Funciones al cambiar opciones de Select
+        function cargarIndicacion8(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase8').val(),
+                success:function(r){
+                    $('#nombreIndicacion8').html(r);
+                }
+            });
+        }
+
+        function cargarIndicacion9(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase9').val(),
+                success:function(r){
+                    $('#nombreIndicacion9').html(r);
+                }
+            });
+        }
+
+        function cargarIndicacion10(){
+            $.ajax({
+                type:"POST",
+                url:"bd/ind.php",
+                data:"ind=" + $('#nombreClase10').val(),
+                success:function(r){
+                    $('#nombreIndicacion10').html(r);
+                }
+            });
+        }
+
+        //Final Funciones de carga de Select
+
+        //Inicio Funciones al cambiar opciones de Select
+
+        // Clase 1
 
         $('#nombreClase1').change(function(){
 			cargarCategoria1();
@@ -387,6 +967,8 @@ $(document).ready(function(){
 		});
 
 
+        //Clase 2
+
         $('#nombreClase2').change(function(){
 			cargarCategoria2();
             $('#nombreCategoria2').prop('selectedIndex', 0);
@@ -418,6 +1000,8 @@ $(document).ready(function(){
             $("#nombreIndicacion2").attr("required","required");
 		});
 
+
+        //Clase 3
 
         $('#nombreClase3').change(function(){
 			cargarCategoria3();
@@ -451,6 +1035,247 @@ $(document).ready(function(){
 		});
 
 
+        //Clase 4
+
+        $('#nombreClase4').change(function(){
+			cargarCategoria4();
+            $('#nombreCategoria4').prop('selectedIndex', 0);
+            $('#nombreCategoria4').removeAttr('disabled');
+            $("#nombreCategoria4").attr("required","required");
+            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia4').prop('disabled', 'disabled');
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria4').change(function(){
+			cargarPalabraAdvertencia4();
+            c = $.trim($("#nombreCategoria4").val());
+            if (c > 0) {
+                cargarPictograma4();
+            };
+            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia4').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia4").attr("required","required");
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia4').change(function(){
+			cargarIndicacion4();
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').removeAttr('disabled');
+            $("#nombreIndicacion4").attr("required","required");
+		});
+
+
+        //Clase 5
+
+        $('#nombreClase5').change(function(){
+			cargarCategoria5();
+            $('#nombreCategoria5').prop('selectedIndex', 0);
+            $('#nombreCategoria5').removeAttr('disabled');
+            $("#nombreCategoria5").attr("required","required");
+            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia5').prop('disabled', 'disabled');
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria5').change(function(){
+			cargarPalabraAdvertencia5();
+            c = $.trim($("#nombreCategoria5").val());
+            if (c > 0) {
+                cargarPictograma5();
+            };
+            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia5').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia5").attr("required","required");
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia5').change(function(){
+			cargarIndicacion5();
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').removeAttr('disabled');
+            $("#nombreIndicacion5").attr("required","required");
+		});
+
+
+        //Clase 6
+
+        $('#nombreClase6').change(function(){
+			cargarCategoria6();
+            $('#nombreCategoria6').prop('selectedIndex', 0);
+            $('#nombreCategoria6').removeAttr('disabled');
+            $("#nombreCategoria6").attr("required","required");
+            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia6').prop('disabled', 'disabled');
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria6').change(function(){
+			cargarPalabraAdvertencia6();
+            c = $.trim($("#nombreCategoria6").val());
+            if (c > 0) {
+                cargarPictograma6();
+            };
+            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia6').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia6").attr("required","required");
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia6').change(function(){
+			cargarIndicacion6();
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').removeAttr('disabled');
+            $("#nombreIndicacion6").attr("required","required");
+		});
+
+
+        //Clase 7
+
+        $('#nombreClase7').change(function(){
+			cargarCategoria7();
+            $('#nombreCategoria7').prop('selectedIndex', 0);
+            $('#nombreCategoria7').removeAttr('disabled');
+            $("#nombreCategoria7").attr("required","required");
+            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia7').prop('disabled', 'disabled');
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria7').change(function(){
+			cargarPalabraAdvertencia7();
+            c = $.trim($("#nombreCategoria7").val());
+            if (c > 0) {
+                cargarPictograma7();
+            };
+            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia7').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia7").attr("required","required");
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia7').change(function(){
+			cargarIndicacion7();
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').removeAttr('disabled');
+            $("#nombreIndicacion7").attr("required","required");
+		});
+
+
+        //Clase 8
+
+        $('#nombreClase8').change(function(){
+			cargarCategoria8();
+            $('#nombreCategoria8').prop('selectedIndex', 0);
+            $('#nombreCategoria8').removeAttr('disabled');
+            $("#nombreCategoria8").attr("required","required");
+            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia8').prop('disabled', 'disabled');
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria8').change(function(){
+			cargarPalabraAdvertencia8();
+            c = $.trim($("#nombreCategoria8").val());
+            if (c > 0) {
+                cargarPictograma8();
+            };
+            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia8').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia8").attr("required","required");
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia8').change(function(){
+			cargarIndicacion8();
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').removeAttr('disabled');
+            $("#nombreIndicacion8").attr("required","required");
+		});
+
+
+        //Clase 9
+
+        $('#nombreClase9').change(function(){
+			cargarCategoria9();
+            $('#nombreCategoria9').prop('selectedIndex', 0);
+            $('#nombreCategoria9').removeAttr('disabled');
+            $("#nombreCategoria9").attr("required","required");
+            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia9').prop('disabled', 'disabled');
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria9').change(function(){
+			cargarPalabraAdvertencia9();
+            c = $.trim($("#nombreCategoria9").val());
+            if (c > 0) {
+                cargarPictograma9();
+            };
+            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia9').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia9").attr("required","required");
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia9').change(function(){
+			cargarIndicacion9();
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').removeAttr('disabled');
+            $("#nombreIndicacion9").attr("required","required");
+		});
+
+
+        //Clase 10
+
+        $('#nombreClase10').change(function(){
+			cargarCategoria10();
+            $('#nombreCategoria10').prop('selectedIndex', 0);
+            $('#nombreCategoria10').removeAttr('disabled');
+            $("#nombreCategoria10").attr("required","required");
+            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia10').prop('disabled', 'disabled');
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').prop('disabled', 'disabled');
+		});
+
+        $('#nombreCategoria10').change(function(){
+			cargarPalabraAdvertencia10();
+            c = $.trim($("#nombreCategoria10").val());
+            if (c > 0) {
+                cargarPictograma10();
+            };
+            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia10').removeAttr('disabled');
+            $("#nombrePalabraAdvertencia10").attr("required","required");
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').prop('disabled', 'disabled');
+		});
+
+        $('#nombrePalabraAdvertencia10').change(function(){
+			cargarIndicacion10();
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').removeAttr('disabled');
+            $("#nombreIndicacion10").attr("required","required");
+		});
+
+        //Final Funciones al cambiar opciones de Select
+
+
+
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('cas').placeholder = 'Chemical Abstracts Service Number *';
         document.getElementById('nombreProducto').placeholder = 'Campo Obligatorio *';
@@ -459,26 +1284,15 @@ $(document).ready(function(){
         document.getElementById('nombreUso').selectedIndex = 1;
         document.getElementById('nombreFabricante').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombreFabricante').value = '';
-        document.getElementById('clase1').style.display = 'none';
-        document.getElementById('clase2').style.display = 'none';
-        document.getElementById('clase3').style.display = 'none';
-        //document.getElementById('btnClase1').style.display = 'none';
         document.getElementById('btnClase2').style.display = 'none';
         document.getElementById('btnClase3').style.display = 'none';
         document.getElementById('btnClase4').style.display = 'none';
-
-        
-        // document.getElementById('nombreGrupo').required = true;
-        // document.getElementById('nombreGrupo').placeholder = 'Elija un grupo.';
-        // document.getElementById('nombreUso').required = true;
-        // document.getElementById('pass2').required = true;
-        // document.getElementById('pass2').placeholder = 'Campo Obligatorio *';
-        // document.getElementById('wsVerif').checked = false;
-        // document.getElementById('nombretipoUsuario').value = '';
-        // document.getElementById('nombretipoUsuario').required = true;
-        // document.getElementById('lugarTrabajo').required = true;
-        // document.getElementById('lugarTrabajo').value = '';
-        //id=null;
+        document.getElementById('btnClase5').style.display = 'none';
+        document.getElementById('btnClase6').style.display = 'none';
+        document.getElementById('btnClase7').style.display = 'none';
+        document.getElementById('btnClase8').style.display = 'none';
+        document.getElementById('btnClase9').style.display = 'none';
+        document.getElementById('btnClase10').style.display = 'none';
 
         $('#btnCancelar').on('click', function() {
             $("#formProductos").trigger("reset");
@@ -489,7 +1303,7 @@ $(document).ready(function(){
     
     var fila; //Capturar la fila para editar o borrar el registro
     
-    //botón EDITAR    
+    //Botón Editar Producto    
     $(document).on("click", ".btnEditar", function(){
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
@@ -556,7 +1370,7 @@ $(document).ready(function(){
         console.log("Edición de Usuario - Paso 1...");
     });
 
-    //botón BORRAR
+    //Botón Eliminar Producto
     $(document).on("click", ".btnBorrar", function(){    
         fila = $(this);
         cas = $(this).closest("tr").find('td:eq(0)').text();

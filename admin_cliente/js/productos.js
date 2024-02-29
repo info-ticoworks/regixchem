@@ -74,19 +74,27 @@ $(document).ready(function(){
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
 
-    $('#modalCRUD').on('hidden.bs.modal', function () {
-        $(this).find('form').trigger('reset');
-    })
-
     //Botón Nuevo Producto
     $("#btnNuevo").click(function(){
         hideClases();
         $("#formProductos").trigger("reset");
+        $("#clases").trigger("reset");
+        $("#modalCRUD").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
         $('#btnClase1').show();
+        idPictograma1 = 0;
+        idPictograma2 = 0;
+        idPictograma3 = 0;
+        idPictograma4 = 0;
+        idPictograma5 = 0;
+        idPictograma6 = 0;
+        idPictograma7 = 0;
+        idPictograma8 = 0;
+        idPictograma9 = 0;
+        idPictograma10 = 0;
 
         //Inicio Funciones de los botones para agregar Clases
 
@@ -1571,8 +1579,6 @@ $(document).ready(function(){
 
         //Final Funciones al cambiar opciones de Select
 
-
-
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('cas').placeholder = 'Chemical Abstracts Service Number *';
         document.getElementById('nombreProducto').placeholder = 'Campo Obligatorio *';
@@ -1594,6 +1600,7 @@ $(document).ready(function(){
         //Botón Cancelar
         $('#btnCancelar').on('click', function() {
             $("#formProductos").trigger("reset");
+            //location.reload();
         });
 
         opcion = 1; //Nuevo Producto
@@ -2237,5 +2244,4 @@ $(document).ready(function(){
             $("#modalCRUD").modal("hide");
     });
     
-
 });

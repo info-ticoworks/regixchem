@@ -44,6 +44,12 @@ td.highlight {
     font-size: 25px;
 }
 
-.modal {
-    width: 80%;
+.btnAddClase {
+    width: auto;
+    height: 45px;
+    background-color: #1cc88a;
+    color: white;
+    border-radius: 10px;
+    border-width: 0;
+    padding: 0 10px;
 }

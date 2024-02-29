@@ -7,7 +7,7 @@ $(document).ready(function(){
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar' disabled>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
     //    "createdRow": function(row, data, dataIndex) {
     //         if ( data[0] ) {
@@ -74,25 +74,19 @@ $(document).ready(function(){
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
 
+    $('#modalCRUD').on('hidden.bs.modal', function () {
+        $(this).find('form').trigger('reset');
+    })
+
     //Botón Nuevo Producto
     $("#btnNuevo").click(function(){
+        hideClases();
         $("#formProductos").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");            
         $("#modalCRUD").modal("show");
         $('#btnClase1').show();
-        idPictograma1 = 0;
-        idPictograma2 = 0;
-        idPictograma3 = 0;
-        idPictograma4 = 0;
-        idPictograma5 = 0;
-        idPictograma6 = 0;
-        idPictograma7 = 0;
-        idPictograma8 = 0;
-        idPictograma9 = 0;
-        idPictograma10 = 0;
-
 
         //Inicio Funciones de los botones para agregar Clases
 
@@ -518,6 +512,224 @@ $(document).ready(function(){
             $idPictograma10 = 0;
         }
 
+        function eliminarClases(){
+            btnEliminarClase1();
+            btnEliminarClase2();
+            btnEliminarClase3();
+            btnEliminarClase4();
+            btnEliminarClase5();
+            btnEliminarClase6();
+            btnEliminarClase7();
+            btnEliminarClase8();
+            btnEliminarClase9();
+            btnEliminarClase10();
+        }
+
+
+        //Funciones para ocultar clases
+
+        function hideClase1(){
+            $('#btnClase1').hide();
+            $('#btnEliminarClase1').hide();
+            $('#nombreClase1').prop('selectedIndex', 0);
+            $('#nombreClase1').prop('disabled', 'disabled');
+            $('#nombreClase1').removeAttr('required');
+            $('#nombreCategoria1').prop('selectedIndex', 0);
+            $('#nombreCategoria1').prop('disabled', 'disabled');
+            $('#nombreCategoria1').removeAttr('required');
+            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia1').removeAttr('required');
+            $('#nombreIndicacion1').prop('selectedIndex', 0);
+            $('#nombreIndicacion1').prop('disabled', 'disabled');
+            $('#nombreIndicacion1').removeAttr('required');
+            $('#clase1').hide();
+            $idPictograma1 = 0;
+        }
+
+        function hideClase2(){
+            $('#btnClase2').hide();
+            $('#btnEliminarClase2').hide();
+            $('#nombreClase2').prop('selectedIndex', 0);
+            $('#nombreClase2').prop('disabled', 'disabled');
+            $('#nombreClase2').removeAttr('required');
+            $('#nombreCategoria2').prop('selectedIndex', 0);
+            $('#nombreCategoria2').prop('disabled', 'disabled');
+            $('#nombreCategoria2').removeAttr('required');
+            $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia2').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia2').removeAttr('required');
+            $('#nombreIndicacion2').prop('selectedIndex', 0);
+            $('#nombreIndicacion2').prop('disabled', 'disabled');
+            $('#nombreIndicacion2').removeAttr('required');
+            $('#clase2').hide();
+            $idPictograma2 = 0;
+        }
+
+        function hideClase3(){
+            $('#btnClase3').hide();
+            $('#btnEliminarClase3').hide();
+            $('#nombreClase3').prop('selectedIndex', 0);
+            $('#nombreClase3').prop('disabled', 'disabled');
+            $('#nombreClase3').removeAttr('required');
+            $('#nombreCategoria3').prop('selectedIndex', 0);
+            $('#nombreCategoria3').prop('disabled', 'disabled');
+            $('#nombreCategoria3').removeAttr('required');
+            $('#nombrePalabraAdvertencia3').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia3').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia3').removeAttr('required');
+            $('#nombreIndicacion3').prop('selectedIndex', 0);
+            $('#nombreIndicacion3').prop('disabled', 'disabled');
+            $('#nombreIndicacion3').removeAttr('required');
+            $('#clase3').hide();
+            $idPictograma3 = 0;
+        }
+
+        function hideClase4(){
+            $('#btnClase4').hide();
+            $('#btnEliminarClase4').hide();
+            $('#nombreClase4').prop('selectedIndex', 0);
+            $('#nombreClase4').prop('disabled', 'disabled');
+            $('#nombreClase4').removeAttr('required');
+            $('#nombreCategoria4').prop('selectedIndex', 0);
+            $('#nombreCategoria4').prop('disabled', 'disabled');
+            $('#nombreCategoria4').removeAttr('required');
+            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia4').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia4').removeAttr('required');
+            $('#nombreIndicacion4').prop('selectedIndex', 0);
+            $('#nombreIndicacion4').prop('disabled', 'disabled');
+            $('#nombreIndicacion4').removeAttr('required');
+            $('#clase4').hide();
+            $idPictograma4 = 0;
+        }
+
+        function hideClase5(){
+            $('#btnClase5').hide();
+            $('#btnEliminarClase5').hide();
+            $('#nombreClase5').prop('selectedIndex', 0);
+            $('#nombreClase5').prop('disabled', 'disabled');
+            $('#nombreClase5').removeAttr('required');
+            $('#nombreCategoria5').prop('selectedIndex', 0);
+            $('#nombreCategoria5').prop('disabled', 'disabled');
+            $('#nombreCategoria5').removeAttr('required');
+            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia5').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia5').removeAttr('required');
+            $('#nombreIndicacion5').prop('selectedIndex', 0);
+            $('#nombreIndicacion5').prop('disabled', 'disabled');
+            $('#nombreIndicacion5').removeAttr('required');
+            $('#clase5').hide();
+            $idPictograma5 = 0;
+        }
+
+        function hideClase6(){
+            $('#btnClase6').hide();
+            $('#btnEliminarClase6').hide();
+            $('#nombreClase6').prop('selectedIndex', 0);
+            $('#nombreClase6').prop('disabled', 'disabled');
+            $('#nombreClase6').removeAttr('required');
+            $('#nombreCategoria6').prop('selectedIndex', 0);
+            $('#nombreCategoria6').prop('disabled', 'disabled');
+            $('#nombreCategoria6').removeAttr('required');
+            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia6').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia6').removeAttr('required');
+            $('#nombreIndicacion6').prop('selectedIndex', 0);
+            $('#nombreIndicacion6').prop('disabled', 'disabled');
+            $('#nombreIndicacion6').removeAttr('required');
+            $('#clase6').hide();
+            $idPictograma6 = 0;
+        }
+
+        function hideClase7(){
+            $('#btnClase7').hide();
+            $('#btnEliminarClase7').hide();
+            $('#nombreClase7').prop('selectedIndex', 0);
+            $('#nombreClase7').prop('disabled', 'disabled');
+            $('#nombreClase7').removeAttr('required');
+            $('#nombreCategoria7').prop('selectedIndex', 0);
+            $('#nombreCategoria7').prop('disabled', 'disabled');
+            $('#nombreCategoria7').removeAttr('required');
+            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia7').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia7').removeAttr('required');
+            $('#nombreIndicacion7').prop('selectedIndex', 0);
+            $('#nombreIndicacion7').prop('disabled', 'disabled');
+            $('#nombreIndicacion7').removeAttr('required');
+            $('#clase7').hide();
+            $idPictograma7 = 0;
+        }
+
+        function hideClase8(){
+            $('#btnClase8').hide();
+            $('#btnEliminarClase8').hide();
+            $('#nombreClase8').prop('selectedIndex', 0);
+            $('#nombreClase8').prop('disabled', 'disabled');
+            $('#nombreClase8').removeAttr('required');
+            $('#nombreCategoria8').prop('selectedIndex', 0);
+            $('#nombreCategoria8').prop('disabled', 'disabled');
+            $('#nombreCategoria8').removeAttr('required');
+            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia8').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia8').removeAttr('required');
+            $('#nombreIndicacion8').prop('selectedIndex', 0);
+            $('#nombreIndicacion8').prop('disabled', 'disabled');
+            $('#nombreIndicacion8').removeAttr('required');
+            $('#clase8').hide();
+            $idPictograma8 = 0;
+        }
+
+        function hideClase9(){
+            $('#btnClase9').hide();
+            $('#btnEliminarClase9').hide();
+            $('#nombreClase9').prop('selectedIndex', 0);
+            $('#nombreClase9').prop('disabled', 'disabled');
+            $('#nombreClase9').removeAttr('required');
+            $('#nombreCategoria9').prop('selectedIndex', 0);
+            $('#nombreCategoria9').prop('disabled', 'disabled');
+            $('#nombreCategoria9').removeAttr('required');
+            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia9').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia9').removeAttr('required');
+            $('#nombreIndicacion9').prop('selectedIndex', 0);
+            $('#nombreIndicacion9').prop('disabled', 'disabled');
+            $('#nombreIndicacion9').removeAttr('required');
+            $('#clase9').hide();
+            $idPictograma9 = 0;
+        }
+
+        function hideClase10(){
+            $('#btnClase10').hide();
+            $('#btnEliminarClase10').hide();
+            $('#nombreClase10').prop('selectedIndex', 0);
+            $('#nombreClase10').prop('disabled', 'disabled');
+            $('#nombreClase10').removeAttr('required');
+            $('#nombreCategoria10').prop('selectedIndex', 0);
+            $('#nombreCategoria10').prop('disabled', 'disabled');
+            $('#nombreCategoria10').removeAttr('required');
+            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+            $('#nombrePalabraAdvertencia10').prop('disabled', 'disabled');
+            $('#nombrePalabraAdvertencia10').removeAttr('required');
+            $('#nombreIndicacion10').prop('selectedIndex', 0);
+            $('#nombreIndicacion10').prop('disabled', 'disabled');
+            $('#nombreIndicacion10').removeAttr('required');
+            $('#clase10').hide();
+            $idPictograma10 = 0;
+        }
+
+        function hideClases(){
+            hideClase1();
+            hideClase2();
+            hideClase3();
+            hideClase4();
+            hideClase5();
+            hideClase6();
+            hideClase7();
+            hideClase8();
+            hideClase9();
+            hideClase10();
+        }
 
         //Botones
 
@@ -1382,16 +1594,6 @@ $(document).ready(function(){
         //Botón Cancelar
         $('#btnCancelar').on('click', function() {
             $("#formProductos").trigger("reset");
-            btnEliminarClase1();
-            btnEliminarClase2();
-            btnEliminarClase3();
-            btnEliminarClase4();
-            btnEliminarClase5();
-            btnEliminarClase6();
-            btnEliminarClase7();
-            btnEliminarClase8();
-            btnEliminarClase9();
-            btnEliminarClase10();
         });
 
         opcion = 1; //Nuevo Producto
@@ -1524,24 +1726,31 @@ $(document).ready(function(){
         idGrupo = $.trim($("#nombreGrupo").val());
         idUso = $.trim($("#nombreUso").val());
         nombreFabricante = $.trim($("#nombreFabricante").val());
+
+
+        //Captura de datos de Clase 1
+
         const opClase1 = document.getElementById("nombreClase1");
         if (opClase1.selectedIndex === 0 || opClase1.selectedIndex === '') {
             idClase1 = 'NULL';
         } else {
             idClase1 = $.trim($("#nombreClase1").val());
         }
+
         const opCategoria1 = document.getElementById("nombreCategoria1");
         if (opCategoria1.selectedIndex === 0) {
             idCategoria1 = 'NULL';
         } else {
             idCategoria1 = $.trim($("#nombreCategoria1").val());
         }
+
         const opPalabraAdvertencia1 = document.getElementById("nombrePalabraAdvertencia1");
         if (opPalabraAdvertencia1.selectedIndex === 0) {
             idPalabraAdvertencia1 = 'NULL';
         } else {
             idPalabraAdvertencia1 = $.trim($("#nombrePalabraAdvertencia1").val());
         }
+
         const opIndicacion1 = document.getElementById("nombreIndicacion1");
         if (opIndicacion1.selectedIndex === 0) {
             idIndicacion1 = 'NULL';
@@ -1551,6 +1760,321 @@ $(document).ready(function(){
         
         if (idPictograma1 === 0) {
             idPictograma1 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 2
+
+        const opClase2 = document.getElementById("nombreClase2");
+        if (opClase2.selectedIndex === 0 || opClase2.selectedIndex === '') {
+            idClase2 = 'NULL';
+        } else {
+            idClase2 = $.trim($("#nombreClase2").val());
+        }
+
+        const opCategoria2 = document.getElementById("nombreCategoria2");
+        if (opCategoria2.selectedIndex === 0) {
+            idCategoria2 = 'NULL';
+        } else {
+            idCategoria2 = $.trim($("#nombreCategoria2").val());
+        }
+
+        const opPalabraAdvertencia2 = document.getElementById("nombrePalabraAdvertencia2");
+        if (opPalabraAdvertencia2.selectedIndex === 0) {
+            idPalabraAdvertencia2 = 'NULL';
+        } else {
+            idPalabraAdvertencia2 = $.trim($("#nombrePalabraAdvertencia2").val());
+        }
+
+        const opIndicacion2 = document.getElementById("nombreIndicacion2");
+        if (opIndicacion2.selectedIndex === 0) {
+            idIndicacion2 = 'NULL';
+        } else {
+            idIndicacion2 = $.trim($("#nombreIndicacion2").val());
+        }
+        
+        if (idPictograma2 === 0) {
+            idPictograma2 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 3
+
+        const opClase3 = document.getElementById("nombreClase3");
+        if (opClase3.selectedIndex === 0 || opClase3.selectedIndex === '') {
+            idClase3 = 'NULL';
+        } else {
+            idClase3 = $.trim($("#nombreClase3").val());
+        }
+
+        const opCategoria3 = document.getElementById("nombreCategoria3");
+        if (opCategoria3.selectedIndex === 0) {
+            idCategoria3 = 'NULL';
+        } else {
+            idCategoria3 = $.trim($("#nombreCategoria3").val());
+        }
+
+        const opPalabraAdvertencia3 = document.getElementById("nombrePalabraAdvertencia3");
+        if (opPalabraAdvertencia3.selectedIndex === 0) {
+            idPalabraAdvertencia3 = 'NULL';
+        } else {
+            idPalabraAdvertencia3 = $.trim($("#nombrePalabraAdvertencia3").val());
+        }
+
+        const opIndicacion3 = document.getElementById("nombreIndicacion3");
+        if (opIndicacion3.selectedIndex === 0) {
+            idIndicacion3 = 'NULL';
+        } else {
+            idIndicacion3 = $.trim($("#nombreIndicacion3").val());
+        }
+        
+        if (idPictograma3 === 0) {
+            idPictograma3 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 4
+
+        const opClase4 = document.getElementById("nombreClase4");
+        if (opClase4.selectedIndex === 0 || opClase4.selectedIndex === '') {
+            idClase4 = 'NULL';
+        } else {
+            idClase4 = $.trim($("#nombreClase4").val());
+        }
+
+        const opCategoria4 = document.getElementById("nombreCategoria4");
+        if (opCategoria4.selectedIndex === 0) {
+            idCategoria4 = 'NULL';
+        } else {
+            idCategoria4 = $.trim($("#nombreCategoria4").val());
+        }
+
+        const opPalabraAdvertencia4 = document.getElementById("nombrePalabraAdvertencia4");
+        if (opPalabraAdvertencia4.selectedIndex === 0) {
+            idPalabraAdvertencia4 = 'NULL';
+        } else {
+            idPalabraAdvertencia4 = $.trim($("#nombrePalabraAdvertencia4").val());
+        }
+
+        const opIndicacion4 = document.getElementById("nombreIndicacion4");
+        if (opIndicacion4.selectedIndex === 0) {
+            idIndicacion4 = 'NULL';
+        } else {
+            idIndicacion4 = $.trim($("#nombreIndicacion4").val());
+        }
+        
+        if (idPictograma4 === 0) {
+            idPictograma4 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 5
+
+        const opClase5 = document.getElementById("nombreClase5");
+        if (opClase5.selectedIndex === 0 || opClase5.selectedIndex === '') {
+            idClase5 = 'NULL';
+        } else {
+            idClase5 = $.trim($("#nombreClase5").val());
+        }
+
+        const opCategoria5 = document.getElementById("nombreCategoria5");
+        if (opCategoria5.selectedIndex === 0) {
+            idCategoria5 = 'NULL';
+        } else {
+            idCategoria5 = $.trim($("#nombreCategoria5").val());
+        }
+
+        const opPalabraAdvertencia5 = document.getElementById("nombrePalabraAdvertencia5");
+        if (opPalabraAdvertencia5.selectedIndex === 0) {
+            idPalabraAdvertencia5 = 'NULL';
+        } else {
+            idPalabraAdvertencia5 = $.trim($("#nombrePalabraAdvertencia5").val());
+        }
+
+        const opIndicacion5 = document.getElementById("nombreIndicacion5");
+        if (opIndicacion5.selectedIndex === 0) {
+            idIndicacion5 = 'NULL';
+        } else {
+            idIndicacion5 = $.trim($("#nombreIndicacion5").val());
+        }
+        
+        if (idPictograma5 === 0) {
+            idPictograma5 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 6
+
+        const opClase6 = document.getElementById("nombreClase6");
+        if (opClase6.selectedIndex === 0 || opClase6.selectedIndex === '') {
+            idClase6 = 'NULL';
+        } else {
+            idClase6 = $.trim($("#nombreClase6").val());
+        }
+
+        const opCategoria6 = document.getElementById("nombreCategoria6");
+        if (opCategoria6.selectedIndex === 0) {
+            idCategoria6 = 'NULL';
+        } else {
+            idCategoria6 = $.trim($("#nombreCategoria6").val());
+        }
+
+        const opPalabraAdvertencia6 = document.getElementById("nombrePalabraAdvertencia6");
+        if (opPalabraAdvertencia6.selectedIndex === 0) {
+            idPalabraAdvertencia6 = 'NULL';
+        } else {
+            idPalabraAdvertencia6 = $.trim($("#nombrePalabraAdvertencia6").val());
+        }
+
+        const opIndicacion6 = document.getElementById("nombreIndicacion6");
+        if (opIndicacion6.selectedIndex === 0) {
+            idIndicacion6 = 'NULL';
+        } else {
+            idIndicacion6 = $.trim($("#nombreIndicacion6").val());
+        }
+        
+        if (idPictograma6 === 0) {
+            idPictograma6 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 7
+
+        const opClase7 = document.getElementById("nombreClase7");
+        if (opClase7.selectedIndex === 0 || opClase7.selectedIndex === '') {
+            idClase7 = 'NULL';
+        } else {
+            idClase7 = $.trim($("#nombreClase7").val());
+        }
+
+        const opCategoria7 = document.getElementById("nombreCategoria7");
+        if (opCategoria7.selectedIndex === 0) {
+            idCategoria7 = 'NULL';
+        } else {
+            idCategoria7 = $.trim($("#nombreCategoria7").val());
+        }
+
+        const opPalabraAdvertencia7 = document.getElementById("nombrePalabraAdvertencia7");
+        if (opPalabraAdvertencia7.selectedIndex === 0) {
+            idPalabraAdvertencia7 = 'NULL';
+        } else {
+            idPalabraAdvertencia7 = $.trim($("#nombrePalabraAdvertencia7").val());
+        }
+
+        const opIndicacion7 = document.getElementById("nombreIndicacion7");
+        if (opIndicacion7.selectedIndex === 0) {
+            idIndicacion7 = 'NULL';
+        } else {
+            idIndicacion7 = $.trim($("#nombreIndicacion7").val());
+        }
+        
+        if (idPictograma7 === 0) {
+            idPictograma7 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 8
+
+        const opClase8 = document.getElementById("nombreClase8");
+        if (opClase8.selectedIndex === 0 || opClase8.selectedIndex === '') {
+            idClase8 = 'NULL';
+        } else {
+            idClase8 = $.trim($("#nombreClase8").val());
+        }
+
+        const opCategoria8 = document.getElementById("nombreCategoria8");
+        if (opCategoria8.selectedIndex === 0) {
+            idCategoria8 = 'NULL';
+        } else {
+            idCategoria8 = $.trim($("#nombreCategoria8").val());
+        }
+
+        const opPalabraAdvertencia8 = document.getElementById("nombrePalabraAdvertencia8");
+        if (opPalabraAdvertencia8.selectedIndex === 0) {
+            idPalabraAdvertencia8 = 'NULL';
+        } else {
+            idPalabraAdvertencia8 = $.trim($("#nombrePalabraAdvertencia8").val());
+        }
+
+        const opIndicacion8 = document.getElementById("nombreIndicacion8");
+        if (opIndicacion8.selectedIndex === 0) {
+            idIndicacion8 = 'NULL';
+        } else {
+            idIndicacion8 = $.trim($("#nombreIndicacion8").val());
+        }
+        
+        if (idPictograma8 === 0) {
+            idPictograma8 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 9
+
+        const opClase9 = document.getElementById("nombreClase9");
+        if (opClase9.selectedIndex === 0 || opClase9.selectedIndex === '') {
+            idClase9 = 'NULL';
+        } else {
+            idClase9 = $.trim($("#nombreClase9").val());
+        }
+
+        const opCategoria9 = document.getElementById("nombreCategoria9");
+        if (opCategoria9.selectedIndex === 0) {
+            idCategoria9 = 'NULL';
+        } else {
+            idCategoria9 = $.trim($("#nombreCategoria9").val());
+        }
+
+        const opPalabraAdvertencia9 = document.getElementById("nombrePalabraAdvertencia9");
+        if (opPalabraAdvertencia9.selectedIndex === 0) {
+            idPalabraAdvertencia9 = 'NULL';
+        } else {
+            idPalabraAdvertencia9 = $.trim($("#nombrePalabraAdvertencia9").val());
+        }
+
+        const opIndicacion9 = document.getElementById("nombreIndicacion9");
+        if (opIndicacion9.selectedIndex === 0) {
+            idIndicacion9 = 'NULL';
+        } else {
+            idIndicacion9 = $.trim($("#nombreIndicacion9").val());
+        }
+        
+        if (idPictograma9 === 0) {
+            idPictograma9 = 'NULL';
+        }
+
+
+        //Captura de datos de Clase 10
+
+        const opClase10 = document.getElementById("nombreClase10");
+        if (opClase10.selectedIndex === 0 || opClase10.selectedIndex === '') {
+            idClase10 = 'NULL';
+        } else {
+            idClase10 = $.trim($("#nombreClase10").val());
+        }
+
+        const opCategoria10 = document.getElementById("nombreCategoria10");
+        if (opCategoria10.selectedIndex === 0) {
+            idCategoria10 = 'NULL';
+        } else {
+            idCategoria10 = $.trim($("#nombreCategoria10").val());
+        }
+
+        const opPalabraAdvertencia10 = document.getElementById("nombrePalabraAdvertencia10");
+        if (opPalabraAdvertencia10.selectedIndex === 0) {
+            idPalabraAdvertencia10 = 'NULL';
+        } else {
+            idPalabraAdvertencia10 = $.trim($("#nombrePalabraAdvertencia10").val());
+        }
+
+        const opIndicacion10 = document.getElementById("nombreIndicacion10");
+        if (opIndicacion10.selectedIndex === 0) {
+            idIndicacion10 = 'NULL';
+        } else {
+            idIndicacion10 = $.trim($("#nombreIndicacion10").val());
+        }
+        
+        if (idPictograma10 === 0) {
+            idPictograma10 = 'NULL';
         }
 
         console.log('CAS: ' , cas);
@@ -1563,18 +2087,42 @@ $(document).ready(function(){
         console.log('Id de Palabra de Advertencia 1: ' , idPalabraAdvertencia1);
         console.log('Id de Indicacion 1: ' , idIndicacion1);
         console.log('Id de Pictograma 1: ' , idPictograma1);
-
-        jsonData = {opcion:opcion,
-            cas:cas,
-            nombreProducto:nombreProducto,
-            idGrupo:idGrupo,
-            idUso:idUso,
-            nombreFabricante:nombreFabricante,
-            idClase1:idClase1,
-            idCategoria1:idCategoria1,
-            idPalabraAdvertencia1:idPalabraAdvertencia1,
-            idIndicacion1:idIndicacion1,
-            idPictograma1:idPictograma1}
+        console.log('Id de Categoria 2: ' , idCategoria2);
+        console.log('Id de Palabra de Advertencia 2: ' , idPalabraAdvertencia2);
+        console.log('Id de Indicacion 2: ' , idIndicacion2);
+        console.log('Id de Pictograma 2: ' , idPictograma2);
+        console.log('Id de Categoria 3: ' , idCategoria3);
+        console.log('Id de Palabra de Advertencia 3: ' , idPalabraAdvertencia3);
+        console.log('Id de Indicacion 3: ' , idIndicacion3);
+        console.log('Id de Pictograma 3: ' , idPictograma3);
+        console.log('Id de Categoria 4: ' , idCategoria4);
+        console.log('Id de Palabra de Advertencia 4: ' , idPalabraAdvertencia4);
+        console.log('Id de Indicacion 4: ' , idIndicacion4);
+        console.log('Id de Pictograma 4: ' , idPictograma4);
+        console.log('Id de Categoria 5: ' , idCategoria5);
+        console.log('Id de Palabra de Advertencia 5: ' , idPalabraAdvertencia5);
+        console.log('Id de Indicacion 5: ' , idIndicacion5);
+        console.log('Id de Pictograma 5: ' , idPictograma5);
+        console.log('Id de Categoria 6: ' , idCategoria6);
+        console.log('Id de Palabra de Advertencia 6: ' , idPalabraAdvertencia6);
+        console.log('Id de Indicacion 6: ' , idIndicacion6);
+        console.log('Id de Pictograma 6: ' , idPictograma6);
+        console.log('Id de Categoria 7: ' , idCategoria7);
+        console.log('Id de Palabra de Advertencia 7: ' , idPalabraAdvertencia7);
+        console.log('Id de Indicacion 7: ' , idIndicacion7);
+        console.log('Id de Pictograma 7: ' , idPictograma7);
+        console.log('Id de Categoria 8: ' , idCategoria8);
+        console.log('Id de Palabra de Advertencia 8: ' , idPalabraAdvertencia8);
+        console.log('Id de Indicacion 8: ' , idIndicacion8);
+        console.log('Id de Pictograma 8: ' , idPictograma8);
+        console.log('Id de Categoria 9: ' , idCategoria9);
+        console.log('Id de Palabra de Advertencia 9: ' , idPalabraAdvertencia9);
+        console.log('Id de Indicacion 9: ' , idIndicacion9);
+        console.log('Id de Pictograma 9: ' , idPictograma9);
+        console.log('Id de Categoria 10: ' , idCategoria10);
+        console.log('Id de Palabra de Advertencia 10: ' , idPalabraAdvertencia10);
+        console.log('Id de Indicacion 10: ' , idIndicacion10);
+        console.log('Id de Pictograma 10: ' , idPictograma10);
 
             $.ajax({
                 url: "bd/crud.php",
@@ -1591,7 +2139,53 @@ $(document).ready(function(){
                     idCategoria1:idCategoria1,
                     idPalabraAdvertencia1:idPalabraAdvertencia1,
                     idIndicacion1:idIndicacion1,
-                    idPictograma1:idPictograma1},
+                    idPictograma1:idPictograma1,
+                    idClase2:idClase2,
+                    idCategoria2:idCategoria2,
+                    idPalabraAdvertencia2:idPalabraAdvertencia2,
+                    idIndicacion2:idIndicacion2,
+                    idPictograma2:idPictograma2,
+                    idClase3:idClase3,
+                    idCategoria3:idCategoria3,
+                    idPalabraAdvertencia3:idPalabraAdvertencia3,
+                    idIndicacion3:idIndicacion3,
+                    idPictograma3:idPictograma3,
+                    idClase4:idClase4,
+                    idCategoria4:idCategoria4,
+                    idPalabraAdvertencia4:idPalabraAdvertencia4,
+                    idIndicacion4:idIndicacion4,
+                    idPictograma4:idPictograma4,
+                    idClase5:idClase5,
+                    idCategoria5:idCategoria5,
+                    idPalabraAdvertencia5:idPalabraAdvertencia5,
+                    idIndicacion5:idIndicacion5,
+                    idPictograma5:idPictograma5,
+                    idClase6:idClase6,
+                    idCategoria6:idCategoria6,
+                    idPalabraAdvertencia6:idPalabraAdvertencia6,
+                    idIndicacion6:idIndicacion6,
+                    idPictograma6:idPictograma6,
+                    idClase7:idClase7,
+                    idCategoria7:idCategoria7,
+                    idPalabraAdvertencia7:idPalabraAdvertencia7,
+                    idIndicacion7:idIndicacion7,
+                    idPictograma7:idPictograma7,
+                    idClase8:idClase8,
+                    idCategoria8:idCategoria8,
+                    idPalabraAdvertencia8:idPalabraAdvertencia8,
+                    idIndicacion8:idIndicacion8,
+                    idPictograma8:idPictograma8,
+                    idClase9:idClase9,
+                    idCategoria9:idCategoria9,
+                    idPalabraAdvertencia9:idPalabraAdvertencia9,
+                    idIndicacion9:idIndicacion9,
+                    idPictograma9:idPictograma9,
+                    idClase10:idClase10,
+                    idCategoria10:idCategoria10,
+                    idPalabraAdvertencia10:idPalabraAdvertencia10,
+                    idIndicacion10:idIndicacion10,
+                    idPictograma10:idPictograma10
+                },
                 success: function(data){
                     //Datos desde el Select de MySQL a la tabla.
                     console.log(data);

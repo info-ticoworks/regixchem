@@ -4,7 +4,8 @@ $cat=$_POST['cat'];
 	$sql="SELECT DISTINCT idCategoriaPeligro,
 			 nombreCategoriaPeligro
 		FROM vista_categoria_peligro
-		WHERE idClasePeligro = $cat";
+		WHERE idClasePeligro = $cat
+		ORDER BY nombreCategoriaPeligro asc";
 	$result=mysqli_query($conexion,$sql);
 	$cadena="<option selected disabled value=''>Elija una categoría de peligro.</option>";
 	while ($ver=mysqli_fetch_row($result)) {

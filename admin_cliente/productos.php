@@ -146,7 +146,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase1 = $conexion->prepare($consulta);
                                     $resultadoClase1->execute();
                                     $dataClase1=$resultadoClase1->fetchAll(PDO::FETCH_ASSOC);
@@ -189,7 +189,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase2 = $conexion->prepare($consulta);
                                     $resultadoClase2->execute();
                                     $dataClase2=$resultadoClase2->fetchAll(PDO::FETCH_ASSOC);
@@ -232,7 +232,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase3 = $conexion->prepare($consulta);
                                     $resultadoClase3->execute();
                                     $dataClase3=$resultadoClase3->fetchAll(PDO::FETCH_ASSOC);
@@ -275,7 +275,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase4 = $conexion->prepare($consulta);
                                     $resultadoClase4->execute();
                                     $dataClase4=$resultadoClase4->fetchAll(PDO::FETCH_ASSOC);
@@ -318,7 +318,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase5 = $conexion->prepare($consulta);
                                     $resultadoClase5->execute();
                                     $dataClase5=$resultadoClase5->fetchAll(PDO::FETCH_ASSOC);
@@ -361,7 +361,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase6 = $conexion->prepare($consulta);
                                     $resultadoClase6->execute();
                                     $dataClase6=$resultadoClase6->fetchAll(PDO::FETCH_ASSOC);
@@ -404,7 +404,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase7 = $conexion->prepare($consulta);
                                     $resultadoClase7->execute();
                                     $dataClase7=$resultadoClase7->fetchAll(PDO::FETCH_ASSOC);
@@ -447,7 +447,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase8 = $conexion->prepare($consulta);
                                     $resultadoClase8->execute();
                                     $dataClase8=$resultadoClase8->fetchAll(PDO::FETCH_ASSOC);
@@ -490,7 +490,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase9 = $conexion->prepare($consulta);
                                     $resultadoClase9->execute();
                                     $dataClase9=$resultadoClase9->fetchAll(PDO::FETCH_ASSOC);
@@ -533,7 +533,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
-                                                ORDER BY idClasePeligro asc";
+                                                ORDER BY nombreClasePeligro asc";
                                     $resultadoClase10 = $conexion->prepare($consulta);
                                     $resultadoClase10->execute();
                                     $dataClase10=$resultadoClase10->fetchAll(PDO::FETCH_ASSOC);

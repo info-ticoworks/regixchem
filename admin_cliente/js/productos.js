@@ -202,7 +202,7 @@ $(document).ready(function(){
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar' disabled>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
     //    "createdRow": function(row, data, dataIndex) {
     //         if ( data[0] ) {
@@ -1617,18 +1617,32 @@ $(document).ready(function(){
                     //console.log(data);
                     dataParse = JSON.parse(data);
                     product_loaded = dataParse;
-                    loaded_cas = product_loaded[0].cas
-                    loaded_nombreProducto = product_loaded[0].nombreProducto
-                    loaded_nombreGrupo = product_loaded[0].nombreGrupo
-                    loaded_nombreUso = product_loaded[0].nombreUso
-                    loaded_nombreFabricante = product_loaded[0].nombreFabricante
+                    loaded_cas = product_loaded[0].cas;
+                    loaded_nombreProducto = product_loaded[0].nombreProducto;
+                    loaded_nombreGrupo = product_loaded[0].nombreGrupo;
+                    loaded_nombreUso = product_loaded[0].nombreUso;
+                    loaded_nombreFabricante = product_loaded[0].nombreFabricante;
+                    loaded_nombreClase1 = product_loaded[0].nombreClase1;
+                    loaded_nombreCategoria1 = product_loaded[0].nombreCategoria1;
+                    loaded_palabraAdvertencia1 = product_loaded[0].palabraAdvertencia1;
+                    loaded_nombreIndicacion1 = product_loaded[0].nombreIndicacion1;
+                    loaded_idPictograma1 = product_loaded[0].idPictograma1;
 
 
-                    // console.log('CAS: ',product_loaded[0].cas);
-                    // console.log('Nombre de Producto: ',product_loaded[0].nombreProducto);
-                    // console.log('Grupo: ',product_loaded[0].nombreGrupo);
-                    // console.log('Uso: ',product_loaded[0].nombreUso);
-                    // console.log('Fabricante: ',product_loaded[0].nombreFabricante);
+
+
+
+
+                    console.log('CAS: ',product_loaded[0].cas);
+                    console.log('Nombre de Producto: ',product_loaded[0].nombreProducto);
+                    console.log('Grupo: ',product_loaded[0].nombreGrupo);
+                    console.log('Uso: ',product_loaded[0].nombreUso);
+                    console.log('Fabricante: ',product_loaded[0].nombreFabricante);
+                    console.log('Clase 1: ',product_loaded[0].nombreClasePeligro1);
+                    console.log('Categoría 1: ',product_loaded[0].nombreCategoriaPeligro1);
+                    console.log('Palabra de Advertencia 1: ',product_loaded[0].palabraAdvertencia1);
+                    console.log('Indicación 1: ',product_loaded[0].nombreIndicacion1);
+                    console.log('ID Pictograma 1: ',product_loaded[0].idPictograma1);
 
 
                     $("#cas").val(loaded_cas);

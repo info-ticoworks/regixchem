@@ -1,13 +1,208 @@
-let lat;
-
 $(document).ready(function(){
 
-    //tabla USUARIOS
+    let lat;
+
+    //Funciones para ocultar clases
+
+    function hideClase1(){
+    $('#btnClase1').hide();
+    $('#btnEliminarClase1').hide();
+    $('#nombreClase1').prop('selectedIndex', 0);
+    $('#nombreClase1').prop('disabled', 'disabled');
+    $('#nombreClase1').removeAttr('required');
+    $('#nombreCategoria1').prop('selectedIndex', 0);
+    $('#nombreCategoria1').prop('disabled', 'disabled');
+    $('#nombreCategoria1').removeAttr('required');
+    $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia1').removeAttr('required');
+    $('#nombreIndicacion1').prop('selectedIndex', 0);
+    $('#nombreIndicacion1').prop('disabled', 'disabled');
+    $('#nombreIndicacion1').removeAttr('required');
+    $('#clase1').hide();
+    $idPictograma1 = 0;
+    }
+    function hideClase2(){
+    $('#btnClase2').hide();
+    $('#btnEliminarClase2').hide();
+    $('#nombreClase2').prop('selectedIndex', 0);
+    $('#nombreClase2').prop('disabled', 'disabled');
+    $('#nombreClase2').removeAttr('required');
+    $('#nombreCategoria2').prop('selectedIndex', 0);
+    $('#nombreCategoria2').prop('disabled', 'disabled');
+    $('#nombreCategoria2').removeAttr('required');
+    $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia2').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia2').removeAttr('required');
+    $('#nombreIndicacion2').prop('selectedIndex', 0);
+    $('#nombreIndicacion2').prop('disabled', 'disabled');
+    $('#nombreIndicacion2').removeAttr('required');
+    $('#clase2').hide();
+    $idPictograma2 = 0;
+    }
+    function hideClase3(){
+    $('#btnClase3').hide();
+    $('#btnEliminarClase3').hide();
+    $('#nombreClase3').prop('selectedIndex', 0);
+    $('#nombreClase3').prop('disabled', 'disabled');
+    $('#nombreClase3').removeAttr('required');
+    $('#nombreCategoria3').prop('selectedIndex', 0);
+    $('#nombreCategoria3').prop('disabled', 'disabled');
+    $('#nombreCategoria3').removeAttr('required');
+    $('#nombrePalabraAdvertencia3').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia3').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia3').removeAttr('required');
+    $('#nombreIndicacion3').prop('selectedIndex', 0);
+    $('#nombreIndicacion3').prop('disabled', 'disabled');
+    $('#nombreIndicacion3').removeAttr('required');
+    $('#clase3').hide();
+    $idPictograma3 = 0;
+    }
+    function hideClase4(){
+    $('#btnClase4').hide();
+    $('#btnEliminarClase4').hide();
+    $('#nombreClase4').prop('selectedIndex', 0);
+    $('#nombreClase4').prop('disabled', 'disabled');
+    $('#nombreClase4').removeAttr('required');
+    $('#nombreCategoria4').prop('selectedIndex', 0);
+    $('#nombreCategoria4').prop('disabled', 'disabled');
+    $('#nombreCategoria4').removeAttr('required');
+    $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia4').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia4').removeAttr('required');
+    $('#nombreIndicacion4').prop('selectedIndex', 0);
+    $('#nombreIndicacion4').prop('disabled', 'disabled');
+    $('#nombreIndicacion4').removeAttr('required');
+    $('#clase4').hide();
+    $idPictograma4 = 0;
+    }
+    function hideClase5(){
+    $('#btnClase5').hide();
+    $('#btnEliminarClase5').hide();
+    $('#nombreClase5').prop('selectedIndex', 0);
+    $('#nombreClase5').prop('disabled', 'disabled');
+    $('#nombreClase5').removeAttr('required');
+    $('#nombreCategoria5').prop('selectedIndex', 0);
+    $('#nombreCategoria5').prop('disabled', 'disabled');
+    $('#nombreCategoria5').removeAttr('required');
+    $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia5').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia5').removeAttr('required');
+    $('#nombreIndicacion5').prop('selectedIndex', 0);
+    $('#nombreIndicacion5').prop('disabled', 'disabled');
+    $('#nombreIndicacion5').removeAttr('required');
+    $('#clase5').hide();
+    $idPictograma5 = 0;
+    }
+    function hideClase6(){
+    $('#btnClase6').hide();
+    $('#btnEliminarClase6').hide();
+    $('#nombreClase6').prop('selectedIndex', 0);
+    $('#nombreClase6').prop('disabled', 'disabled');
+    $('#nombreClase6').removeAttr('required');
+    $('#nombreCategoria6').prop('selectedIndex', 0);
+    $('#nombreCategoria6').prop('disabled', 'disabled');
+    $('#nombreCategoria6').removeAttr('required');
+    $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia6').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia6').removeAttr('required');
+    $('#nombreIndicacion6').prop('selectedIndex', 0);
+    $('#nombreIndicacion6').prop('disabled', 'disabled');
+    $('#nombreIndicacion6').removeAttr('required');
+    $('#clase6').hide();
+    $idPictograma6 = 0;
+    }
+    function hideClase7(){
+    $('#btnClase7').hide();
+    $('#btnEliminarClase7').hide();
+    $('#nombreClase7').prop('selectedIndex', 0);
+    $('#nombreClase7').prop('disabled', 'disabled');
+    $('#nombreClase7').removeAttr('required');
+    $('#nombreCategoria7').prop('selectedIndex', 0);
+    $('#nombreCategoria7').prop('disabled', 'disabled');
+    $('#nombreCategoria7').removeAttr('required');
+    $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia7').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia7').removeAttr('required');
+    $('#nombreIndicacion7').prop('selectedIndex', 0);
+    $('#nombreIndicacion7').prop('disabled', 'disabled');
+    $('#nombreIndicacion7').removeAttr('required');
+    $('#clase7').hide();
+    $idPictograma7 = 0;
+    }
+    function hideClase8(){
+    $('#btnClase8').hide();
+    $('#btnEliminarClase8').hide();
+    $('#nombreClase8').prop('selectedIndex', 0);
+    $('#nombreClase8').prop('disabled', 'disabled');
+    $('#nombreClase8').removeAttr('required');
+    $('#nombreCategoria8').prop('selectedIndex', 0);
+    $('#nombreCategoria8').prop('disabled', 'disabled');
+    $('#nombreCategoria8').removeAttr('required');
+    $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia8').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia8').removeAttr('required');
+    $('#nombreIndicacion8').prop('selectedIndex', 0);
+    $('#nombreIndicacion8').prop('disabled', 'disabled');
+    $('#nombreIndicacion8').removeAttr('required');
+    $('#clase8').hide();
+    $idPictograma8 = 0;
+    }
+    function hideClase9(){
+    $('#btnClase9').hide();
+    $('#btnEliminarClase9').hide();
+    $('#nombreClase9').prop('selectedIndex', 0);
+    $('#nombreClase9').prop('disabled', 'disabled');
+    $('#nombreClase9').removeAttr('required');
+    $('#nombreCategoria9').prop('selectedIndex', 0);
+    $('#nombreCategoria9').prop('disabled', 'disabled');
+    $('#nombreCategoria9').removeAttr('required');
+    $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia9').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia9').removeAttr('required');
+    $('#nombreIndicacion9').prop('selectedIndex', 0);
+    $('#nombreIndicacion9').prop('disabled', 'disabled');
+    $('#nombreIndicacion9').removeAttr('required');
+    $('#clase9').hide();
+    $idPictograma9 = 0;
+    }
+    function hideClase10(){
+    $('#btnClase10').hide();
+    $('#btnEliminarClase10').hide();
+    $('#nombreClase10').prop('selectedIndex', 0);
+    $('#nombreClase10').prop('disabled', 'disabled');
+    $('#nombreClase10').removeAttr('required');
+    $('#nombreCategoria10').prop('selectedIndex', 0);
+    $('#nombreCategoria10').prop('disabled', 'disabled');
+    $('#nombreCategoria10').removeAttr('required');
+    $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
+    $('#nombrePalabraAdvertencia10').prop('disabled', 'disabled');
+    $('#nombrePalabraAdvertencia10').removeAttr('required');
+    $('#nombreIndicacion10').prop('selectedIndex', 0);
+    $('#nombreIndicacion10').prop('disabled', 'disabled');
+    $('#nombreIndicacion10').removeAttr('required');
+    $('#clase10').hide();
+    $idPictograma10 = 0;
+    }
+    function hideClases(){
+    hideClase1();
+    hideClase2();
+    hideClase3();
+    hideClase4();
+    hideClase5();
+    hideClase6();
+    hideClase7();
+    hideClase8();
+    hideClase9();
+    hideClase10();
+    }
+
+    //Tabla Productos
     tablaProductos = $("#tablaProductos").DataTable({
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar' disabled>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
     //    "createdRow": function(row, data, dataIndex) {
     //         if ( data[0] ) {
@@ -531,212 +726,6 @@ $(document).ready(function(){
             btnEliminarClase8();
             btnEliminarClase9();
             btnEliminarClase10();
-        }
-
-
-        //Funciones para ocultar clases
-
-        function hideClase1(){
-            $('#btnClase1').hide();
-            $('#btnEliminarClase1').hide();
-            $('#nombreClase1').prop('selectedIndex', 0);
-            $('#nombreClase1').prop('disabled', 'disabled');
-            $('#nombreClase1').removeAttr('required');
-            $('#nombreCategoria1').prop('selectedIndex', 0);
-            $('#nombreCategoria1').prop('disabled', 'disabled');
-            $('#nombreCategoria1').removeAttr('required');
-            $('#nombrePalabraAdvertencia1').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia1').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia1').removeAttr('required');
-            $('#nombreIndicacion1').prop('selectedIndex', 0);
-            $('#nombreIndicacion1').prop('disabled', 'disabled');
-            $('#nombreIndicacion1').removeAttr('required');
-            $('#clase1').hide();
-            $idPictograma1 = 0;
-        }
-
-        function hideClase2(){
-            $('#btnClase2').hide();
-            $('#btnEliminarClase2').hide();
-            $('#nombreClase2').prop('selectedIndex', 0);
-            $('#nombreClase2').prop('disabled', 'disabled');
-            $('#nombreClase2').removeAttr('required');
-            $('#nombreCategoria2').prop('selectedIndex', 0);
-            $('#nombreCategoria2').prop('disabled', 'disabled');
-            $('#nombreCategoria2').removeAttr('required');
-            $('#nombrePalabraAdvertencia2').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia2').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia2').removeAttr('required');
-            $('#nombreIndicacion2').prop('selectedIndex', 0);
-            $('#nombreIndicacion2').prop('disabled', 'disabled');
-            $('#nombreIndicacion2').removeAttr('required');
-            $('#clase2').hide();
-            $idPictograma2 = 0;
-        }
-
-        function hideClase3(){
-            $('#btnClase3').hide();
-            $('#btnEliminarClase3').hide();
-            $('#nombreClase3').prop('selectedIndex', 0);
-            $('#nombreClase3').prop('disabled', 'disabled');
-            $('#nombreClase3').removeAttr('required');
-            $('#nombreCategoria3').prop('selectedIndex', 0);
-            $('#nombreCategoria3').prop('disabled', 'disabled');
-            $('#nombreCategoria3').removeAttr('required');
-            $('#nombrePalabraAdvertencia3').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia3').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia3').removeAttr('required');
-            $('#nombreIndicacion3').prop('selectedIndex', 0);
-            $('#nombreIndicacion3').prop('disabled', 'disabled');
-            $('#nombreIndicacion3').removeAttr('required');
-            $('#clase3').hide();
-            $idPictograma3 = 0;
-        }
-
-        function hideClase4(){
-            $('#btnClase4').hide();
-            $('#btnEliminarClase4').hide();
-            $('#nombreClase4').prop('selectedIndex', 0);
-            $('#nombreClase4').prop('disabled', 'disabled');
-            $('#nombreClase4').removeAttr('required');
-            $('#nombreCategoria4').prop('selectedIndex', 0);
-            $('#nombreCategoria4').prop('disabled', 'disabled');
-            $('#nombreCategoria4').removeAttr('required');
-            $('#nombrePalabraAdvertencia4').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia4').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia4').removeAttr('required');
-            $('#nombreIndicacion4').prop('selectedIndex', 0);
-            $('#nombreIndicacion4').prop('disabled', 'disabled');
-            $('#nombreIndicacion4').removeAttr('required');
-            $('#clase4').hide();
-            $idPictograma4 = 0;
-        }
-
-        function hideClase5(){
-            $('#btnClase5').hide();
-            $('#btnEliminarClase5').hide();
-            $('#nombreClase5').prop('selectedIndex', 0);
-            $('#nombreClase5').prop('disabled', 'disabled');
-            $('#nombreClase5').removeAttr('required');
-            $('#nombreCategoria5').prop('selectedIndex', 0);
-            $('#nombreCategoria5').prop('disabled', 'disabled');
-            $('#nombreCategoria5').removeAttr('required');
-            $('#nombrePalabraAdvertencia5').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia5').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia5').removeAttr('required');
-            $('#nombreIndicacion5').prop('selectedIndex', 0);
-            $('#nombreIndicacion5').prop('disabled', 'disabled');
-            $('#nombreIndicacion5').removeAttr('required');
-            $('#clase5').hide();
-            $idPictograma5 = 0;
-        }
-
-        function hideClase6(){
-            $('#btnClase6').hide();
-            $('#btnEliminarClase6').hide();
-            $('#nombreClase6').prop('selectedIndex', 0);
-            $('#nombreClase6').prop('disabled', 'disabled');
-            $('#nombreClase6').removeAttr('required');
-            $('#nombreCategoria6').prop('selectedIndex', 0);
-            $('#nombreCategoria6').prop('disabled', 'disabled');
-            $('#nombreCategoria6').removeAttr('required');
-            $('#nombrePalabraAdvertencia6').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia6').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia6').removeAttr('required');
-            $('#nombreIndicacion6').prop('selectedIndex', 0);
-            $('#nombreIndicacion6').prop('disabled', 'disabled');
-            $('#nombreIndicacion6').removeAttr('required');
-            $('#clase6').hide();
-            $idPictograma6 = 0;
-        }
-
-        function hideClase7(){
-            $('#btnClase7').hide();
-            $('#btnEliminarClase7').hide();
-            $('#nombreClase7').prop('selectedIndex', 0);
-            $('#nombreClase7').prop('disabled', 'disabled');
-            $('#nombreClase7').removeAttr('required');
-            $('#nombreCategoria7').prop('selectedIndex', 0);
-            $('#nombreCategoria7').prop('disabled', 'disabled');
-            $('#nombreCategoria7').removeAttr('required');
-            $('#nombrePalabraAdvertencia7').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia7').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia7').removeAttr('required');
-            $('#nombreIndicacion7').prop('selectedIndex', 0);
-            $('#nombreIndicacion7').prop('disabled', 'disabled');
-            $('#nombreIndicacion7').removeAttr('required');
-            $('#clase7').hide();
-            $idPictograma7 = 0;
-        }
-
-        function hideClase8(){
-            $('#btnClase8').hide();
-            $('#btnEliminarClase8').hide();
-            $('#nombreClase8').prop('selectedIndex', 0);
-            $('#nombreClase8').prop('disabled', 'disabled');
-            $('#nombreClase8').removeAttr('required');
-            $('#nombreCategoria8').prop('selectedIndex', 0);
-            $('#nombreCategoria8').prop('disabled', 'disabled');
-            $('#nombreCategoria8').removeAttr('required');
-            $('#nombrePalabraAdvertencia8').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia8').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia8').removeAttr('required');
-            $('#nombreIndicacion8').prop('selectedIndex', 0);
-            $('#nombreIndicacion8').prop('disabled', 'disabled');
-            $('#nombreIndicacion8').removeAttr('required');
-            $('#clase8').hide();
-            $idPictograma8 = 0;
-        }
-
-        function hideClase9(){
-            $('#btnClase9').hide();
-            $('#btnEliminarClase9').hide();
-            $('#nombreClase9').prop('selectedIndex', 0);
-            $('#nombreClase9').prop('disabled', 'disabled');
-            $('#nombreClase9').removeAttr('required');
-            $('#nombreCategoria9').prop('selectedIndex', 0);
-            $('#nombreCategoria9').prop('disabled', 'disabled');
-            $('#nombreCategoria9').removeAttr('required');
-            $('#nombrePalabraAdvertencia9').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia9').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia9').removeAttr('required');
-            $('#nombreIndicacion9').prop('selectedIndex', 0);
-            $('#nombreIndicacion9').prop('disabled', 'disabled');
-            $('#nombreIndicacion9').removeAttr('required');
-            $('#clase9').hide();
-            $idPictograma9 = 0;
-        }
-
-        function hideClase10(){
-            $('#btnClase10').hide();
-            $('#btnEliminarClase10').hide();
-            $('#nombreClase10').prop('selectedIndex', 0);
-            $('#nombreClase10').prop('disabled', 'disabled');
-            $('#nombreClase10').removeAttr('required');
-            $('#nombreCategoria10').prop('selectedIndex', 0);
-            $('#nombreCategoria10').prop('disabled', 'disabled');
-            $('#nombreCategoria10').removeAttr('required');
-            $('#nombrePalabraAdvertencia10').prop('selectedIndex', 0);
-            $('#nombrePalabraAdvertencia10').prop('disabled', 'disabled');
-            $('#nombrePalabraAdvertencia10').removeAttr('required');
-            $('#nombreIndicacion10').prop('selectedIndex', 0);
-            $('#nombreIndicacion10').prop('disabled', 'disabled');
-            $('#nombreIndicacion10').removeAttr('required');
-            $('#clase10').hide();
-            $idPictograma10 = 0;
-        }
-
-        function hideClases(){
-            hideClase1();
-            hideClase2();
-            hideClase3();
-            hideClase4();
-            hideClase5();
-            hideClase6();
-            hideClase7();
-            hideClase8();
-            hideClase9();
-            hideClase10();
         }
 
         //Botones
@@ -1610,69 +1599,70 @@ $(document).ready(function(){
     
     //Botón Editar Producto    
     $(document).on("click", ".btnEditar", function(){
+        hideClases();
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
-        cas = parseInt(fila.find('td:eq(0)').text());
+        cas = fila.find('td:eq(0)').text();
         nombre = fila.find('td:eq(1)').text();
         nombreGrupo = fila.find('td:eq(2)').text();
         nombreUso = fila.find('td:eq(3)').text();
         nombreFabricante = fila.find('td:eq(4)').text();
-        // apellido1 = fila.find('td:eq(2)').text();
-        // apellido2 = fila.find('td:eq(3)').text();
-        // pass1 = '';
-        // pass2 = '';
-        // telefono = parseInt(fila.find('td:eq(4)').text());
-        // correo = fila.find('td:eq(5)').text();
-        // nombretipoUsuario = fila.find('td:eq(6)').text();
-        // if (fila.find('td:eq(7)').text() == 'Sí') {
-        //     document.getElementById('wsVerif').checked = true;
-        // } else if (fila.find('td:eq(7)').text() == 'No') {
-        //     document.getElementById('wsVerif').checked = false;
-        // }
-        // lugarTrabajo = fila.find('td:eq(8)').text();
-        //Seteo de algunas opciones al presionar el botón de Editar
-        //document.getElementById('newid').autofocus = false;
-        // document.getElementById('pass1').required = false;
-        // document.getElementById('pass1').placeholder = 'Cambiar contraseña';
-        // document.getElementById('pass2').required = false;
-        // document.getElementById('pass2').placeholder = 'Repetir nueva contraseña';
-        // document.getElementById('nombretipoUsuario').required = true;
-        // document.getElementById('lugarTrabajo').required = true;
-        $("#newid").val(id);
-        $("#nombre").val(nombre);
-        var selectednombreGrupo = nombreGrupo;
-        $('#nombreGrupo option').map(function () {
-        if ($(this).text() == selectednombreGrupo) return this;
-        }).attr('selected', 'selected');
-        var selectednombreUso = nombreUso;
-        $('#nombreUso option').map(function () {
-        if ($(this).text() == selectednombreUso) return this;
-        }).attr('selected', 'selected');
-        var selectednombreFabricante = nombreFabricante;
-        $('#nombreFabricante option').map(function () {
-        if ($(this).text() == selectednombreFabricante) return this;
-        }).attr('selected', 'selected');
-        // $("#apellido1").val(apellido1);
-        // $("#apellido2").val(apellido2);
-        // $("#pass1").val(pass1);
-        // $("#pass2").val(pass2);
-        // $("#telefono").val(telefono);
-        // $("#correo").val(correo);
-        // var selectednombretipoUsuario = nombretipoUsuario;
-        // $('#nombretipoUsuario option').map(function () {
-        //     if ($(this).text() == selectednombretipoUsuario) return this;
-        // }).attr('selected', 'selected');
-        // $("#wsVerif.value").val(wsVerif);
-        // var selectedLugarTrabajo = lugarTrabajo;
-        // $('#lugarTrabajo option').map(function () {
-        //     if ($(this).text() == selectedLugarTrabajo) return this;
-        // }).attr('selected', 'selected');
+        console.log('CAS: ',cas);
+        
+            $.ajax({
+                type:"POST",
+                url:"bd/cargarProducto.php",
+                data:"cas=" + cas,
+                success:function(data){
+                    //console.log(data);
+                    dataParse = JSON.parse(data);
+                    product_loaded = dataParse;
+                    loaded_cas = product_loaded[0].cas
+                    loaded_nombreProducto = product_loaded[0].nombreProducto
+                    loaded_nombreGrupo = product_loaded[0].nombreGrupo
+                    loaded_nombreUso = product_loaded[0].nombreUso
+                    loaded_nombreFabricante = product_loaded[0].nombreFabricante
+
+
+                    // console.log('CAS: ',product_loaded[0].cas);
+                    // console.log('Nombre de Producto: ',product_loaded[0].nombreProducto);
+                    // console.log('Grupo: ',product_loaded[0].nombreGrupo);
+                    // console.log('Uso: ',product_loaded[0].nombreUso);
+                    // console.log('Fabricante: ',product_loaded[0].nombreFabricante);
+
+
+                    $("#cas").val(loaded_cas);
+                    $("#nombreProducto").val(loaded_nombreProducto);
+                    var selectednombreGrupo = loaded_nombreGrupo;
+                    $('#nombreGrupo option').map(function () {
+                    if ($(this).text() == selectednombreGrupo) return this;
+                    }).attr('selected', 'selected');
+                    var selectednombreUso = loaded_nombreUso;
+                    $('#nombreUso option').map(function () {
+                    if ($(this).text() == selectednombreUso) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreFabricante").val(loaded_nombreFabricante);
+
+                },
+                error: function(textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No se pudo cargar el producto.',
+                        footer: '<a href="">Why do I have this issue?</a>',
+                        timer: 3000
+                    })
+                }
+            });
+
+
         opcion = 2; //Editar Producto
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Producto");            
         $("#modalCRUD").modal("show"); 
-        console.log("Edición de Usuario - Paso 1...");
+        //console.log("Edición de Usuario - Paso 1...");
     });
 
     //Botón Eliminar Producto
@@ -2243,5 +2233,6 @@ $(document).ready(function(){
             });
             $("#modalCRUD").modal("hide");
     });
+
     
 });

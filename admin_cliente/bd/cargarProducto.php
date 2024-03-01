@@ -66,7 +66,7 @@ $consulta = "SELECT cas,
 					idPictograma9,
 					idPictograma10,
 					nivel,
-					unidad
+					nombreUnidad
 					FROM vista_productos_completa
 					WHERE cas='$cas'
 					ORDER BY cas DESC LIMIT 1";

@@ -202,7 +202,7 @@ $(document).ready(function(){
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar' disabled>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
        }],
     //    "createdRow": function(row, data, dataIndex) {
     //         if ( data[0] ) {
@@ -1622,28 +1622,116 @@ $(document).ready(function(){
                     loaded_nombreGrupo = product_loaded[0].nombreGrupo;
                     loaded_nombreUso = product_loaded[0].nombreUso;
                     loaded_nombreFabricante = product_loaded[0].nombreFabricante;
-                    loaded_nombreClase1 = product_loaded[0].nombreClase1;
-                    loaded_nombreCategoria1 = product_loaded[0].nombreCategoria1;
+                    loaded_nombreClase1 = product_loaded[0].nombreClasePeligro1;
+                    loaded_nombreCategoria1 = product_loaded[0].nombreCategoriaPeligro1;
                     loaded_palabraAdvertencia1 = product_loaded[0].palabraAdvertencia1;
                     loaded_nombreIndicacion1 = product_loaded[0].nombreIndicacion1;
                     loaded_idPictograma1 = product_loaded[0].idPictograma1;
+                    loaded_nombreClase2 = product_loaded[0].nombreClasePeligro2;
+                    loaded_nombreCategoria2 = product_loaded[0].nombreCategoriaPeligro2;
+                    loaded_palabraAdvertencia2 = product_loaded[0].palabraAdvertencia2;
+                    loaded_nombreIndicacion2 = product_loaded[0].nombreIndicacion2;
+                    loaded_idPictograma2 = product_loaded[0].idPictograma2;
+                    loaded_nombreClase3 = product_loaded[0].nombreClasePeligro3;
+                    loaded_nombreCategoria3 = product_loaded[0].nombreCategoriaPeligro3;
+                    loaded_palabraAdvertencia3 = product_loaded[0].palabraAdvertencia3;
+                    loaded_nombreIndicacion3 = product_loaded[0].nombreIndicacion3;
+                    loaded_idPictograma3 = product_loaded[0].idPictograma3;
+                    loaded_nombreClase4 = product_loaded[0].nombreClasePeligro4;
+                    loaded_nombreCategoria4 = product_loaded[0].nombreCategoriaPeligro4;
+                    loaded_palabraAdvertencia4 = product_loaded[0].palabraAdvertencia4;
+                    loaded_nombreIndicacion4 = product_loaded[0].nombreIndicacion4;
+                    loaded_idPictograma4 = product_loaded[0].idPictograma4;
+                    loaded_nombreClase5 = product_loaded[0].nombreClasePeligro5;
+                    loaded_nombreCategoria5 = product_loaded[0].nombreCategoriaPeligro5;
+                    loaded_palabraAdvertencia5 = product_loaded[0].palabraAdvertencia5;
+                    loaded_nombreIndicacion5 = product_loaded[0].nombreIndicacion5;
+                    loaded_idPictograma5 = product_loaded[0].idPictograma5;
+                    loaded_nombreClase6 = product_loaded[0].nombreClasePeligro6;
+                    loaded_nombreCategoria6 = product_loaded[0].nombreCategoriaPeligro6;
+                    loaded_palabraAdvertencia6 = product_loaded[0].palabraAdvertencia6;
+                    loaded_nombreIndicacion6 = product_loaded[0].nombreIndicacion6;
+                    loaded_idPictograma6 = product_loaded[0].idPictograma6;
+                    loaded_nombreClase7 = product_loaded[0].nombreClasePeligro7;
+                    loaded_nombreCategoria7 = product_loaded[0].nombreCategoriaPeligro7;
+                    loaded_palabraAdvertencia7 = product_loaded[0].palabraAdvertencia7;
+                    loaded_nombreIndicacion7 = product_loaded[0].nombreIndicacion7;
+                    loaded_idPictograma7 = product_loaded[0].idPictograma7;
+                    loaded_nombreClase8 = product_loaded[0].nombreClasePeligro8;
+                    loaded_nombreCategoria8 = product_loaded[0].nombreCategoriaPeligro8;
+                    loaded_palabraAdvertencia8 = product_loaded[0].palabraAdvertencia8;
+                    loaded_nombreIndicacion8 = product_loaded[0].nombreIndicacion8;
+                    loaded_idPictograma8 = product_loaded[0].idPictograma8;
+                    loaded_nombreClase9 = product_loaded[0].nombreClasePeligro9;
+                    loaded_nombreCategoria9 = product_loaded[0].nombreCategoriaPeligro9;
+                    loaded_palabraAdvertencia9 = product_loaded[0].palabraAdvertencia9;
+                    loaded_nombreIndicacion9 = product_loaded[0].nombreIndicacion9;
+                    loaded_idPictograma9 = product_loaded[0].idPictograma9;
+                    loaded_nombreClase10 = product_loaded[0].nombreClasePeligro10;
+                    loaded_nombreCategoria10 = product_loaded[0].nombreCategoriaPeligro10;
+                    loaded_palabraAdvertencia10 = product_loaded[0].palabraAdvertencia10;
+                    loaded_nombreIndicacion10 = product_loaded[0].nombreIndicacion10;
+                    loaded_idPictograma10 = product_loaded[0].idPictograma10;
+                    loaded_nivel = product_loaded[0].nivel;
+                    loaded_unidad = product_loaded[0].nombreUnidad;
 
-
-
-
-
-
-                    console.log('CAS: ',product_loaded[0].cas);
-                    console.log('Nombre de Producto: ',product_loaded[0].nombreProducto);
-                    console.log('Grupo: ',product_loaded[0].nombreGrupo);
-                    console.log('Uso: ',product_loaded[0].nombreUso);
-                    console.log('Fabricante: ',product_loaded[0].nombreFabricante);
-                    console.log('Clase 1: ',product_loaded[0].nombreClasePeligro1);
-                    console.log('Categoría 1: ',product_loaded[0].nombreCategoriaPeligro1);
-                    console.log('Palabra de Advertencia 1: ',product_loaded[0].palabraAdvertencia1);
-                    console.log('Indicación 1: ',product_loaded[0].nombreIndicacion1);
-                    console.log('ID Pictograma 1: ',product_loaded[0].idPictograma1);
-
+                    console.log('CAS: ',loaded_cas);
+                    console.log('Nombre de Producto: ',loaded_nombreProducto);
+                    console.log('Grupo: ',loaded_nombreGrupo);
+                    console.log('Uso: ',loaded_nombreUso);
+                    console.log('Fabricante: ',loaded_nombreFabricante);
+                    console.log('Clase 1: ',loaded_nombreClase1);
+                    console.log('Categoría 1: ',loaded_nombreCategoria1);
+                    console.log('Palabra de Advertencia 1: ',loaded_palabraAdvertencia1);
+                    console.log('Indicación 1: ',loaded_nombreIndicacion1);
+                    console.log('ID Pictograma 1: ',loaded_idPictograma1);
+                    console.log('Clase 2: ',loaded_nombreClase2);
+                    console.log('Categoría 2: ',loaded_nombreCategoria2);
+                    console.log('Palabra de Advertencia 2: ',loaded_palabraAdvertencia2);
+                    console.log('Indicación 2: ',loaded_nombreIndicacion2);
+                    console.log('ID Pictograma 2: ',loaded_idPictograma2);
+                    console.log('Clase 3: ',loaded_nombreClase3);
+                    console.log('Categoría 3: ',loaded_nombreCategoria3);
+                    console.log('Palabra de Advertencia 3: ',loaded_palabraAdvertencia3);
+                    console.log('Indicación 3: ',loaded_nombreIndicacion3);
+                    console.log('ID Pictograma 3: ',loaded_idPictograma3);
+                    console.log('Clase 4: ',loaded_nombreClase4);
+                    console.log('Categoría 4: ',loaded_nombreCategoria4);
+                    console.log('Palabra de Advertencia 4: ',loaded_palabraAdvertencia4);
+                    console.log('Indicación 4: ',loaded_nombreIndicacion4);
+                    console.log('ID Pictograma 4: ',loaded_idPictograma4);
+                    console.log('Clase 5: ',loaded_nombreClase5);
+                    console.log('Categoría 5: ',loaded_nombreCategoria5);
+                    console.log('Palabra de Advertencia 5: ',loaded_palabraAdvertencia5);
+                    console.log('Indicación 5: ',loaded_nombreIndicacion5);
+                    console.log('ID Pictograma 5: ',loaded_idPictograma5);
+                    console.log('Clase 6: ',loaded_nombreClase6);
+                    console.log('Categoría 6: ',loaded_nombreCategoria6);
+                    console.log('Palabra de Advertencia 6: ',loaded_palabraAdvertencia6);
+                    console.log('Indicación 6: ',loaded_nombreIndicacion6);
+                    console.log('ID Pictograma 6: ',loaded_idPictograma6);
+                    console.log('Clase 7: ',loaded_nombreClase7);
+                    console.log('Categoría 7: ',loaded_nombreCategoria7);
+                    console.log('Palabra de Advertencia 7: ',loaded_palabraAdvertencia7);
+                    console.log('Indicación 7: ',loaded_nombreIndicacion7);
+                    console.log('ID Pictograma 7: ',loaded_idPictograma7);
+                    console.log('Clase 8: ',loaded_nombreClase8);
+                    console.log('Categoría 8: ',loaded_nombreCategoria8);
+                    console.log('Palabra de Advertencia 8: ',loaded_palabraAdvertencia8);
+                    console.log('Indicación 8: ',loaded_nombreIndicacion8);
+                    console.log('ID Pictograma 8: ',loaded_idPictograma8);
+                    console.log('Clase 9: ',loaded_nombreClase9);
+                    console.log('Categoría 9: ',loaded_nombreCategoria9);
+                    console.log('Palabra de Advertencia 9: ',loaded_palabraAdvertencia9);
+                    console.log('Indicación 9: ',loaded_nombreIndicacion9);
+                    console.log('ID Pictograma 9: ',loaded_idPictograma9);
+                    console.log('Clase 10: ',loaded_nombreClase10);
+                    console.log('Categoría 10: ',loaded_nombreCategoria10);
+                    console.log('Palabra de Advertencia 10: ',loaded_palabraAdvertencia10);
+                    console.log('Indicación 10: ',loaded_nombreIndicacion10);
+                    console.log('ID Pictograma 10: ',loaded_idPictograma10);
+                    console.log('Nivel: ',loaded_nivel);
+                    console.log('Unidad: ',loaded_unidad);
 
                     $("#cas").val(loaded_cas);
                     $("#nombreProducto").val(loaded_nombreProducto);

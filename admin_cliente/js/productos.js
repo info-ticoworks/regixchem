@@ -1147,6 +1147,466 @@ $(document).ready(function () {
 
     //Final de las Funciones de carga de Select
 
+    //Inicio de las Funciones de carga de Select para editar el producto
+
+    function cargarCategoria1Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase1').val(),
+            success: function (r) {
+                $('#nombreCategoria1').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria2Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase2').val(),
+            success: function (r) {
+                $('#nombreCategoria2').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria3Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase3').val(),
+            success: function (r) {
+                $('#nombreCategoria3').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria4Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase4').val(),
+            success: function (r) {
+                $('#nombreCategoria4').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria5Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase5').val(),
+            success: function (r) {
+                $('#nombreCategoria5').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria6Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase6').val(),
+            success: function (r) {
+                $('#nombreCategoria6').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria7Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase7').val(),
+            success: function (r) {
+                $('#nombreCategoria7').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria8Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase8').val(),
+            success: function (r) {
+                $('#nombreCategoria8').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria9Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase9').val(),
+            success: function (r) {
+                $('#nombreCategoria9').html(r);
+            }
+        });
+    }
+
+    function cargarCategoria10Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/catEdit.php",
+            data: "cat=" + $('#nombreClase10').val(),
+            success: function (r) {
+                $('#nombreCategoria10').html(r);
+            }
+        });
+    }
+
+    //Carga de Palabras de Advertencia
+
+    function cargarPalabraAdvertencia1Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase1').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia1').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia2Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase2').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia2').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia3Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase3').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia3').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia4Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase4').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia4').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia5Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase5').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia5').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia6Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase6').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia6').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia7Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase7').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia7').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia8Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase8').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia8').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia9Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase9').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia9').html(r);
+            }
+        });
+    }
+
+    function cargarPalabraAdvertencia10Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/paladEdit.php",
+            data: "palad=" + $('#nombreClase10').val(),
+            success: function (r) {
+                $('#nombrePalabraAdvertencia10').html(r);
+            }
+        });
+    }
+
+    //Carga de Pictogramas
+
+    function cargarPictograma1Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria1').val(),
+            success: function (r) {
+                idPictograma1 = r;
+            }
+        });
+    }
+
+    function cargarPictograma2Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria2').val(),
+            success: function (r) {
+                idPictograma2 = r;
+            }
+        });
+    }
+
+    function cargarPictograma3Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria3').val(),
+            success: function (r) {
+                idPictograma3 = r;
+            }
+        });
+    }
+
+    function cargarPictograma4Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria4').val(),
+            success: function (r) {
+                idPictograma4 = r;
+            }
+        });
+    }
+
+    function cargarPictograma5Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria5').val(),
+            success: function (r) {
+                idPictograma5 = r;
+            }
+        });
+    }
+
+    function cargarPictograma6Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria6').val(),
+            success: function (r) {
+                idPictograma6 = r;
+            }
+        });
+    }
+
+    function cargarPictograma7Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria7').val(),
+            success: function (r) {
+                idPictograma7 = r;
+            }
+        });
+    }
+
+    function cargarPictograma8Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria8').val(),
+            success: function (r) {
+                idPictograma8 = r;
+            }
+        });
+    }
+
+    function cargarPictograma9Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria9').val(),
+            success: function (r) {
+                idPictograma9 = r;
+            }
+        });
+    }
+
+    function cargarPictograma10Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/pictEdit.php",
+            data: "pict=" + $('#nombreCategoria10').val(),
+            success: function (r) {
+                idPictograma10 = r;
+            }
+        });
+    }
+
+    //Carga de Indicaciones
+
+    function cargarIndicacion1Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase1').val(),
+            success: function (r) {
+                $('#nombreIndicacion1').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion2Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase2').val(),
+            success: function (r) {
+                $('#nombreIndicacion2').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion3Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase3').val(),
+            success: function (r) {
+                $('#nombreIndicacion3').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion4Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase4').val(),
+            success: function (r) {
+                $('#nombreIndicacion4').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion5Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase5').val(),
+            success: function (r) {
+                $('#nombreIndicacion5').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion6Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase6').val(),
+            success: function (r) {
+                $('#nombreIndicacion6').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion7Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase7').val(),
+            success: function (r) {
+                $('#nombreIndicacion7').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion8Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase8').val(),
+            success: function (r) {
+                $('#nombreIndicacion8').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion9Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase9').val(),
+            success: function (r) {
+                $('#nombreIndicacion9').html(r);
+            }
+        });
+    }
+
+    function cargarIndicacion10Edit() {
+        $.ajax({
+            type: "POST",
+            url: "bd/indEdit.php",
+            data: "ind=" + $('#nombreClase10').val(),
+            success: function (r) {
+                $('#nombreIndicacion10').html(r);
+            }
+        });
+    }
+
+    //Final de las Funciones de carga de Select para editar el producto
+
+
+
+
+
+
+
+
+
+
+
     //Inicio Funciones al cambiar opciones de Select
 
     // Clase 1
@@ -1760,30 +2220,28 @@ $(document).ready(function () {
                 $("#nombreFabricante").val(loaded_nombreFabricante);
 
                 if (loaded_nombreClase1 != 'Null') {
-                    //btnClase1();
                     $('#clase1').show();
                     $('#btnClase1').hide();
                     $('#btnEliminarClase1').show();
                     $('#nombreClase1').removeAttr('disabled');
-                    $("#nombreClase").attr("required", "required");
+                    $("#nombreClase1").attr("required", "required");
                     $('#nombreClase1 option').map(function () {
                         if ($(this).text() == loaded_nombreClase1) return this;
                     }).attr('selected', 'selected');
+                    cargarCategoria1Edit();
                     $('#nombreCategoria1').removeAttr('disabled');
-                    cargarCategoria1();
                     $('#nombreCategoria1 option').map(function () {
                         if ($(this).text() == loaded_nombreCategoria1) return this;
                     }).attr('selected', 'selected');
                     $("#nombreCategoria1").attr("required", "required");
+                    cargarPalabraAdvertencia1Edit();
                     $('#nombrePalabraAdvertencia1').removeAttr('disabled');
-
-                    cargarPalabraAdvertencia1();
                     $('#nombrePalabraAdvertencia1 option').map(function () {
                         if ($(this).text() == loaded_palabraAdvertencia1) return this;
                     }).attr('selected', 'selected');
                     $("#nombrePalabraAdvertencia1").attr("required", "required");
+                    cargarIndicacion1Edit();
                     $('#nombreIndicacion1').removeAttr('disabled');
-                    cargarIndicacion1();
                     $('#nombreIndicacion1 option').map(function () {
                         if ($(this).text() == loaded_nombreIndicacion1) return this;
                     }).attr('selected', 'selected');
@@ -1791,6 +2249,291 @@ $(document).ready(function () {
                     $('#btnClase2').show();
                     $('#modalCRUD').animate({ scrollTop: 500 }, 'slow');
                 }
+
+                if (loaded_nombreClase2 != 'Null') {
+                    $('#clase2').show();
+                    $('#btnClase2').hide();
+                    $('#btnEliminarClase2').show();
+                    $('#nombreClase2').removeAttr('disabled');
+                    $("#nombreClase2").attr("required", "required");
+                    $('#nombreClase2 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase2) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria2Edit();
+                    $('#nombreCategoria2').removeAttr('disabled');
+                    $('#nombreCategoria2 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria2) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria2").attr("required", "required");
+                    cargarPalabraAdvertencia2Edit();
+                    $('#nombrePalabraAdvertencia2').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia2 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia2) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia2").attr("required", "required");
+                    cargarIndicacion2Edit();
+                    $('#nombreIndicacion2').removeAttr('disabled');
+                    $('#nombreIndicacion2 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion2) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion2").attr("required", "required");
+                    $('#btnClase3').show();
+                    $('#modalCRUD').animate({ scrollTop: 1000 }, 'slow');
+                }
+
+                if (loaded_nombreClase3 != 'Null') {
+                    $('#clase3').show();
+                    $('#btnClase3').hide();
+                    $('#btnEliminarClase3').show();
+                    $('#nombreClase3').removeAttr('disabled');
+                    $("#nombreClase3").attr("required", "required");
+                    $('#nombreClase3 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase3) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria3Edit();
+                    $('#nombreCategoria3').removeAttr('disabled');
+                    $('#nombreCategoria3 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria3) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria3").attr("required", "required");
+                    cargarPalabraAdvertencia3Edit();
+                    $('#nombrePalabraAdvertencia3').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia3 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia3) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia3").attr("required", "required");
+                    cargarIndicacion3Edit();
+                    $('#nombreIndicacion3').removeAttr('disabled');
+                    $('#nombreIndicacion3 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion3) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion3").attr("required", "required");
+                    $('#btnClase4').show();
+                    $('#modalCRUD').animate({ scrollTop: 1500 }, 'slow');
+                }
+
+                if (loaded_nombreClase4 != 'Null') {
+                    $('#clase4').show();
+                    $('#btnClase4').hide();
+                    $('#btnEliminarClase4').show();
+                    $('#nombreClase4').removeAttr('disabled');
+                    $("#nombreClase4").attr("required", "required");
+                    $('#nombreClase4 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase4) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria4Edit();
+                    $('#nombreCategoria4').removeAttr('disabled');
+                    $('#nombreCategoria4 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria4) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria4").attr("required", "required");
+                    cargarPalabraAdvertencia4Edit();
+                    $('#nombrePalabraAdvertencia4').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia4 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia4) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia4").attr("required", "required");
+                    cargarIndicacion4Edit();
+                    $('#nombreIndicacion4').removeAttr('disabled');
+                    $('#nombreIndicacion4 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion4) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion4").attr("required", "required");
+                    $('#btnClase5').show();
+                    $('#modalCRUD').animate({ scrollTop: 2000 }, 'slow');
+                }
+
+                if (loaded_nombreClase5 != 'Null') {
+                    $('#clase5').show();
+                    $('#btnClase5').hide();
+                    $('#btnEliminarClase5').show();
+                    $('#nombreClase5').removeAttr('disabled');
+                    $("#nombreClase5").attr("required", "required");
+                    $('#nombreClase5 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase5) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria5Edit();
+                    $('#nombreCategoria5').removeAttr('disabled');
+                    $('#nombreCategoria5 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria5) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria5").attr("required", "required");
+                    cargarPalabraAdvertencia5Edit();
+                    $('#nombrePalabraAdvertencia5').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia5 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia5) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia5").attr("required", "required");
+                    cargarIndicacion5Edit();
+                    $('#nombreIndicacion5').removeAttr('disabled');
+                    $('#nombreIndicacion5 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion5) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion5").attr("required", "required");
+                    $('#btnClase6').show();
+                    $('#modalCRUD').animate({ scrollTop: 2500 }, 'slow');
+                }
+
+                if (loaded_nombreClase6 != 'Null') {
+                    $('#clase6').show();
+                    $('#btnClase6').hide();
+                    $('#btnEliminarClase6').show();
+                    $('#nombreClase6').removeAttr('disabled');
+                    $("#nombreClase6").attr("required", "required");
+                    $('#nombreClase6 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase6) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria6Edit();
+                    $('#nombreCategoria6').removeAttr('disabled');
+                    $('#nombreCategoria6 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria6) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria6").attr("required", "required");
+                    cargarPalabraAdvertencia6Edit();
+                    $('#nombrePalabraAdvertencia6').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia6 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia6) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia6").attr("required", "required");
+                    cargarIndicacion6Edit();
+                    $('#nombreIndicacion6').removeAttr('disabled');
+                    $('#nombreIndicacion6 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion6) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion6").attr("required", "required");
+                    $('#btnClase7').show();
+                    $('#modalCRUD').animate({ scrollTop: 3000 }, 'slow');
+                }
+
+                if (loaded_nombreClase7 != 'Null') {
+                    $('#clase7').show();
+                    $('#btnClase7').hide();
+                    $('#btnEliminarClase7').show();
+                    $('#nombreClase7').removeAttr('disabled');
+                    $("#nombreClase7").attr("required", "required");
+                    $('#nombreClase7 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase7) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria7Edit();
+                    $('#nombreCategoria7').removeAttr('disabled');
+                    $('#nombreCategoria7 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria7) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria7").attr("required", "required");
+                    cargarPalabraAdvertencia7Edit();
+                    $('#nombrePalabraAdvertencia7').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia7 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia7) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia7").attr("required", "required");
+                    cargarIndicacion7Edit();
+                    $('#nombreIndicacion7').removeAttr('disabled');
+                    $('#nombreIndicacion7 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion7) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion7").attr("required", "required");
+                    $('#btnClase8').show();
+                    $('#modalCRUD').animate({ scrollTop: 3500 }, 'slow');
+                }
+
+                if (loaded_nombreClase8 != 'Null') {
+                    $('#clase8').show();
+                    $('#btnClase8').hide();
+                    $('#btnEliminarClase8').show();
+                    $('#nombreClase8').removeAttr('disabled');
+                    $("#nombreClase8").attr("required", "required");
+                    $('#nombreClase8 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase8) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria8Edit();
+                    $('#nombreCategoria8').removeAttr('disabled');
+                    $('#nombreCategoria8 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria8) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria8").attr("required", "required");
+                    cargarPalabraAdvertencia8Edit();
+                    $('#nombrePalabraAdvertencia8').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia8 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia8) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia8").attr("required", "required");
+                    cargarIndicacion8Edit();
+                    $('#nombreIndicacion8').removeAttr('disabled');
+                    $('#nombreIndicacion8 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion8) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion8").attr("required", "required");
+                    $('#btnClase9').show();
+                    $('#modalCRUD').animate({ scrollTop: 4000 }, 'slow');
+                }
+
+                if (loaded_nombreClase9 != 'Null') {
+                    $('#clase9').show();
+                    $('#btnClase9').hide();
+                    $('#btnEliminarClase9').show();
+                    $('#nombreClase9').removeAttr('disabled');
+                    $("#nombreClase9").attr("required", "required");
+                    $('#nombreClase9 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase9) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria9Edit();
+                    $('#nombreCategoria9').removeAttr('disabled');
+                    $('#nombreCategoria9 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria9) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria9").attr("required", "required");
+                    cargarPalabraAdvertencia9Edit();
+                    $('#nombrePalabraAdvertencia9').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia9 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia9) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia9").attr("required", "required");
+                    cargarIndicacion9Edit();
+                    $('#nombreIndicacion9').removeAttr('disabled');
+                    $('#nombreIndicacion9 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion9) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion9").attr("required", "required");
+                    $('#btnClase10').show();
+                    $('#modalCRUD').animate({ scrollTop: 4500 }, 'slow');
+                }
+
+                if (loaded_nombreClase10 != 'Null') {
+                    $('#clase10').show();
+                    $('#btnClase10').hide();
+                    $('#btnEliminarClase10').show();
+                    $('#nombreClase10').removeAttr('disabled');
+                    $("#nombreClase10").attr("required", "required");
+                    $('#nombreClase10 option').map(function () {
+                        if ($(this).text() == loaded_nombreClase10) return this;
+                    }).attr('selected', 'selected');
+                    cargarCategoria10Edit();
+                    $('#nombreCategoria10').removeAttr('disabled');
+                    $('#nombreCategoria10 option').map(function () {
+                        if ($(this).text() == loaded_nombreCategoria10) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreCategoria10").attr("required", "required");
+                    cargarPalabraAdvertencia10Edit();
+                    $('#nombrePalabraAdvertencia10').removeAttr('disabled');
+                    $('#nombrePalabraAdvertencia10 option').map(function () {
+                        if ($(this).text() == loaded_palabraAdvertencia10) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombrePalabraAdvertencia10").attr("required", "required");
+                    cargarIndicacion10Edit();
+                    $('#nombreIndicacion10').removeAttr('disabled');
+                    $('#nombreIndicacion10 option').map(function () {
+                        if ($(this).text() == loaded_nombreIndicacion10) return this;
+                    }).attr('selected', 'selected');
+                    $("#nombreIndicacion10").attr("required", "required");
+                    $('#modalCRUD').animate({ scrollTop: 5000 }, 'slow');
+                }
+
+
+
+
+
+
+
             },
             error: function (textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);

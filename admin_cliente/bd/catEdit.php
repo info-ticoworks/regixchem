@@ -7,7 +7,7 @@ $cat=$_POST['cat'];
 		WHERE idClasePeligro = $cat
 		ORDER BY nombreCategoriaPeligro asc";
 	$result=mysqli_query($conexion,$sql);
-	$cadena="<option selected disabled value=''>Elija una categoría de peligro.</option>";
+	$cadena="<option disabled value=''>Elija una categoría de peligro.</option>";
 	while ($ver=mysqli_fetch_row($result)) {
 		$cadena=$cadena.'<option value='.$ver[0].'>'.($ver[1]).'</option>';
 	}

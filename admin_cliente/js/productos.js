@@ -1945,7 +1945,7 @@ $(document).ready(function () {
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarProducto'>Editar</button><button class='btn btn-danger btnBorrarProducto'>Borrar</button></div></div>"
         }],
         //    "createdRow": function(row, data, dataIndex) {
         //         if ( data[0] ) {
@@ -2013,7 +2013,7 @@ $(document).ready(function () {
     });
 
     //Botón Nuevo Producto
-    $("#btnNuevo").click(function () {
+    $("#btnNuevoProducto").click(function () {
         hideClases();
         cas = ''
         $("#formProductos").trigger("reset");
@@ -2052,20 +2052,21 @@ $(document).ready(function () {
         document.getElementById('btnClase8').style.display = 'none';
         document.getElementById('btnClase9').style.display = 'none';
         document.getElementById('btnClase10').style.display = 'none';
-
-        //Botón Cancelar
-        $('#btnCancelar').on('click', function () {
-            $("#formProductos").trigger("reset");
-            //location.reload();
-        });
-
+        cas=null;
         opcion = 1; //Nuevo Producto
+
+        // //Botón Cancelar
+        // $('#btnCancelar').on('click', function () {
+        //     $("#formProductos").trigger("reset");
+        //     //location.reload();
+        // });
+
     });
 
     var fila; //Capturar la fila para editar o borrar el registro
 
     //Botón Editar Producto    
-    $(document).on("click", ".btnEditar", function () {
+    $(document).on("click", ".btnEditarProducto", function () {
         hideClases();
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
@@ -2572,7 +2573,7 @@ $(document).ready(function () {
     });
 
     //Botón Eliminar Producto
-    $(document).on("click", ".btnBorrar", function () {
+    $(document).on("click", ".btnBorrarProducto", function () {
         fila = $(this);
         cas = $(this).closest("tr").find('td:eq(0)').text();
         nombreProducto = $(this).closest("tr").find('td:eq(1)').text();
@@ -2587,7 +2588,7 @@ $(document).ready(function () {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "bd/crud.php",
+                    url: "bd/bdProductos.php",
                     type: "POST",
                     dataType: "json",
                     data: { opcion: opcion, cas: cas },
@@ -3031,7 +3032,7 @@ $(document).ready(function () {
         console.log('Id de Pictograma 10: ', idPictograma10);
 
         $.ajax({
-            url: "bd/crud.php",
+            url: "bd/bdProductos.php",
             type: "POST",
             dataType: "json",
             data: {

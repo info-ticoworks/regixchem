@@ -22,7 +22,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="card-header py-3">
     <div class="col-lg-12">
-        <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
+        <button id="btnNuevoProducto" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
     </div>    
 </div>
 

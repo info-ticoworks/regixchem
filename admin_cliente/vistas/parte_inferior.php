@@ -79,7 +79,7 @@
 
     <!-- código propio JS --> 
     <script type="text/javascript" src="./js/productos.js"></script>
-    <script type="text/javascript" src="./js/marcas.js"></script>
+    <script type="text/javascript" src="./js/usuarios.js"></script>
 
 </body>
 

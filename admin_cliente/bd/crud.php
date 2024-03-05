@@ -7,6 +7,7 @@ $conexion = $objeto->Conectar();
 
 // Recepción de los datos enviados mediante POST desde el JS
 $cas = (isset($_POST['cas'])) ? $_POST['cas'] : '';
+$newcas = (isset($_POST['newcas'])) ? $_POST['newcas'] : '';
 $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
@@ -131,7 +132,7 @@ switch($opcion){
                                             idPalabraAdvertencia10,
                                             idIndicacion10,
                                             idPictograma10) VALUES (
-                                            '$cas',
+                                            '$newcas',
                                             '$nombreProducto',
                                             $idGrupo,
                                             $idUso,
@@ -188,41 +189,81 @@ switch($opcion){
                                             $idPictograma10)";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
-
-        $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante FROM vista_productos_reducida ORDER BY cas DESC LIMIT 1";
+        $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante
+                    FROM vista_productos_reducida
+                    WHERE cas='$newcas'
+                    ORDER BY cas DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     case 2: //modificación
-        if ($pass1=="") {
-            $consulta = "UPDATE usuarios SET cedula='$newid', nombre='$nombre', apellido1='$apellido1', apellido2='$apellido2', telefono='$telefono', correo='$correo', idTipoUsuario='$idTipoUsuario', wsNotif='$wsNotif', idLugarTrabajo='$idLugarTrabajo' WHERE cedula='$id'";		
+            $consulta = "UPDATE producto SET cas='$newcas',
+                                            nombreProducto='$nombreProducto',
+                                            idGrupo=$idGrupo,
+                                            idUso=$idUso,
+                                            nombreFabricante='$nombreFabricante',
+                                            idClasePeligro1=$idClase1,
+                                            idCategoriaPeligro1=$idCategoria1,
+                                            idPalabraAdvertencia1=$idPalabraAdvertencia1,
+                                            idIndicacion1=$idIndicacion1,
+                                            idPictograma1=$idPictograma1,
+                                            idClasePeligro2=$idClase2,
+                                            idCategoriaPeligro2=$idCategoria2,
+                                            idPalabraAdvertencia2=$idPalabraAdvertencia2,
+                                            idIndicacion2=$idIndicacion2,
+                                            idPictograma2=$idPictograma2,
+                                            idClasePeligro3=$idClase3,
+                                            idCategoriaPeligro3=$idCategoria3,
+                                            idPalabraAdvertencia3=$idPalabraAdvertencia3,
+                                            idIndicacion3=$idIndicacion3,
+                                            idPictograma3=$idPictograma3,
+                                            idClasePeligro4=$idClase4,
+                                            idCategoriaPeligro4=$idCategoria4,
+                                            idPalabraAdvertencia4=$idPalabraAdvertencia4,
+                                            idIndicacion4=$idIndicacion4,
+                                            idPictograma4=$idPictograma4,
+                                            idClasePeligro5=$idClase5,
+                                            idCategoriaPeligro5=$idCategoria5,
+                                            idPalabraAdvertencia5=$idPalabraAdvertencia5,
+                                            idIndicacion5=$idIndicacion5,
+                                            idPictograma5=$idPictograma5,
+                                            idClasePeligro6=$idClase6,
+                                            idCategoriaPeligro6=$idCategoria6,
+                                            idPalabraAdvertencia6=$idPalabraAdvertencia6,
+                                            idIndicacion6=$idIndicacion6,
+                                            idPictograma6=$idPictograma6,
+                                            idClasePeligro7=$idClase7,
+                                            idCategoriaPeligro7=$idCategoria7,
+                                            idPalabraAdvertencia7=$idPalabraAdvertencia7,
+                                            idIndicacion7=$idIndicacion7,
+                                            idPictograma7=$idPictograma7,
+                                            idClasePeligro8=$idClase8,
+                                            idCategoriaPeligro8=$idCategoria8,
+                                            idPalabraAdvertencia8=$idPalabraAdvertencia8,
+                                            idIndicacion8=$idIndicacion8,
+                                            idPictograma8=$idPictograma8,
+                                            idClasePeligro9=$idClase9,
+                                            idCategoriaPeligro9=$idCategoria9,
+                                            idPalabraAdvertencia9=$idPalabraAdvertencia9,
+                                            idIndicacion9=$idIndicacion9,
+                                            idPictograma9=$idPictograma9,
+                                            idClasePeligro10=$idClase10,
+                                            idCategoriaPeligro10=$idCategoria10,
+                                            idPalabraAdvertencia10=$idPalabraAdvertencia10,
+                                            idIndicacion10=$idIndicacion10,
+                                            idPictograma10=$idPictograma10
+                                            WHERE cas='$cas'";	
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
-            $consulta = "SELECT cedula, nombre, apellido1, apellido2, telefono, correo, nombretipoUsuario, wsNotif, nombreLugarTrabajo FROM usuarios
-                        inner join tipoUsuario on usuarios.idTipoUsuario=tipoUsuario.idTipoUsuario
-                        inner join empresa on usuarios.idEmpresa=empresa.idEmpresa
-                        inner join lugarTrabajo on usuarios.idLugarTrabajo=lugarTrabajo.idLugarTrabajo
-                        WHERE cedula='$newid'";
+            $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante
+                        FROM vista_productos_reducida
+                        WHERE cas='$newcas'
+                        ORDER BY cas DESC LIMIT 1";
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
             $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
             break;   
-        } else {
-            $consulta = "UPDATE usuarios SET cedula='$newid', nombre='$nombre', apellido1='$apellido1', apellido2='$apellido2', pass='$pass', telefono='$telefono', correo='$correo', idTipoUsuario='$idTipoUsuario', wsNotif='$wsNotif', idLugarTrabajo='$idLugarTrabajo' WHERE cedula='$id'";		
-            $resultado = $conexion->prepare($consulta);
-            $resultado->execute();
-            
-            $consulta = "SELECT cedula, nombre, apellido1, apellido2, telefono, correo, nombretipoUsuario, wsNotif, nombreLugarTrabajo FROM usuarios
-                        inner join tipoUsuario on usuarios.idTipoUsuario=tipoUsuario.idTipoUsuario
-                        inner join empresa on usuarios.idEmpresa=empresa.idEmpresa
-                        inner join lugarTrabajo on usuarios.idLugarTrabajo=lugarTrabajo.idLugarTrabajo
-                        WHERE cedula='$newid'";
-            $resultado = $conexion->prepare($consulta);
-            $resultado->execute();
-            $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-            break;   
-        }
     case 3://baja
         $consulta = "DELETE FROM producto WHERE cas='$cas'";		
         $resultado = $conexion->prepare($consulta);

@@ -82,8 +82,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="cas" class="col-form-label">CAS: *</label>
-                    <input type="text" class="form-control" id="cas" required>
+                    <label for="newcas" class="col-form-label">CAS: *</label>
+                    <input type="text" class="form-control" id="newcas" required>
                 </div>
 
                 <div class="form-group">

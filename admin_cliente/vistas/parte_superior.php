@@ -96,7 +96,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Panel de Administración
+                Panel de Usuario
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -105,12 +105,12 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Productos</span>
+                    <span>Opciones</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Administración:</h6>
-                        <a class="collapse-item" href="productos.php">Lista de Productos</a>
+                        <h6 class="collapse-header">Administrar:</h6>
+                        <a class="collapse-item" href="productos.php">Productos</a>
                     </div>
                 </div>
             </li>  
@@ -128,18 +128,18 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Usuarios</span>
+                    <span>Administración</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Administración:</h6>
-                        <a class="collapse-item" href="usuarios.php">Lista de Usuarios</a>
+                        <h6 class="collapse-header">Administrar:</h6>
+                        <a class="collapse-item" href="empresas.php">Empresas</a>
+                        <a class="collapse-item" href="paises.php">Países</a>
+                        <a class="collapse-item" href="usuarios.php">Usuarios</a>
                     </div>
                 </div>
             </li>
-
-
 
             <!-- Heading -->
             <!-- <div class="sidebar-heading">

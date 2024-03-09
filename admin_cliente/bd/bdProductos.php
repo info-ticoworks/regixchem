@@ -18,6 +18,8 @@ $idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
 $idPalabraAdvertencia1 = (isset($_POST['idPalabraAdvertencia1'])) ? $_POST['idPalabraAdvertencia1'] : '';
 $idIndicacion1 = (isset($_POST['idIndicacion1'])) ? $_POST['idIndicacion1'] : '';
 $idPictograma1 = (isset($_POST['idPictograma1'])) ? $_POST['idPictograma1'] : '';
+$nivel1 = (isset($_POST['nivel1'])) ? $_POST['nivel1'] : '';
+$idUnidad1 = (isset($_POST['idUnidad1'])) ? $_POST['idUnidad1'] : '';
 
 $idClase2 = (isset($_POST['idClase2'])) ? $_POST['idClase2'] : '';
 $idCategoria2 = (isset($_POST['idCategoria2'])) ? $_POST['idCategoria2'] : '';
@@ -87,6 +89,8 @@ switch($opcion){
                                             idPalabraAdvertencia1,
                                             idIndicacion1,
                                             idPictograma1,
+                                            nivel1,
+                                            idUnidad1,
                                             idClasePeligro2,
                                             idCategoriaPeligro2,
                                             idPalabraAdvertencia2,
@@ -142,6 +146,8 @@ switch($opcion){
                                             $idPalabraAdvertencia1,
                                             $idIndicacion1,
                                             $idPictograma1,
+                                            $nivel1,
+                                            $idUnidad1,
                                             $idClase2,
                                             $idCategoria2,
                                             $idPalabraAdvertencia2,
@@ -208,6 +214,8 @@ switch($opcion){
                                             idPalabraAdvertencia1=$idPalabraAdvertencia1,
                                             idIndicacion1=$idIndicacion1,
                                             idPictograma1=$idPictograma1,
+                                            nivel1=$nivel1,
+                                            idUnidad1=$idUnidad1,
                                             idClasePeligro2=$idClase2,
                                             idCategoriaPeligro2=$idCategoria2,
                                             idPalabraAdvertencia2=$idPalabraAdvertencia2,

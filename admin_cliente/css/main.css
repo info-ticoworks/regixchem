@@ -41,7 +41,33 @@ td.highlight {
 }
 
 .clase-box-titulo {
-    font-size: 25px;
+    font-size: 30px;
+}
+
+.cont_cat{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.cat_select {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.cont_nivel{
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cont_nivel.p{
+    height: 100%;
+    font-size: 20px;
+    margin-left: 5px;
+    align-items: center;
 }
 
 .btnAddClase {

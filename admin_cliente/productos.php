@@ -142,7 +142,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         <div class="form-group">
                             <label for="nombreClase1" class="col-form-label">Clase de Peligro: *</label>
-                            <select class="form-control" id="nombreClase1">
+                            <select class="form-control" id="nombreClase1" disabled>
                                 <option selected disabled value="">Elija una clase de peligro.</option>
                                 <?php
                                     $consulta = "SELECT DISTINCT idClasePeligro, nombreClasePeligro FROM vista_categoria_peligro
@@ -156,11 +156,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria1' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria1' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria1' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria1' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad1">
+                                <div class="form-group">
+                                    <label for="nivel1" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel1" disabled>
+                                        <p class="cont_nivel p" id="unidad1">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia1' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -199,11 +212,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria2' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria2' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria2' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria2' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad2">
+                                <div class="form-group">
+                                    <label for="nivel2" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel2" disabled>
+                                        <p class="cont_nivel p" id="unidad2">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia2' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -242,11 +268,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria3' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria3' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria3' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria3' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad3">
+                                <div class="form-group">
+                                    <label for="nivel3" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel3" disabled>
+                                        <p class="cont_nivel p" id="unidad3">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia3' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -285,11 +324,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria4' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria4' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria4' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria4' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad4">
+                                <div class="form-group">
+                                    <label for="nivel4" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel4" disabled>
+                                        <p class="cont_nivel p" id="unidad4">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia4' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -328,11 +380,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria5' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria5' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria5' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria5' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad5">
+                                <div class="form-group">
+                                    <label for="nivel5" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel5" disabled>
+                                        <p class="cont_nivel p" id="unidad5">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia5' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -371,11 +436,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria6' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria6' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria6' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria6' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad6">
+                                <div class="form-group">
+                                    <label for="nivel6" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel6" disabled>
+                                        <p class="cont_nivel p" id="unidad6">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia6' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -414,11 +492,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria7' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria7' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria7' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria7' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad7">
+                                <div class="form-group">
+                                    <label for="nivel7" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel7" disabled>
+                                        <p class="cont_nivel p" id="unidad7">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia7' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -457,11 +548,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria8' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria8' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria8' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria8' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad8">
+                                <div class="form-group">
+                                    <label for="nivel8" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel8" disabled>
+                                        <p class="cont_nivel p" id="unidad8">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia8' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -500,11 +604,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria9' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria9' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria9' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria9' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad9">
+                                <div class="form-group">
+                                    <label for="nivel9" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel9" disabled>
+                                        <p class="cont_nivel p" id="unidad9">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia9' class='col-form-label'>Palabra de Advertencia: *</label>
@@ -543,11 +660,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-        		            <label for='nombreCategoria10' class='col-form-label'>Categoría de Peligro: *</label>
-        		            <select class='form-control' id='nombreCategoria10' disabled>
-				            <option selected disabled value="">Elija una categoría de peligro.</option>
-                            </select>
+                        <div class="cont_cat">
+                            <div class="cat_select">
+                                <div class="form-group">
+        		                    <label for='nombreCategoria10' class='col-form-label'>Categoría de Peligro: *</label>
+        		                    <select class='form-control' id='nombreCategoria10' disabled>
+				                    <option selected disabled value="">Elija una categoría de peligro.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="toxicidad10">
+                                <div class="form-group">
+                                    <label for="nivel10" class="col-form-label">Toxicidad: *</label>
+                                    <div class="cont_nivel">
+                                        <input type="number" class="form-control" id="nivel10" disabled>
+                                        <p class="cont_nivel p" id="unidad10">N/A</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
         		            <label for='nombrePalabraAdvertencia10' class='col-form-label'>Palabra de Advertencia: *</label>

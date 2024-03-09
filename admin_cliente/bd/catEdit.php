@@ -11,4 +11,4 @@ $cat=$_POST['cat'];
 	while ($ver=mysqli_fetch_row($result)) {
 		$cadena=$cadena.'<option value='.$ver[0].'>'.($ver[1]).'</option>';
 	}
-	echo  $cadena."";
+	echo  $cadena;

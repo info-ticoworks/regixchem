@@ -12,4 +12,3 @@ $pict=$_POST['pict'];
 	$idPict = intval($ver[0]);
 
 	echo $idPict;
-?>

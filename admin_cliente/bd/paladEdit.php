@@ -12,4 +12,3 @@ $palad=$_POST['palad'];
 		$cadena=$cadena.'<option value='.$ver[0].'>'.($ver[1]).'</option>';
 	}
 	echo  $cadena."";
-?>

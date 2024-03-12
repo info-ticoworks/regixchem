@@ -1868,7 +1868,7 @@ $(document).ready(function () {
     function cargarCategoria1Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase1,
             success: function (r) {
                 $('#nombreCategoria1').html(r);
@@ -1879,7 +1879,7 @@ $(document).ready(function () {
     function cargarCategoria2Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase2,
             success: function (r) {
                 $('#nombreCategoria2').html(r);
@@ -1890,7 +1890,7 @@ $(document).ready(function () {
     function cargarCategoria3Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase3,
             success: function (r) {
                 $('#nombreCategoria3').html(r);
@@ -1901,7 +1901,7 @@ $(document).ready(function () {
     function cargarCategoria4Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase4,
             success: function (r) {
                 $('#nombreCategoria4').html(r);
@@ -1912,7 +1912,7 @@ $(document).ready(function () {
     function cargarCategoria5Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase5,
             success: function (r) {
                 $('#nombreCategoria5').html(r);
@@ -1923,7 +1923,7 @@ $(document).ready(function () {
     function cargarCategoria6Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase6,
             success: function (r) {
                 $('#nombreCategoria6').html(r);
@@ -1934,7 +1934,7 @@ $(document).ready(function () {
     function cargarCategoria7Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase7,
             success: function (r) {
                 $('#nombreCategoria7').html(r);
@@ -1945,7 +1945,7 @@ $(document).ready(function () {
     function cargarCategoria8Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase8,
             success: function (r) {
                 $('#nombreCategoria8').html(r);
@@ -1956,7 +1956,7 @@ $(document).ready(function () {
     function cargarCategoria9Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase9,
             success: function (r) {
                 $('#nombreCategoria9').html(r);
@@ -1967,7 +1967,7 @@ $(document).ready(function () {
     function cargarCategoria10Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/catEdit.php",
+            url: "bd/cat.php",
             data: "cat=" + loaded_idClase10,
             success: function (r) {
                 $('#nombreCategoria10').html(r);
@@ -1980,7 +1980,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia1Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase1,
             success: function (r) {
                 $('#nombrePalabraAdvertencia1').html(r);
@@ -1991,7 +1991,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia2Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase2,
             success: function (r) {
                 $('#nombrePalabraAdvertencia2').html(r);
@@ -2002,7 +2002,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia3Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase3,
             success: function (r) {
                 $('#nombrePalabraAdvertencia3').html(r);
@@ -2013,7 +2013,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia4Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase4,
             success: function (r) {
                 $('#nombrePalabraAdvertencia4').html(r);
@@ -2024,7 +2024,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia5Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase5,
             success: function (r) {
                 $('#nombrePalabraAdvertencia5').html(r);
@@ -2035,7 +2035,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia6Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase6,
             success: function (r) {
                 $('#nombrePalabraAdvertencia6').html(r);
@@ -2046,7 +2046,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia7Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase7,
             success: function (r) {
                 $('#nombrePalabraAdvertencia7').html(r);
@@ -2057,7 +2057,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia8Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase8,
             success: function (r) {
                 $('#nombrePalabraAdvertencia8').html(r);
@@ -2068,7 +2068,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia9Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase9,
             success: function (r) {
                 $('#nombrePalabraAdvertencia9').html(r);
@@ -2079,7 +2079,7 @@ $(document).ready(function () {
     function cargarPalabraAdvertencia10Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/paladEdit.php",
+            url: "bd/palad.php",
             data: "palad=" + loaded_idClase10,
             success: function (r) {
                 $('#nombrePalabraAdvertencia10').html(r);
@@ -2204,7 +2204,7 @@ $(document).ready(function () {
     function cargarIndicacion1Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase1,
             success: function (r) {
                 $('#nombreIndicacion1').html(r);
@@ -2215,7 +2215,7 @@ $(document).ready(function () {
     function cargarIndicacion2Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase2,
             success: function (r) {
                 $('#nombreIndicacion2').html(r);
@@ -2226,7 +2226,7 @@ $(document).ready(function () {
     function cargarIndicacion3Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase3,
             success: function (r) {
                 $('#nombreIndicacion3').html(r);
@@ -2237,7 +2237,7 @@ $(document).ready(function () {
     function cargarIndicacion4Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase4,
             success: function (r) {
                 $('#nombreIndicacion4').html(r);
@@ -2248,7 +2248,7 @@ $(document).ready(function () {
     function cargarIndicacion5Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase5,
             success: function (r) {
                 $('#nombreIndicacion5').html(r);
@@ -2259,7 +2259,7 @@ $(document).ready(function () {
     function cargarIndicacion6Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase6,
             success: function (r) {
                 $('#nombreIndicacion6').html(r);
@@ -2270,7 +2270,7 @@ $(document).ready(function () {
     function cargarIndicacion7Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase7,
             success: function (r) {
                 $('#nombreIndicacion7').html(r);
@@ -2281,7 +2281,7 @@ $(document).ready(function () {
     function cargarIndicacion8Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase8,
             success: function (r) {
                 $('#nombreIndicacion8').html(r);
@@ -2292,7 +2292,7 @@ $(document).ready(function () {
     function cargarIndicacion9Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase9,
             success: function (r) {
                 $('#nombreIndicacion9').html(r);
@@ -2303,7 +2303,7 @@ $(document).ready(function () {
     function cargarIndicacion10Edit() {
         $.ajax({
             type: "POST",
-            url: "bd/indEdit.php",
+            url: "bd/ind.php",
             data: "ind=" + loaded_idClase10,
             success: function (r) {
                 $('#nombreIndicacion10').html(r);
@@ -2832,8 +2832,7 @@ $(document).ready(function () {
     var fila; //Capturar la fila para editar o borrar el registro
 
     //Botón Editar Producto    
-    $(document).on("click", ".btnEditarProducto", function () {
-        
+    $(document).on("click", ".btnEditarProducto", function () {  
         hideClases();
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
@@ -2863,7 +2862,7 @@ $(document).ready(function () {
                 loaded_idCategoria1 = product_loaded[0].idCategoriaPeligro1;
                 loaded_nombreCategoria1 = product_loaded[0].nombreCategoriaPeligro1;
                 loaded_idPalabraAdvertencia1 = product_loaded[0].idPalabraAdvertencia1;
-                loaded_palabraAdvertencia1 = product_loaded[0].nombrePalabraAdvertencia1;
+                loaded_nombrePalabraAdvertencia1 = product_loaded[0].nombrePalabraAdvertencia1;
                 loaded_idIndicacion1 = product_loaded[0].idIndicacion1;
                 loaded_nombreIndicacion1 = product_loaded[0].nombreIndicacion1;
                 loaded_idPictograma1 = product_loaded[0].idPictograma1;
@@ -2875,7 +2874,7 @@ $(document).ready(function () {
                 loaded_idCategoria2 = product_loaded[0].idCategoriaPeligro2;
                 loaded_nombreCategoria2 = product_loaded[0].nombreCategoriaPeligro2;
                 loaded_idPalabraAdvertencia2 = product_loaded[0].idPalabraAdvertencia2;
-                loaded_palabraAdvertencia2 = product_loaded[0].nombrePalabraAdvertencia2;
+                loaded_nombrePalabraAdvertencia2 = product_loaded[0].nombrePalabraAdvertencia2;
                 loaded_idIndicacion2 = product_loaded[0].idIndicacion2;
                 loaded_nombreIndicacion2 = product_loaded[0].nombreIndicacion2;
                 loaded_idPictograma2 = product_loaded[0].idPictograma2;
@@ -2887,7 +2886,7 @@ $(document).ready(function () {
                 loaded_idCategoria3 = product_loaded[0].idCategoriaPeligro3;
                 loaded_nombreCategoria3 = product_loaded[0].nombreCategoriaPeligro3;
                 loaded_idPalabraAdvertencia3 = product_loaded[0].idPalabraAdvertencia3;
-                loaded_palabraAdvertencia3 = product_loaded[0].nombrePalabraAdvertencia3;
+                loaded_nombrePalabraAdvertencia3 = product_loaded[0].nombrePalabraAdvertencia3;
                 loaded_idIndicacion3 = product_loaded[0].idIndicacion3;
                 loaded_nombreIndicacion3 = product_loaded[0].nombreIndicacion3;
                 loaded_idPictograma3 = product_loaded[0].idPictograma3;
@@ -2899,7 +2898,7 @@ $(document).ready(function () {
                 loaded_idCategoria4 = product_loaded[0].idCategoriaPeligro4;
                 loaded_nombreCategoria4 = product_loaded[0].nombreCategoriaPeligro4;
                 loaded_idPalabraAdvertencia4 = product_loaded[0].idPalabraAdvertencia4;
-                loaded_palabraAdvertencia4 = product_loaded[0].nombrePalabraAdvertencia4;
+                loaded_nombrePalabraAdvertencia4 = product_loaded[0].nombrePalabraAdvertencia4;
                 loaded_idIndicacion4 = product_loaded[0].idIndicacion4;
                 loaded_nombreIndicacion4 = product_loaded[0].nombreIndicacion4;
                 loaded_idPictograma4 = product_loaded[0].idPictograma4;
@@ -2911,7 +2910,7 @@ $(document).ready(function () {
                 loaded_idCategoria5 = product_loaded[0].idCategoriaPeligro5;
                 loaded_nombreCategoria5 = product_loaded[0].nombreCategoriaPeligro5;
                 loaded_idPalabraAdvertencia5 = product_loaded[0].idPalabraAdvertencia5;
-                loaded_palabraAdvertencia5 = product_loaded[0].nombrePalabraAdvertencia5;
+                loaded_nombrePalabraAdvertencia5 = product_loaded[0].nombrePalabraAdvertencia5;
                 loaded_idIndicacion5 = product_loaded[0].idIndicacion5;
                 loaded_nombreIndicacion5 = product_loaded[0].nombreIndicacion5;
                 loaded_idPictograma5 = product_loaded[0].idPictograma5;
@@ -2923,7 +2922,7 @@ $(document).ready(function () {
                 loaded_idCategoria6 = product_loaded[0].idCategoriaPeligro6;
                 loaded_nombreCategoria6 = product_loaded[0].nombreCategoriaPeligro6;
                 loaded_idPalabraAdvertencia6 = product_loaded[0].idPalabraAdvertencia6;
-                loaded_palabraAdvertencia6 = product_loaded[0].nombrePalabraAdvertencia6;
+                loaded_nombrePalabraAdvertencia6 = product_loaded[0].nombrePalabraAdvertencia6;
                 loaded_idIndicacion6 = product_loaded[0].idIndicacion6;
                 loaded_nombreIndicacion6 = product_loaded[0].nombreIndicacion6;
                 loaded_idPictograma6 = product_loaded[0].idPictograma6;
@@ -2935,7 +2934,7 @@ $(document).ready(function () {
                 loaded_idCategoria7 = product_loaded[0].idCategoriaPeligro7;
                 loaded_nombreCategoria7 = product_loaded[0].nombreCategoriaPeligro7;
                 loaded_idPalabraAdvertencia7 = product_loaded[0].idPalabraAdvertencia7;
-                loaded_palabraAdvertencia7 = product_loaded[0].nombrePalabraAdvertencia7;
+                loaded_nombrePalabraAdvertencia7 = product_loaded[0].nombrePalabraAdvertencia7;
                 loaded_idIndicacion7 = product_loaded[0].idIndicacion7;
                 loaded_nombreIndicacion7 = product_loaded[0].nombreIndicacion7;
                 loaded_idPictograma7 = product_loaded[0].idPictograma7;
@@ -2947,7 +2946,7 @@ $(document).ready(function () {
                 loaded_idCategoria8 = product_loaded[0].idCategoriaPeligro8;
                 loaded_nombreCategoria8 = product_loaded[0].nombreCategoriaPeligro8;
                 loaded_idPalabraAdvertencia8 = product_loaded[0].idPalabraAdvertencia8;
-                loaded_palabraAdvertencia8 = product_loaded[0].nombrePalabraAdvertencia8;
+                loaded_nombrePalabraAdvertencia8 = product_loaded[0].nombrePalabraAdvertencia8;
                 loaded_idIndicacion8 = product_loaded[0].idIndicacion8;
                 loaded_nombreIndicacion8 = product_loaded[0].nombreIndicacion8;
                 loaded_idPictograma8 = product_loaded[0].idPictograma8;
@@ -2959,7 +2958,7 @@ $(document).ready(function () {
                 loaded_idCategoria9 = product_loaded[0].idCategoriaPeligro9;
                 loaded_nombreCategoria9 = product_loaded[0].nombreCategoriaPeligro9;
                 loaded_idPalabraAdvertencia9 = product_loaded[0].idPalabraAdvertencia9;
-                loaded_palabraAdvertencia9 = product_loaded[0].nombrePalabraAdvertencia9;
+                loaded_nombrePalabraAdvertencia9 = product_loaded[0].nombrePalabraAdvertencia9;
                 loaded_idIndicacion9 = product_loaded[0].idIndicacion9;
                 loaded_nombreIndicacion9 = product_loaded[0].nombreIndicacion9;
                 loaded_idPictograma9 = product_loaded[0].idPictograma9;
@@ -2971,7 +2970,7 @@ $(document).ready(function () {
                 loaded_idCategoria10 = product_loaded[0].idCategoriaPeligro10;
                 loaded_nombreCategoria10 = product_loaded[0].nombreCategoriaPeligro10;
                 loaded_idPalabraAdvertencia10 = product_loaded[0].idPalabraAdvertencia10;
-                loaded_palabraAdvertencia10 = product_loaded[0].nombrePalabraAdvertencia10;
+                loaded_nombrePalabraAdvertencia10 = product_loaded[0].nombrePalabraAdvertencia10;
                 loaded_idIndicacion10 = product_loaded[0].idIndicacion10;
                 loaded_nombreIndicacion10 = product_loaded[0].nombreIndicacion10;
                 loaded_idPictograma10 = product_loaded[0].idPictograma10;
@@ -2985,54 +2984,125 @@ $(document).ready(function () {
                 console.log('Fabricante: ', loaded_nombreFabricante);
                 console.log('Clase 1: ', loaded_nombreClase1);
                 console.log('Categoría 1: ', loaded_nombreCategoria1);
-                console.log('Palabra de Advertencia 1: ', loaded_palabraAdvertencia1);
+                console.log('Palabra de Advertencia 1: ', loaded_idPalabraAdvertencia1);
                 console.log('Indicación 1: ', loaded_idIndicacion1);
                 console.log('ID Pictograma 1: ', loaded_idPictograma1);
                 console.log('Clase 2: ', loaded_nombreClase2);
                 console.log('Categoría 2: ', loaded_nombreCategoria2);
-                console.log('Palabra de Advertencia 2: ', loaded_palabraAdvertencia2);
+                console.log('Palabra de Advertencia 2: ', loaded_idPalabraAdvertencia2);
                 console.log('Indicación 2: ', loaded_nombreIndicacion2);
                 console.log('ID Pictograma 2: ', loaded_idPictograma2);
                 console.log('Clase 3: ', loaded_nombreClase3);
                 console.log('Categoría 3: ', loaded_nombreCategoria3);
-                console.log('Palabra de Advertencia 3: ', loaded_palabraAdvertencia3);
+                console.log('Palabra de Advertencia 3: ', loaded_idPalabraAdvertencia3);
                 console.log('Indicación 3: ', loaded_nombreIndicacion3);
                 console.log('ID Pictograma 3: ', loaded_idPictograma3);
                 console.log('Clase 4: ', loaded_nombreClase4);
                 console.log('Categoría 4: ', loaded_nombreCategoria4);
-                console.log('Palabra de Advertencia 4: ', loaded_palabraAdvertencia4);
+                console.log('Palabra de Advertencia 4: ', loaded_idPalabraAdvertencia4);
                 console.log('Indicación 4: ', loaded_nombreIndicacion4);
                 console.log('ID Pictograma 4: ', loaded_idPictograma4);
                 console.log('Clase 5: ', loaded_nombreClase5);
                 console.log('Categoría 5: ', loaded_nombreCategoria5);
-                console.log('Palabra de Advertencia 5: ', loaded_palabraAdvertencia5);
+                console.log('Palabra de Advertencia 5: ', loaded_idPalabraAdvertencia5);
                 console.log('Indicación 5: ', loaded_nombreIndicacion5);
                 console.log('ID Pictograma 5: ', loaded_idPictograma5);
                 console.log('Clase 6: ', loaded_nombreClase6);
                 console.log('Categoría 6: ', loaded_nombreCategoria6);
-                console.log('Palabra de Advertencia 6: ', loaded_palabraAdvertencia6);
+                console.log('Palabra de Advertencia 6: ', loaded_idPalabraAdvertencia6);
                 console.log('Indicación 6: ', loaded_nombreIndicacion6);
                 console.log('ID Pictograma 6: ', loaded_idPictograma6);
                 console.log('Clase 7: ', loaded_nombreClase7);
                 console.log('Categoría 7: ', loaded_nombreCategoria7);
-                console.log('Palabra de Advertencia 7: ', loaded_palabraAdvertencia7);
+                console.log('Palabra de Advertencia 7: ', loaded_idPalabraAdvertencia7);
                 console.log('Indicación 7: ', loaded_nombreIndicacion7);
                 console.log('ID Pictograma 7: ', loaded_idPictograma7);
                 console.log('Clase 8: ', loaded_nombreClase8);
                 console.log('Categoría 8: ', loaded_nombreCategoria8);
-                console.log('Palabra de Advertencia 8: ', loaded_palabraAdvertencia8);
+                console.log('Palabra de Advertencia 8: ', loaded_idPalabraAdvertencia8);
                 console.log('Indicación 8: ', loaded_nombreIndicacion8);
                 console.log('ID Pictograma 8: ', loaded_idPictograma8);
                 console.log('Clase 9: ', loaded_nombreClase9);
                 console.log('Categoría 9: ', loaded_nombreCategoria9);
-                console.log('Palabra de Advertencia 9: ', loaded_palabraAdvertencia9);
+                console.log('Palabra de Advertencia 9: ', loaded_idPalabraAdvertencia9);
                 console.log('Indicación 9: ', loaded_nombreIndicacion9);
                 console.log('ID Pictograma 9: ', loaded_idPictograma9);
                 console.log('Clase 10: ', loaded_nombreClase10);
                 console.log('Categoría 10: ', loaded_nombreCategoria10);
-                console.log('Palabra de Advertencia 10: ', loaded_palabraAdvertencia10);
+                console.log('Palabra de Advertencia 10: ', loaded_idPalabraAdvertencia10);
                 console.log('Indicación 10: ', loaded_nombreIndicacion10);
                 console.log('ID Pictograma 10: ', loaded_idPictograma10);
+
+                loading_timer = 1000;
+                more_time = 250;
+
+                if (loaded_nombreClase1 != null) {
+                    loading_timer = loading_timer + more_time;
+                } else {
+                    loading_timer = 400;
+                }
+
+                if (loaded_nombreClase2 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase3 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase4 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase5 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase6 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase7 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase8 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase9 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+
+                if (loaded_nombreClase10 != null) {
+                    loading_timer = loading_timer + more_time;
+                }
+                Swal.fire({
+                  title: "Cargando Información!",
+                  html: "Por favor espere.",
+                  timer: loading_timer,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = loading_timer
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval);
+                  }
+                }).then((result) => {
+                  /* Read more about handling dismissals below */
+                  if (result.dismiss === Swal.DismissReason.timer) {
+                    //console.log("I was closed by the timer");
+                  }
+                });
+
+
+
+
+
+
+
 
                 $("#newcas").val(loaded_cas);
                 $("#nombreProducto").val(loaded_nombreProducto);

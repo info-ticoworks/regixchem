@@ -165,11 +165,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad1">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel1" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel1" disabled>
+                                        <input type="number" class="form-control" style="width:150px" id="nivel1" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad1">N/A</p>
                                     </div>
                                 </div>
@@ -221,11 +221,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad2">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel2" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel2" disabled>
+                                        <input type="number" class="form-control" id="nivel2" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad2">N/A</p>
                                     </div>
                                 </div>
@@ -277,11 +277,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad3">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel3" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel3" disabled>
+                                        <input type="number" class="form-control" id="nivel3" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad3">N/A</p>
                                     </div>
                                 </div>
@@ -333,11 +333,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad4">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel4" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel4" disabled>
+                                        <input type="number" class="form-control" id="nivel4" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad4">N/A</p>
                                     </div>
                                 </div>
@@ -389,11 +389,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad5">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel5" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel5" disabled>
+                                        <input type="number" class="form-control" id="nivel5" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad5">N/A</p>
                                     </div>
                                 </div>
@@ -445,11 +445,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad6">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel6" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel6" disabled>
+                                        <input type="number" class="form-control" id="nivel6" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad6">N/A</p>
                                     </div>
                                 </div>
@@ -501,11 +501,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad7">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel7" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel7" disabled>
+                                        <input type="number" class="form-control" id="nivel7" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad7">N/A</p>
                                     </div>
                                 </div>
@@ -557,11 +557,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad8">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel8" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel8" disabled>
+                                        <input type="number" class="form-control" id="nivel8" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad8">N/A</p>
                                     </div>
                                 </div>
@@ -613,11 +613,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad9">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel9" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel9" disabled>
+                                        <input type="number" class="form-control" id="nivel9" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad9">N/A</p>
                                     </div>
                                 </div>
@@ -669,11 +669,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </select>
                                 </div>
                             </div>
-                            <div class="toxicidad10">
+                            <div class="toxicidad">
                                 <div class="form-group">
                                     <label for="nivel10" class="col-form-label">Toxicidad: *</label>
                                     <div class="cont_nivel">
-                                        <input type="number" class="form-control" id="nivel10" disabled>
+                                        <input type="number" class="form-control" id="nivel10" min="0" max="9999.99"  step="0.01" disabled>
                                         <p class="cont_nivel p" id="unidad10">N/A</p>
                                     </div>
                                 </div>

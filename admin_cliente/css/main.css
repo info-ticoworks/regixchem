@@ -51,8 +51,12 @@ td.highlight {
 }
 
 .cat_select {
-    width: 100%;
-    margin-right: 10px;
+    width: 75%;
+    margin-right: 15px;
+}
+
+.toxicidad {
+    width: 25%;
 }
 
 .cont_nivel{
@@ -64,9 +68,10 @@ td.highlight {
 }
 
 .cont_nivel.p{
+    width: 100%;
     height: 100%;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
     align-items: center;
 }
 

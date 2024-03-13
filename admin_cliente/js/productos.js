@@ -19,17 +19,23 @@ $(document).ready(function () {
         $('#nombreIndicacion1').prop('selectedIndex', 0);
         $('#nombreIndicacion1').prop('disabled', 'disabled');
         $('#nombreIndicacion1').removeAttr('required');
+        $('#unidad1').html("N/A");
+        $('#nivel1').removeAttr('required');
+        $('#nivel1').attr("disabled", "disabled");
+        $('#nivel1').val('');
         $('#clase1').hide();
         idClase1 = 0;
         idCategoria1 = 0;
         idPalabraAdvertencia1 = 0;
         idIndicacion1 = 0;
         idPictograma1 = 0;
-        console.log(idClase1);
-        console.log(idCategoria1);
-        console.log(idPalabraAdvertencia1);
-        console.log(idIndicacion1);
-        console.log(idPictograma1);
+        nivel1 = 'null';
+        idUnidad1 = 'null';
+        // console.log(idClase1);
+        // console.log(idCategoria1);
+        // console.log(idPalabraAdvertencia1);
+        // console.log(idIndicacion1);
+        // console.log(idPictograma1);
     }
 
     function hideClase2() {
@@ -47,8 +53,18 @@ $(document).ready(function () {
         $('#nombreIndicacion2').prop('selectedIndex', 0);
         $('#nombreIndicacion2').prop('disabled', 'disabled');
         $('#nombreIndicacion2').removeAttr('required');
+        $('#unidad2').html("N/A");
+        $('#nivel2').removeAttr('required');
+        $('#nivel2').attr("disabled", "disabled");
+        $('#nivel2').val('');
         $('#clase2').hide();
-        $idPictograma2 = 0;
+        idClase2 = 0;
+        idCategoria2 = 0;
+        idPalabraAdvertencia2 = 0;
+        idIndicacion2 = 0;
+        idPictograma2 = 0;
+        nivel2 = 'null';
+        idUnidad2 = 'null';
     }
 
     function hideClase3() {
@@ -66,8 +82,18 @@ $(document).ready(function () {
         $('#nombreIndicacion3').prop('selectedIndex', 0);
         $('#nombreIndicacion3').prop('disabled', 'disabled');
         $('#nombreIndicacion3').removeAttr('required');
+        $('#unidad3').html("N/A");
+        $('#nivel3').removeAttr('required');
+        $('#nivel3').attr("disabled", "disabled");
+        $('#nivel3').val('');
         $('#clase3').hide();
-        $idPictograma3 = 0;
+        idClase3 = 0;
+        idCategoria3 = 0;
+        idPalabraAdvertencia3 = 0;
+        idIndicacion3 = 0;
+        idPictograma3 = 0;
+        nivel3 = 'null';
+        idUnidad3 = 'null';
     }
 
     function hideClase4() {
@@ -85,8 +111,18 @@ $(document).ready(function () {
         $('#nombreIndicacion4').prop('selectedIndex', 0);
         $('#nombreIndicacion4').prop('disabled', 'disabled');
         $('#nombreIndicacion4').removeAttr('required');
+        $('#unidad4').html("N/A");
+        $('#nivel4').removeAttr('required');
+        $('#nivel4').attr("disabled", "disabled");
+        $('#nivel4').val('');
         $('#clase4').hide();
-        $idPictograma4 = 0;
+        idClase4 = 0;
+        idCategoria4 = 0;
+        idPalabraAdvertencia4 = 0;
+        idIndicacion4 = 0;
+        idPictograma4 = 0;
+        nivel4 = 'null';
+        idUnidad4 = 'null';
     }
 
     function hideClase5() {
@@ -104,8 +140,18 @@ $(document).ready(function () {
         $('#nombreIndicacion5').prop('selectedIndex', 0);
         $('#nombreIndicacion5').prop('disabled', 'disabled');
         $('#nombreIndicacion5').removeAttr('required');
+        $('#unidad5').html("N/A");
+        $('#nivel5').removeAttr('required');
+        $('#nivel5').attr("disabled", "disabled");
+        $('#nivel5').val('');
         $('#clase5').hide();
-        $idPictograma5 = 0;
+        idClase5 = 0;
+        idCategoria5 = 0;
+        idPalabraAdvertencia5 = 0;
+        idIndicacion5 = 0;
+        idPictograma5 = 0;
+        nivel5 = 'null';
+        idUnidad5 = 'null';
     }
 
     function hideClase6() {
@@ -123,8 +169,18 @@ $(document).ready(function () {
         $('#nombreIndicacion6').prop('selectedIndex', 0);
         $('#nombreIndicacion6').prop('disabled', 'disabled');
         $('#nombreIndicacion6').removeAttr('required');
+        $('#unidad6').html("N/A");
+        $('#nivel6').removeAttr('required');
+        $('#nivel6').attr("disabled", "disabled");
+        $('#nivel6').val('');
         $('#clase6').hide();
-        $idPictograma6 = 0;
+        idClase6 = 0;
+        idCategoria6 = 0;
+        idPalabraAdvertencia6 = 0;
+        idIndicacion6 = 0;
+        idPictograma6 = 0;
+        nivel6 = 'null';
+        idUnidad6 = 'null';
     }
 
     function hideClase7() {
@@ -142,8 +198,18 @@ $(document).ready(function () {
         $('#nombreIndicacion7').prop('selectedIndex', 0);
         $('#nombreIndicacion7').prop('disabled', 'disabled');
         $('#nombreIndicacion7').removeAttr('required');
+        $('#unidad7').html("N/A");
+        $('#nivel7').removeAttr('required');
+        $('#nivel7').attr("disabled", "disabled");
+        $('#nivel7').val('');
         $('#clase7').hide();
-        $idPictograma7 = 0;
+        idClase7 = 0;
+        idCategoria7 = 0;
+        idPalabraAdvertencia7 = 0;
+        idIndicacion7 = 0;
+        idPictograma7 = 0;
+        nivel7 = 'null';
+        idUnidad7 = 'null';
     }
 
     function hideClase8() {
@@ -161,8 +227,18 @@ $(document).ready(function () {
         $('#nombreIndicacion8').prop('selectedIndex', 0);
         $('#nombreIndicacion8').prop('disabled', 'disabled');
         $('#nombreIndicacion8').removeAttr('required');
+        $('#unidad8').html("N/A");
+        $('#nivel8').removeAttr('required');
+        $('#nivel8').attr("disabled", "disabled");
+        $('#nivel8').val('');
         $('#clase8').hide();
-        $idPictograma8 = 0;
+        idClase8 = 0;
+        idCategoria8 = 0;
+        idPalabraAdvertencia8 = 0;
+        idIndicacion8 = 0;
+        idPictograma8 = 0;
+        nivel8 = 'null';
+        idUnidad8 = 'null';
     }
 
     function hideClase9() {
@@ -180,8 +256,18 @@ $(document).ready(function () {
         $('#nombreIndicacion9').prop('selectedIndex', 0);
         $('#nombreIndicacion9').prop('disabled', 'disabled');
         $('#nombreIndicacion9').removeAttr('required');
+        $('#unidad9').html("N/A");
+        $('#nivel9').removeAttr('required');
+        $('#nivel9').attr("disabled", "disabled");
+        $('#nivel9').val('');
         $('#clase9').hide();
-        $idPictograma9 = 0;
+        idClase9 = 0;
+        idCategoria9 = 0;
+        idPalabraAdvertencia9 = 0;
+        idIndicacion9 = 0;
+        idPictograma9 = 0;
+        nivel9 = 'null';
+        idUnidad9 = 'null';
     }
 
     function hideClase10() {
@@ -199,8 +285,18 @@ $(document).ready(function () {
         $('#nombreIndicacion10').prop('selectedIndex', 0);
         $('#nombreIndicacion10').prop('disabled', 'disabled');
         $('#nombreIndicacion10').removeAttr('required');
+        $('#unidad10').html("N/A");
+        $('#nivel10').removeAttr('required');
+        $('#nivel10').attr("disabled", "disabled");
+        $('#nivel10').val('');
         $('#clase10').hide();
-        $idPictograma10 = 0;
+        idClase10 = 0;
+        idCategoria10 = 0;
+        idPalabraAdvertencia10 = 0;
+        idIndicacion10 = 0;
+        idPictograma10 = 0;
+        nivel10 = 'null';
+        idUnidad10 = 'null';
     }
 
     function hideClases() {
@@ -443,6 +539,8 @@ $(document).ready(function () {
         idPalabraAdvertencia1 = 0;
         idIndicacion1 = 0;
         idPictograma1 = 0;
+        nivel1 = 'null';
+        idUnidad1 = 'null';
         // console.log(idClase1);
         // console.log(idCategoria1);
         // console.log(idPalabraAdvertencia1);
@@ -476,6 +574,8 @@ $(document).ready(function () {
         idPalabraAdvertencia2 = 0;
         idIndicacion2 = 0;
         idPictograma2 = 0;
+        nivel2 = 'null';
+        idUnidad2 = 'null';
         $('#btnEliminarClase1').show();
         $('#btnClase2').fadeIn(1000);
         $('#btnEliminarClase2').hide();
@@ -506,6 +606,8 @@ $(document).ready(function () {
         idPalabraAdvertencia3 = 0;
         idIndicacion3 = 0;
         idPictograma3 = 0;
+        nivel3 = 'null';
+        idUnidad3 = 'null';
         $('#btnEliminarClase2').show();
         $('#btnClase3').fadeIn(1000);
         $('#btnEliminarClase3').hide();
@@ -536,6 +638,8 @@ $(document).ready(function () {
         idPalabraAdvertencia4 = 0;
         idIndicacion4 = 0;
         idPictograma4 = 0;
+        nivel4 = 'null';
+        idUnidad4 = 'null';
         $('#btnEliminarClase3').show();
         $('#btnClase4').fadeIn(1000);
         $('#btnEliminarClase4').hide();
@@ -566,6 +670,8 @@ $(document).ready(function () {
         idPalabraAdvertencia5 = 0;
         idIndicacion5 = 0;
         idPictograma5 = 0;
+        nivel5 = 'null';
+        idUnidad5 = 'null';
         $('#btnEliminarClase4').show();
         $('#btnClase5').fadeIn(1000);
         $('#btnEliminarClase5').hide();
@@ -596,6 +702,8 @@ $(document).ready(function () {
         idPalabraAdvertencia6 = 0;
         idIndicacion6 = 0;
         idPictograma6 = 0;
+        nivel6 = 'null';
+        idUnidad6 = 'null';
         $('#btnEliminarClase5').show();
         $('#btnClase6').fadeIn(1000);
         $('#btnEliminarClase6').hide();
@@ -626,6 +734,8 @@ $(document).ready(function () {
         idPalabraAdvertencia7 = 0;
         idIndicacion7 = 0;
         idPictograma7 = 0;
+        nivel7 = 'null';
+        idUnidad7 = 'null';
         $('#btnEliminarClase6').show();
         $('#btnClase7').fadeIn(1000);
         $('#btnEliminarClase7').hide();
@@ -656,6 +766,8 @@ $(document).ready(function () {
         idPalabraAdvertencia8 = 0;
         idIndicacion8 = 0;
         idPictograma8 = 0;
+        nivel8 = 'null';
+        idUnidad8 = 'null';
         $('#btnEliminarClase7').show();
         $('#btnClase8').fadeIn(1000);
         $('#btnEliminarClase8').hide();
@@ -686,6 +798,8 @@ $(document).ready(function () {
         idPalabraAdvertencia9 = 0;
         idIndicacion9 = 0;
         idPictograma9 = 0;
+        nivel9 = 'null';
+        idUnidad9 = 'null';
         $('#btnEliminarClase8').show();
         $('#btnClase9').fadeIn(1000);
         $('#btnEliminarClase9').hide();
@@ -716,6 +830,8 @@ $(document).ready(function () {
         idPalabraAdvertencia10 = 0;
         idIndicacion10 = 0;
         idPictograma10 = 0;
+        nivel10 = 'null';
+        idUnidad10 = 'null';
         $('#btnEliminarClase9').show();
         $('#btnClase10').fadeIn(1000);
         $('#btnEliminarClase10').hide();
@@ -762,6 +878,8 @@ $(document).ready(function () {
         idPalabraAdvertencia1 = 0;
         idIndicacion1 = 0;
         idPictograma1 = 0;
+        nivel1 = 'null';
+        idUnidad1 = 'null';
         // console.log(idClase1);
         // console.log(idCategoria1);
         // console.log(idPalabraAdvertencia1);
@@ -795,6 +913,8 @@ $(document).ready(function () {
         idPalabraAdvertencia2 = 0;
         idIndicacion2 = 0;
         idPictograma2 = 0;
+        nivel2 = 'null';
+        idUnidad2 = 'null';
         $('#btnEliminarClase1').show();
         //$('#btnClase2').fadeIn(1000);
         $('#btnEliminarClase2').hide();
@@ -825,6 +945,8 @@ $(document).ready(function () {
         idPalabraAdvertencia3 = 0;
         idIndicacion3 = 0;
         idPictograma3 = 0;
+        nivel3 = 'null';
+        idUnidad3 = 'null';
         $('#btnEliminarClase2').show();
         //$('#btnClase3').fadeIn(1000);
         $('#btnEliminarClase3').hide();
@@ -855,6 +977,8 @@ $(document).ready(function () {
         idPalabraAdvertencia4 = 0;
         idIndicacion4 = 0;
         idPictograma4 = 0;
+        nivel4 = 'null';
+        idUnidad4 = 'null';
         $('#btnEliminarClase3').show();
         //$('#btnClase4').fadeIn(1000);
         $('#btnEliminarClase4').hide();
@@ -885,6 +1009,8 @@ $(document).ready(function () {
         idPalabraAdvertencia5 = 0;
         idIndicacion5 = 0;
         idPictograma5 = 0;
+        nivel5 = 'null';
+        idUnidad5 = 'null';
         $('#btnEliminarClase4').show();
         //$('#btnClase5').fadeIn(1000);
         $('#btnEliminarClase5').hide();
@@ -915,6 +1041,8 @@ $(document).ready(function () {
         idPalabraAdvertencia6 = 0;
         idIndicacion6 = 0;
         idPictograma6 = 0;
+        nivel6 = 'null';
+        idUnidad6 = 'null';
         $('#btnEliminarClase5').show();
         //$('#btnClase6').fadeIn(1000);
         $('#btnEliminarClase6').hide();
@@ -945,6 +1073,8 @@ $(document).ready(function () {
         idPalabraAdvertencia7 = 0;
         idIndicacion7 = 0;
         idPictograma7 = 0;
+        nivel7 = 'null';
+        idUnidad7 = 'null';
         $('#btnEliminarClase6').show();
         //$('#btnClase7').fadeIn(1000);
         $('#btnEliminarClase7').hide();
@@ -975,6 +1105,8 @@ $(document).ready(function () {
         idPalabraAdvertencia8 = 0;
         idIndicacion8 = 0;
         idPictograma8 = 0;
+        nivel8 = 'null';
+        idUnidad8 = 'null';
         $('#btnEliminarClase7').show();
         //$('#btnClase8').fadeIn(1000);
         $('#btnEliminarClase8').hide();
@@ -1005,6 +1137,8 @@ $(document).ready(function () {
         idPalabraAdvertencia9 = 0;
         idIndicacion9 = 0;
         idPictograma9 = 0;
+        nivel9 = 'null';
+        idUnidad9 = 'null';
         $('#btnEliminarClase8').show();
         //$('#btnClase9').fadeIn(1000);
         $('#btnEliminarClase9').hide();
@@ -1035,6 +1169,8 @@ $(document).ready(function () {
         idPalabraAdvertencia10 = 0;
         idIndicacion10 = 0;
         idPictograma10 = 0;
+        nivel10 = 'null';
+        idUnidad10 = 'null';
         $('#btnEliminarClase9').show();
         //$('#btnClase10').fadeIn(1000);
         $('#btnEliminarClase10').hide();
@@ -2771,7 +2907,7 @@ $(document).ready(function () {
     //Botón Nuevo Producto
     $("#btnNuevoProducto").click(function () {
         hideClases();
-        cas = ''
+        cas = 'null'
         $("#formProductos").trigger("reset");
         $("#clases").trigger("reset");
         $("#modalCRUD").trigger("reset");
@@ -3077,6 +3213,7 @@ $(document).ready(function () {
                 if (loaded_nombreClase10 != null) {
                     loading_timer = loading_timer + more_time;
                 }
+
                 Swal.fire({
                   title: "Cargando Información!",
                   html: "Por favor espere.",
@@ -3096,13 +3233,6 @@ $(document).ready(function () {
                     //console.log("I was closed by the timer");
                   }
                 });
-
-
-
-
-
-
-
 
                 $("#newcas").val(loaded_cas);
                 $("#nombreProducto").val(loaded_nombreProducto);
@@ -3164,7 +3294,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia1 = loaded_idPalabraAdvertencia1;
                         idIndicacion1 = loaded_idIndicacion1;
                         idPictograma1 = loaded_idPictograma1;
-                    }, 1000);
+                    }, 1500);
                 } else {
                     $('#btnClase1').show();
                     eliminarClase1();
@@ -3220,7 +3350,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia2 = loaded_idPalabraAdvertencia2;
                         idIndicacion2 = loaded_idIndicacion2;
                         idPictograma2 = loaded_idPictograma2;
-                    }, 1000);
+                    }, 1600);
                 } else {
                     //$('#btnClase2').show();
                     eliminarClase2();
@@ -3276,7 +3406,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia3 = loaded_idPalabraAdvertencia3;
                         idIndicacion3 = loaded_idIndicacion3;
                         idPictograma3 = loaded_idPictograma3;
-                    }, 1000);
+                    }, 1700);
                 } else {
                     //$('#btnClase3').show();
                     eliminarClase3();
@@ -3332,7 +3462,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia4 = loaded_idPalabraAdvertencia4;
                         idIndicacion4 = loaded_idIndicacion4;
                         idPictograma4 = loaded_idPictograma4;
-                    }, 1000);
+                    }, 1800);
                 } else {
                     //$('#btnClase4').show();
                     eliminarClase4();
@@ -3388,7 +3518,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia5 = loaded_idPalabraAdvertencia5;
                         idIndicacion5 = loaded_idIndicacion5;
                         idPictograma5 = loaded_idPictograma5;
-                    }, 1000);
+                    }, 1900);
                 } else {
                     //$('#btnClase5').show();
                     eliminarClase5();
@@ -3444,7 +3574,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia6 = loaded_idPalabraAdvertencia6;
                         idIndicacion6 = loaded_idIndicacion6;
                         idPictograma6 = loaded_idPictograma6;
-                    }, 1000);
+                    }, 2000);
                 } else {
                     //$('#btnClase6').show();
                     eliminarClase6();
@@ -3500,7 +3630,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia7 = loaded_idPalabraAdvertencia7;
                         idIndicacion7 = loaded_idIndicacion7;
                         idPictograma7 = loaded_idPictograma7;
-                    }, 1000);
+                    }, 2100);
                 } else {
                     //$('#btnClase7').show();
                     eliminarClase7();
@@ -3556,7 +3686,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia8 = loaded_idPalabraAdvertencia8;
                         idIndicacion8 = loaded_idIndicacion8;
                         idPictograma8 = loaded_idPictograma8;
-                    }, 1000);
+                    }, 2200);
                 } else {
                     //$('#btnClase8').show();
                     eliminarClase8();
@@ -3612,7 +3742,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia9 = loaded_idPalabraAdvertencia9;
                         idIndicacion9 = loaded_idIndicacion9;
                         idPictograma9 = loaded_idPictograma9;
-                    }, 1000);
+                    }, 2300);
                 } else {
                     //$('#btnClase9').show();
                     eliminarClase9();
@@ -3667,7 +3797,7 @@ $(document).ready(function () {
                         idPalabraAdvertencia10 = loaded_idPalabraAdvertencia10;
                         idIndicacion10 = loaded_idIndicacion10;
                         idPictograma10 = loaded_idPictograma10;
-                    }, 1000);
+                    }, 2400);
                 } else {
                     //$('#btnClase10').show();
                     eliminarClase10();
@@ -3825,6 +3955,12 @@ $(document).ready(function () {
             idPictograma2 = 'null';
         }
 
+        if (idUnidad2 != 'null') {
+            nivel2 = $.trim($("#nivel2").val());
+        } else {
+            nivel2 = 'null';
+        }
+
 
         //Captura de datos de Clase 3
 
@@ -3858,6 +3994,12 @@ $(document).ready(function () {
 
         if (idPictograma3 === 0) {
             idPictograma3 = 'null';
+        }
+        
+        if (idUnidad3 != 'null') {
+            nivel3 = $.trim($("#nivel3").val());
+        } else {
+            nivel3 = 'null';
         }
 
 
@@ -3895,6 +4037,12 @@ $(document).ready(function () {
             idPictograma4 = 'null';
         }
 
+        if (idUnidad4 != 'null') {
+            nivel4 = $.trim($("#nivel4").val());
+        } else {
+            nivel4 = 'null';
+        }
+
 
         //Captura de datos de Clase 5
 
@@ -3928,6 +4076,12 @@ $(document).ready(function () {
 
         if (idPictograma5 === 0) {
             idPictograma5 = 'null';
+        }
+
+        if (idUnidad5 != 'null') {
+            nivel5 = $.trim($("#nivel5").val());
+        } else {
+            nivel5 = 'null';
         }
 
 
@@ -3965,6 +4119,12 @@ $(document).ready(function () {
             idPictograma6 = 'null';
         }
 
+        if (idUnidad6 != 'null') {
+            nivel6 = $.trim($("#nivel6").val());
+        } else {
+            nivel6 = 'null';
+        }
+
 
         //Captura de datos de Clase 7
 
@@ -3998,6 +4158,12 @@ $(document).ready(function () {
 
         if (idPictograma7 === 0) {
             idPictograma7 = 'null';
+        }
+
+        if (idUnidad7 != 'null') {
+            nivel7 = $.trim($("#nivel7").val());
+        } else {
+            nivel7 = 'null';
         }
 
 
@@ -4035,6 +4201,12 @@ $(document).ready(function () {
             idPictograma8 = 'null';
         }
 
+        if (idUnidad8 != 'null') {
+            nivel8 = $.trim($("#nivel8").val());
+        } else {
+            nivel8 = 'null';
+        }
+
 
         //Captura de datos de Clase 9
 
@@ -4068,6 +4240,12 @@ $(document).ready(function () {
 
         if (idPictograma9 === 0) {
             idPictograma9 = 'null';
+        }
+
+        if (idUnidad9 != 'null') {
+            nivel9 = $.trim($("#nivel9").val());
+        } else {
+            nivel9 = 'null';
         }
 
 
@@ -4105,6 +4283,12 @@ $(document).ready(function () {
             idPictograma10 = 'null';
         }
 
+        if (idUnidad10 != 'null') {
+            nivel10 = $.trim($("#nivel10").val());
+        } else {
+            nivel10 = 'null';
+        }
+
         // if (cas == undefined) {
         //     console.log('CAS: ', newcas);
         // } else {
@@ -4123,42 +4307,60 @@ $(document).ready(function () {
         console.log('Id de Pictograma 1: ', idPictograma1);
         console.log('Nivel 1: ', nivel1);
         console.log('Unidad 1: ', idUnidad1);
-        // console.log('Id de Categoria 2: ', idCategoria2);
-        // console.log('Id de Palabra de Advertencia 2: ', idPalabraAdvertencia2);
-        // console.log('Id de Indicacion 2: ', idIndicacion2);
-        // console.log('Id de Pictograma 2: ', idPictograma2);
-        // console.log('Id de Categoria 3: ', idCategoria3);
-        // console.log('Id de Palabra de Advertencia 3: ', idPalabraAdvertencia3);
-        // console.log('Id de Indicacion 3: ', idIndicacion3);
-        // console.log('Id de Pictograma 3: ', idPictograma3);
-        // console.log('Id de Categoria 4: ', idCategoria4);
-        // console.log('Id de Palabra de Advertencia 4: ', idPalabraAdvertencia4);
-        // console.log('Id de Indicacion 4: ', idIndicacion4);
-        // console.log('Id de Pictograma 4: ', idPictograma4);
-        // console.log('Id de Categoria 5: ', idCategoria5);
-        // console.log('Id de Palabra de Advertencia 5: ', idPalabraAdvertencia5);
-        // console.log('Id de Indicacion 5: ', idIndicacion5);
-        // console.log('Id de Pictograma 5: ', idPictograma5);
-        // console.log('Id de Categoria 6: ', idCategoria6);
-        // console.log('Id de Palabra de Advertencia 6: ', idPalabraAdvertencia6);
-        // console.log('Id de Indicacion 6: ', idIndicacion6);
-        // console.log('Id de Pictograma 6: ', idPictograma6);
-        // console.log('Id de Categoria 7: ', idCategoria7);
-        // console.log('Id de Palabra de Advertencia 7: ', idPalabraAdvertencia7);
-        // console.log('Id de Indicacion 7: ', idIndicacion7);
-        // console.log('Id de Pictograma 7: ', idPictograma7);
-        // console.log('Id de Categoria 8: ', idCategoria8);
-        // console.log('Id de Palabra de Advertencia 8: ', idPalabraAdvertencia8);
-        // console.log('Id de Indicacion 8: ', idIndicacion8);
-        // console.log('Id de Pictograma 8: ', idPictograma8);
-        // console.log('Id de Categoria 9: ', idCategoria9);
-        // console.log('Id de Palabra de Advertencia 9: ', idPalabraAdvertencia9);
-        // console.log('Id de Indicacion 9: ', idIndicacion9);
-        // console.log('Id de Pictograma 9: ', idPictograma9);
-        // console.log('Id de Categoria 10: ', idCategoria10);
-        // console.log('Id de Palabra de Advertencia 10: ', idPalabraAdvertencia10);
-        // console.log('Id de Indicacion 10: ', idIndicacion10);
-        // console.log('Id de Pictograma 10: ', idPictograma10);
+        console.log('Id de Categoria 2: ', idCategoria2);
+        console.log('Id de Palabra de Advertencia 2: ', idPalabraAdvertencia2);
+        console.log('Id de Indicacion 2: ', idIndicacion2);
+        console.log('Id de Pictograma 2: ', idPictograma2);
+        console.log('Nivel 2: ', nivel2);
+        console.log('Unidad 2: ', idUnidad2);
+        console.log('Id de Categoria 3: ', idCategoria3);
+        console.log('Id de Palabra de Advertencia 3: ', idPalabraAdvertencia3);
+        console.log('Id de Indicacion 3: ', idIndicacion3);
+        console.log('Id de Pictograma 3: ', idPictograma3);
+        console.log('Nivel 3: ', nivel3);
+        console.log('Unidad 3: ', idUnidad3);
+        console.log('Id de Categoria 4: ', idCategoria4);
+        console.log('Id de Palabra de Advertencia 4: ', idPalabraAdvertencia4);
+        console.log('Id de Indicacion 4: ', idIndicacion4);
+        console.log('Id de Pictograma 4: ', idPictograma4);
+        console.log('Nivel 4: ', nivel4);
+        console.log('Unidad 4: ', idUnidad4);
+        console.log('Id de Categoria 5: ', idCategoria5);
+        console.log('Id de Palabra de Advertencia 5: ', idPalabraAdvertencia5);
+        console.log('Id de Indicacion 5: ', idIndicacion5);
+        console.log('Id de Pictograma 5: ', idPictograma5);
+        console.log('Nivel 5: ', nivel5);
+        console.log('Unidad 5: ', idUnidad5);
+        console.log('Id de Categoria 6: ', idCategoria6);
+        console.log('Id de Palabra de Advertencia 6: ', idPalabraAdvertencia6);
+        console.log('Id de Indicacion 6: ', idIndicacion6);
+        console.log('Id de Pictograma 6: ', idPictograma6);
+        console.log('Nivel 6: ', nivel6);
+        console.log('Unidad 6: ', idUnidad6);
+        console.log('Id de Categoria 7: ', idCategoria7);
+        console.log('Id de Palabra de Advertencia 7: ', idPalabraAdvertencia7);
+        console.log('Id de Indicacion 7: ', idIndicacion7);
+        console.log('Id de Pictograma 7: ', idPictograma7);
+        console.log('Nivel 7: ', nivel7);
+        console.log('Unidad 7: ', idUnidad7);
+        console.log('Id de Categoria 8: ', idCategoria8);
+        console.log('Id de Palabra de Advertencia 8: ', idPalabraAdvertencia8);
+        console.log('Id de Indicacion 8: ', idIndicacion8);
+        console.log('Id de Pictograma 8: ', idPictograma8);
+        console.log('Nivel 8: ', nivel8);
+        console.log('Unidad 8: ', idUnidad8);
+        console.log('Id de Categoria 9: ', idCategoria9);
+        console.log('Id de Palabra de Advertencia 9: ', idPalabraAdvertencia9);
+        console.log('Id de Indicacion 9: ', idIndicacion9);
+        console.log('Id de Pictograma 9: ', idPictograma9);
+        console.log('Nivel 9: ', nivel9);
+        console.log('Unidad 9: ', idUnidad9);
+        console.log('Id de Categoria 10: ', idCategoria10);
+        console.log('Id de Palabra de Advertencia 10: ', idPalabraAdvertencia10);
+        console.log('Id de Indicacion 10: ', idIndicacion10);
+        console.log('Id de Pictograma 10: ', idPictograma10);
+        console.log('Nivel 10: ', nivel10);
+        console.log('Unidad 10: ', idUnidad10);
 
         $.ajax({
             url: "bd/bdProductos.php",
@@ -4184,46 +4386,64 @@ $(document).ready(function () {
                 idPalabraAdvertencia2: idPalabraAdvertencia2,
                 idIndicacion2: idIndicacion2,
                 idPictograma2: idPictograma2,
+                nivel2: nivel2,
+                idUnidad2: idUnidad2,
                 idClase3: idClase3,
                 idCategoria3: idCategoria3,
                 idPalabraAdvertencia3: idPalabraAdvertencia3,
                 idIndicacion3: idIndicacion3,
                 idPictograma3: idPictograma3,
+                nivel3: nivel3,
+                idUnidad3: idUnidad3,
                 idClase4: idClase4,
                 idCategoria4: idCategoria4,
                 idPalabraAdvertencia4: idPalabraAdvertencia4,
                 idIndicacion4: idIndicacion4,
                 idPictograma4: idPictograma4,
+                nivel4: nivel4,
+                idUnidad4: idUnidad4,
                 idClase5: idClase5,
                 idCategoria5: idCategoria5,
                 idPalabraAdvertencia5: idPalabraAdvertencia5,
                 idIndicacion5: idIndicacion5,
                 idPictograma5: idPictograma5,
+                nivel5: nivel5,
+                idUnidad5: idUnidad5,
                 idClase6: idClase6,
                 idCategoria6: idCategoria6,
                 idPalabraAdvertencia6: idPalabraAdvertencia6,
                 idIndicacion6: idIndicacion6,
                 idPictograma6: idPictograma6,
+                nivel6: nivel6,
+                idUnidad6: idUnidad6,
                 idClase7: idClase7,
                 idCategoria7: idCategoria7,
                 idPalabraAdvertencia7: idPalabraAdvertencia7,
                 idIndicacion7: idIndicacion7,
                 idPictograma7: idPictograma7,
+                nivel7: nivel7,
+                idUnidad7: idUnidad7,
                 idClase8: idClase8,
                 idCategoria8: idCategoria8,
                 idPalabraAdvertencia8: idPalabraAdvertencia8,
                 idIndicacion8: idIndicacion8,
                 idPictograma8: idPictograma8,
+                nivel8: nivel8,
+                idUnidad8: idUnidad8,
                 idClase9: idClase9,
                 idCategoria9: idCategoria9,
                 idPalabraAdvertencia9: idPalabraAdvertencia9,
                 idIndicacion9: idIndicacion9,
                 idPictograma9: idPictograma9,
+                nivel9: nivel9,
+                idUnidad9: idUnidad9,
                 idClase10: idClase10,
                 idCategoria10: idCategoria10,
                 idPalabraAdvertencia10: idPalabraAdvertencia10,
                 idIndicacion10: idIndicacion10,
-                idPictograma10: idPictograma10
+                idPictograma10: idPictograma10,
+                nivel10: nivel10,
+                idUnidad10: idUnidad10
             },
             success: function (data) {
                 //Datos desde el Select de MySQL a la tabla.
@@ -4275,6 +4495,4 @@ $(document).ready(function () {
         });
         $("#modalCRUD").modal("hide");
     });
-
-
 });

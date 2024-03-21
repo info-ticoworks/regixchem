@@ -81,7 +81,7 @@ $(document).ready(function(){
         $("#formEmpresas").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
-        $(".modal-title").text("Nueva Persona");            
+        $(".modal-title").text("Nueva Empresa");            
         $("#modalEmpresas").modal("show");
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('pass1').required = true;
@@ -131,9 +131,6 @@ $(document).ready(function(){
         document.getElementById('idPais').required = true;
         document.getElementById('nombreEmpresa').required = true;
 
-
-
-
         $("#newid").val(id);
         var selectedtipoCedula = tipoCedula;
         $('#tipoCedula option').map(function () {
@@ -162,7 +159,7 @@ $(document).ready(function(){
         opcion = 2; //editar
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
-        $(".modal-title").text("Editar Persona");            
+        $(".modal-title").text("Editar Empresa");            
         $("#modalEmpresas").modal("show"); 
         console.log("Edición de Usuario - Paso 1...");
     });

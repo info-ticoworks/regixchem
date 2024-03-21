@@ -83,6 +83,22 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         <form id="formEmpresas">    
             <div class="modal-body">
                 <div class="form-group">
+                    <label for="idTipoCedula" class="col-form-label">Tipo de Cédula: *</label>
+                    <select class="form-control" id="idTipoCedula">
+                        <option selected disabled value="">Elija un tipo de cédula.</option>
+                        <?php
+                            $consulta = "SELECT * FROM tipoCedula
+                                        ORDER BY idTipoCedula asc";
+                            $resultadoTipoCedula = $conexion->prepare($consulta);
+                            $resultadoTipoCedula->execute();
+                            $dataTipoCedula=$resultadoTipoCedula->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($dataTipoCedula as $datTipoCedula) {
+                                echo "<option value=" . $datTipoCedula['idTipoCedula'] . ">" . $datTipoCedula['nombreTipoCedula'] . "</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="newidEmpresa" class="col-form-label">Id de Empresa: *</label>
                     <input type="text" placeholder="Digitar ID otorgado por el Gobierno para la Empresa." class="form-control" id="newidEmpresa" required>
                 </div>

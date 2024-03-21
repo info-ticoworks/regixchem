@@ -1373,7 +1373,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase1').val(),
+            data: "palad=" + $('#nombreCategoria1').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia1').html(r);
             }
@@ -1384,7 +1384,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase2').val(),
+            data: "palad=" + $('#nombreCategoria2').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia2').html(r);
             }
@@ -1395,7 +1395,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase3').val(),
+            data: "palad=" + $('#nombreCategoria3').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia3').html(r);
             }
@@ -1406,7 +1406,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase4').val(),
+            data: "palad=" + $('#nombreCategoria4').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia4').html(r);
             }
@@ -1417,7 +1417,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase5').val(),
+            data: "palad=" + $('#nombreCategoria5').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia5').html(r);
             }
@@ -1428,7 +1428,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase6').val(),
+            data: "palad=" + $('#nombreCategoria6').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia6').html(r);
             }
@@ -1439,7 +1439,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase7').val(),
+            data: "palad=" + $('#nombreCategoria7').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia7').html(r);
             }
@@ -1450,7 +1450,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase8').val(),
+            data: "palad=" + $('#nombreCategoria8').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia8').html(r);
             }
@@ -1461,7 +1461,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase9').val(),
+            data: "palad=" + $('#nombreCategoria9').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia9').html(r);
             }
@@ -1472,7 +1472,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + $('#nombreClase10').val(),
+            data: "palad=" + $('#nombreCategoria10').val(),
             success: function (r) {
                 $('#nombrePalabraAdvertencia10').html(r);
             }
@@ -1597,7 +1597,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase1').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia1').val(),
             success: function (r) {
                 $('#nombreIndicacion1').html(r);
             }
@@ -1608,7 +1608,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase2').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia2').val(),
             success: function (r) {
                 $('#nombreIndicacion2').html(r);
             }
@@ -1619,7 +1619,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase3').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia3').val(),
             success: function (r) {
                 $('#nombreIndicacion3').html(r);
             }
@@ -1630,7 +1630,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase4').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia4').val(),
             success: function (r) {
                 $('#nombreIndicacion4').html(r);
             }
@@ -1641,7 +1641,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase5').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia5').val(),
             success: function (r) {
                 $('#nombreIndicacion5').html(r);
             }
@@ -1652,7 +1652,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase6').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia6').val(),
             success: function (r) {
                 $('#nombreIndicacion6').html(r);
             }
@@ -1663,7 +1663,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase7').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia7').val(),
             success: function (r) {
                 $('#nombreIndicacion7').html(r);
             }
@@ -1674,7 +1674,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase8').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia8').val(),
             success: function (r) {
                 $('#nombreIndicacion8').html(r);
             }
@@ -1685,7 +1685,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase9').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia9').val(),
             success: function (r) {
                 $('#nombreIndicacion9').html(r);
             }
@@ -1696,7 +1696,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + $('#nombreClase10').val(),
+            data: "ind=" + $('#nombrePalabraAdvertencia10').val(),
             success: function (r) {
                 $('#nombreIndicacion10').html(r);
             }
@@ -2117,7 +2117,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase1,
+            data: "palad=" + loaded_idCategoria1,
             success: function (r) {
                 $('#nombrePalabraAdvertencia1').html(r);
             }
@@ -2128,7 +2128,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase2,
+            data: "palad=" + loaded_idCategoria2,
             success: function (r) {
                 $('#nombrePalabraAdvertencia2').html(r);
             }
@@ -2139,7 +2139,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase3,
+            data: "palad=" + loaded_idCategoria3,
             success: function (r) {
                 $('#nombrePalabraAdvertencia3').html(r);
             }
@@ -2150,7 +2150,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase4,
+            data: "palad=" + loaded_idCategoria4,
             success: function (r) {
                 $('#nombrePalabraAdvertencia4').html(r);
             }
@@ -2161,7 +2161,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase5,
+            data: "palad=" + loaded_idCategoria5,
             success: function (r) {
                 $('#nombrePalabraAdvertencia5').html(r);
             }
@@ -2172,7 +2172,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase6,
+            data: "palad=" + loaded_idCategoria6,
             success: function (r) {
                 $('#nombrePalabraAdvertencia6').html(r);
             }
@@ -2183,7 +2183,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase7,
+            data: "palad=" + loaded_idCategoria7,
             success: function (r) {
                 $('#nombrePalabraAdvertencia7').html(r);
             }
@@ -2194,7 +2194,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase8,
+            data: "palad=" + loaded_idCategoria8,
             success: function (r) {
                 $('#nombrePalabraAdvertencia8').html(r);
             }
@@ -2205,7 +2205,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase9,
+            data: "palad=" + loaded_idCategoria9,
             success: function (r) {
                 $('#nombrePalabraAdvertencia9').html(r);
             }
@@ -2216,7 +2216,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/palad.php",
-            data: "palad=" + loaded_idClase10,
+            data: "palad=" + loaded_idCategoria10,
             success: function (r) {
                 $('#nombrePalabraAdvertencia10').html(r);
             }
@@ -2341,7 +2341,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase1,
+            data: "ind=" + loaded_idPalabraAdvertencia1,
             success: function (r) {
                 $('#nombreIndicacion1').html(r);
             }
@@ -2352,7 +2352,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase2,
+            data: "ind=" + loaded_idPalabraAdvertencia2,
             success: function (r) {
                 $('#nombreIndicacion2').html(r);
             }
@@ -2363,7 +2363,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase3,
+            data: "ind=" + loaded_idPalabraAdvertencia3,
             success: function (r) {
                 $('#nombreIndicacion3').html(r);
             }
@@ -2374,7 +2374,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase4,
+            data: "ind=" + loaded_idPalabraAdvertencia4,
             success: function (r) {
                 $('#nombreIndicacion4').html(r);
             }
@@ -2385,7 +2385,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase5,
+            data: "ind=" + loaded_idPalabraAdvertencia5,
             success: function (r) {
                 $('#nombreIndicacion5').html(r);
             }
@@ -2396,7 +2396,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase6,
+            data: "ind=" + loaded_idPalabraAdvertencia6,
             success: function (r) {
                 $('#nombreIndicacion6').html(r);
             }
@@ -2407,7 +2407,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase7,
+            data: "ind=" + loaded_idPalabraAdvertencia7,
             success: function (r) {
                 $('#nombreIndicacion7').html(r);
             }
@@ -2418,7 +2418,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase8,
+            data: "ind=" + loaded_idPalabraAdvertencia8,
             success: function (r) {
                 $('#nombreIndicacion8').html(r);
             }
@@ -2429,7 +2429,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase9,
+            data: "ind=" + loaded_idPalabraAdvertencia9,
             success: function (r) {
                 $('#nombreIndicacion9').html(r);
             }
@@ -2440,7 +2440,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "bd/ind.php",
-            data: "ind=" + loaded_idClase10,
+            data: "ind=" + loaded_idPalabraAdvertencia10,
             success: function (r) {
                 $('#nombreIndicacion10').html(r);
             }

@@ -4,7 +4,7 @@ $ind=$_POST['ind'];
 	$sql="SELECT DISTINCT idIndicacion,
 			 nombreIndicacion
 		FROM vista_categoria_peligro
-		WHERE idClasepeligro = $ind
+		WHERE idPalabraAdvertencia = $ind
 		ORDER BY nombreIndicacion asc";
 	$result=mysqli_query($conexion,$sql);
 	$cadena="<option disabled value=''>Elija una Indicación.</option>";

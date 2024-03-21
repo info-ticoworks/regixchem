@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     //tabla USUARIOS
-    tablaPersonas = $("#tablaPersonas").DataTable({
+    tablaPaises = $("#tablaPaises").DataTable({
        "columnDefs":[{
         "targets": -1,
         "data":null,
@@ -71,9 +71,9 @@ $(document).ready(function(){
     });
 
     //Highlight de filas
-    tablaPersonas.on('mouseenter', 'tr', function(){
+    tablaPaises.on('mouseenter', 'tr', function(){
         $(document).find('tr').removeClass("dtSelected");
-        $(tablaPersonas.row(this).selector.rows).addClass("dtSelected");
+        $(tablaPaises.row(this).selector.rows).addClass("dtSelected");
     });
 
     //Botón NUEVO USUARIO
@@ -189,7 +189,7 @@ $(document).ready(function(){
                         dataType: "json",
                         data: {opcion:opcion, id:id},
                         success: function(){
-                            tablaPersonas.row(fila.parents('tr')).remove().draw();
+                            tablaPaises.row(fila.parents('tr')).remove().draw();
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
@@ -259,7 +259,7 @@ $(document).ready(function(){
                     nombreEmpresa = data[0].nombreEmpresa;
                     console.log(wsVerif);
                     if(opcion == 1){
-                        tablaPersonas.row.add([id,tipoCedula,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,idPais,nombreEmpresa]).draw();
+                        tablaPaises.row.add([id,tipoCedula,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,idPais,nombreEmpresa]).draw();
 
                         Swal.fire({
                             position: 'top-end',
@@ -269,7 +269,7 @@ $(document).ready(function(){
                             timer: 2000
                         })
                     }else{
-                        tablaPersonas.row(fila).data([id,tipoCedula,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,idPais,nombreEmpresa]).draw();
+                        tablaPaises.row(fila).data([id,tipoCedula,nombre,apellido1,apellido2,telefono,correo,nombretipoUsuario,wsVerif,idPais,nombreEmpresa]).draw();
                         $('td:eq(4)').css( 'text-align', 'center' );
                         $('td:eq(7)').css( 'text-align', 'center' );
                         Swal.fire({

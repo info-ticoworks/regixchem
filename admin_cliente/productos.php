@@ -35,7 +35,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
-                                <th>Fabricante</th>
+                                <th>Fabricante 1</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -48,7 +48,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['nombreProducto'] ?></td>
                                 <td><?php echo $dat['nombreGrupo'] ?></td>
                                 <td><?php echo $dat['nombreUso'] ?></td>
-                                <td><?php echo $dat['nombreFabricante'] ?></td>
+                                <td><?php echo $dat['nombreFabricante1'] ?></td>
                                 <td></td>
                             </tr>
                             <?php
@@ -61,7 +61,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Nombre</th>
                                 <th>Grupo</th>
                                 <th>Uso</th>                                
-                                <th>Fabricante</th>
+                                <th>Fabricante 1</th>
                                 <th>Acciones</th>
                             </tr>
                         </tfoot>     
@@ -126,8 +126,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="form-group">
-                    <label for="nombreFabricante" class="col-form-label">Fabricante: *</label>
-                    <input type="text" class="form-control" id="nombreFabricante" required>
+                    <label for="nombreFabricante1" class="col-form-label">Fabricante 1: *</label>
+                    <input type="text" class="form-control" id="nombreFabricante1" required>
                 </div>
 
                 <!-- Clases de Peligro -->

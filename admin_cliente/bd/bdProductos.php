@@ -11,7 +11,7 @@ $newcas = (isset($_POST['newcas'])) ? $_POST['newcas'] : '';
 $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] : '';
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
-$nombreFabricante = (isset($_POST['nombreFabricante'])) ? $_POST['nombreFabricante'] : '';
+$nombreFabricante1 = (isset($_POST['nombreFabricante1'])) ? $_POST['nombreFabricante1'] : '';
 
 $idClase1 = (isset($_POST['idClase1'])) ? $_POST['idClase1'] : '';
 $idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
@@ -101,7 +101,7 @@ switch($opcion){
                                             nombreProducto,
                                             idGrupo,
                                             idUso,
-                                            nombreFabricante,
+                                            nombreFabricante1,
                                             idClasePeligro1,
                                             idCategoriaPeligro1,
                                             idPalabraAdvertencia1,
@@ -176,7 +176,7 @@ switch($opcion){
                                             '$nombreProducto',
                                             $idGrupo,
                                             $idUso,
-                                            '$nombreFabricante',
+                                            '$nombreFabricante1',
                                             $idClase1,
                                             $idCategoria1,
                                             $idPalabraAdvertencia1,
@@ -249,7 +249,7 @@ switch($opcion){
                                             $idUnidad10)";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
-        $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante
+        $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante1
                     FROM vista_productos_reducida
                     WHERE cas='$newcas'
                     ORDER BY cas DESC LIMIT 1";
@@ -262,7 +262,7 @@ switch($opcion){
                                             nombreProducto='$nombreProducto',
                                             idGrupo=$idGrupo,
                                             idUso=$idUso,
-                                            nombreFabricante='$nombreFabricante',
+                                            nombreFabricante1='$nombreFabricante1',
                                             idClasePeligro1=$idClase1,
                                             idCategoriaPeligro1=$idCategoria1,
                                             idPalabraAdvertencia1=$idPalabraAdvertencia1,
@@ -336,7 +336,7 @@ switch($opcion){
                                             WHERE cas='$cas'";	
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
-            $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante
+            $consulta = "SELECT cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante1
                         FROM vista_productos_reducida
                         WHERE cas='$newcas'
                         ORDER BY cas DESC LIMIT 1";

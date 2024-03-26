@@ -2943,8 +2943,8 @@ $(document).ready(function () {
         document.getElementById('nombreProducto').value = '';
         document.getElementById('nombreGrupo').selectedIndex = 0;
         document.getElementById('nombreUso').selectedIndex = 1;
-        document.getElementById('nombreFabricante').placeholder = 'Campo Obligatorio *';
-        document.getElementById('nombreFabricante').value = '';
+        document.getElementById('nombreFabricante1').placeholder = 'Campo Obligatorio *';
+        document.getElementById('nombreFabricante1').value = '';
         document.getElementById('btnClase2').style.display = 'none';
         document.getElementById('btnClase3').style.display = 'none';
         document.getElementById('btnClase4').style.display = 'none';
@@ -2976,7 +2976,7 @@ $(document).ready(function () {
         nombre = fila.find('td:eq(1)').text();
         nombreGrupo = fila.find('td:eq(2)').text();
         nombreUso = fila.find('td:eq(3)').text();
-        nombreFabricante = fila.find('td:eq(4)').text();
+        nombreFabricante1 = fila.find('td:eq(4)').text();
         console.log('CAS: ', cas);
 
         $.ajax({
@@ -2992,7 +2992,7 @@ $(document).ready(function () {
                 loaded_nombreProducto = product_loaded[0].nombreProducto;
                 loaded_nombreGrupo = product_loaded[0].nombreGrupo;
                 loaded_nombreUso = product_loaded[0].nombreUso;
-                loaded_nombreFabricante = product_loaded[0].nombreFabricante;
+                loaded_nombreFabricante1 = product_loaded[0].nombreFabricante1;
                 loaded_idClase1 = product_loaded[0].idClasePeligro1;
                 loaded_nombreClase1 = product_loaded[0].nombreClasePeligro1;
                 loaded_idCategoria1 = product_loaded[0].idCategoriaPeligro1;
@@ -3117,7 +3117,7 @@ $(document).ready(function () {
                 console.log('Nombre de Producto: ', loaded_nombreProducto);
                 console.log('Grupo: ', loaded_nombreGrupo);
                 console.log('Uso: ', loaded_nombreUso);
-                console.log('Fabricante: ', loaded_nombreFabricante);
+                console.log('Fabricante1: ', loaded_nombreFabricante1);
                 console.log('Clase 1: ', loaded_nombreClase1);
                 console.log('Categoría 1: ', loaded_nombreCategoria1);
                 console.log('Palabra de Advertencia 1: ', loaded_idPalabraAdvertencia1);
@@ -3242,7 +3242,7 @@ $(document).ready(function () {
                 $('#nombreUso option').map(function () {
                     if ($(this).text() == loaded_nombreUso) return this;
                 }).attr('selected', 'selected');
-                $("#nombreFabricante").val(loaded_nombreFabricante);
+                $("#nombreFabricante1").val(loaded_nombreFabricante1);
 
                 if (loaded_nombreClase1 != null) {
                     cargarCategoria1Edit();
@@ -3879,7 +3879,7 @@ $(document).ready(function () {
         nombreProducto = $.trim($('#nombreProducto').val());
         idGrupo = $.trim($("#nombreGrupo").val());
         idUso = $.trim($("#nombreUso").val());
-        nombreFabricante = $.trim($("#nombreFabricante").val());
+        nombreFabricante1 = $.trim($("#nombreFabricante1").val());
 
         //Captura de datos de Clase 1
 
@@ -4299,7 +4299,7 @@ $(document).ready(function () {
         console.log('Nombre de Producto: ', nombreProducto);
         console.log('Id de Grupo: ', idGrupo);
         console.log('Id de Uso: ', idUso);
-        console.log('Nombre del Fabricante: ', nombreFabricante);
+        console.log('Nombre del Fabricante1: ', nombreFabricante1);
         console.log('Id de Clase de Peligro 1: ', idClase1);
         console.log('Id de Categoria 1: ', idCategoria1);
         console.log('Id de Palabra de Advertencia 1: ', idPalabraAdvertencia1);
@@ -4373,7 +4373,7 @@ $(document).ready(function () {
                 nombreProducto: nombreProducto,
                 idGrupo: idGrupo,
                 idUso: idUso,
-                nombreFabricante: nombreFabricante,
+                nombreFabricante1: nombreFabricante1,
                 idClase1: idClase1,
                 idCategoria1: idCategoria1,
                 idPalabraAdvertencia1: idPalabraAdvertencia1,
@@ -4452,9 +4452,9 @@ $(document).ready(function () {
                 nombreProducto = data[0].nombreProducto;
                 nombreGrupo = data[0].nombreGrupo;
                 nombreUso = data[0].nombreUso;
-                nombreFabricante = data[0].nombreFabricante;
+                nombreFabricante1 = data[0].nombreFabricante1;
                 if (opcion == 1) {
-                    tablaProductos.row.add([cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante]).draw();
+                    tablaProductos.row.add([cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante1]).draw();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -4463,7 +4463,7 @@ $(document).ready(function () {
                         timer: 2000
                     })
                 } else {
-                    tablaProductos.row(fila).data([cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante]).draw();
+                    tablaProductos.row(fila).data([cas, nombreProducto, nombreGrupo, nombreUso, nombreFabricante1]).draw();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',

@@ -125,9 +125,179 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="nombreFabricante1" class="col-form-label">Fabricante 1: *</label>
-                    <input type="text" class="form-control" id="nombreFabricante1" required>
+                <!-- Fabricantes -->
+                <div class="fabricantes" id="fabricantes">
+                    <div class="fabricante1" id="fabricante1">
+                        <div class="form-group">
+                            <label for="nombreFabricante1" class="col-form-label">Fabricante 1: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante1" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante2" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante2" id="fabricante2">
+                        <div class="form-group">
+                            <label for="nombreFabricante2" class="col-form-label">Fabricante 2: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante2" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante2" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante3" id="fabricante3">
+                        <div class="form-group">
+                            <label for="nombreFabricante3" class="col-form-label">Fabricante 3: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante3" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante3" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante4" id="fabricante4">
+                        <div class="form-group">
+                            <label for="nombreFabricante4" class="col-form-label">Fabricante 4: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante4" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante4" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante5" id="fabricante5">
+                        <div class="form-group">
+                            <label for="nombreFabricante5" class="col-form-label">Fabricante 5: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante5" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante5" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante6" id="fabricante6">
+                        <div class="form-group">
+                            <label for="nombreFabricante6" class="col-form-label">Fabricante 6: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante6" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante6" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante7" id="fabricante7">
+                        <div class="form-group">
+                            <label for="nombreFabricante7" class="col-form-label">Fabricante 7: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante7" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante7" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante8" id="fabricante8">
+                        <div class="form-group">
+                            <label for="nombreFabricante8" class="col-form-label">Fabricante 8: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante8" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante8" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante9" id="fabricante9">
+                        <div class="form-group">
+                            <label for="nombreFabricante9" class="col-form-label">Fabricante 9: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante9" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante9" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fabricante10" id="fabricante10">
+                        <div class="form-group">
+                            <label for="nombreFabricante10" class="col-form-label">Fabricante 10: *</label>  
+                        </div>
+                        <div class="fabricante-box">
+                            <div class="fabricante-text">
+                                <input type="text" class="form-control" id="nombreFabricante10" required>
+                            </div>
+                            <div>
+                                <button type="button" id="btnEliminarFabricante10" class="btn btn-danger" title="Eliminar fabricante">-</button>
+                            </div>
+                            <div>
+                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
                 </div>
 
                 <!-- Clases de Peligro -->

@@ -23,6 +23,19 @@ td.highlight {
     margin-right: 10px;
 }
 
+.fabricantes {
+    display: none;
+}
+
+.fabricante-box {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.fabricante-text {
+    width: 100%;
+}
+
 .clase-box {
     display: none;
     width: 100%;

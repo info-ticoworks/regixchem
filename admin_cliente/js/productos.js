@@ -1252,6 +1252,24 @@ $(document).ready(function () {
     });
 
     //Final de los botones para eliminar clases
+
+
+    //Inicio de los botones para agregar y quitar fabricantes
+
+    function btnFabricante2() {
+        $('#fabricante2').show();
+        document.getElementById('nombreFabricante2').placeholder = 'Campo Obligatorio *';
+        document.getElementById('nombreFabricante2').value = '';
+    }
+
+    $('#btnFabricante2').on('click', function () {
+        btnFabricante2();
+    });
+
+
+
+    //Final de los botones para agregar y quitar fabricantes
+
     
     //Inicio de las Funciones de carga de Select
     
@@ -2914,8 +2932,19 @@ $(document).ready(function () {
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nuevo Producto");
-        $("#modalCRUD").modal("show");
+        $('#fabricantes').show();
+        $('#fabricante1').show();
+        $('#fabricante2').hide();
+        $('#fabricante3').hide();
+        $('#fabricante4').hide();
+        $('#fabricante5').hide();
+        $('#fabricante6').hide();
+        $('#fabricante7').hide();
+        $('#fabricante8').hide();
+        $('#fabricante9').hide();
+        $('#fabricante10').hide();
         $('#btnClase1').show();
+        $("#modalCRUD").modal("show");
         idPictograma1 = 0;
         idPictograma2 = 0;
         idPictograma3 = 0;

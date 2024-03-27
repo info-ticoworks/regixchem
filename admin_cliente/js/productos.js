@@ -1256,15 +1256,15 @@ $(document).ready(function () {
 
     //Inicio de los botones para agregar y quitar fabricantes
 
-    function btnFabricante2() {
-        $('#fabricante2').show();
-        document.getElementById('nombreFabricante2').placeholder = 'Campo Obligatorio *';
-        document.getElementById('nombreFabricante2').value = '';
-    }
+    // function btnFabricante2() {
+    //     $('#fabricante2').show();
+    //     document.getElementById('nombreFabricante2').placeholder = 'Campo Obligatorio *';
+    //     document.getElementById('nombreFabricante2').value = '';
+    // }
 
-    $('#btnFabricante2').on('click', function () {
-        btnFabricante2();
-    });
+    // $('#btnFabricante2').on('click', function () {
+    //     btnFabricante2();
+    // });
 
 
 

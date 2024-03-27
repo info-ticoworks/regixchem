@@ -82,7 +82,7 @@ $(document).ready(function(){
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Nueva Persona");            
-        $("#modalUsuarios").modal("show");
+        $("#modalUsuarios").modal({backdrop: 'static', keyboard: false}, 'show');
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('pass1').required = true;
         document.getElementById('pass1').placeholder = 'Campo Obligatorio *';
@@ -163,7 +163,7 @@ $(document).ready(function(){
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Persona");            
-        $("#modalUsuarios").modal("show"); 
+        $("#modalUsuarios").modal({backdrop: 'static', keyboard: false}, 'show'); 
         console.log("Edición de Usuario - Paso 1...");
     });
 

@@ -2944,7 +2944,7 @@ $(document).ready(function () {
         $('#fabricante9').hide();
         $('#fabricante10').hide();
         $('#btnClase1').show();
-        $("#modalCRUD").modal("show");
+        $('#modalCRUD').modal({backdrop: 'static', keyboard: false}, 'show');
         idPictograma1 = 0;
         idPictograma2 = 0;
         idPictograma3 = 0;
@@ -2997,7 +2997,7 @@ $(document).ready(function () {
     var fila; //Capturar la fila para editar o borrar el registro
 
     //Botón Editar Producto    
-    $(document).on("click", ".btnEditarProducto", function () {  
+    $(document).on("click", ".btnEditarProducto", function () {
         hideClases();
         $("#formProductos").trigger("reset");
         fila = $(this).closest("tr");
@@ -3849,7 +3849,7 @@ $(document).ready(function () {
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Producto");
-        $("#modalCRUD").modal("show");
+        $('#modalCRUD').modal({backdrop: 'static', keyboard: false}, 'show');
         //console.log("Edición de Usuario - Paso 1...");
     });
 

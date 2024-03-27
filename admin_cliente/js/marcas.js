@@ -112,7 +112,7 @@ $(document).ready(function(){
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Detalles de marca.");            
-        $("#modalMarcas").modal("show");
+        $("#modalMarcas").modal({backdrop: 'static', keyboard: false}, 'show');
         console.log("Edición de Usuario - Paso 1...");
     });
 

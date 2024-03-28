@@ -170,7 +170,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante3" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante4" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante4" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante5" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante5" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante6" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante6" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante7" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -238,7 +238,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante7" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante8" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -255,7 +255,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante8" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante9" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -272,7 +272,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <button type="button" id="btnEliminarFabricante9" class="btn btn-danger" title="Eliminar fabricante">-</button>
                             </div>
                             <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
+                                <button type="button" id="btnFabricante10" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>
@@ -287,9 +287,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <div>
                                 <button type="button" id="btnEliminarFabricante10" class="btn btn-danger" title="Eliminar fabricante">-</button>
-                            </div>
-                            <div>
-                                <button type="button" id="btnFabricante3" class="btn btn-primary" title="Agregar otro fabricante">+</button>
                             </div>
                         </div>
                     </div>

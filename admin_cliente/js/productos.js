@@ -3279,6 +3279,15 @@ $(document).ready(function () {
                 loaded_nombreGrupo = product_loaded[0].nombreGrupo;
                 loaded_nombreUso = product_loaded[0].nombreUso;
                 loaded_nombreFabricante1 = product_loaded[0].nombreFabricante1;
+                loaded_nombreFabricante2 = product_loaded[0].nombreFabricante2;
+                loaded_nombreFabricante3 = product_loaded[0].nombreFabricante3;
+                loaded_nombreFabricante4 = product_loaded[0].nombreFabricante4;
+                loaded_nombreFabricante5 = product_loaded[0].nombreFabricante5;
+                loaded_nombreFabricante6 = product_loaded[0].nombreFabricante6;
+                loaded_nombreFabricante7 = product_loaded[0].nombreFabricante7;
+                loaded_nombreFabricante8 = product_loaded[0].nombreFabricante8;
+                loaded_nombreFabricante9 = product_loaded[0].nombreFabricante9;
+                loaded_nombreFabricante10 = product_loaded[0].nombreFabricante10;
                 loaded_idClase1 = product_loaded[0].idClasePeligro1;
                 loaded_nombreClase1 = product_loaded[0].nombreClasePeligro1;
                 loaded_idCategoria1 = product_loaded[0].idCategoriaPeligro1;
@@ -3404,6 +3413,15 @@ $(document).ready(function () {
                 console.log('Grupo: ', loaded_nombreGrupo);
                 console.log('Uso: ', loaded_nombreUso);
                 console.log('Fabricante1: ', loaded_nombreFabricante1);
+                console.log('Fabricante2: ', loaded_nombreFabricante2);
+                console.log('Fabricante3: ', loaded_nombreFabricante3);
+                console.log('Fabricante4: ', loaded_nombreFabricante4);
+                console.log('Fabricante5: ', loaded_nombreFabricante5);
+                console.log('Fabricante6: ', loaded_nombreFabricante6);
+                console.log('Fabricante7: ', loaded_nombreFabricante7);
+                console.log('Fabricante8: ', loaded_nombreFabricante8);
+                console.log('Fabricante9: ', loaded_nombreFabricante9);
+                console.log('Fabricante10: ', loaded_nombreFabricante10);
                 console.log('Clase 1: ', loaded_nombreClase1);
                 console.log('Categoría 1: ', loaded_nombreCategoria1);
                 console.log('Palabra de Advertencia 1: ', loaded_idPalabraAdvertencia1);
@@ -3456,7 +3474,7 @@ $(document).ready(function () {
                 console.log('ID Pictograma 10: ', loaded_idPictograma10);
 
                 loading_timer = 1000;
-                more_time = 250;
+                more_time = 260;
 
                 if (loaded_nombreClase1 != null) {
                     loading_timer = loading_timer + more_time;
@@ -3529,6 +3547,14 @@ $(document).ready(function () {
                     if ($(this).text() == loaded_nombreUso) return this;
                 }).attr('selected', 'selected');
                 $("#nombreFabricante1").val(loaded_nombreFabricante1);
+
+
+
+
+
+
+
+
 
                 if (loaded_nombreClase1 != null) {
                     cargarCategoria1Edit();
@@ -4165,8 +4191,20 @@ $(document).ready(function () {
         nombreProducto = $.trim($('#nombreProducto').val());
         idGrupo = $.trim($("#nombreGrupo").val());
         idUso = $.trim($("#nombreUso").val());
-        nombreFabricante1 = $.trim($("#nombreFabricante1").val());
 
+        //Captura de datos de Fabricantes
+
+        nombreFabricante1 = $.trim($("#nombreFabricante1").val());
+        nombreFabricante2 = $.trim($("#nombreFabricante2").val());
+        nombreFabricante3 = $.trim($("#nombreFabricante3").val());
+        nombreFabricante4 = $.trim($("#nombreFabricante4").val());
+        nombreFabricante5 = $.trim($("#nombreFabricante5").val());
+        nombreFabricante6 = $.trim($("#nombreFabricante6").val());
+        nombreFabricante7 = $.trim($("#nombreFabricante7").val());
+        nombreFabricante8 = $.trim($("#nombreFabricante8").val());
+        nombreFabricante9 = $.trim($("#nombreFabricante9").val());
+        nombreFabricante10 = $.trim($("#nombreFabricante10").val());
+        
         //Captura de datos de Clase 1
 
         const opClase1 = document.getElementById("nombreClase1");
@@ -4586,6 +4624,15 @@ $(document).ready(function () {
         console.log('Id de Grupo: ', idGrupo);
         console.log('Id de Uso: ', idUso);
         console.log('Nombre del Fabricante1: ', nombreFabricante1);
+        console.log('Nombre del Fabricante2: ', nombreFabricante2);
+        console.log('Nombre del Fabricante3: ', nombreFabricante3);
+        console.log('Nombre del Fabricante4: ', nombreFabricante4);
+        console.log('Nombre del Fabricante5: ', nombreFabricante5);
+        console.log('Nombre del Fabricante6: ', nombreFabricante6);
+        console.log('Nombre del Fabricante7: ', nombreFabricante7);
+        console.log('Nombre del Fabricante8: ', nombreFabricante8);
+        console.log('Nombre del Fabricante9: ', nombreFabricante9);
+        console.log('Nombre del Fabricante10: ', nombreFabricante10);
         console.log('Id de Clase de Peligro 1: ', idClase1);
         console.log('Id de Categoria 1: ', idCategoria1);
         console.log('Id de Palabra de Advertencia 1: ', idPalabraAdvertencia1);
@@ -4660,6 +4707,15 @@ $(document).ready(function () {
                 idGrupo: idGrupo,
                 idUso: idUso,
                 nombreFabricante1: nombreFabricante1,
+                nombreFabricante2: nombreFabricante2,
+                nombreFabricante3: nombreFabricante3,
+                nombreFabricante4: nombreFabricante4,
+                nombreFabricante5: nombreFabricante5,
+                nombreFabricante6: nombreFabricante6,
+                nombreFabricante7: nombreFabricante7,
+                nombreFabricante8: nombreFabricante8,
+                nombreFabricante9: nombreFabricante9,
+                nombreFabricante10: nombreFabricante10,
                 idClase1: idClase1,
                 idCategoria1: idCategoria1,
                 idPalabraAdvertencia1: idPalabraAdvertencia1,

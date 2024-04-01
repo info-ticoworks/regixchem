@@ -12,6 +12,15 @@ $nombreProducto = (isset($_POST['nombreProducto'])) ? $_POST['nombreProducto'] :
 $idGrupo = (isset($_POST['idGrupo'])) ? $_POST['idGrupo'] : '';
 $idUso = (isset($_POST['idUso'])) ? $_POST['idUso'] : '';
 $nombreFabricante1 = (isset($_POST['nombreFabricante1'])) ? $_POST['nombreFabricante1'] : '';
+$nombreFabricante2 = (isset($_POST['nombreFabricante2'])) ? $_POST['nombreFabricante2'] : '';
+$nombreFabricante3 = (isset($_POST['nombreFabricante3'])) ? $_POST['nombreFabricante3'] : '';
+$nombreFabricante4 = (isset($_POST['nombreFabricante4'])) ? $_POST['nombreFabricante4'] : '';
+$nombreFabricante5 = (isset($_POST['nombreFabricante5'])) ? $_POST['nombreFabricante5'] : '';
+$nombreFabricante6 = (isset($_POST['nombreFabricante6'])) ? $_POST['nombreFabricante6'] : '';
+$nombreFabricante7 = (isset($_POST['nombreFabricante7'])) ? $_POST['nombreFabricante7'] : '';
+$nombreFabricante8 = (isset($_POST['nombreFabricante8'])) ? $_POST['nombreFabricante8'] : '';
+$nombreFabricante9 = (isset($_POST['nombreFabricante9'])) ? $_POST['nombreFabricante9'] : '';
+$nombreFabricante10 = (isset($_POST['nombreFabricante10'])) ? $_POST['nombreFabricante10'] : '';
 
 $idClase1 = (isset($_POST['idClase1'])) ? $_POST['idClase1'] : '';
 $idCategoria1 = (isset($_POST['idCategoria1'])) ? $_POST['idCategoria1'] : '';
@@ -102,6 +111,15 @@ switch($opcion){
                                             idGrupo,
                                             idUso,
                                             nombreFabricante1,
+                                            nombreFabricante2,
+                                            nombreFabricante3,
+                                            nombreFabricante4,
+                                            nombreFabricante5,
+                                            nombreFabricante6,
+                                            nombreFabricante7,
+                                            nombreFabricante8,
+                                            nombreFabricante9,
+                                            nombreFabricante10,
                                             idClasePeligro1,
                                             idCategoriaPeligro1,
                                             idPalabraAdvertencia1,
@@ -176,7 +194,16 @@ switch($opcion){
                                             '$nombreProducto',
                                             $idGrupo,
                                             $idUso,
-                                            '$nombreFabricante1',
+                                            ".(($nombreFabricante1=='')?"NULL":("'".$nombreFabricante1."'")).",
+                                            ".(($nombreFabricante2=='')?"NULL":("'".$nombreFabricante2."'")).",
+                                            ".(($nombreFabricante3=='')?"NULL":("'".$nombreFabricante3."'")).",
+                                            ".(($nombreFabricante4=='')?"NULL":("'".$nombreFabricante4."'")).",
+                                            ".(($nombreFabricante5=='')?"NULL":("'".$nombreFabricante5."'")).",
+                                            ".(($nombreFabricante6=='')?"NULL":("'".$nombreFabricante6."'")).",
+                                            ".(($nombreFabricante7=='')?"NULL":("'".$nombreFabricante7."'")).",
+                                            ".(($nombreFabricante8=='')?"NULL":("'".$nombreFabricante8."'")).",
+                                            ".(($nombreFabricante9=='')?"NULL":("'".$nombreFabricante9."'")).",
+                                            ".(($nombreFabricante10=='')?"NULL":("'".$nombreFabricante10."'")).",
                                             $idClase1,
                                             $idCategoria1,
                                             $idPalabraAdvertencia1,
@@ -262,7 +289,16 @@ switch($opcion){
                                             nombreProducto='$nombreProducto',
                                             idGrupo=$idGrupo,
                                             idUso=$idUso,
-                                            nombreFabricante1='$nombreFabricante1',
+                                            nombreFabricante1=".(($nombreFabricante1=='')?"NULL":("'".$nombreFabricante1."'")).",
+                                            nombreFabricante2=".(($nombreFabricante2=='')?"NULL":("'".$nombreFabricante2."'")).",
+                                            nombreFabricante3=".(($nombreFabricante3=='')?"NULL":("'".$nombreFabricante3."'")).",
+                                            nombreFabricante4=".(($nombreFabricante4=='')?"NULL":("'".$nombreFabricante4."'")).",
+                                            nombreFabricante5=".(($nombreFabricante5=='')?"NULL":("'".$nombreFabricante5."'")).",
+                                            nombreFabricante6=".(($nombreFabricante6=='')?"NULL":("'".$nombreFabricante6."'")).",
+                                            nombreFabricante7=".(($nombreFabricante7=='')?"NULL":("'".$nombreFabricante7."'")).",
+                                            nombreFabricante8=".(($nombreFabricante8=='')?"NULL":("'".$nombreFabricante8."'")).",
+                                            nombreFabricante9=".(($nombreFabricante9=='')?"NULL":("'".$nombreFabricante9."'")).",
+                                            nombreFabricante10=".(($nombreFabricante10=='')?"NULL":("'".$nombreFabricante10."'")).",
                                             idClasePeligro1=$idClase1,
                                             idCategoriaPeligro1=$idCategoria1,
                                             idPalabraAdvertencia1=$idPalabraAdvertencia1,

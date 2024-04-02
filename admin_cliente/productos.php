@@ -127,6 +127,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
                 <!-- Fabricantes -->
                 <div class="fabricantes" id="fabricantes">
+                <label class="clase-box-titulo">Fabricantes:</label>
                     <div class="fabricante1" id="fabricante1">
                         <div class="form-group">
                             <label for="nombreFabricante1" class="col-form-label">Fabricante 1: *</label>  

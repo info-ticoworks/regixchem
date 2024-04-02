@@ -1262,7 +1262,7 @@ $(document).ready(function () {
         document.getElementById('nombreFabricante2').value = '';
         $('#btnFabricante2').hide();
         $('#fabricante2').show();
-        $('#modalCRUD').animate({ scrollTop: 500 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 200 }, 'fast');
     }
 
     function btnFabricante3() {
@@ -1272,7 +1272,7 @@ $(document).ready(function () {
         $('#btnFabricante3').hide();
         $('#btnEliminarFabricante2').hide();
         $('#fabricante3').show();
-        $('#modalCRUD').animate({ scrollTop: 1000 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 400 }, 'fast');
     }
 
     function btnFabricante4() {
@@ -1282,7 +1282,7 @@ $(document).ready(function () {
         $('#btnFabricante4').hide();
         $('#btnEliminarFabricante3').hide();
         $('#fabricante4').show();
-        $('#modalCRUD').animate({ scrollTop: 1500 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 600 }, 'fast');
     }
 
     function btnFabricante5() {
@@ -1292,7 +1292,7 @@ $(document).ready(function () {
         $('#btnFabricante5').hide();
         $('#btnEliminarFabricante4').hide();
         $('#fabricante5').show();
-        $('#modalCRUD').animate({ scrollTop: 2000 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 800 }, 'fast');
     }
 
     function btnFabricante6() {
@@ -1302,7 +1302,7 @@ $(document).ready(function () {
         $('#btnFabricante6').hide();
         $('#btnEliminarFabricante5').hide();
         $('#fabricante6').show();
-        $('#modalCRUD').animate({ scrollTop: 2500 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1000 }, 'fast');
     }
 
     function btnFabricante7() {
@@ -1312,7 +1312,7 @@ $(document).ready(function () {
         $('#btnFabricante7').hide();
         $('#btnEliminarFabricante6').hide();
         $('#fabricante7').show();
-        $('#modalCRUD').animate({ scrollTop: 3000 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1200 }, 'fast');
     }
 
     function btnFabricante8() {
@@ -1322,7 +1322,7 @@ $(document).ready(function () {
         $('#btnFabricante8').hide();
         $('#btnEliminarFabricante7').hide();
         $('#fabricante8').show();
-        $('#modalCRUD').animate({ scrollTop: 3500 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1400 }, 'fast');
     }
 
     function btnFabricante9() {
@@ -1332,7 +1332,7 @@ $(document).ready(function () {
         $('#btnFabricante9').hide();
         $('#btnEliminarFabricante8').hide();
         $('#fabricante9').show();
-        $('#modalCRUD').animate({ scrollTop: 4000 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1600 }, 'fast');
     }
 
     function btnFabricante10() {
@@ -1342,7 +1342,7 @@ $(document).ready(function () {
         $('#btnFabricante10').hide();
         $('#btnEliminarFabricante9').hide();
         $('#fabricante10').show();
-        $('#modalCRUD').animate({ scrollTop: 4500 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1800 }, 'fast');
     }
 
 
@@ -3473,13 +3473,13 @@ $(document).ready(function () {
                 console.log('Indicación 10: ', loaded_nombreIndicacion10);
                 console.log('ID Pictograma 10: ', loaded_idPictograma10);
 
-                loading_timer = 1000;
+                loading_timer = 1200;
                 more_time = 260;
 
                 if (loaded_nombreClase1 != null) {
                     loading_timer = loading_timer + more_time;
                 } else {
-                    loading_timer = 400;
+                    loading_timer = 1000;
                 }
 
                 if (loaded_nombreClase2 != null) {
@@ -3538,6 +3538,18 @@ $(document).ready(function () {
                   }
                 });
 
+                $('#fabricantes').show();
+                $('#fabricante1').show();
+                $('#fabricante2').hide();
+                $('#fabricante3').hide();
+                $('#fabricante4').hide();
+                $('#fabricante5').hide();
+                $('#fabricante6').hide();
+                $('#fabricante7').hide();
+                $('#fabricante8').hide();
+                $('#fabricante9').hide();
+                $('#fabricante10').hide();
+
                 $("#newcas").val(loaded_cas);
                 $("#nombreProducto").val(loaded_nombreProducto);
                 $('#nombreGrupo option').map(function () {
@@ -3546,15 +3558,78 @@ $(document).ready(function () {
                 $('#nombreUso option').map(function () {
                     if ($(this).text() == loaded_nombreUso) return this;
                 }).attr('selected', 'selected');
-                $("#nombreFabricante1").val(loaded_nombreFabricante1);
+
+                //Precarga de datos de Fabricantes
+
+                if (loaded_nombreFabricante1 != null) {
+                    $("#nombreFabricante1").val(loaded_nombreFabricante1);
+                }
+
+                if (loaded_nombreFabricante2 != null) {
+                    btnFabricante2();
+                    $("#nombreFabricante2").val(loaded_nombreFabricante2);
+                } else {
+                    btnEliminarFabricante2();
+                }
+
+                if (loaded_nombreFabricante3 != null) {
+                    btnFabricante3();
+                    $("#nombreFabricante3").val(loaded_nombreFabricante3);
+                } else {
+                    btnEliminarFabricante3();
+                }
+
+                if (loaded_nombreFabricante4 != null) {
+                    btnFabricante4();
+                    $("#nombreFabricante4").val(loaded_nombreFabricante4);
+                } else {
+                    btnEliminarFabricante4();
+                }
+
+                if (loaded_nombreFabricante5 != null) {
+                    btnFabricante5();
+                    $("#nombreFabricante5").val(loaded_nombreFabricante5);
+                } else {
+                    btnEliminarFabricante5();
+                }
+
+                if (loaded_nombreFabricante6 != null) {
+                    btnFabricante6();
+                    $("#nombreFabricante6").val(loaded_nombreFabricante6);
+                } else {
+                    btnEliminarFabricante6();
+                }
+
+                if (loaded_nombreFabricante7 != null) {
+                    btnFabricante7();
+                    $("#nombreFabricante7").val(loaded_nombreFabricante7);
+                } else {
+                    btnEliminarFabricante7();
+                }
+
+                if (loaded_nombreFabricante8 != null) {
+                    btnFabricante8();
+                    $("#nombreFabricante8").val(loaded_nombreFabricante8);
+                } else {
+                    btnEliminarFabricante8();
+                }
+
+                if (loaded_nombreFabricante9 != null) {
+                    btnFabricante9();
+                    $("#nombreFabricante9").val(loaded_nombreFabricante9);
+                } else {
+                    btnEliminarFabricante9();
+                }
+
+                if (loaded_nombreFabricante10 != null) {
+                    btnFabricante10();
+                    $("#nombreFabricante10").val(loaded_nombreFabricante10);
+                } else {
+                    btnEliminarFabricante10();
+                }
 
 
-
-
-
-
-
-
+                //Precarga de datos de Clases
 
                 if (loaded_nombreClase1 != null) {
                     cargarCategoria1Edit();

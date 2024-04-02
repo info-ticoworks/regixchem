@@ -25,6 +25,10 @@ td.highlight {
 
 .fabricantes {
     display: none;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 .fabricante-box {
@@ -54,7 +58,7 @@ td.highlight {
 }
 
 .clase-box-titulo {
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .cont_cat{

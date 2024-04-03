@@ -1262,7 +1262,7 @@ $(document).ready(function () {
         document.getElementById('nombreFabricante2').value = '';
         $('#btnFabricante2').hide();
         $('#fabricante2').show();
-        $('#modalCRUD').animate({ scrollTop: 200 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 150 }, 'fast');
     }
 
     function btnFabricante3() {
@@ -1272,7 +1272,7 @@ $(document).ready(function () {
         $('#btnFabricante3').hide();
         $('#btnEliminarFabricante2').hide();
         $('#fabricante3').show();
-        $('#modalCRUD').animate({ scrollTop: 400 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 300 }, 'fast');
     }
 
     function btnFabricante4() {
@@ -1282,7 +1282,7 @@ $(document).ready(function () {
         $('#btnFabricante4').hide();
         $('#btnEliminarFabricante3').hide();
         $('#fabricante4').show();
-        $('#modalCRUD').animate({ scrollTop: 600 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 450 }, 'fast');
     }
 
     function btnFabricante5() {
@@ -1292,7 +1292,7 @@ $(document).ready(function () {
         $('#btnFabricante5').hide();
         $('#btnEliminarFabricante4').hide();
         $('#fabricante5').show();
-        $('#modalCRUD').animate({ scrollTop: 800 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 600 }, 'fast');
     }
 
     function btnFabricante6() {
@@ -1302,7 +1302,7 @@ $(document).ready(function () {
         $('#btnFabricante6').hide();
         $('#btnEliminarFabricante5').hide();
         $('#fabricante6').show();
-        $('#modalCRUD').animate({ scrollTop: 1000 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 750 }, 'fast');
     }
 
     function btnFabricante7() {
@@ -1312,7 +1312,7 @@ $(document).ready(function () {
         $('#btnFabricante7').hide();
         $('#btnEliminarFabricante6').hide();
         $('#fabricante7').show();
-        $('#modalCRUD').animate({ scrollTop: 1200 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 900 }, 'fast');
     }
 
     function btnFabricante8() {
@@ -1322,7 +1322,7 @@ $(document).ready(function () {
         $('#btnFabricante8').hide();
         $('#btnEliminarFabricante7').hide();
         $('#fabricante8').show();
-        $('#modalCRUD').animate({ scrollTop: 1400 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1050 }, 'fast');
     }
 
     function btnFabricante9() {
@@ -1332,7 +1332,7 @@ $(document).ready(function () {
         $('#btnFabricante9').hide();
         $('#btnEliminarFabricante8').hide();
         $('#fabricante9').show();
-        $('#modalCRUD').animate({ scrollTop: 1600 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1200 }, 'fast');
     }
 
     function btnFabricante10() {
@@ -1342,7 +1342,7 @@ $(document).ready(function () {
         $('#btnFabricante10').hide();
         $('#btnEliminarFabricante9').hide();
         $('#fabricante10').show();
-        $('#modalCRUD').animate({ scrollTop: 1800 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1350 }, 'fast');
     }
 
 

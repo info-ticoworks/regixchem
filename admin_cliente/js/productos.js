@@ -1256,13 +1256,15 @@ $(document).ready(function () {
 
     //Inicio de los botones para agregar y quitar fabricantes
 
+
     function btnFabricante2() {
         $("#nombreFabricante2").attr("required", "required");
         document.getElementById('nombreFabricante2').placeholder = 'Campo Obligatorio *';
         document.getElementById('nombreFabricante2').value = '';
         $('#btnFabricante2').hide();
-        $('#fabricante2').show();
-        $('#modalCRUD').animate({ scrollTop: 150 }, 'fast');
+        //$('#fabricante2').show();
+        $('#fabricante2').slideDown(122);
+        $('#modalCRUD').animate({ scrollTop: 122 }, 'fast');
     }
 
     function btnFabricante3() {
@@ -1272,7 +1274,7 @@ $(document).ready(function () {
         $('#btnFabricante3').hide();
         $('#btnEliminarFabricante2').hide();
         $('#fabricante3').show();
-        $('#modalCRUD').animate({ scrollTop: 300 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 244 }, 'fast');
     }
 
     function btnFabricante4() {
@@ -1282,7 +1284,7 @@ $(document).ready(function () {
         $('#btnFabricante4').hide();
         $('#btnEliminarFabricante3').hide();
         $('#fabricante4').show();
-        $('#modalCRUD').animate({ scrollTop: 450 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 366 }, 'fast');
     }
 
     function btnFabricante5() {
@@ -1292,7 +1294,7 @@ $(document).ready(function () {
         $('#btnFabricante5').hide();
         $('#btnEliminarFabricante4').hide();
         $('#fabricante5').show();
-        $('#modalCRUD').animate({ scrollTop: 600 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 488 }, 'fast');
     }
 
     function btnFabricante6() {
@@ -1302,7 +1304,7 @@ $(document).ready(function () {
         $('#btnFabricante6').hide();
         $('#btnEliminarFabricante5').hide();
         $('#fabricante6').show();
-        $('#modalCRUD').animate({ scrollTop: 750 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 610 }, 'fast');
     }
 
     function btnFabricante7() {
@@ -1312,7 +1314,7 @@ $(document).ready(function () {
         $('#btnFabricante7').hide();
         $('#btnEliminarFabricante6').hide();
         $('#fabricante7').show();
-        $('#modalCRUD').animate({ scrollTop: 900 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 732 }, 'fast');
     }
 
     function btnFabricante8() {
@@ -1322,7 +1324,7 @@ $(document).ready(function () {
         $('#btnFabricante8').hide();
         $('#btnEliminarFabricante7').hide();
         $('#fabricante8').show();
-        $('#modalCRUD').animate({ scrollTop: 1050 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 854 }, 'fast');
     }
 
     function btnFabricante9() {
@@ -1332,7 +1334,7 @@ $(document).ready(function () {
         $('#btnFabricante9').hide();
         $('#btnEliminarFabricante8').hide();
         $('#fabricante9').show();
-        $('#modalCRUD').animate({ scrollTop: 1200 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 976 }, 'fast');
     }
 
     function btnFabricante10() {
@@ -1342,7 +1344,7 @@ $(document).ready(function () {
         $('#btnFabricante10').hide();
         $('#btnEliminarFabricante9').hide();
         $('#fabricante10').show();
-        $('#modalCRUD').animate({ scrollTop: 1350 }, 'fast');
+        $('#modalCRUD').animate({ scrollTop: 1098 }, 'fast');
     }
 
 
@@ -1385,80 +1387,80 @@ $(document).ready(function () {
 
     function btnEliminarFabricante2() {
         nombreFabricante2 = 'null';
-        $('#fabricante2').hide();
         $('#nombreFabricante2').removeAttr('required');
         document.getElementById('nombreFabricante2').value = '';
+        $('#fabricante2').slideUp(122);
         $('#btnFabricante2').show();
     }
 
     function btnEliminarFabricante3() {
         nombreFabricante3 = 'null';
-        $('#fabricante3').hide();
         $('#nombreFabricante3').removeAttr('required');
         document.getElementById('nombreFabricante3').value = '';
+        $('#fabricante3').slideUp(122);
         $('#btnEliminarFabricante2').show();
         $('#btnFabricante3').show();
     }
 
     function btnEliminarFabricante4() {
         nombreFabricante4 = 'null';
-        $('#fabricante4').hide();
         $('#nombreFabricante4').removeAttr('required');
         document.getElementById('nombreFabricante4').value = '';
+        $('#fabricante4').slideUp(122);
         $('#btnEliminarFabricante3').show();
         $('#btnFabricante4').show();
     }
 
     function btnEliminarFabricante5() {
         nombreFabricante5 = 'null';
-        $('#fabricante5').hide();
         $('#nombreFabricante5').removeAttr('required');
         document.getElementById('nombreFabricante5').value = '';
+        $('#fabricante5').slideUp(122);
         $('#btnEliminarFabricante4').show();
         $('#btnFabricante5').show();
     }
 
     function btnEliminarFabricante6() {
         nombreFabricante6 = 'null';
-        $('#fabricante6').hide();
         $('#nombreFabricante6').removeAttr('required');
         document.getElementById('nombreFabricante6').value = '';
+        $('#fabricante6').slideUp(122);
         $('#btnEliminarFabricante5').show();
         $('#btnFabricante6').show();
     }
 
     function btnEliminarFabricante7() {
         nombreFabricante7 = 'null';
-        $('#fabricante7').hide();
         $('#nombreFabricante7').removeAttr('required');
         document.getElementById('nombreFabricante7').value = '';
+        $('#fabricante7').slideUp(122);
         $('#btnEliminarFabricante6').show();
         $('#btnFabricante7').show();
     }
 
     function btnEliminarFabricante8() {
         nombreFabricante8 = 'null';
-        $('#fabricante8').hide();
         $('#nombreFabricante8').removeAttr('required');
         document.getElementById('nombreFabricante8').value = '';
+        $('#fabricante8').slideUp(122);
         $('#btnEliminarFabricante7').show();
         $('#btnFabricante8').show();
     }
 
     function btnEliminarFabricante9() {
         nombreFabricante9 = 'null';
-        $('#fabricante9').hide();
         $('#nombreFabricante9').removeAttr('required');
         document.getElementById('nombreFabricante9').value = '';
+        $('#fabricante9').slideUp(122);
         $('#btnEliminarFabricante8').show();
         $('#btnFabricante9').show();
     }
 
     function btnEliminarFabricante10() {
         nombreFabricante10 = 'null';
-        $('#fabricante10').hide();
         $('#nombreFabricante10').removeAttr('required');
         document.getElementById('nombreFabricante10').value = '';
+        $('#fabricante10').slideUp(122);
         $('#btnEliminarFabricante9').show();
         $('#btnFabricante10').show();
     }

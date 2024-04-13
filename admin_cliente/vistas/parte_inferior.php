@@ -82,6 +82,7 @@
     <script type="text/javascript" src="./js/paises.js"></script>
     <script type="text/javascript" src="./js/productos.js"></script>
     <script type="text/javascript" src="./js/usuarios.js"></script>
+    <script type="text/javascript" src="./js/recetas.js"></script>
 
 </body>
 

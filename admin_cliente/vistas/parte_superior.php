@@ -134,8 +134,8 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Administrar:</h6>
+                        <a class="collapse-item" href="receta.php">Recetas</a>
                         <a class="collapse-item" href="hojaSeguridad.php">Listado de Hojas</a>
-            
                     </div>
                 </div>
             </li>

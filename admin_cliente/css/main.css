@@ -40,6 +40,47 @@ td.highlight {
     width: 100%;
 }
 
+.ingredientes {
+    /* display: none; */
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.ingrediente_display {
+    display: flex;
+}
+
+.ingrediente-box {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.ingrediente-text {
+    width: 100%;
+    margin-right: 5px;
+}
+
+.ingrediente_izquierda {
+    width: 80%;
+}
+
+.ingrediente_derecha {
+    width: auto;
+    padding-left: 35px;
+}
+
+.cantidad-box {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.cantidad-text {
+    display: flex;
+    width: 100%;
+}
+
 .clase-box {
     display: none;
     width: 100%;

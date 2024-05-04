@@ -5,7 +5,7 @@ $(document).ready(function () {
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarUsuario'>Editar</button><button class='btn btn-danger btnBorrarUsuario'>Borrar</button></div></div>"
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarReceta'>Editar</button><button class='btn btn-danger btnBorrarReceta'>Borrar</button></div></div>"
        }],
        "createdRow": function(row, data, dataIndex) {
             if ( data[0] ) {
@@ -83,7 +83,7 @@ $(document).ready(function () {
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-success btnEscoger'>Escoger</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto' data-dismiss='modal'>Seleccionar</button></div></div>"
         }],
 
         responsive: "true",
@@ -135,26 +135,28 @@ $(document).ready(function () {
         $("#modalProductosReducida").modal({backdrop: 'static', keyboard: false}, 'show');
     });
 
-    // $(document).on("click", ".btnEscogerProducto", function () {
-    //     fila = $(this);
-    //     cas = fila.find('td:eq(0)').text();
-    //     nombreProducto = $(this).closest("tr").find('td:eq(1)').text();
+    $(document).on("click", ".btnEscogerProducto", function () {
+        fila = $(this).closest("tr");
+        cas = fila.find('td:eq(0)').text();
+        nombreProducto = fila.find('td:eq(1)').text();
+        console.log('CAS: ', cas);
         
-    //     Swal.fire({
-    //         title: 'Está seguro que desea escoger el producto "' + nombreProducto + '"?',
-    //         showDenyButton: false,
-    //         showCancelButton: true,
-    //         confirmButtonText: 'Escoger',
-    //         denyButtonText: `Cancelar`,
-    //     }).then((result) => {
-    //         /* Read more about isConfirmed, isDenied below */
-    //         if (result.isConfirmed) {
-    //             $("#nombreIngrediente1").val(cas);
-    //         }
-    //     })
-    //     // $("#modalRecetas").modal({backdrop: 'static', keyboard: false}, 'show');
-    //     // $("#modalProductosReducida").modal("hide");
-    // });
+        // Swal.fire({
+        //     title: 'Está seguro que desea escoger el producto "' + nombreProducto + '"?',
+        //     showDenyButton: false,
+        //     showCancelButton: true,
+        //     confirmButtonText: 'Escoger',
+        //     denyButtonText: `Cancelar`,
+        // }).then((result) => {
+        //     /* Read more about isConfirmed, isDenied below */
+        //     if (result.isConfirmed) {
+                console.log('CAS: ', cas);
+                $("#nombreIngrediente1").val(cas);
+        //     }
+        // })
+        // $("#modalRecetas").modal({backdrop: 'static', keyboard: false}, 'show');
+        // $("#modalProductosReducida").modal("hide");
+    });
 
 
 

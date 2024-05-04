@@ -108,7 +108,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <div class="cantidad-box">
                                 <div class="cantidad-text">
-                                    <input type="number" class="form-control" style="width:130px" id="nivel1" min="0" max="100" step="0.01" disabled>
+                                    <input type="number" class="form-control" style="width:130px" id="nivel1" min="0" max="100" step="0.01">
                                     <p class="cont_nivel p" id="cantidad1">%</p>
                                 </div>
                             </div>
@@ -191,7 +191,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                      <?php
                     // include_once './bd/conexion.php';
                     $consulta1 = "SELECT * FROM vista_productos_reducida";
-                                
+
                     $resultado1 = $conexion->prepare($consulta1);
                     $resultado1->execute();
                     $data1=$resultado1->fetchAll(PDO::FETCH_ASSOC);
@@ -201,7 +201,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <button id="btnNuevoProducto" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
                         </div>    
                     </div>
-                                
+
                     <div class="card-body">
                         <div class="table-responsive">        
                             <table id="tablaProductosReducida" class="table table-bordered" style="width:100%">

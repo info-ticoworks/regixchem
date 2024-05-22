@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //tabla RECETAS
+    //Tabla Recetas
     tablaRecetas = $("#tablaRecetas").DataTable({
        "columnDefs":[{
         "targets": -1,
@@ -79,11 +79,18 @@ $(document).ready(function () {
         $(tablaRecetas.row(this).selector.rows).addClass("dtSelected");
     });
 
-    tablaProductosReducida = $("#tablaProductosReducida").DataTable({
+
+
+
+
+
+
+    //Tabla Producto 1
+    tablaProductosReducida1 = $("#tablaProductosReducida1").DataTable({
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto' data-dismiss='modal'>Seleccionar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto1' data-dismiss='modal'>Seleccionar</button></div></div>"
         }],
 
         responsive: "true",
@@ -108,11 +115,63 @@ $(document).ready(function () {
         }
     });
 
-    //Highlight de filas Tabla Productos
-    tablaProductosReducida.on('mouseenter', 'tr', function () {
+    //Highlight de filas Producto 1
+    tablaProductosReducida1.on('mouseenter', 'tr', function () {
         $(document).find('tr').removeClass("dtSelected");
-        $(tablaProductosReducida.row(this).selector.rows).addClass("dtSelected");
+        $(tablaProductosReducida1.row(this).selector.rows).addClass("dtSelected");
     });
+
+
+
+    //Tabla Producto 2
+    tablaProductosReducida2 = $("#tablaProductosReducida2").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto2' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0,'asc']], //Establece la columna que será el orden de los productos.
+        
+        
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas Producto 2
+    tablaProductosReducida2.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaProductosReducida2.row(this).selector.rows).addClass("dtSelected");
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Botón NUEVA RECETA
     $("#btnNuevaReceta").click(function(){
@@ -127,35 +186,32 @@ $(document).ready(function () {
         opcion = 1; //alta
     });
 
-    $("#btnBuscarIngrediente").click(function(){
-        $("#formProductosReducida").trigger("reset");
-        $(".modal-header").css("background-color", "#1cc88a");
-        $(".modal-header").css("color", "white");
-        $(".modal-title").text("Escoger Producto");            
-        $("#modalProductosReducida").modal({backdrop: 'static', keyboard: false}, 'show');
+    $("#btnBuscarIngrediente1").click(function(){
+        $("#formProductosReducida1").trigger("reset");
+        $("#modalProductosReducida1").modal({backdrop: 'static', keyboard: false}, 'show');
     });
 
-    $(document).on("click", ".btnEscogerProducto", function () {
-        fila = $(this).closest("tr");
-        cas = fila.find('td:eq(0)').text();
-        nombreProducto = fila.find('td:eq(1)').text();
-        console.log('CAS: ', cas);
-        
-        // Swal.fire({
-        //     title: 'Está seguro que desea escoger el producto "' + nombreProducto + '"?',
-        //     showDenyButton: false,
-        //     showCancelButton: true,
-        //     confirmButtonText: 'Escoger',
-        //     denyButtonText: `Cancelar`,
-        // }).then((result) => {
-        //     /* Read more about isConfirmed, isDenied below */
-        //     if (result.isConfirmed) {
-                console.log('CAS: ', cas);
-                $("#nombreIngrediente1").val(cas);
-        //     }
-        // })
-        // $("#modalRecetas").modal({backdrop: 'static', keyboard: false}, 'show');
-        // $("#modalProductosReducida").modal("hide");
+    $("#btnBuscarIngrediente2").click(function(){
+        $("#formProductosReducida2").trigger("reset");
+        $("#modalProductosReducida2").modal({backdrop: 'static', keyboard: false}, 'show');
+    });
+
+    $(document).on("click", ".btnEscogerProducto1", function () {
+        fila1 = $(this).closest("tr");
+        cas1 = fila1.find('td:eq(0)').text();
+        nombreProducto1 = fila1.find('td:eq(1)').text();
+        console.log('CAS1: ', cas1);
+        console.log('CAS1: ', cas1);
+        $("#nombreIngrediente1").val(cas1);
+    });
+
+    $(document).on("click", ".btnEscogerProducto2", function () {
+        fila2 = $(this).closest("tr");
+        cas2 = fila2.find('td:eq(0)').text();
+        nombreProducto2 = fila2.find('td:eq(1)').text();
+        console.log('CAS2: ', cas2);
+        console.log('CAS2: ', cas2);
+        $("#nombreIngrediente2").val(cas2);
     });
 
 

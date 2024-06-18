@@ -163,7 +163,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente3" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente3" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente4" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -197,7 +197,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente4" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente4" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente5" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -231,7 +231,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente5" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:6px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente5" class="btn btn-success" style="margin-right:6px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente6" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -265,7 +265,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente6" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente6" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente7" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -299,7 +299,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente7" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente7" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente8" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -333,7 +333,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente8" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente8" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente9" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -367,7 +367,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente9" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente9" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente10" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -401,7 +401,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente10" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente10" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente11" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -435,7 +435,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente11" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente11" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente12" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -469,7 +469,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente12" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente12" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente13" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -503,7 +503,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente13" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente13" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente14" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -537,7 +537,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente14" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente14" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                         <div>
                                             <button type="button" id="btnIngrediente15" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
@@ -571,7 +571,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <input type="text" class="form-control" id="nombreIngrediente15" required disabled>
                                         </div>
                                         <div>
-                                            <button type="button" id="btnBuscarIngrediente" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
+                                            <button type="button" id="btnBuscarIngrediente15" class="btn btn-success" style="margin-right:5px" title="Buscar ingrediente en la base de datos">Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -600,8 +600,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
-
-
 
 <!--Inicio Modal para escoger ingrediente 1-->
 <div class="modal fade" id="modalProductosReducida1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -696,10 +694,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <!-- Inicio de Tabla -->
                         <div class="card shadow mb-4">
                             <?php
-                            $consulta1 = "SELECT * FROM vista_productos_reducida";
-                            $resultado1 = $conexion->prepare($consulta1);
-                            $resultado1->execute();
-                            $data1=$resultado1->fetchAll(PDO::FETCH_ASSOC);
+                            $consulta2 = "SELECT * FROM vista_productos_reducida";
+                            $resultado2 = $conexion->prepare($consulta1);
+                            $resultado2->execute();
+                            $data2=$resultado2->fetchAll(PDO::FETCH_ASSOC);
                             ?>
                             <div class="card-header py-3">
                                 <div class="col-lg-12">
@@ -718,11 +716,11 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                     </thead>
                                     <tbody>
                                         <?php                            
-                                        foreach($data1 as $dat1) {                                                        
+                                        foreach($data2 as $dat2) {                                                        
                                         ?>
                                         <tr>
-                                            <td><?php echo $dat1['cas'] ?></td>
-                                            <td><?php echo $dat1['nombreProducto'] ?></td>
+                                            <td><?php echo $dat2['cas'] ?></td>
+                                            <td><?php echo $dat2['nombreProducto'] ?></td>
                                             <td></td>
                                         </tr>
                                         <?php
@@ -751,6 +749,78 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 </div>  
 <!--Final Modal para escoger ingrediente 2-->
 
+<!--Inicio Modal para escoger ingrediente 3-->
+<div class="modal fade" id="modalProductosReducida3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formProductosReducida3">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de <?php echo $SESSION_nombreEmpresa?></h1>
+                        <p class="mb-4">Puede agregar productos a la base de datos</p>
+                        <!-- Inicio de Tabla -->
+                        <div class="card shadow mb-4">
+                            <?php
+                            $consulta3 = "SELECT * FROM vista_productos_reducida";
+                            $resultado3 = $conexion->prepare($consulta1);
+                            $resultado3->execute();
+                            $data3=$resultado3->fetchAll(PDO::FETCH_ASSOC);
+                            ?>
+                            <div class="card-header py-3">
+                                <div class="col-lg-12">
+                                    <button id="btnNuevoProducto" type="button" class="btn btn-success" data-toggle="modal">Agregar Producto</button>    
+                                </div>    
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">        
+                                    <table id="tablaProductosReducida3" class="table table-bordered" style="width:100%">
+                                    <thead class="text-center">
+                                        <tr>
+                                            <th>CAS</th>
+                                            <th>Nombre</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php                            
+                                        foreach($data3 as $dat3) {                                                        
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $dat3['cas'] ?></td>
+                                            <td><?php echo $dat3['nombreProducto'] ?></td>
+                                            <td></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>                                
+                                    </tbody>
+                                    <tfoot class="text-center">
+                                        <tr>
+                                            <th>CAS</th>
+                                            <th>Nombre</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>     
+                                   </table>                    
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnCancelar" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </form>    
+        </div>
+    </div>
+</div>
+<!--Final Modal para escoger ingrediente 3-->
 
       
 </div>

@@ -1314,6 +1314,7 @@ $(document).ready(function () {
 
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {
+        idReceta = 'null';
         $("#formRecetas").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
         $(".modal-header").css("color", "white");

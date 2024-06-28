@@ -65,6 +65,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
 </head>
 
 <body id="page-top">
+    <input type="label" value="<?=$SESSION_idEmpresa?>" id="idEmpresa" hidden>
 
     <!-- Page Wrapper -->
     <div id="wrapper">

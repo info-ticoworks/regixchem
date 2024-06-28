@@ -147,3 +147,7 @@ td.highlight {
     overflow-y: scroll;
     overflow-x: scroll;
 }
+
+input[data-readonly] {
+    pointer-events: none;
+  }

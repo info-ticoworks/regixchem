@@ -1965,6 +1965,41 @@
         </div>
         <!--Final Modal para escoger ingrediente 15-->
 
+
+        <!--Inicio Modal para mostrar hoja de seguridad-->
+        <div class="modal fade" id="modalHojaSeguridad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formHojaSeguridad">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <!-- Page Heading -->
+                                <h3 class="h3 mb-2 text-gray-800" id="nombreRecetaPrev" value=""></h3>
+                                <p class="mb-4">Esto es solamente una previsualización.</p>
+                                <!-- Inicio de Hoja de Seguridad -->
+                                <?php require_once "hs.php" ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="btnGenerar" class="btn btn-dark">Generar Hoja de
+                                    Seguridad</button>
+                                <button type="button" id="btnCancelar" class="btn btn-light"
+                                    data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Final Modal para mostrar hoja de seguridad-->
+
+
     </div>
     <!-- /.container-fluid -->
 

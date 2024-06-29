@@ -5,7 +5,7 @@ $(document).ready(function () {
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarReceta'>Editar</button><button class='btn btn-danger btnBorrarReceta'>Borrar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditarReceta'>Editar</button><button class='btn btn-danger btnBorrarReceta'>Borrar</button><button class='btn btn-success btnPrevisualizar'>Previsualizar</button></div></div>"
         }],
         "createdRow": function (row, data, dataIndex) {
             if (data[0]) {
@@ -2143,17 +2143,5 @@ $(document).ready(function () {
         });
         $("#modalRecetas").modal("hide");
     });
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

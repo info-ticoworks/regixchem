@@ -83,6 +83,8 @@
     <script type="text/javascript" src="./js/productos.js"></script>
     <script type="text/javascript" src="./js/usuarios.js"></script>
     <script type="text/javascript" src="./js/recetas.js"></script>
+    <script type="text/javascript" src="./js/hoja-seguridad.js"></script>
+
 
 </body>
 

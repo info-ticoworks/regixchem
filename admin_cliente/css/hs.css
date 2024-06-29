@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    max-width: 10in;
+    margin: auto;
+  }
+
+.page-container {
+    min-width: 8.5in;
+    max-width: 8.5in;
+    background-color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 1in;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+    border: 1px solid black;
+}

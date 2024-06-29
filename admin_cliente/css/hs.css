@@ -20,3 +20,21 @@
     box-shadow: 5px 5px 5px rgb(0, 0, 0);
     border: 1px solid black;
 }
+
+.page-container h2 {
+    background-color: rgb(228, 57, 57);
+    padding: 15px;
+    font-family: Arial;
+    font-size: 16pt;
+    font-weight: 600;
+    text-align: justify;
+    color: white;
+}
+
+.page-container h3 {
+    padding: 15px;
+    font-family: Arial;
+    font-size: 12pt;
+}
+
+

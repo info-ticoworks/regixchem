@@ -1421,22 +1421,6 @@ $(document).ready(function () {
     });
 
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Inicio de botones para buscar ONU
 
     $("#btnBuscarOnu1").click(function () {
@@ -1521,10 +1505,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente2').on('click', function () {
         cas2 = 'null';
+        onu2 = 'null';
         $("#nombreIngrediente2").attr("required", "required");
+        $("#nombreOnu2").attr("required", "required");
         $("#nivel2").attr("required", "required");
         $('#ingrediente2').show();
-        $('#modalRecetas').animate({ scrollTop: 100 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 130 }, 'fast');
         $('#btnIngrediente2').hide();
         $('#btnQuitarIngrediente2').show();
         $('#btnIngrediente3').show();
@@ -1532,22 +1518,27 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente2').on('click', function () {
         cas2 = 'null';
+        onu2 = 'null';
         $('#nombreIngrediente2').removeAttr('required');
+        $('#nombreOnu2').removeAttr('required');
         $('#nivel2').removeAttr('required');
         $('#ingrediente2').hide();
-        $('#modalRecetas').animate({ scrollTop: 100 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 130 }, 'fast');
         $('#fabricante2').slideDown(122);
         $("#nombreIngrediente2").val('');
+        $("#nombreOnu2").val('');
         $("#nivel2").val('');
         $('#btnIngrediente2').show();
     });
 
     $('#btnIngrediente3').on('click', function () {
         cas3 = 'null';
+        onu3 = 'null';
         $("#nombreIngrediente3").attr("required", "required");
+        $("#nombreOnu").attr("required", "required");
         $("#nivel3").attr("required", "required");
         $('#ingrediente3').show();
-        $('#modalRecetas').animate({ scrollTop: 200 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 260 }, 'fast');
         $('#btnQuitarIngrediente2').hide();
         $('#btnIngrediente3').hide();
         $('#btnQuitarIngrediente3').show();
@@ -1556,12 +1547,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente3').on('click', function () {
         cas3 = 'null';
+        onu3 = 'null';
         $('#nombreIngrediente3').removeAttr('required');
+        $('#nombreOnu3').removeAttr('required');
         $('#nivel3').removeAttr('required');
         $('#ingrediente3').hide();
-        $('#modalRecetas').animate({ scrollTop: 200 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 260 }, 'fast');
         $('#fabricante3').slideDown(122);
         $("#nombreIngrediente3").val('');
+        $("#nombreOnu3").val('');
         $("#nivel3").val('');
         $('#btnQuitarIngrediente2').show();
         $('#btnIngrediente3').show();
@@ -1569,10 +1563,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente4').on('click', function () {
         cas4 = 'null';
+        onu4 = 'null';
         $("#nombreIngrediente4").attr("required", "required");
+        $("#nombreOnu4").attr("required", "required");
         $("#nivel4").attr("required", "required");
         $('#ingrediente4').show();
-        $('#modalRecetas').animate({ scrollTop: 300 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 390 }, 'fast');
         $('#btnQuitarIngrediente3').hide();
         $('#btnIngrediente4').hide();
         $('#btnQuitarIngrediente4').show();
@@ -1581,12 +1577,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente4').on('click', function () {
         cas4 = 'null';
+        onu4 = 'null';
         $('#nombreIngrediente4').removeAttr('required');
+        $('#nombreOnu4').removeAttr('required');
         $('#nivel4').removeAttr('required');
         $('#ingrediente4').hide();
-        $('#modalRecetas').animate({ scrollTop: 300 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 390 }, 'fast');
         $('#fabricante4').slideDown(122);
         $("#nombreIngrediente4").val('');
+        $("#nombreOnu4").val('');
         $("#nivel4").val('');
         $('#btnQuitarIngrediente3').show();
         $('#btnIngrediente4').show();
@@ -1594,10 +1593,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente5').on('click', function () {
         cas5 = 'null';
+        onu5 = 'null';
         $("#nombreIngrediente5").attr("required", "required");
+        $("#nombreOnu5").attr("required", "required");
         $("#nivel5").attr("required", "required");
         $('#ingrediente5').show();
-        $('#modalRecetas').animate({ scrollTop: 400 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 520 }, 'fast');
         $('#btnQuitarIngrediente4').hide();
         $('#btnIngrediente5').hide();
         $('#btnQuitarIngrediente5').show();
@@ -1606,12 +1607,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente5').on('click', function () {
         cas5 = 'null';
+        onu5 = 'null';
         $('#nombreIngrediente5').removeAttr('required');
+        $('#nombreOnu5').removeAttr('required');
         $('#nivel5').removeAttr('required');
         $('#ingrediente5').hide();
-        $('#modalRecetas').animate({ scrollTop: 400 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 520 }, 'fast');
         $('#fabricante5').slideDown(122);
         $("#nombreIngrediente5").val('');
+        $("#nombreOnu5").val('');
         $("#nivel5").val('');
         $('#btnQuitarIngrediente4').show();
         $('#btnIngrediente5').show();
@@ -1619,10 +1623,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente6').on('click', function () {
         cas6 = 'null';
+        onu6 = 'null';
         $("#nombreIngrediente6").attr("required", "required");
+        $("#nombreOnu6").attr("required", "required");
         $("#nivel6").attr("required", "required");
         $('#ingrediente6').show();
-        $('#modalRecetas').animate({ scrollTop: 500 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 650 }, 'fast');
         $('#btnQuitarIngrediente5').hide();
         $('#btnIngrediente6').hide();
         $('#btnQuitarIngrediente6').show();
@@ -1631,12 +1637,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente6').on('click', function () {
         cas6 = 'null';
+        onu6 = 'null';
         $('#nombreIngrediente6').removeAttr('required');
+        $('#nombreOnu6').removeAttr('required');
         $('#nivel6').removeAttr('required');
         $('#ingrediente6').hide();
-        $('#modalRecetas').animate({ scrollTop: 500 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 650 }, 'fast');
         $('#fabricante6').slideDown(122);
         $("#nombreIngrediente6").val('');
+        $("#nombreOnu6").val('');
         $("#nivel6").val('');
         $('#btnQuitarIngrediente5').show();
         $('#btnIngrediente6').show();
@@ -1644,10 +1653,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente7').on('click', function () {
         cas7 = 'null';
+        onu7 = 'null';
         $("#nombreIngrediente7").attr("required", "required");
+        $("#nombreOnu7").attr("required", "required");
         $("#nivel7").attr("required", "required");
         $('#ingrediente7').show();
-        $('#modalRecetas').animate({ scrollTop: 600 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 780 }, 'fast');
         $('#btnQuitarIngrediente6').hide();
         $('#btnIngrediente7').hide();
         $('#btnQuitarIngrediente7').show();
@@ -1656,12 +1667,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente7').on('click', function () {
         cas7 = 'null';
+        onu7 = 'null';
         $('#nombreIngrediente7').removeAttr('required');
+        $('#nombreOnu7').removeAttr('required');
         $('#nivel7').removeAttr('required');
         $('#ingrediente7').hide();
-        $('#modalRecetas').animate({ scrollTop: 600 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 780 }, 'fast');
         $('#fabricante7').slideDown(122);
         $("#nombreIngrediente7").val('');
+        $("#nombreOnu7").val('');
         $("#nivel7").val('');
         $('#btnQuitarIngrediente6').show();
         $('#btnIngrediente7').show();
@@ -1669,10 +1683,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente8').on('click', function () {
         cas8 = 'null';
+        onu8 = 'null';
         $("#nombreIngrediente8").attr("required", "required");
+        $("#nombreOnu8").attr("required", "required");
         $("#nivel8").attr("required", "required");
         $('#ingrediente8').show();
-        $('#modalRecetas').animate({ scrollTop: 700 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 910 }, 'fast');
         $('#btnQuitarIngrediente7').hide();
         $('#btnIngrediente8').hide();
         $('#btnQuitarIngrediente8').show();
@@ -1681,12 +1697,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente8').on('click', function () {
         cas8 = 'null';
+        onu8 = 'null';
         $('#nombreIngrediente8').removeAttr('required');
+        $('#nombreOnu8').removeAttr('required');
         $('#nivel8').removeAttr('required');
         $('#ingrediente8').hide();
-        $('#modalRecetas').animate({ scrollTop: 700 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 910 }, 'fast');
         $('#fabricante8').slideDown(122);
         $("#nombreIngrediente8").val('');
+        $("#nombreOnu8").val('');
         $("#nivel8").val('');
         $('#btnQuitarIngrediente7').show();
         $('#btnIngrediente8').show();
@@ -1694,10 +1713,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente9').on('click', function () {
         cas9 = 'null';
+        onu9 = 'null';
         $("#nombreIngrediente9").attr("required", "required");
+        $("#nombreOnu9").attr("required", "required");
         $("#nivel9").attr("required", "required");
         $('#ingrediente9').show();
-        $('#modalRecetas').animate({ scrollTop: 800 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1040 }, 'fast');
         $('#btnQuitarIngrediente8').hide();
         $('#btnIngrediente9').hide();
         $('#btnQuitarIngrediente9').show();
@@ -1706,12 +1727,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente9').on('click', function () {
         cas9 = 'null';
+        onu9 = 'null';
         $('#nombreIngrediente9').removeAttr('required');
+        $('#nombreOnu9').removeAttr('required');
         $('#nivel9').removeAttr('required');
         $('#ingrediente9').hide();
-        $('#modalRecetas').animate({ scrollTop: 800 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1040 }, 'fast');
         $('#fabricante9').slideDown(122);
         $("#nombreIngrediente9").val('');
+        $("#nombreOnu9").val('');
         $("#nivel9").val('');
         $('#btnQuitarIngrediente8').show();
         $('#btnIngrediente9').show();
@@ -1719,10 +1743,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente10').on('click', function () {
         cas10 = 'null';
+        onu10 = 'null';
         $("#nombreIngrediente10").attr("required", "required");
+        $("#nombreOnu10").attr("required", "required");
         $("#nivel10").attr("required", "required");
         $('#ingrediente10').show();
-        $('#modalRecetas').animate({ scrollTop: 900 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1170 }, 'fast');
         $('#btnQuitarIngrediente9').hide();
         $('#btnIngrediente10').hide();
         $('#btnQuitarIngrediente10').show();
@@ -1731,12 +1757,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente10').on('click', function () {
         cas10 = 'null';
+        onu10 = 'null';
         $('#nombreIngrediente10').removeAttr('required');
+        $('#nombreOnu10').removeAttr('required');
         $('#nivel10').removeAttr('required');
         $('#ingrediente10').hide();
-        $('#modalRecetas').animate({ scrollTop: 900 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1170 }, 'fast');
         $('#fabricante10').slideDown(122);
         $("#nombreIngrediente10").val('');
+        $("#nombreOnu10").val('');
         $("#nivel10").val('');
         $('#btnQuitarIngrediente9').show();
         $('#btnIngrediente10').show();
@@ -1744,10 +1773,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente11').on('click', function () {
         cas11 = 'null';
+        onu11 = 'null';
         $("#nombreIngrediente11").attr("required", "required");
+        $("#nombreOnu11").attr("required", "required");
         $("#nivel11").attr("required", "required");
         $('#ingrediente11').show();
-        $('#modalRecetas').animate({ scrollTop: 1000 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1300 }, 'fast');
         $('#btnQuitarIngrediente10').hide();
         $('#btnIngrediente11').hide();
         $('#btnQuitarIngrediente11').show();
@@ -1756,12 +1787,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente11').on('click', function () {
         cas11 = 'null';
+        onu11 = 'null';
         $('#nombreIngrediente11').removeAttr('required');
+        $('#nombreOnu11').removeAttr('required');
         $('#nivel11').removeAttr('required');
         $('#ingrediente11').hide();
-        $('#modalRecetas').animate({ scrollTop: 1000 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1300 }, 'fast');
         $('#fabricante11').slideDown(122);
         $("#nombreIngrediente11").val('');
+        $("#nombreOnu11").val('');
         $("#nivel11").val('');
         $('#btnQuitarIngrediente10').show();
         $('#btnIngrediente11').show();
@@ -1769,10 +1803,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente12').on('click', function () {
         cas12 = 'null';
+        onu12 = 'null';
         $("#nombreIngrediente12").attr("required", "required");
+        $("#nombreOnu12").attr("required", "required");
         $("#nivel12").attr("required", "required");
         $('#ingrediente12').show();
-        $('#modalRecetas').animate({ scrollTop: 1100 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1430 }, 'fast');
         $('#btnQuitarIngrediente11').hide();
         $('#btnIngrediente12').hide();
         $('#btnQuitarIngrediente12').show();
@@ -1781,12 +1817,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente12').on('click', function () {
         cas12 = 'null';
+        onu12 = 'null';
         $('#nombreIngrediente12').removeAttr('required');
+        $('#nombreOnu12').removeAttr('required');
         $('#nivel12').removeAttr('required');
         $('#ingrediente12').hide();
-        $('#modalRecetas').animate({ scrollTop: 1100 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1430 }, 'fast');
         $('#fabricante12').slideDown(122);
         $("#nombreIngrediente12").val('');
+        $("#nombreOnu12").val('');
         $("#nivel12").val('');
         $('#btnQuitarIngrediente11').show();
         $('#btnIngrediente12').show();
@@ -1794,10 +1833,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente13').on('click', function () {
         cas13 = 'null';
+        onu13 = 'null';
         $("#nombreIngrediente13").attr("required", "required");
+        $("#nombreOnu13").attr("required", "required");
         $("#nivel13").attr("required", "required");
         $('#ingrediente13').show();
-        $('#modalRecetas').animate({ scrollTop: 1200 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1560 }, 'fast');
         $('#btnQuitarIngrediente12').hide();
         $('#btnIngrediente13').hide();
         $('#btnQuitarIngrediente13').show();
@@ -1806,12 +1847,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente13').on('click', function () {
         cas13 = 'null';
+        onu13 = 'null';
         $('#nombreIngrediente13').removeAttr('required');
+        $('#nombreOnu13').removeAttr('required');
         $('#nivel13').removeAttr('required');
         $('#ingrediente13').hide();
-        $('#modalRecetas').animate({ scrollTop: 1200 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1560 }, 'fast');
         $('#fabricante13').slideDown(122);
         $("#nombreIngrediente13").val('');
+        $("#nombreOnu13").val('');
         $("#nivel13").val('');
         $('#btnQuitarIngrediente12').show();
         $('#btnIngrediente13').show();
@@ -1819,10 +1863,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente14').on('click', function () {
         cas14 = 'null';
+        onu14 = 'null';
         $("#nombreIngrediente14").attr("required", "required");
+        $("#nombreOnu14").attr("required", "required");
         $("#nivel14").attr("required", "required");
         $('#ingrediente14').show();
-        $('#modalRecetas').animate({ scrollTop: 1300 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1690 }, 'fast');
         $('#btnQuitarIngrediente13').hide();
         $('#btnIngrediente14').hide();
         $('#btnQuitarIngrediente14').show();
@@ -1831,12 +1877,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente14').on('click', function () {
         cas14 = 'null';
+        onu14 = 'null';
         $('#nombreIngrediente14').removeAttr('required');
+        $('#nombreOnu14').removeAttr('required');
         $('#nivel14').removeAttr('required');
         $('#ingrediente14').hide();
-        $('#modalRecetas').animate({ scrollTop: 1300 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1690 }, 'fast');
         $('#fabricante14').slideDown(122);
         $("#nombreIngrediente14").val('');
+        $("#nombreOnu14").val('');
         $("#nivel14").val('');
         $('#btnQuitarIngrediente13').show();
         $('#btnIngrediente14').show();
@@ -1844,10 +1893,12 @@ $(document).ready(function () {
 
     $('#btnIngrediente15').on('click', function () {
         cas15 = 'null';
+        onu15 = 'null';
         $("#nombreIngrediente15").attr("required", "required");
+        $("#nombreOnu15").attr("required", "required");
         $("#nivel15").attr("required", "required");
         $('#ingrediente15').show();
-        $('#modalRecetas').animate({ scrollTop: 1400 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1820 }, 'fast');
         $('#btnQuitarIngrediente14').hide();
         $('#btnIngrediente15').hide();
         $('#btnQuitarIngrediente15').show();
@@ -1855,12 +1906,15 @@ $(document).ready(function () {
 
     $('#btnQuitarIngrediente15').on('click', function () {
         cas15 = 'null';
+        onu15 = 'null';
         $('#nombreIngrediente15').removeAttr('required');
+        $('#nombreOnu15').removeAttr('required');
         $('#nivel15').removeAttr('required');
         $('#ingrediente15').hide();
-        $('#modalRecetas').animate({ scrollTop: 1400 }, 'fast');
+        $('#modalRecetas').animate({ scrollTop: 1820 }, 'fast');
         $('#fabricante15').slideDown(122);
         $("#nombreIngrediente15").val('');
+        $("#nombreOnu15").val('');
         $("#nivel15").val('');
         $('#btnQuitarIngrediente14').show();
         $('#btnIngrediente15').show();

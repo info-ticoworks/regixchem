@@ -84,41 +84,46 @@
 
                             <!-- Ingredientes -->
                             <div class="ingredientes" id="ingredientes">
-                                <label class="clase-box-titulo">Ingredientes:</label>
+                                <label class="clase-box-titulo">Ingredientes: (Utilizar el porcentaje de concentración mayor).</label>
 
                                 <!-- Inicio Ingrediente 1 -->
                                 <div class="ingrediente1" id="ingrediente1">
                                     <div class="ingrediente_display">
                                         <div class="ingrediente_izquierda">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente1" class="col-form-label">Ingrediente
-                                                    1:*</label>
+                                                <label class="col-form-label">Ingrediente 1:*</label>
                                             </div>
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente1"
-                                                        required data-readonly placeholder="Selección Obligatoria*">
+                                                    required data-readonly placeholder="CAS 1*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente1"
-                                                        class="btn btn-success" style="margin-right:5px"
-                                                        title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                    class="btn btn-success" style="margin-right:5px"
+                                                    title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu1"
+                                                    required data-readonly placeholder="ONU 1*">
                                                 </div>
                                                 <div>
-                                                    <button type="button" id="btnIngrediente2" class="btn btn-primary"
-                                                        title="Agregar otro ingrediente">+</button>
+                                                    <button type="button" id="btnBuscarOnu1"
+                                                    class="btn btn-success" style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnIngrediente2" class="btn btn-primary" title="Agregar otro ingrediente">+</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente1"
-                                                    class="col-form-label">Cantidad:*</label>
+                                                <label for="nombreIngrediente1" class="col-form-label">Cantidad 1:*</label>
                                             </div>
                                             <div class="cantidad-box">
                                                 <div class="cantidad-text">
-                                                    <input type="number" class="form-control" style="width:130px"
-                                                        id="nivel1" min="0" max="100" step="0.01" required>
+                                                    <input type="number" class="form-control" style="width:130px" id="nivel1" min="0" max="100" step="0.01" required>
                                                     <p class="cont_nivel p" id="cantidad1">%</p>
                                                 </div>
                                             </div>
@@ -137,28 +142,38 @@
                                             </div>
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
+
                                                     <input type="text" class="form-control" id="nombreIngrediente2"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 2*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente2"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu2"
+                                                    required data-readonly placeholder="ONU 2*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu2"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
+                                                </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente3" class="btn btn-primary"
-                                                        title="Agregar otro ingrediente">+</button>
+                                                    title="Agregar otro ingrediente">+</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnQuitarIngrediente2"
-                                                        class="btn btn-danger" title="Eliminar ingrediente">-</button>
+                                                    class="btn btn-danger"
+                                                    title="Eliminar ingrediente">-</button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente2" class="col-form-label">Cantidad:
-                                                    *</label>
+                                                <label for="nombreIngrediente2" class="col-form-label">Cantidad 2:*</label>
                                             </div>
                                             <div class="cantidad-box">
                                                 <div class="cantidad-text">
@@ -183,12 +198,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente3"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 3*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente3"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu3"
+                                                    required data-readonly placeholder="ONU 3*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu3"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente4" class="btn btn-primary"
@@ -202,7 +226,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente3" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente3" class="col-form-label">Cantidad 3:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -228,12 +252,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente4"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 4*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente4"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu4"
+                                                    required data-readonly placeholder="ONU 4*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu4"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente5" class="btn btn-primary"
@@ -247,7 +280,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente4" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente4" class="col-form-label">Cantidad 4:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -273,12 +306,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente5"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 5*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente5"
                                                         class="btn btn-success" style="margin-right:6px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu5"
+                                                    required data-readonly placeholder="ONU 5*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu5"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente6" class="btn btn-primary"
@@ -292,7 +334,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente5" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente5" class="col-form-label">Cantidad 5:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -318,12 +360,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente6"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 6*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente6"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu6"
+                                                    required data-readonly placeholder="ONU 6*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu6"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente7" class="btn btn-primary"
@@ -337,7 +388,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente6" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente6" class="col-form-label">Cantidad 6:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -363,12 +414,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente7"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 7*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente7"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu7"
+                                                    required data-readonly placeholder="ONU 7*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu7"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente8" class="btn btn-primary"
@@ -382,7 +442,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente7" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente7" class="col-form-label">Cantidad 7:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -408,12 +468,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente8"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 8*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente8"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu8"
+                                                    required data-readonly placeholder="ONU 8*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu8"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente9" class="btn btn-primary"
@@ -427,7 +496,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente8" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente8" class="col-form-label">Cantidad 8:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -453,12 +522,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente9"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 9*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente9"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu9"
+                                                    required data-readonly placeholder="ONU 9*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu9"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente10" class="btn btn-primary"
@@ -472,7 +550,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente9" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente9" class="col-form-label">Cantidad 9:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -498,12 +576,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente10"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 10*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente10"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu10"
+                                                    required data-readonly placeholder="ONU 10*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu10"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente11" class="btn btn-primary"
@@ -517,7 +604,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente10" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente10" class="col-form-label">Cantidad 10:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -543,12 +630,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente11"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 11*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente11"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu11"
+                                                    required data-readonly placeholder="ONU 11*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu11"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente12" class="btn btn-primary"
@@ -562,7 +658,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente11" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente11" class="col-form-label">Cantidad 11:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -588,12 +684,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente12"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 12*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente12"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu12"
+                                                    required data-readonly placeholder="ONU 12*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu12"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente13" class="btn btn-primary"
@@ -607,7 +712,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente12" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente12" class="col-form-label">Cantidad 12:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -633,12 +738,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente13"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 13*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente13"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu13"
+                                                    required data-readonly placeholder="ONU 13*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu13"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente14" class="btn btn-primary"
@@ -652,7 +766,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente13" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente13" class="col-form-label">Cantidad 13:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -678,12 +792,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente14"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 14*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente14"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu14"
+                                                    required data-readonly placeholder="ONU 14*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu14"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnIngrediente15" class="btn btn-primary"
@@ -697,7 +820,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente14" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente14" class="col-form-label">Cantidad 14:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -723,12 +846,21 @@
                                             <div class="ingrediente-box">
                                                 <div class="ingrediente-text">
                                                     <input type="text" class="form-control" id="nombreIngrediente15"
-                                                        data-readonly placeholder="Selección Obligatoria*">
+                                                        data-readonly placeholder="CAS 15*">
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnBuscarIngrediente15"
                                                         class="btn btn-success" style="margin-right:5px"
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
+                                                </div>
+                                                <div class="ingrediente-text">
+                                                    <input type="text" class="form-control" id="nombreOnu15"
+                                                    required data-readonly placeholder="ONU 15*">
+                                                </div>
+                                                <div>
+                                                    <button type="button" id="btnBuscarOnu15"
+                                                    class="btn btn-success"  style="margin-right:5px"
+                                                    title="Buscar ONU en la base de datos">Buscar</button>
                                                 </div>
                                                 <div>
                                                     <button type="button" id="btnQuitarIngrediente15"
@@ -738,7 +870,7 @@
                                         </div>
                                         <div class="ingrediente_derecha">
                                             <div class="form-group">
-                                                <label for="nombreIngrediente15" class="col-form-label">Cantidad:
+                                                <label for="nombreIngrediente15" class="col-form-label">Cantidad 15:
                                                     *</label>
                                             </div>
                                             <div class="cantidad-box">
@@ -1966,6 +2098,100 @@
         <!--Final Modal para escoger ingrediente 15-->
 
 
+
+
+
+
+
+
+
+        <!--Inicio Modal para escoger ONU 1-->
+        <div class="modal fade" id="modalONU1" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="formONU1">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <!-- Page Heading -->
+
+                                <!-- Inicio de Tabla -->
+                                <div class="card shadow mb-4">
+                                    <?php
+                                    $consulta1 = "SELECT * FROM numUN";
+                                    $resultado1 = $conexion->prepare($consulta1);
+                                    $resultado1->execute();
+                                    $data1 = $resultado1->fetchAll(PDO::FETCH_ASSOC);
+                                    ?>
+                                    <div class="card-header py-3">
+                                        <div class="col-lg-12">
+                                            <h1 class="h3 mb-2 text-gray-800">Lista de números ONU</h1>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="tablaONU1" class="table table-bordered"
+                                                style="width:100%">
+                                                <thead class="text-center">
+                                                    <tr>
+                                                        <th>No ONU</th>
+                                                        <th>Descripción</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    foreach ($data1 as $dat1) {
+                                                        ?>
+                                                        <tr>
+                                                            <td><?php echo $dat1['onu'] ?></td>
+                                                            <td><?php echo $dat1['desc'] ?></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </tbody>
+                                                <tfoot class="text-center">
+                                                    <tr>
+                                                        <th>No ONU</th>
+                                                        <th>Descripción</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="btnCancelar" class="btn btn-light"
+                                    data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Final Modal para escoger ONU 1-->
+
+
+
+
+
+
+
+
+
+
+
         <!--Inicio Modal para mostrar hoja de seguridad-->
         <div class="modal fade" id="modalHojaSeguridad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -1987,10 +2213,8 @@
                                 <?php require_once "hs.php" ?>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" id="btnGenerar" class="btn btn-dark">Generar Hoja de
-                                    Seguridad</button>
-                                <button type="button" id="btnCancelar" class="btn btn-light"
-                                    data-dismiss="modal">Cancelar</button>
+                                <button id="download-btn" class="btn btn-dark" data-dismiss="modal">Generar Hoja de Seguridad</button>
+                                <button type="button" id="btnCancelar" class="btn btn-light" data-dismiss="modal">Cancelar</button>
                             </div>
                         </div>
                     </form>

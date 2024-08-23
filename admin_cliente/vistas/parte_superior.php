@@ -120,9 +120,9 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Hojas de Seguridad
-            </div>                        
+            </div>                         -->
             
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">

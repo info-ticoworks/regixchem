@@ -710,7 +710,8 @@ $(document).ready(function () {
         $('body').addClass('modal-open');
     });
 
-    //Inicio de botones para buscar ingradientes
+
+    //Inicio de botones para buscar ingredientes
 
     $("#btnBuscarIngrediente1").click(function () {
         $("#formProductosReducida1").trigger("reset");
@@ -790,7 +791,730 @@ $(document).ready(function () {
     //Final de botones para buscar ingredientes
 
 
+    //Tabla ONU 1
+    tablaONU1 = $("#tablaONU1").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu1' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
 
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 1
+    tablaONU1.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU1.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 1
+    $('#modalONU1').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 2
+    tablaONU2 = $("#tablaONU2").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu2' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 2
+    tablaONU2.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU2.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 2
+    $('#modalONU2').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 3
+    tablaONU3 = $("#tablaONU3").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu3' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 3
+    tablaONU3.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU3.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 3
+    $('#modalONU3').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 4
+    tablaONU4 = $("#tablaONU4").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu4' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 4
+    tablaONU4.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU4.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 4
+    $('#modalONU4').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 5
+    tablaONU5 = $("#tablaONU5").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu5' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 5
+    tablaONU5.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU5.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 5
+    $('#modalONU5').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 6
+    tablaONU6 = $("#tablaONU6").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu6' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 6
+    tablaONU6.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU6.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 6
+    $('#modalONU6').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 7
+    tablaONU7 = $("#tablaONU7").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu7' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 7
+    tablaONU7.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU7.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 7
+    $('#modalONU7').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 8
+    tablaONU8 = $("#tablaONU8").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu8' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 8
+    tablaONU8.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU8.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 8
+    $('#modalONU8').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 9
+    tablaONU9 = $("#tablaONU9").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu9' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 9
+    tablaONU9.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU9.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 9
+    $('#modalONU9').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 10
+    tablaONU10 = $("#tablaONU10").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu10' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 10
+    tablaONU10.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU10.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 10
+    $('#modalONU10').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 11
+    tablaONU11 = $("#tablaONU11").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu11' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 11
+    tablaONU11.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU11.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 11
+    $('#modalONU11').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 12
+    tablaONU12 = $("#tablaONU12").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu12' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 12
+    tablaONU12.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU12.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 12
+    $('#modalONU12').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 13
+    tablaONU13 = $("#tablaONU13").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu13' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 13
+    tablaONU13.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU13.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 13
+    $('#modalONU13').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 14
+    tablaONU14 = $("#tablaONU14").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu14' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 14
+    tablaONU14.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU14.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 14
+    $('#modalONU14').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+    //Tabla ONU 15
+    tablaONU15 = $("#tablaONU15").DataTable({
+        "columnDefs": [{
+            "targets": -1,
+            "data": null,
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu15' data-dismiss='modal'>Seleccionar</button></div></div>"
+        }],
+
+        responsive: "true",
+        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
+
+
+        //Para cambiar el lenguaje a español
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "zeroRecords": "No se encontraron resultados",
+            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "sProcessing": "Procesando...",
+        }
+    });
+
+    //Highlight de filas ONU 15
+    tablaONU15.on('mouseenter', 'tr', function () {
+        $(document).find('tr').removeClass("dtSelected");
+        $(tablaONU15.row(this).selector.rows).addClass("dtSelected");
+    });
+
+    //Fix de Scroll en Modal ONU 15
+    $('#modalONU15').on('hidden.bs.modal', function (e) {
+        $('body').addClass('modal-open');
+    });
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Inicio de botones para buscar ONU
+
+    $("#btnBuscarOnu1").click(function () {
+        $("#formONU1").trigger("reset");
+        $("#modalONU1").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu2").click(function () {
+        $("#formONU2").trigger("reset");
+        $("#modalONU2").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu3").click(function () {
+        $("#formONU3").trigger("reset");
+        $("#modalONU3").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu4").click(function () {
+        $("#formONU4").trigger("reset");
+        $("#modalONU4").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu5").click(function () {
+        $("#formONU5").trigger("reset");
+        $("#modalONU5").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu6").click(function () {
+        $("#formONU6").trigger("reset");
+        $("#modalONU6").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu7").click(function () {
+        $("#formONU7").trigger("reset");
+        $("#modalONU7").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu8").click(function () {
+        $("#formONU8").trigger("reset");
+        $("#modalONU8").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu9").click(function () {
+        $("#formONU9").trigger("reset");
+        $("#modalONU9").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu10").click(function () {
+        $("#formONU10").trigger("reset");
+        $("#modalONU10").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu11").click(function () {
+        $("#formONU11").trigger("reset");
+        $("#modalONU11").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu12").click(function () {
+        $("#formONU12").trigger("reset");
+        $("#modalONU12").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu13").click(function () {
+        $("#formONU13").trigger("reset");
+        $("#modalONU13").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu14").click(function () {
+        $("#formONU14").trigger("reset");
+        $("#modalONU14").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    $("#btnBuscarOnu15").click(function () {
+        $("#formONU15").trigger("reset");
+        $("#modalONU15").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+    
+    //Final de botones para buscar ONU
 
 
     //Inicio de botones para agregar y quitar ingredientes
@@ -1311,6 +2035,160 @@ $(document).ready(function () {
         $("#nombreIngrediente15").val(cas15);
         $('#modalRecetas').modal('show');
     });
+
+
+    //Botón para escoger ONU 1
+    $(document).on("click", ".btnEscogerOnu1", function () {
+        fila1 = $(this).closest("tr");
+        onu1 = fila1.find('td:eq(0)').text();
+        nombreONU1 = fila1.find('td:eq(1)').text();
+        console.log('ONU 1: ', onu1);
+        $("#nombreOnu1").val(onu1);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 2
+    $(document).on("click", ".btnEscogerOnu2", function () {
+        fila2 = $(this).closest("tr");
+        onu2 = fila2.find('td:eq(0)').text();
+        nombreONU2 = fila2.find('td:eq(1)').text();
+        console.log('ONU 2: ', onu2);
+        $("#nombreOnu2").val(onu2);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 3
+    $(document).on("click", ".btnEscogerOnu3", function () {
+        fila3 = $(this).closest("tr");
+        onu3 = fila3.find('td:eq(0)').text();
+        nombreONU3 = fila3.find('td:eq(1)').text();
+        console.log('ONU 3: ', onu3);
+        $("#nombreOnu3").val(onu3);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 4
+    $(document).on("click", ".btnEscogerOnu4", function () {
+        fila4 = $(this).closest("tr");
+        onu4 = fila4.find('td:eq(0)').text();
+        nombreONU4 = fila4.find('td:eq(1)').text();
+        console.log('ONU 4: ', onu4);
+        $("#nombreOnu4").val(onu4);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 5
+    $(document).on("click", ".btnEscogerOnu5", function () {
+        fila5 = $(this).closest("tr");
+        onu5 = fila5.find('td:eq(0)').text();
+        nombreONU5 = fila5.find('td:eq(1)').text();
+        console.log('ONU 5: ', onu5);
+        $("#nombreOnu5").val(onu5);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 6
+    $(document).on("click", ".btnEscogerOnu6", function () {
+        fila6 = $(this).closest("tr");
+        onu6 = fila6.find('td:eq(0)').text();
+        nombreONU6 = fila6.find('td:eq(1)').text();
+        console.log('ONU 6: ', onu6);
+        $("#nombreOnu6").val(onu6);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 7
+    $(document).on("click", ".btnEscogerOnu7", function () {
+        fila7 = $(this).closest("tr");
+        onu7 = fila7.find('td:eq(0)').text();
+        nombreONU7 = fila7.find('td:eq(1)').text();
+        console.log('ONU 7: ', onu7);
+        $("#nombreOnu7").val(onu7);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 8
+    $(document).on("click", ".btnEscogerOnu8", function () {
+        fila8 = $(this).closest("tr");
+        onu8 = fila8.find('td:eq(0)').text();
+        nombreONU8 = fila8.find('td:eq(1)').text();
+        console.log('ONU 8: ', onu8);
+        $("#nombreOnu8").val(onu8);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 9
+    $(document).on("click", ".btnEscogerOnu9", function () {
+        fila9 = $(this).closest("tr");
+        onu9 = fila9.find('td:eq(0)').text();
+        nombreONU9 = fila9.find('td:eq(1)').text();
+        console.log('ONU 9: ', onu9);
+        $("#nombreOnu9").val(onu9);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 10
+    $(document).on("click", ".btnEscogerOnu10", function () {
+        fila10 = $(this).closest("tr");
+        onu10 = fila10.find('td:eq(0)').text();
+        nombreONU10 = fila10.find('td:eq(1)').text();
+        console.log('ONU 10: ', onu10);
+        $("#nombreOnu10").val(onu10);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 11
+    $(document).on("click", ".btnEscogerOnu11", function () {
+        fila11 = $(this).closest("tr");
+        onu11 = fila11.find('td:eq(0)').text();
+        nombreONU11 = fila11.find('td:eq(1)').text();
+        console.log('ONU 11: ', onu11);
+        $("#nombreOnu11").val(onu11);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 113
+    $(document).on("click", ".btnEscogerOnu113", function () {
+        fila113 = $(this).closest("tr");
+        onu113 = fila113.find('td:eq(0)').text();
+        nombreONU113 = fila113.find('td:eq(1)').text();
+        console.log('ONU 113: ', onu113);
+        $("#nombreOnu113").val(onu113);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 13
+    $(document).on("click", ".btnEscogerOnu13", function () {
+        fila13 = $(this).closest("tr");
+        onu13 = fila13.find('td:eq(0)').text();
+        nombreONU13 = fila13.find('td:eq(1)').text();
+        console.log('ONU 13: ', onu13);
+        $("#nombreOnu13").val(onu13);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 14
+    $(document).on("click", ".btnEscogerOnu14", function () {
+        fila14 = $(this).closest("tr");
+        onu14 = fila14.find('td:eq(0)').text();
+        nombreONU14 = fila14.find('td:eq(1)').text();
+        console.log('ONU 14: ', onu14);
+        $("#nombreOnu14").val(onu14);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    //Botón para escoger ONU 15
+    $(document).on("click", ".btnEscogerOnu15", function () {
+        fila15 = $(this).closest("tr");
+        onu15 = fila15.find('td:eq(0)').text();
+        nombreONU15 = fila15.find('td:eq(1)').text();
+        console.log('ONU 15: ', onu15);
+        $("#nombreOnu15").val(onu15);
+        $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
+    });
+
+    
+
 
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {

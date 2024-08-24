@@ -897,8 +897,10 @@
             </div>
         </div>
 
-        <!--Inicio Modal para escoger ingrediente 1-->
-        <div class="modal fade" id="modalProductosReducida1" tabindex="-1" role="dialog"
+        <div id="loadModals"></div>
+
+            <!-- Inicio Modal para escoger ingrediente 1 -->
+    <div class="modal fade" id="modalProductosReducida1" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -976,11 +978,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 1-->
-
-        <!--Inicio Modal para escoger ingrediente 2-->
-        <div class="modal fade" id="modalProductosReducida2" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 1-->
+    <!--Inicio Modal para escoger ingrediente 2-->
+    <div class="modal fade" id="modalProductosReducida2" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1056,11 +1057,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 2-->
-
-        <!--Inicio Modal para escoger ingrediente 3-->
-        <div class="modal fade" id="modalProductosReducida3" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 2-->
+    <!--Inicio Modal para escoger ingrediente 3-->
+    <div class="modal fade" id="modalProductosReducida3" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1136,11 +1136,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 3-->
-
-        <!--Inicio Modal para escoger ingrediente 4-->
-        <div class="modal fade" id="modalProductosReducida4" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 3-->
+    <!--Inicio Modal para escoger ingrediente 4-->
+    <div class="modal fade" id="modalProductosReducida4" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1216,11 +1215,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 4-->
-
-        <!--Inicio Modal para escoger ingrediente 5-->
-        <div class="modal fade" id="modalProductosReducida5" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 4-->
+    <!--Inicio Modal para escoger ingrediente 5-->
+    <div class="modal fade" id="modalProductosReducida5" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1296,9 +1294,9 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 5--><!--Inicio Modal para escoger ingrediente 6-->
-        <div class="modal fade" id="modalProductosReducida6" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 5--><!--Inicio Modal para escoger ingrediente 6-->
+    <div class="modal fade" id="modalProductosReducida6" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1374,11 +1372,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 6-->
-
-        <!--Inicio Modal para escoger ingrediente 7-->
-        <div class="modal fade" id="modalProductosReducida7" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 6-->
+    <!--Inicio Modal para escoger ingrediente 7-->
+    <div class="modal fade" id="modalProductosReducida7" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1454,11 +1451,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 7-->
-
-        <!--Inicio Modal para escoger ingrediente 8-->
-        <div class="modal fade" id="modalProductosReducida8" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 7-->
+    <!--Inicio Modal para escoger ingrediente 8-->
+    <div class="modal fade" id="modalProductosReducida8" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1534,11 +1530,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 8-->
-
-        <!--Inicio Modal para escoger ingrediente 9-->
-        <div class="modal fade" id="modalProductosReducida9" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 8-->
+    <!--Inicio Modal para escoger ingrediente 9-->
+    <div class="modal fade" id="modalProductosReducida9" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1614,11 +1609,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 9-->
-
-        <!--Inicio Modal para escoger ingrediente 10-->
-        <div class="modal fade" id="modalProductosReducida10" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 9-->
+    <!--Inicio Modal para escoger ingrediente 10-->
+    <div class="modal fade" id="modalProductosReducida10" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1694,11 +1688,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 10-->
-
-        <!--Inicio Modal para escoger ingrediente 11-->
-        <div class="modal fade" id="modalProductosReducida11" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 10-->
+    <!--Inicio Modal para escoger ingrediente 11-->
+    <div class="modal fade" id="modalProductosReducida11" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1774,11 +1767,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 11-->
-
-        <!--Inicio Modal para escoger ingrediente 12-->
-        <div class="modal fade" id="modalProductosReducida12" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 11-->
+    <!--Inicio Modal para escoger ingrediente 12-->
+    <div class="modal fade" id="modalProductosReducida12" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1854,11 +1846,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 12-->
-
-        <!--Inicio Modal para escoger ingrediente 13-->
-        <div class="modal fade" id="modalProductosReducida13" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 12-->
+    <!--Inicio Modal para escoger ingrediente 13-->
+    <div class="modal fade" id="modalProductosReducida13" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -1934,11 +1925,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 13-->
-
-        <!--Inicio Modal para escoger ingrediente 14-->
-        <div class="modal fade" id="modalProductosReducida14" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 13-->
+    <!--Inicio Modal para escoger ingrediente 14-->
+    <div class="modal fade" id="modalProductosReducida14" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2014,11 +2004,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 14-->
-
-        <!--Inicio Modal para escoger ingrediente 15-->
-        <div class="modal fade" id="modalProductosReducida15" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 14-->
+    <!--Inicio Modal para escoger ingrediente 15-->
+    <div class="modal fade" id="modalProductosReducida15" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2094,13 +2083,12 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 15-->
-        
-
-        
-        <!--Inicio Modal para escoger ONU 1-->
-        <div class="modal fade" id="modalONU1" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ingrediente 15-->
+    
+    
+    <!--Inicio Modal para escoger ONU 1-->
+    <div class="modal fade" id="modalONU1" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2173,11 +2161,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 1-->
-
-        <!--Inicio Modal para escoger ONU 2-->
-        <div class="modal fade" id="modalONU2" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 1-->
+    <!--Inicio Modal para escoger ONU 2-->
+    <div class="modal fade" id="modalONU2" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2250,11 +2237,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 2-->
-
-        <!--Inicio Modal para escoger ONU 3-->
-        <div class="modal fade" id="modalONU3" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 2-->
+    <!--Inicio Modal para escoger ONU 3-->
+    <div class="modal fade" id="modalONU3" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2327,11 +2313,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 3-->
-
-        <!--Inicio Modal para escoger ONU 4-->
-        <div class="modal fade" id="modalONU4" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 3-->
+    <!--Inicio Modal para escoger ONU 4-->
+    <div class="modal fade" id="modalONU4" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2404,11 +2389,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 4-->
-
-        <!--Inicio Modal para escoger ONU 5-->
-        <div class="modal fade" id="modalONU5" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 4-->
+    <!--Inicio Modal para escoger ONU 5-->
+    <div class="modal fade" id="modalONU5" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2481,11 +2465,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 5-->
-
-        <!--Inicio Modal para escoger ONU 6-->
-        <div class="modal fade" id="modalONU6" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 5-->
+    <!--Inicio Modal para escoger ONU 6-->
+    <div class="modal fade" id="modalONU6" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2558,11 +2541,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 6-->
-
-        <!--Inicio Modal para escoger ONU 7-->
-        <div class="modal fade" id="modalONU7" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 6-->
+    <!--Inicio Modal para escoger ONU 7-->
+    <div class="modal fade" id="modalONU7" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2635,11 +2617,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 7-->
-
-        <!--Inicio Modal para escoger ONU 8-->
-        <div class="modal fade" id="modalONU8" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 7-->
+    <!--Inicio Modal para escoger ONU 8-->
+    <div class="modal fade" id="modalONU8" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2712,11 +2693,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 8-->
-
-        <!--Inicio Modal para escoger ONU 9-->
-        <div class="modal fade" id="modalONU9" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 8-->
+    <!--Inicio Modal para escoger ONU 9-->
+    <div class="modal fade" id="modalONU9" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2789,11 +2769,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 9-->
-
-        <!--Inicio Modal para escoger ONU 10-->
-        <div class="modal fade" id="modalONU10" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 9-->
+    <!--Inicio Modal para escoger ONU 10-->
+    <div class="modal fade" id="modalONU10" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2866,11 +2845,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 10-->
-
-        <!--Inicio Modal para escoger ONU 11-->
-        <div class="modal fade" id="modalONU11" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 10-->
+    <!--Inicio Modal para escoger ONU 11-->
+    <div class="modal fade" id="modalONU11" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -2943,11 +2921,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 11-->
-
-        <!--Inicio Modal para escoger ONU 12-->
-        <div class="modal fade" id="modalONU12" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 11-->
+    <!--Inicio Modal para escoger ONU 12-->
+    <div class="modal fade" id="modalONU12" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -3020,11 +2997,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 12-->
-
-        <!--Inicio Modal para escoger ONU 13-->
-        <div class="modal fade" id="modalONU13" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 12-->
+    <!--Inicio Modal para escoger ONU 13-->
+    <div class="modal fade" id="modalONU13" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -3097,11 +3073,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 13-->
-
-        <!--Inicio Modal para escoger ONU 14-->
-        <div class="modal fade" id="modalONU14" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 13-->
+    <!--Inicio Modal para escoger ONU 14-->
+    <div class="modal fade" id="modalONU14" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -3174,11 +3149,10 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 14-->
-
-        <!--Inicio Modal para escoger ONU 15-->
-        <div class="modal fade" id="modalONU15" tabindex="-1" role="dialog"
+    </div>
+    <!--Final Modal para escoger ONU 14-->
+    <!--Inicio Modal para escoger ONU 15-->
+    <div class="modal fade" id="modalONU15" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -3251,10 +3225,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!--Final Modal para escoger ONU 15-->
-
-
+    </div>
+    <!--Final Modal para escoger ONU 15-->
 
         <!--Inicio Modal para mostrar hoja de seguridad-->
         <div class="modal fade" id="modalHojaSeguridad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

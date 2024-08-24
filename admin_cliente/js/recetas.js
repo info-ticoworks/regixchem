@@ -1922,8 +1922,6 @@ $(document).ready(function () {
 
 
 
-
-
     //Botón para escoger Producto 1
     $(document).on("click", ".btnEscogerProducto1", function () {
         fila1 = $(this).closest("tr");
@@ -2242,13 +2240,6 @@ $(document).ready(function () {
     
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {
-        $.ajax({
-            url: 'TEMP.php',
-            success: function(data) {
-              $('#loadModals').html(data);
-              alert('Load was performed.');
-            }
-          });
         idReceta = 'null';
         $("#formRecetas").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");

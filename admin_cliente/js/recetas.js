@@ -789,88 +789,6 @@ $(document).ready(function () {
     //Final de botones para buscar ingredientes
 
 
-    //Tabla ONU 1
-    tablaONU1 = $("#tablaONU1").DataTable({
-        "columnDefs": [{
-            "targets": -1,
-            "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu1' data-dismiss='modal'>Seleccionar</button></div></div>"
-        }],
-
-        responsive: "true",
-        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
-
-
-        //Para cambiar el lenguaje a español
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sSearch": "Buscar:",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "sProcessing": "Procesando...",
-        }
-    });
-
-    //Highlight de filas ONU 1
-    tablaONU1.on('mouseenter', 'tr', function () {
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaONU1.row(this).selector.rows).addClass("dtSelected");
-    });
-
-    //Fix de Scroll en Modal ONU 1
-    $('#modalONU1').on('hidden.bs.modal', function (e) {
-        $('body').addClass('modal-open');
-    });
-
-
-    //Tabla ONU 2
-    tablaONU2 = $("#tablaONU2").DataTable({
-        "columnDefs": [{
-            "targets": -1,
-            "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu2' data-dismiss='modal'>Seleccionar</button></div></div>"
-        }],
-
-        responsive: "true",
-        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
-
-
-        //Para cambiar el lenguaje a español
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sSearch": "Buscar:",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "sProcessing": "Procesando...",
-        }
-    });
-
-    //Highlight de filas ONU 2
-    tablaONU2.on('mouseenter', 'tr', function () {
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaONU2.row(this).selector.rows).addClass("dtSelected");
-    });
-
-    //Fix de Scroll en Modal ONU 2
-    $('#modalONU2').on('hidden.bs.modal', function (e) {
-        $('body').addClass('modal-open');
-    });
 
 
     //Tabla ONU 3
@@ -1502,6 +1420,7 @@ $(document).ready(function () {
     //Inicio de botones para agregar y quitar ingredientes
 
     $('#btnIngrediente2').on('click', function () {
+        cargarOnu2();
         cas2 = 'null';
         onu2 = 'null';
         $("#nombreIngrediente2").attr("required", "required");
@@ -2237,9 +2156,37 @@ $(document).ready(function () {
         $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
     });
 
-    
+    function cargarOnu1() {
+        $.ajax({
+            type: "POST",
+            url: "bd/onuLoad1.php",
+            success: function (r) {
+                $('#loadModal1').html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+    function cargarOnu2() {
+        $.ajax({
+            type: "POST",
+            url: "bd/onuLoad2.php",
+            success: function (r) {
+                $('#loadModal2').html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {
+        cargarOnu1();
         idReceta = 'null';
         $("#formRecetas").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
@@ -2287,36 +2234,6 @@ $(document).ready(function () {
         $('#btnIngrediente15').hide();
         $('#btnQuitarIngrediente15').hide();
         $('#modalRecetas').modal({ backdrop: 'static', keyboard: false }, 'show');
-        // cas1 = 'null';
-        // cas2 = 'null';
-        // cas3 = 'null';
-        // cas4 = 'null';
-        // cas5 = 'null';
-        // cas6 = 'null';
-        // cas7 = 'null';
-        // cas8 = 'null';
-        // cas9 = 'null';
-        // cas10 = 'null';
-        // cas11 = 'null';
-        // cas12 = 'null';
-        // cas13 = 'null';
-        // cas14 = 'null';
-        // cas15 = 'null';
-        // cantidad1 = 0;
-        // cantidad2 = 0;
-        // cantidad3 = 0;
-        // cantidad4 = 0;
-        // cantidad5 = 0;
-        // cantidad6 = 0;
-        // cantidad7 = 0;
-        // cantidad8 = 0;
-        // cantidad9 = 0;
-        // cantidad10 = 0;
-        // cantidad11 = 0;
-        // cantidad12 = 0;
-        // cantidad13 = 0;
-        // cantidad14 = 0;
-        // cantidad15 = 0;
 
         opcion = 1; //Nuevo Producto
     });

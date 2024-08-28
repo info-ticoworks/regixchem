@@ -1,6 +1,5 @@
 <?php 
 $conexion=mysqli_connect('51.222.207.182','rchemuser','gseeHI02TI8DRzoWkOap','regixchem');
-$onu=$_POST['onu'];
 $consulta = "SELECT onu, descripcion FROM numUN";
 $result=mysqli_query($conexion,$consulta);
 ?>

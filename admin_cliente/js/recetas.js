@@ -1,5 +1,28 @@
 $(document).ready(function () {
 
+    //Timer de carga de base de datos de CAS y ONU
+    function timer (){
+        Swal.fire({
+            title: "Cargando la Base de Datos de CAS y ONU!",
+            html: "Por favor espere.",
+            timer: 1500,
+            timerProgressBar: false,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup().querySelector("b");
+              timerInterval = timer
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              //console.log("I was closed by the timer");
+            }
+        });
+    }
+
     //Tabla Recetas
     tablaRecetas = $("#tablaRecetas").DataTable({
         "columnDefs": [{
@@ -79,88 +102,14 @@ $(document).ready(function () {
         $(tablaRecetas.row(this).selector.rows).addClass("dtSelected");
     });
 
-    //Tabla Producto 1
-    tablaProductosReducida1 = $("#tablaProductosReducida1").DataTable({
-        "columnDefs": [{
-            "targets": -1,
-            "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto1' data-dismiss='modal'>Seleccionar</button></div></div>"
-        }],
-
-        responsive: "true",
-        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
 
 
-        //Para cambiar el lenguaje a español
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sSearch": "Buscar:",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "sProcessing": "Procesando...",
-        }
-    });
-
-    //Highlight de filas Producto 1
-    tablaProductosReducida1.on('mouseenter', 'tr', function () {
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaProductosReducida1.row(this).selector.rows).addClass("dtSelected");
-    });
-
-    //Fix de Scroll en Modal 1
-    $('#modalProductosReducida1').on('hidden.bs.modal', function (e) {
-        $('body').addClass('modal-open');
-    });
 
 
-    //Tabla Producto 2
-    tablaProductosReducida2 = $("#tablaProductosReducida2").DataTable({
-        "columnDefs": [{
-            "targets": -1,
-            "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto2' data-dismiss='modal'>Seleccionar</button></div></div>"
-        }],
-
-        responsive: "true",
-        order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
 
 
-        //Para cambiar el lenguaje a español
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sSearch": "Buscar:",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "sProcessing": "Procesando...",
-        }
-    });
 
-    //Highlight de filas Producto 2
-    tablaProductosReducida2.on('mouseenter', 'tr', function () {
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaProductosReducida2.row(this).selector.rows).addClass("dtSelected");
-    });
 
-    //Fix de Scroll en Modal 2
-    $('#modalProductosReducida2').on('hidden.bs.modal', function (e) {
-        $('body').addClass('modal-open');
-    });
 
 
     //Tabla Producto 3
@@ -1420,6 +1369,8 @@ $(document).ready(function () {
     //Inicio de botones para agregar y quitar ingredientes
 
     $('#btnIngrediente2').on('click', function () {
+        timer();
+        cargarCas2();
         cargarOnu2();
         cas2 = 'null';
         onu2 = 'null';
@@ -1434,6 +1385,8 @@ $(document).ready(function () {
     });
 
     $('#btnQuitarIngrediente2').on('click', function () {
+        $('#loadCasModal2').empty();
+        $('#loadOnuModal2').empty();
         cas2 = 'null';
         onu2 = 'null';
         $('#nombreIngrediente2').removeAttr('required');
@@ -2156,12 +2109,49 @@ $(document).ready(function () {
         $("#modalRecetas").modal({ backdrop: 'static', keyboard: false }, 'show');
     });
 
+
+
+    function cargarCas1() {
+        $.ajax({
+            type: "POST",
+            url: "bd/casLoad1.php",
+            success: function (r) {
+                $('#loadCasModal1').html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+    function cargarCas2() {
+        $.ajax({
+            type: "POST",
+            url: "bd/casLoad2.php",
+            success: function (r) {
+                $('#loadCasModal2').html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+
+
+
+
+
+
+
     function cargarOnu1() {
         $.ajax({
             type: "POST",
             url: "bd/onuLoad1.php",
             success: function (r) {
-                $('#loadModal1').html(r);
+                $('#loadOnuModal1').html(r);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
@@ -2175,7 +2165,7 @@ $(document).ready(function () {
             type: "POST",
             url: "bd/onuLoad2.php",
             success: function (r) {
-                $('#loadModal2').html(r);
+                $('#loadOnuModal2').html(r);
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
@@ -2186,6 +2176,8 @@ $(document).ready(function () {
 
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {
+        timer();
+        cargarCas1();
         cargarOnu1();
         idReceta = 'null';
         $("#formRecetas").trigger("reset");

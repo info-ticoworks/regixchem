@@ -901,98 +901,37 @@
             </div>
         </div>
 
-        <!-- Inicio Modal para escoger ingrediente 1 -->
-        <div class="modal fade" id="modalProductosReducida1" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form id="formProductosReducida1">
-                        <div class="modal-body">
-                            <div class="container-fluid">
-                                <!-- Page Heading -->
-                                <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de
-                                    <?php echo $SESSION_nombreEmpresa ?>
-                                </h1>
-                                <p class="mb-4">Puede agregar productos a la base de datos</p>
-                                <!-- Inicio de Tabla -->
-                                <div class="card shadow mb-4">
-                                    <?php
-                                    $consulta1 = "SELECT * FROM vista_productos_reducida";
-
-                                    $resultado1 = $conexion->prepare($consulta1);
-                                    $resultado1->execute();
-                                    $data1 = $resultado1->fetchAll(PDO::FETCH_ASSOC);
-                                    ?>
-                                    <div class="card-header py-3">
-                                        <div class="col-lg-12">
-                                            <button id="btnNuevoProducto" type="button" class="btn btn-success"
-                                                data-toggle="modal">Agregar Producto</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table id="tablaProductosReducida1" class="table table-bordered"
-                                                style="width:100%">
-                                                <thead class="text-center">
-                                                    <tr>
-                                                        <th>CAS</th>
-                                                        <th>Nombre</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    foreach ($data1 as $dat1) {
-                                                        ?>
-                                                        <tr>
-                                                            <td><?php echo $dat1['cas'] ?></td>
-                                                            <td><?php echo $dat1['nombreProducto'] ?></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </tbody>
-                                                <tfoot class="text-center">
-                                                    <tr>
-                                                        <th>CAS</th>
-                                                        <th>Nombre</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="btnCancelar" class="btn btn-light"
-                                    data-dismiss="modal">Cancelar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--Final Modal para escoger ingrediente 1-->
-
-        <!--Inicio Modal para escoger ONU 1-->
-        <div id="loadModal1"></div>
-        <!--Final Modal para escoger ONU 1-->
-
-        <!--Inicio Modal para escoger ONU 2-->
-        <div id="loadModal2"></div>
-        <!--Final Modal para escoger ONU 2-->
-
-
-
+        <!-- Modals de CAS y ONU -->
+        <div id="loadCasModal1"></div>
+        <div id="loadCasModal2"></div>
+        <div id="loadCasModal3"></div>
+        <div id="loadCasModal4"></div>
+        <div id="loadCasModal5"></div>
+        <div id="loadCasModal6"></div>
+        <div id="loadCasModal7"></div>
+        <div id="loadCasModal8"></div>
+        <div id="loadCasModal9"></div>
+        <div id="loadCasModal10"></div>
+        <div id="loadCasModal11"></div>
+        <div id="loadCasModal12"></div>
+        <div id="loadCasModal13"></div>
+        <div id="loadCasModal14"></div>
+        <div id="loadCasModal15"></div>
+        <div id="loadOnuModal1"></div>
+        <div id="loadOnuModal2"></div>
+        <div id="loadOnuModal3"></div>
+        <div id="loadOnuModal4"></div>
+        <div id="loadOnuModal5"></div>
+        <div id="loadOnuModal6"></div>
+        <div id="loadOnuModal7"></div>
+        <div id="loadOnuModal8"></div>
+        <div id="loadOnuModal9"></div>
+        <div id="loadOnuModal10"></div>
+        <div id="loadOnuModal11"></div>
+        <div id="loadOnuModal12"></div>
+        <div id="loadOnuModal13"></div>
+        <div id="loadOnuModal14"></div>
+        <div id="loadOnuModal15"></div>
 
         <!--Inicio Modal para mostrar hoja de seguridad-->
         <div class="modal fade" id="modalHojaSeguridad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

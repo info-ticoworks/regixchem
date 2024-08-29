@@ -1,19 +1,35 @@
 $(document).ready(function () {
 
     //Timer de carga de base de datos de CAS y ONU
-    function timer (){
+    function timerCas (delay) {
         Swal.fire({
-            title: "Cargando la Base de Datos de CAS y ONU!",
+            title: "Cargando la Base de Datos de CAS!",
             html: "Por favor espere.",
-            timer: 1500,
+            timer: delay,
             timerProgressBar: false,
             didOpen: () => {
               Swal.showLoading();
-              const timer = Swal.getPopup().querySelector("b");
+              const timer = Swal.getPopup();
               timerInterval = timer
-            },
-            willClose: () => {
-              clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              //console.log("I was closed by the timer");
+            }
+        });
+    }
+
+    function timerOnu (delay) {
+        Swal.fire({
+            title: "Cargando la Base de Datos de ONU!",
+            html: "Por favor espere.",
+            timer: delay,
+            timerProgressBar: false,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup();
+              timerInterval = timer
             }
         }).then((result) => {
             /* Read more about handling dismissals below */
@@ -657,17 +673,82 @@ $(document).ready(function () {
         $('body').addClass('modal-open');
     });
 
-
     //Inicio de botones para buscar ingredientes
 
     $("#btnBuscarIngrediente1").click(function () {
-        $("#formProductosReducida1").trigger("reset");
-        $("#modalProductosReducida1").modal({ backdrop: 'static', keyboard: false }, 'show');
+        timerCas();
+        checkCas1 = 0;
+        waitForMe().then(function(){
+            console.log('Mostrando Modal')
+            $("#modalProductosReducida1").modal({ backdrop: 'static', keyboard: false }, 'show');
+            $(timerCas).stop();
+        },
+        function(err){
+            console.log('This is error message.', err);
+        })
+        function waitForMe(){
+            console.log('Inicio');
+            return new Promise(function(resolve, reject){
+                    cargarCas1();
+                    if (checkCas1 === 1) {
+                        setTimeout(() => {
+                            console.log('Sí hay datos');
+                            resolve();
+                        }, 800);
+                    } else {
+                        setTimeout(() => {
+                            console.log('No hay datos');
+                            waitForMe().then(function(){
+                                console.log('Mostrando Modal')
+                                $("#modalProductosReducida1").modal({ backdrop: 'static', keyboard: false }, 'show');
+                                $(timerCas).stop();
+                            },
+                            function(err){
+                                console.log('This is error message.', err);
+                            })
+                        }, 800);
+                    }
+                }
+            )
+        }
     });
 
     $("#btnBuscarIngrediente2").click(function () {
-        $("#formProductosReducida2").trigger("reset");
-        $("#modalProductosReducida2").modal({ backdrop: 'static', keyboard: false }, 'show');
+        timerCas();
+        checkCas2 = 0;
+        waitForMe().then(function(){
+            console.log('Mostrando Modal')
+            $("#modalProductosReducida2").modal({ backdrop: 'static', keyboard: false }, 'show');
+            $(timerCas).stop();
+        },
+        function(err){
+            console.log('This is error message.', err);
+        })
+        function waitForMe(){
+            console.log('Inicio');
+            return new Promise(function(resolve, reject){
+                    cargarCas2();
+                    if (checkCas2 === 1) {
+                        setTimeout(() => {
+                            console.log('Sí hay datos');
+                            resolve();
+                        }, 800);
+                    } else {
+                        setTimeout(() => {
+                            console.log('No hay datos');
+                            waitForMe().then(function(){
+                                console.log('Mostrando Modal')
+                                $("#modalProductosReducida2").modal({ backdrop: 'static', keyboard: false }, 'show');
+                                $(timerCas).stop();
+                            },
+                            function(err){
+                                console.log('This is error message.', err);
+                            })
+                        }, 800);
+                    }
+                }
+            )
+        }
     });
 
     $("#btnBuscarIngrediente3").click(function () {
@@ -1289,13 +1370,79 @@ $(document).ready(function () {
     //Inicio de botones para buscar ONU
 
     $("#btnBuscarOnu1").click(function () {
-        $("#formONU1").trigger("reset");
-        $("#modalONU1").modal({ backdrop: 'static', keyboard: false }, 'show');
+        timerOnu();
+        checkOnu1 = 0;
+        waitForMe().then(function(){
+            console.log('Mostrando Modal')
+            $("#modalONU1").modal({ backdrop: 'static', keyboard: false }, 'show');
+            $(timerOnu).stop();
+        },
+        function(err){
+            console.log('This is error message.', err);
+        })
+        function waitForMe(){
+            console.log('Inicio');
+            return new Promise(function(resolve, reject){
+                    cargarOnu1();
+                    if (checkOnu1 === 1) {
+                        setTimeout(() => {
+                            console.log('Sí hay datos');
+                            resolve();
+                        }, 1500);
+                    } else {
+                        setTimeout(() => {
+                            console.log('No hay datos');
+                            waitForMe().then(function(){
+                                console.log('Mostrando Modal')
+                                $("#modalONU1").modal({ backdrop: 'static', keyboard: false }, 'show');
+                                $(timerOnu).stop();
+                            },
+                            function(err){
+                                console.log('This is error message.', err);
+                            })
+                        }, 1500);
+                    }
+                }
+            )
+        }
     });
 
     $("#btnBuscarOnu2").click(function () {
-        $("#formONU2").trigger("reset");
-        $("#modalONU2").modal({ backdrop: 'static', keyboard: false }, 'show');
+        timerOnu();
+        checkOnu2 = 0;
+        waitForMe().then(function(){
+            console.log('Mostrando Modal')
+            $("#modalONU2").modal({ backdrop: 'static', keyboard: false }, 'show');
+            $(timerOnu).stop();
+        },
+        function(err){
+            console.log('This is error message.', err);
+        })
+        function waitForMe(){
+            console.log('Inicio');
+            return new Promise(function(resolve, reject){
+                    cargarOnu2();
+                    if (checkOnu2 === 1) {
+                        setTimeout(() => {
+                            console.log('Sí hay datos');
+                            resolve();
+                        }, 1500);
+                    } else {
+                        setTimeout(() => {
+                            console.log('No hay datos');
+                            waitForMe().then(function(){
+                                console.log('Mostrando Modal')
+                                $("#modalONU2").modal({ backdrop: 'static', keyboard: false }, 'show');
+                                $(timerOnu).stop();
+                            },
+                            function(err){
+                                console.log('This is error message.', err);
+                            })
+                        }, 1500);
+                    }
+                }
+            )
+        }
     });
 
     $("#btnBuscarOnu3").click(function () {
@@ -1369,9 +1516,6 @@ $(document).ready(function () {
     //Inicio de botones para agregar y quitar ingredientes
 
     $('#btnIngrediente2').on('click', function () {
-        timer();
-        cargarCas2();
-        cargarOnu2();
         cas2 = 'null';
         onu2 = 'null';
         $("#nombreIngrediente2").attr("required", "required");
@@ -2110,54 +2254,55 @@ $(document).ready(function () {
     });
 
 
-
     function cargarCas1() {
         $.ajax({
             type: "POST",
             url: "bd/casLoad1.php",
             success: function (r) {
+                checkCas1 = 0;
                 $('#loadCasModal1').html(r);
+                checkCas1 = 1;
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }
         });
-    }
+        return checkCas1;
+    }    
 
     function cargarCas2() {
         $.ajax({
             type: "POST",
             url: "bd/casLoad2.php",
             success: function (r) {
+                checkCas2 = 0;
                 $('#loadCasModal2').html(r);
+                checkCas2 = 1;
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }
         });
+        return checkCas2;
     }
-
-
-
-
-
-
-
 
     function cargarOnu1() {
         $.ajax({
             type: "POST",
             url: "bd/onuLoad1.php",
             success: function (r) {
+                checkOnu1 = 0;
                 $('#loadOnuModal1').html(r);
+                checkOnu1 = 1;
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }
         });
+        return checkOnu1;
     }
 
     function cargarOnu2() {
@@ -2165,20 +2310,20 @@ $(document).ready(function () {
             type: "POST",
             url: "bd/onuLoad2.php",
             success: function (r) {
+                checkOnu2 = 0;
                 $('#loadOnuModal2').html(r);
+                checkOnu2 = 1;
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
                 alert(thrownError);
             }
         });
+        return checkOnu2;
     }
 
     //Botón Nueva Receta
     $("#btnNuevaReceta").click(function () {
-        timer();
-        cargarCas1();
-        cargarOnu1();
         idReceta = 'null';
         $("#formRecetas").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");

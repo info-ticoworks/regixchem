@@ -1,15 +1,11 @@
-//Tabla ONU 2
-tablaONU2 = $("#tablaONU2").DataTable({
+//Tabla Producto 1
+tablaProductosReducida = $("#tablaProductosReducida").DataTable({
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu2' data-dismiss='modal'>Seleccionar</button></div></div>"
-        }],
-
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto' data-dismiss='modal'>Seleccionar</button></div></div>"        }],
         responsive: "true",
         order: [[0, 'asc']], //Establece la columna que será el orden de los productos.
-
-
         //Para cambiar el lenguaje a español
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros",
@@ -27,12 +23,14 @@ tablaONU2 = $("#tablaONU2").DataTable({
             "sProcessing": "Procesando...",
         }
 });
-//Highlight de filas ONU 2
-tablaONU2.on('mouseenter', 'tr', function () {
+
+//Highlight de filas Producto 1
+tablaProductosReducida.on('mouseenter', 'tr', function () {
         $(document).find('tr').removeClass("dtSelected");
-        $(tablaONU2.row(this).selector.rows).addClass("dtSelected");
+        $(tablaProductosReducida.row(this).selector.rows).addClass("dtSelected");
 });
-//Fix de Scroll en Modal ONU 2
-$('#modalONU2').on('hidden.bs.modal', function (e) {
-        $('body').addClass('modal-open');
+
+//Fix de Scroll en Modal
+$('#modalProductosReducida').on('hidden.bs.modal', function (e) {
+    $('body').addClass('modal-open');
 });

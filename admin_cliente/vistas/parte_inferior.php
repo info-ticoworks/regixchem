@@ -85,11 +85,11 @@
     <script type="text/javascript" src="./js/recetas.js"></script>
     <script type="text/javascript" src="./js/hoja-seguridad.js"></script>
 
+
     <!-- PDF Make -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
     <script type="text/javascript" src="./js/htmltopdf.js"></script>
-
 
 </body>
 

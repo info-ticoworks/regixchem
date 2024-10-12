@@ -12,26 +12,25 @@ $SESSION_wsNotif = $_SESSION['wsNotif'];
 $SESSION_idEmpresa = $_SESSION['idEmpresa'];
 $SESSION_nombreEmpresa = $_SESSION['nombreEmpresa'];
 date_default_timezone_set('America/Costa_Rica');
-$bMeses = array("void","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+$bMeses = array("void", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 $bDias = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
 $fecha = getdate();
 $dias = $bDias[$fecha["wday"]];
 $meses = $bMeses[$fecha["mon"]];
-$fechaActual = "$dias ".$fecha["mday"]." de ".$meses." de ".$fecha["year"]."";
-$horaActual = "".$fecha["hours"].":".$fecha["minutes"].":".$fecha["seconds"]."";
-if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsuario<>4){
+$fechaActual = "$dias " . $fecha["mday"] . " de " . $meses . " de " . $fecha["year"] . "";
+$horaActual = "" . $fecha["hours"] . ":" . $fecha["minutes"] . ":" . $fecha["seconds"] . "";
+if ($SESSION_idTipoUsuario <> 2 && $SESSION_idTipoUsuario <> 3 && $SESSION_idTipoUsuario <> 4) {
     // header ("Location: rediriges a la pagina de logueo".)
     header("Location: ../index.php");
 }
-?>
 
-<?php 
-$conexion=mysqli_connect('51.222.207.182','rchemuser','gseeHI02TI8DRzoWkOap','regixchem');
+$conexion = mysqli_connect('51.222.207.182', 'rchemuser', 'gseeHI02TI8DRzoWkOap', 'regixchem');
 $consulta = "SELECT cas, nombreProducto FROM vista_productos_reducida";
-$result=mysqli_query($conexion,$consulta);
+$result = mysqli_query($conexion, $consulta);
 ?>
 
-<div class="modal fade" id="modalProductosReducida1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalProductosReducida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -40,11 +39,12 @@ $result=mysqli_query($conexion,$consulta);
                         aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="formProductosReducida1">
+            <form id="formProductosReducida">
                 <div class="modal-body">
                     <div class="container-fluid">
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de <?php echo $SESSION_nombreEmpresa ?>
+                        <h1 class="h3 mb-2 text-gray-800">Lista de Productos para uso de
+                            <?php echo $SESSION_nombreEmpresa ?>
                         </h1>
                         <p class="mb-4">Puede agregar productos a la base de datos</p>
                         <!-- Inicio de Tabla -->
@@ -57,8 +57,7 @@ $result=mysqli_query($conexion,$consulta);
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="tablaProductosReducida1" class="table table-bordered"
-                                        style="width:100%">
+                                    <table id="tablaProductosReducida" class="table table-bordered" style="width:100%">
                                         <thead class="text-center">
                                             <tr>
                                                 <th>CAS</th>
@@ -66,17 +65,17 @@ $result=mysqli_query($conexion,$consulta);
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="loadCasModal1">
                                             <?php
-                                                while ($ver=mysqli_fetch_array($result)) {
-                                                    ?>
-                                                    <tr>
-                                                        <td><?php echo $ver['cas'] ?></td>
-                                                        <td><?php echo $ver['nombreProducto'] ?></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <?php
-                                                }
+                                            while ($ver = mysqli_fetch_array($result)) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $ver['cas'] ?></td>
+                                                    <td><?php echo $ver['nombreProducto'] ?></td>
+                                                    <td></td>
+                                                </tr>
+                                                <?php
+                                            }
                                             ?>
                                         </tbody>
                                         <tfoot class="text-center">
@@ -101,18 +100,4 @@ $result=mysqli_query($conexion,$consulta);
     </div>
 </div>
 
-<!-- Carga de archivo CAS -->
-<script type="text/javascript" src="./js/casLoad1.js"></script>
-
-<?php
-
-
-
-
-
-
-
-
-
-
-    
+<script type="text/javascript" src="./js/casLoad.js"></script>

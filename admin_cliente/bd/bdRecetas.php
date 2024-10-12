@@ -22,6 +22,21 @@ $cas12 = (isset($_POST['cas12'])) ? $_POST['cas12'] : '';
 $cas13 = (isset($_POST['cas13'])) ? $_POST['cas13'] : '';
 $cas14 = (isset($_POST['cas14'])) ? $_POST['cas14'] : '';
 $cas15 = (isset($_POST['cas15'])) ? $_POST['cas15'] : '';
+$onu1 = (isset($_POST['onu1'])) ? $_POST['onu1'] : '';
+$onu2 = (isset($_POST['onu2'])) ? $_POST['onu2'] : '';
+$onu3 = (isset($_POST['onu3'])) ? $_POST['onu3'] : '';
+$onu4 = (isset($_POST['onu4'])) ? $_POST['onu4'] : '';
+$onu5 = (isset($_POST['onu5'])) ? $_POST['onu5'] : '';
+$onu6 = (isset($_POST['onu6'])) ? $_POST['onu6'] : '';
+$onu7 = (isset($_POST['onu7'])) ? $_POST['onu7'] : '';
+$onu8 = (isset($_POST['onu8'])) ? $_POST['onu8'] : '';
+$onu9 = (isset($_POST['onu9'])) ? $_POST['onu9'] : '';
+$onu10 = (isset($_POST['onu10'])) ? $_POST['onu10'] : '';
+$onu11 = (isset($_POST['onu11'])) ? $_POST['onu11'] : '';
+$onu12 = (isset($_POST['onu12'])) ? $_POST['onu12'] : '';
+$onu13 = (isset($_POST['onu13'])) ? $_POST['onu13'] : '';
+$onu14 = (isset($_POST['onu14'])) ? $_POST['onu14'] : '';
+$onu15 = (isset($_POST['onu15'])) ? $_POST['onu15'] : '';
 $cantidad1 = (isset($_POST['cantidad1'])) ? $_POST['cantidad1'] : '';
 $cantidad2 = (isset($_POST['cantidad2'])) ? $_POST['cantidad2'] : '';
 $cantidad3 = (isset($_POST['cantidad3'])) ? $_POST['cantidad3'] : '';
@@ -58,6 +73,21 @@ switch ($opcion) {
                                         cas13,
                                         cas14,
                                         cas15,
+                                        onu1,
+                                        onu2,
+                                        onu3,
+                                        onu4,
+                                        onu5,
+                                        onu6,
+                                        onu7,
+                                        onu8,
+                                        onu9,
+                                        onu10,
+                                        onu11,
+                                        onu12,
+                                        onu13,
+                                        onu14,
+                                        onu15,
                                         cantidad1,
                                         cantidad2,
                                         cantidad3,
@@ -90,6 +120,21 @@ switch ($opcion) {
                                         " . (($cas13 == '') ? "NULL" : ("'" . $cas13 . "'")) . ",
                                         " . (($cas14 == '') ? "NULL" : ("'" . $cas14 . "'")) . ",
                                         " . (($cas15 == '') ? "NULL" : ("'" . $cas15 . "'")) . ",
+                                        " . (($onu1 == '') ? "NULL" : ("'" . $onu1 . "'")) . ",
+                                        " . (($onu2 == '') ? "NULL" : ("'" . $onu2 . "'")) . ",
+                                        " . (($onu3 == '') ? "NULL" : ("'" . $onu3 . "'")) . ",
+                                        " . (($onu4 == '') ? "NULL" : ("'" . $onu4 . "'")) . ",
+                                        " . (($onu5 == '') ? "NULL" : ("'" . $onu5 . "'")) . ",
+                                        " . (($onu6 == '') ? "NULL" : ("'" . $onu6 . "'")) . ",
+                                        " . (($onu7 == '') ? "NULL" : ("'" . $onu7 . "'")) . ",
+                                        " . (($onu8 == '') ? "NULL" : ("'" . $onu8 . "'")) . ",
+                                        " . (($onu9 == '') ? "NULL" : ("'" . $onu9 . "'")) . ",
+                                        " . (($onu10 == '') ? "NULL" : ("'" . $onu10 . "'")) . ",
+                                        " . (($onu11 == '') ? "NULL" : ("'" . $onu11 . "'")) . ",
+                                        " . (($onu12 == '') ? "NULL" : ("'" . $onu12 . "'")) . ",
+                                        " . (($onu13 == '') ? "NULL" : ("'" . $onu13 . "'")) . ",
+                                        " . (($onu14 == '') ? "NULL" : ("'" . $onu14 . "'")) . ",
+                                        " . (($onu15 == '') ? "NULL" : ("'" . $onu15 . "'")) . ",
                                         " . (($cantidad1 == '') ? "NULL" : ("'" . $cantidad1 . "'")) . ",
                                         " . (($cantidad2 == '') ? "NULL" : ("'" . $cantidad2 . "'")) . ",
                                         " . (($cantidad3 == '') ? "NULL" : ("'" . $cantidad3 . "'")) . ",
@@ -134,6 +179,21 @@ switch ($opcion) {
                                         cas13=" . (($cas13 == '') ? "NULL" : ("'" . $cas13 . "'")) . ",
                                         cas14=" . (($cas14 == '') ? "NULL" : ("'" . $cas14 . "'")) . ",
                                         cas15=" . (($cas15 == '') ? "NULL" : ("'" . $cas15 . "'")) . ",
+                                        onu1=" . (($onu1 == '') ? "NULL" : ("'" . $onu1 . "'")) . ",
+                                        onu2=" . (($onu2 == '') ? "NULL" : ("'" . $onu2 . "'")) . ",
+                                        onu3=" . (($onu3 == '') ? "NULL" : ("'" . $onu3 . "'")) . ",
+                                        onu4=" . (($onu4 == '') ? "NULL" : ("'" . $onu4 . "'")) . ",
+                                        onu5=" . (($onu5 == '') ? "NULL" : ("'" . $onu5 . "'")) . ",
+                                        onu6=" . (($onu6 == '') ? "NULL" : ("'" . $onu6 . "'")) . ",
+                                        onu7=" . (($onu7 == '') ? "NULL" : ("'" . $onu7 . "'")) . ",
+                                        onu8=" . (($onu8 == '') ? "NULL" : ("'" . $onu8 . "'")) . ",
+                                        onu9=" . (($onu9 == '') ? "NULL" : ("'" . $onu9 . "'")) . ",
+                                        onu10=" . (($onu10 == '') ? "NULL" : ("'" . $onu10 . "'")) . ",
+                                        onu11=" . (($onu11 == '') ? "NULL" : ("'" . $onu11 . "'")) . ",
+                                        onu12=" . (($onu12 == '') ? "NULL" : ("'" . $onu12 . "'")) . ",
+                                        onu13=" . (($onu13 == '') ? "NULL" : ("'" . $onu13 . "'")) . ",
+                                        onu14=" . (($onu14 == '') ? "NULL" : ("'" . $onu14 . "'")) . ",
+                                        onu15=" . (($onu15 == '') ? "NULL" : ("'" . $onu15 . "'")) . ",
                                         cantidad1=" . (($cantidad1 == '') ? "NULL" : ("'" . $cantidad1 . "'")) . ",
                                         cantidad2=" . (($cantidad2 == '') ? "NULL" : ("'" . $cantidad2 . "'")) . ",
                                         cantidad3=" . (($cantidad3 == '') ? "NULL" : ("'" . $cantidad3 . "'")) . ",

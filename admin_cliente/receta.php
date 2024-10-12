@@ -156,7 +156,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu2" required
+                                                    <input type="text" class="form-control" id="nombreOnu2"
                                                         data-readonly placeholder="ONU 2*">
                                                 </div>
                                                 <div>
@@ -210,7 +210,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu3" required
+                                                    <input type="text" class="form-control" id="nombreOnu3"
                                                         data-readonly placeholder="ONU 3*">
                                                 </div>
                                                 <div>
@@ -264,7 +264,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu4" required
+                                                    <input type="text" class="form-control" id="nombreOnu4"
                                                         data-readonly placeholder="ONU 4*">
                                                 </div>
                                                 <div>
@@ -318,7 +318,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu5" required
+                                                    <input type="text" class="form-control" id="nombreOnu5"
                                                         data-readonly placeholder="ONU 5*">
                                                 </div>
                                                 <div>
@@ -372,7 +372,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu6" required
+                                                    <input type="text" class="form-control" id="nombreOnu6"
                                                         data-readonly placeholder="ONU 6*">
                                                 </div>
                                                 <div>
@@ -426,7 +426,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu7" required
+                                                    <input type="text" class="form-control" id="nombreOnu7"
                                                         data-readonly placeholder="ONU 7*">
                                                 </div>
                                                 <div>
@@ -480,7 +480,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu8" required
+                                                    <input type="text" class="form-control" id="nombreOnu8"
                                                         data-readonly placeholder="ONU 8*">
                                                 </div>
                                                 <div>
@@ -534,7 +534,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu9" required
+                                                    <input type="text" class="form-control" id="nombreOnu9"
                                                         data-readonly placeholder="ONU 9*">
                                                 </div>
                                                 <div>
@@ -588,7 +588,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu10" required
+                                                    <input type="text" class="form-control" id="nombreOnu10"
                                                         data-readonly placeholder="ONU 10*">
                                                 </div>
                                                 <div>
@@ -642,7 +642,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu11" required
+                                                    <input type="text" class="form-control" id="nombreOnu11"
                                                         data-readonly placeholder="ONU 11*">
                                                 </div>
                                                 <div>
@@ -696,7 +696,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu12" required
+                                                    <input type="text" class="form-control" id="nombreOnu12"
                                                         data-readonly placeholder="ONU 12*">
                                                 </div>
                                                 <div>
@@ -750,7 +750,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu13" required
+                                                    <input type="text" class="form-control" id="nombreOnu13"
                                                         data-readonly placeholder="ONU 13*">
                                                 </div>
                                                 <div>
@@ -804,7 +804,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu14" required
+                                                    <input type="text" class="form-control" id="nombreOnu14"
                                                         data-readonly placeholder="ONU 14*">
                                                 </div>
                                                 <div>
@@ -858,7 +858,7 @@
                                                         title="Buscar ingrediente en la base de datos">Buscar</button>
                                                 </div>
                                                 <div class="ingrediente-text">
-                                                    <input type="text" class="form-control" id="nombreOnu15" required
+                                                    <input type="text" class="form-control" id="nombreOnu15"
                                                         data-readonly placeholder="ONU 15*">
                                                 </div>
                                                 <div>
@@ -902,36 +902,9 @@
         </div>
 
         <!-- Modals de CAS y ONU -->
-        <div id="loadCasModal1"></div>
-        <div id="loadCasModal2"></div>
-        <div id="loadCasModal3"></div>
-        <div id="loadCasModal4"></div>
-        <div id="loadCasModal5"></div>
-        <div id="loadCasModal6"></div>
-        <div id="loadCasModal7"></div>
-        <div id="loadCasModal8"></div>
-        <div id="loadCasModal9"></div>
-        <div id="loadCasModal10"></div>
-        <div id="loadCasModal11"></div>
-        <div id="loadCasModal12"></div>
-        <div id="loadCasModal13"></div>
-        <div id="loadCasModal14"></div>
-        <div id="loadCasModal15"></div>
-        <div id="loadOnuModal1"></div>
-        <div id="loadOnuModal2"></div>
-        <div id="loadOnuModal3"></div>
-        <div id="loadOnuModal4"></div>
-        <div id="loadOnuModal5"></div>
-        <div id="loadOnuModal6"></div>
-        <div id="loadOnuModal7"></div>
-        <div id="loadOnuModal8"></div>
-        <div id="loadOnuModal9"></div>
-        <div id="loadOnuModal10"></div>
-        <div id="loadOnuModal11"></div>
-        <div id="loadOnuModal12"></div>
-        <div id="loadOnuModal13"></div>
-        <div id="loadOnuModal14"></div>
-        <div id="loadOnuModal15"></div>
+        <div id="loadCasModal"></div>
+
+        <div id="loadOnuModal"></div>
 
         <!--Inicio Modal para mostrar hoja de seguridad-->
         <div class="modal fade" id="modalHojaSeguridad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -951,7 +924,8 @@
                                 <h3 class="h3 mb-2 text-gray-800" id="nombreRecetaPrev" value=""></h3>
                                 <p class="mb-4">Esto es solamente una previsualización.</p>
                                 <!-- Inicio de Hoja de Seguridad -->
-                                <?php require_once "hs.php" ?>
+                                <?php require_once "hsprev.php" ?>
+                                <!-- Final de Hoja de Seguridad -->
                             </div>
                             <div class="modal-footer">
                                 <button id="download-btn" class="btn btn-dark" data-dismiss="modal">Generar Hoja de
@@ -972,5 +946,7 @@
 
 </div>
 <!--FIN del cont principal-->
+
+
 
 <?php require_once "vistas/parte_inferior.php" ?>

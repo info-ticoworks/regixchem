@@ -11,6 +11,7 @@ $SESSION_mailNotif = $_SESSION['mailNotif'];
 $SESSION_wsNotif = $_SESSION['wsNotif'];
 $SESSION_idEmpresa = $_SESSION['idEmpresa'];
 $SESSION_nombreEmpresa = $_SESSION['nombreEmpresa'];
+$_SESSION['ingredientes'] = [];
 date_default_timezone_set('America/Costa_Rica');
 $bMeses = array("void","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 $bDias = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
@@ -38,7 +39,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Regixchem</title>
+    <title>Khemnet Regixchem</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,6 +47,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
 
     <!-- CSS propio-->
     <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/hsprev.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="./css/sb-admin-2.min.css" rel="stylesheet">

@@ -8,7 +8,7 @@ session_start();
         <meta charset="UFT-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Regixchem</title>
+        <title>Khemnet Regixchem</title>
         <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">

@@ -1,9 +1,9 @@
-//Tabla Producto 1
-tablaProductosReducida1 = $("#tablaProductosReducida1").DataTable({
+//Tabla ONU 1
+tablaONU = $("#tablaONU").DataTable({
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerProducto1' data-dismiss='modal'>Seleccionar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button type='submit' class='btn btn-primary btnEscogerOnu' data-dismiss='modal'>Seleccionar</button></div></div>"
         }],
 
         responsive: "true",
@@ -28,13 +28,13 @@ tablaProductosReducida1 = $("#tablaProductosReducida1").DataTable({
         }
 });
 
-//Highlight de filas Producto 1
-tablaProductosReducida1.on('mouseenter', 'tr', function () {
-        $(document).find('tr').removeClass("dtSelected");
-        $(tablaProductosReducida1.row(this).selector.rows).addClass("dtSelected");
+//Highlight de filas ONU 1
+tablaONU.on('mouseenter', 'tr', function () {
+    $(document).find('tr').removeClass("dtSelected");
+    $(tablaONU.row(this).selector.rows).addClass("dtSelected");
 });
 
-//Fix de Scroll en Modal 1
-$('#modalProductosReducida1').on('hidden.bs.modal', function (e) {
+//Fix de Scroll en Modal ONU 1
+$('#modalONU').on('hidden.bs.modal', function (e) {
     $('body').addClass('modal-open');
 });

@@ -3176,7 +3176,8 @@ $(document).ready(function () {
         }, function (data) {
             console.log (data);
             if (data != cas) {
-                alert("No existe");
+                //alert("No existe");
+                console.log('El producto no existe');
             } else {
                 Swal.fire({
                     icon: 'error',

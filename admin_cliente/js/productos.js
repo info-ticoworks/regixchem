@@ -1512,9 +1512,6 @@ $(document).ready(function () {
     $('#btnEliminarFabricante10').on('click', function () {
         btnEliminarFabricante10();
     });
-
-
-
     //Final de los botones para agregar y quitar fabricantes
 
     
@@ -3168,6 +3165,31 @@ $(document).ready(function () {
         $(document).find('tr').removeClass("dtSelected");
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
+
+
+    //Check si producto ya existe
+    $("#newcas").focusout(function () {
+        //alert("hello");
+        var cas = $('#newcas').val(); // assuming this is a input text field
+        $.post('bd/checkProducto.php', {
+            'cas': cas
+        }, function (data) {
+            console.log (data);
+            if (data != cas) {
+                alert("No existe");
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Alerta!',
+                    text: 'Tenga en cuenta que este producto ya existe en la base de datos',
+                    footer: '<a href="">Why do I have this issue?</a>',
+                    timer: 2000
+                })
+            }
+        });
+        return false;
+    });
+
 
     //Botón Nuevo Producto
     $("#btnNuevoProducto").click(function () {
@@ -4910,7 +4932,7 @@ $(document).ready(function () {
             //         footer: '<a href="">Why do I have this issue?</a>',
             //         timer: 3000
             //     })
-            // }   
+            // }
         });
         $("#modalCRUD").modal("hide");
     });

@@ -22,7 +22,6 @@ $(document).ready(function () {
         }
     }
 
-
     function irritacion2ingredientes (ingrediente1, ingrediente2, cantidad) {
         if (idCategoria === 70 && cantidad >= 5) {
             idCategoria = idCategoria
@@ -53,15 +52,14 @@ $(document).ready(function () {
 
     //Botón Previsualizar Hoja de Seguridad
     $(document).on("click", ".btnPrevisualizar", function () {
-        //$("#nombreRecetaPrev").empty();
-        //$("#modalHojaSeguridad").trigger("reset");
+        $("#nombreRecetaPrev").empty();
+        $("#modalHojaSeguridad").trigger("reset");
         fila = $(this).closest("tr");
         idReceta = fila.find('td:eq(0)').text();
         nombreReceta = fila.find('td:eq(1)').text();
         console.log('ID de Receta: ', idReceta);
         console.log('Nombre de Receta: ', nombreReceta);
         console.log('Fecha: ', date);
-        $('#productos').show();
         $("#fechaImpresion").text(date);
 
         $.ajax({
@@ -307,6 +305,8 @@ $(document).ready(function () {
                             })
                         }
                     });
+
+                    $('#productos').show();
 
                 }
 

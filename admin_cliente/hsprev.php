@@ -1,30 +1,3 @@
-<!-- INICIO DE SESION -->
-<?php
-
-$SESSION_cedula = $_SESSION['cedula'];
-$SESSION_nombre = $_SESSION['nombre'];
-$SESSION_apellido1 = $_SESSION['apellido1'];
-$SESSION_telefono = $_SESSION['telefono'];
-$SESSION_correo = $_SESSION['correo'];
-$SESSION_idTipoUsuario = $_SESSION['idTipoUsuario'];
-$SESSION_mailNotif = $_SESSION['mailNotif'];
-$SESSION_wsNotif = $_SESSION['wsNotif'];
-$SESSION_idEmpresa = $_SESSION['idEmpresa'];
-$SESSION_nombreEmpresa = $_SESSION['nombreEmpresa'];
-date_default_timezone_set('America/Costa_Rica');
-$bMeses = array("void","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-$bDias = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-$fecha = getdate();
-$dias = $bDias[$fecha["wday"]];
-$meses = $bMeses[$fecha["mon"]];
-$fechaActual = "$dias ".$fecha["mday"]." de ".$meses." de ".$fecha["year"]."";
-$horaActual = "".$fecha["hours"].":".$fecha["minutes"].":".$fecha["seconds"]."";
-if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsuario<>4){
-    // header ("Location: rediriges a la pagina de logueo".)
-    header("Location: ../index.php");
-}
-?>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
     <head>
@@ -45,15 +18,15 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                     Reglamento Técnico RTCR 478:2015 de Costa Rica y en concordancia con el GHS-SGA Naciones Unidas Revisión 6ta.
                 </p>
                 <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-                <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                <p style="text-indent: 0pt;text-align: left;"></p>
                 <p style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">BASF Hoja de Seguridad</p>
                 <p style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Fecha / actualizada el:
                     17.10.2023</p>
                 <p style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;" id="nombreReceta">Producto: <b>Ácido fosforoso</b>
                 </p>
                 <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                <p style="text-indent: 0pt;text-align: left;"><span /></p>
-                <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                <p style="text-indent: 0pt;text-align: left;"></p>
+                <p style="text-indent: 0pt;text-align: left;"></p>
                 <p style="padding-top: 1pt;padding-left: 8pt;padding-left: 15pt;line-height: 23pt;text-align: left;">Versión: 2.0</p>
 
 
@@ -64,7 +37,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                 
                 <ol id="l1">
 
-                    <div id="productos" hidden>
+                    <div id="productos">
                         <h3 style="padding-top: 8pt;padding-left: 18pt;text-indent: -13pt;text-align: left;">1. Identificación de la
                             sustancia o preparado y de la sociedad o empresa</h3>
                         <h3 style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;"><a
@@ -78,9 +51,9 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
                         <p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">Fabricantes:</p>
                         <p style="padding-top: 6pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 76pt;text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 76pt;text-indent: 0pt;text-align: left;"></p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="peligros" hidden>
@@ -105,15 +78,15 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 105pt;text-indent: 0pt;text-align: left;"><span /> <span /></p>
+                        <p style="padding-left: 105pt;text-indent: 0pt;text-align: left;"> </p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Palabra de advertencia:</p>
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Peligro</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p class="s5" style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">Indicaciones
                             de peligro: <span class="p">Puede ser corrosiva para los metales.</span></p>
                         <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">Nocivo en caso de ingestión</p>
@@ -363,7 +336,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -391,7 +364,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             PBT (persistente/bioacumulable/tóxico) y mPmB (muy persistente/muy bioacumulable).. Autoclasificación
                         </p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="composicion" hidden>
@@ -418,11 +391,11 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="p-auxilios" hidden>
@@ -458,7 +431,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Tratamiento: Tratamiento sintomático
                             (descontaminación, funciones vitales), no es conocido ningún antídoto específico.</p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="m-incendios" hidden>
@@ -481,7 +454,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Protéjase con un equipo respiratorio
                             autónomo.</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="m-vertido-accidental" hidden>
@@ -499,7 +472,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -515,7 +488,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             absorbente (p. ej. arena, serrín, absorbente universal, tierra de diatomeas). Eliminar el material
                             recogido teniendo en consideración las disposiciones locales.</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="manipulacion" hidden>
@@ -538,7 +511,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Otras especificaciones sobre condiciones
                             almacenamiento: Mantener el recipiente bien cerrado, en lugar fresco y ventilado.</p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="control-exposicion" hidden>
@@ -577,7 +550,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -615,7 +588,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             caso de ventilación insuficiente. Filtro para gas para gases/vapores orgánicos (punto de ebullición &gt;
                             65 ºC, p.ej. EN 14387 tipo A).</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="p-fisicas-quimicas" hidden>
@@ -713,7 +686,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -975,7 +948,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -994,7 +967,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             </tr>
                         </table>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="estabilidad-reactividad" hidden>
@@ -1018,7 +991,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             presentan productos peligrosos de descomposición, si se tienen en consideración las normas/ indicaciones
                             sobre almacenamiento y manipulación.</p>
                         <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                     </div>
 
                     <div id="i-toxicologicas" hidden>
@@ -1050,7 +1023,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1077,7 +1050,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         </h4>
                         <p style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: justify;">Valoración de
                             mutagenicidad:</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">La sustancia no presentó efectos mutágenos
                             en bacterias. La sustancia no ha presentado indicaciones de propiedades mutagénicas en cultivos
                             celulares de mamíferos.</p>
@@ -1116,7 +1089,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1127,7 +1100,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">Tiene efecto
                             desengrasante sobre la piel.</p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="i-ecologica" hidden>
@@ -1194,7 +1167,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1242,7 +1215,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">El producto no debe ser vertido al
                             alcantarillado sin un tratamiento previo.</p>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="c-eliminacion" hidden>
@@ -1259,7 +1232,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Los envases contaminados deben ser vaciados
                             de forma óptima de manera que después de una limpieza a fondo pueden ser reutilizados</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="i-transporte" hidden>
@@ -1310,7 +1283,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1554,7 +1527,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                                 fosforoso</b></p>
                         <p style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
                             Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                        <p style="text-indent: 0pt;text-align: left;"><span /></p>
+                        <p style="text-indent: 0pt;text-align: left;"></p>
                         <p style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Fecha de impresión
                             17.10.2023</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1609,7 +1582,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                             </tr>
                         </table>
                         <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="reglamentaciones" hidden>
@@ -1625,7 +1598,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                         <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Esta hoja de seguridad fue realizada de
                             acuerdo a los requerimientos de Resolución 801/15 de la SRT</p>
                         <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
                     <div id="o-informaciones" hidden>
@@ -1676,7 +1649,7 @@ if($SESSION_idTipoUsuario<>2 && $SESSION_idTipoUsuario<>3 && $SESSION_idTipoUsua
                     </tr>
                 </table>
                 <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br /></p>
-                <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"><span /></p>
+                <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                 <p style="padding-left: 15pt;text-indent: 0pt;text-align: left;">Las variaciones respecto a la versión anterior se
                     han señalado para su comodidad mediante líneas verticales situadas en el margen izquierdo del texto.</p>
                 <p style="padding-top: 11pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">Los datos contenidos en esta hoja

@@ -6,6 +6,9 @@ $conexion = $objeto->Conectar();
 // Recepción de los datos enviados mediante POST desde el JS
 $idReceta = (isset($_POST['idReceta'])) ? $_POST['idReceta'] : '';
 $nombreReceta = (isset($_POST['nombreReceta'])) ? $_POST['nombreReceta'] : '';
+$nombreFabricanteReceta = (isset($_POST['nombreFabricanteReceta'])) ? $_POST['nombreFabricanteReceta'] : '';
+$direccionFabricanteReceta = (isset($_POST['direccionFabricanteReceta'])) ? $_POST['direccionFabricanteReceta'] : '';
+$telefonoFabricanteReceta = (isset($_POST['telefonoFabricanteReceta'])) ? $_POST['telefonoFabricanteReceta'] : '';
 $idEmpresa = (isset($_POST['idEmpresa'])) ? $_POST['idEmpresa'] : '';
 $cas1 = (isset($_POST['cas1'])) ? $_POST['cas1'] : '';
 $cas2 = (isset($_POST['cas2'])) ? $_POST['cas2'] : '';
@@ -56,7 +59,10 @@ $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 
 switch ($opcion) {
     case 1: //alta
-        $consulta = "INSERT INTO receta (nombreReceta, 
+        $consulta = "INSERT INTO receta (nombreReceta,
+                                        nombreFabricanteReceta,
+                                        direccionFabricanteReceta,
+                                        telefonoFabricanteReceta, 
                                         idEmpresa, 
                                         cas1,
                                         cas2,
@@ -104,6 +110,9 @@ switch ($opcion) {
                                         cantidad14,
                                         cantidad15)
                                         VALUES('$nombreReceta',
+                                        '$nombreFabricanteReceta',
+                                        '$direccionFabricanteReceta',
+                                        '$telefonoFabricanteReceta',
                                         '$idEmpresa',
                                         " . (($cas1 == '') ? "NULL" : ("'" . $cas1 . "'")) . ",
                                         " . (($cas2 == '') ? "NULL" : ("'" . $cas2 . "'")) . ",
@@ -164,6 +173,9 @@ switch ($opcion) {
 
     case 2: //modificación
         $consulta = "UPDATE receta SET nombreReceta='$nombreReceta',
+                                        nombreFabricanteReceta='$nombreFabricanteReceta',
+                                        direccionFabricanteReceta='$direccionFabricanteReceta',
+                                        telefonoFabricanteReceta='$telefonoFabricanteReceta',
                                         cas1=" . (($cas1 == '') ? "NULL" : ("'" . $cas1 . "'")) . ",
                                         cas2=" . (($cas2 == '') ? "NULL" : ("'" . $cas2 . "'")) . ",
                                         cas3=" . (($cas3 == '') ? "NULL" : ("'" . $cas3 . "'")) . ",

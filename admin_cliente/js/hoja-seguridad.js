@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var fila; //Capturar la fila para editar o borrar el registro
     const date = 'Fecha de impresión: ' + new Date().toLocaleDateString();
+    const date2 = 'Fecha / actualizada el: ' + new Date().toLocaleDateString();
 
 
     //Fórmulas
@@ -61,6 +62,8 @@ $(document).ready(function () {
         console.log('Nombre de Receta: ', nombreReceta);
         console.log('Fecha: ', date);
         $("#fechaImpresion").text(date);
+        $("#fechaActualizada").text(date2);
+
 
         $.ajax({
             type: "POST",
@@ -73,6 +76,9 @@ $(document).ready(function () {
                 console.log(recipe_loaded);
                 loaded_idReceta = recipe_loaded[0].idReceta;
                 loaded_nombreReceta = recipe_loaded[0].nombreReceta;
+                loaded_nombreFabricanteReceta = recipe_loaded[0].nombreFabricanteReceta;
+                loaded_direccionFabricanteReceta = recipe_loaded[0].direccionFabricanteReceta;
+                loaded_telefonoFabricanteReceta = recipe_loaded[0].telefonoFabricanteReceta;
                 loaded_idEmpresa = recipe_loaded[0].idEmpresa;
                 loaded_cas1 = recipe_loaded[0].cas1;
                 loaded_cas2 = recipe_loaded[0].cas2;
@@ -121,6 +127,9 @@ $(document).ready(function () {
                 loaded_cantidad15 = recipe_loaded[0].cantidad15;
                 console.log('ID de Receta: ', loaded_idReceta);
                 console.log('Nombre de Receta: ', loaded_nombreReceta);
+                console.log('Nombre del Fabricante de la Receta: ', loaded_nombreFabricanteReceta);
+                console.log('Direción del Fabricante de la Receta: ', loaded_direccionFabricanteReceta);
+                console.log('Teléfono del Fabricante de la Receta: ', loaded_telefonoFabricanteReceta);
                 console.log('ID de Empresa: ', loaded_idEmpresa);
                 console.log('Cas 1: ', loaded_cas1);
                 console.log('Cas 2: ', loaded_cas2);
@@ -254,11 +263,11 @@ $(document).ready(function () {
                     }
                 });
 
-                $("#nombreReceta").val(loaded_nombreReceta);
-
                 //Precarga de datos de Clases
 
                 if (loaded_cas1 != null) {
+                    console.log("Producto 1 cargado");
+                    $("#idReceta").show();
 
                     $.ajax({
                         type: "POST",
@@ -270,6 +279,7 @@ $(document).ready(function () {
                             cas_loaded = dataParse;
                             console.log('Cargando CAS1...');
                             console.log(cas_loaded);
+                            $("#nombreUso").text(cas_loaded[0].nombreUso);
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -306,8 +316,12 @@ $(document).ready(function () {
                         }
                     });
 
-                    $('#productos').show();
+                    $("#loaded_nombreReceta").text(loaded_nombreReceta);
+                    
 
+
+                } else {
+                    $("#productos").hide();
                 }
 
 

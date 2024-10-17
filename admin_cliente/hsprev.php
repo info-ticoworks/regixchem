@@ -37,11 +37,9 @@
                 
                 <ol id="l1">
 
-                    <div id="productos">
+                    <div id="nombreReceta">
                         <h3 style="padding-top: 8pt;padding-left: 18pt;text-indent: -13pt;text-align: left;">1. Identificación de la
                             sustancia o preparado y de la sociedad o empresa</h3>
-                        <h3 style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;"><a
-                                name="bookmark0">&zwnj;</a>Producto 1</h>
                         <h2 style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;"><a
                                 name="bookmark0">&zwnj;</a>Ácido fosforoso</h2>
                         <p style="padding-top: 11pt;padding-left: 18pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
@@ -56,7 +54,7 @@
                         <p style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;"></p>
                     </div>
 
-                    <div id="peligros" hidden>
+                    <div id="peligros">
                         <h3 style="padding-top: 5pt;padding-left: 18pt;text-indent: -5pt;line-height: 190%;text-align: left;"><a
                                 name="bookmark1">&zwnj;</a>2. Identificación de los peligros <span class="s4">Clasificación de la
                                 sustancia o de la mezcla </span><span class="s3">De acuerdo con los criterios del GHS (ONU)</span>

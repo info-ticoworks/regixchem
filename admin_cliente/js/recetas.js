@@ -2675,11 +2675,6 @@ $(document).ready(function () {
         $('#ingrediente13').hide();
         $('#ingrediente14').hide();
         $('#ingrediente15').hide();
-
-
-
-
-
         $('#btnQuitarIngrediente2').hide();
         $('#btnIngrediente3').hide();
         $('#btnQuitarIngrediente3').hide();
@@ -2774,6 +2769,9 @@ $(document).ready(function () {
                 console.log(recipe_loaded);
                 loaded_idReceta = recipe_loaded[0].idReceta;
                 loaded_nombreReceta = recipe_loaded[0].nombreReceta;
+                loaded_nombreFabricanteReceta = recipe_loaded[0].nombreFabricanteReceta;
+                loaded_direccionFabricanteReceta = recipe_loaded[0].direccionFabricanteReceta;
+                loaded_telefonoFabricanteReceta = recipe_loaded[0].telefonoFabricanteReceta;
                 loaded_idEmpresa = recipe_loaded[0].idEmpresa;
                 loaded_cas1 = recipe_loaded[0].cas1;
                 loaded_cas2 = recipe_loaded[0].cas2;
@@ -2822,6 +2820,9 @@ $(document).ready(function () {
                 loaded_cantidad15 = recipe_loaded[0].cantidad15;
                 console.log('ID de Receta: ', loaded_idReceta);
                 console.log('Nombre de Receta: ', loaded_nombreReceta);
+                console.log('Nombre del Fabricante de la Receta: ', loaded_nombreFabricanteReceta);
+                console.log('Direción del Fabricante de la Receta: ', loaded_direccionFabricanteReceta);
+                console.log('Teléfono del Fabricante de la Receta: ', loaded_telefonoFabricanteReceta);
                 console.log('ID de Empresa: ', loaded_idEmpresa);
                 console.log('Cas 1: ', loaded_cas1);
                 console.log('Cas 2: ', loaded_cas2);
@@ -2956,6 +2957,9 @@ $(document).ready(function () {
                 });
 
                 $("#nombreReceta").val(loaded_nombreReceta);
+                $("#nombreFabricanteReceta").val(loaded_nombreFabricanteReceta);
+                $("#direccionFabricanteReceta").val(loaded_direccionFabricanteReceta);
+                $("#telefonoFabricanteReceta").val(loaded_telefonoFabricanteReceta);
 
                 //Precarga de datos de Clases
 
@@ -3403,6 +3407,9 @@ $(document).ready(function () {
     $("#formRecetas").submit(function (e) {
         e.preventDefault();
         nombreReceta = $.trim($("#nombreReceta").val());
+        nombreFabricanteReceta = $.trim($("#nombreFabricanteReceta").val());
+        direccionFabricanteReceta = $.trim($("#direccionFabricanteReceta").val());
+        telefonoFabricanteReceta = $.trim($("#telefonoFabricanteReceta").val());
         idEmpresa = $.trim($("#idEmpresa").val());
         cas1 = $.trim($("#nombreIngrediente1").val());
         cas2 = $.trim($("#nombreIngrediente2").val());
@@ -3490,6 +3497,9 @@ $(document).ready(function () {
                 opcion: opcion,
                 idReceta: idReceta,
                 nombreReceta: nombreReceta,
+                nombreFabricanteReceta: nombreFabricanteReceta,
+                direccionFabricanteReceta: direccionFabricanteReceta,
+                telefonoFabricanteReceta: telefonoFabricanteReceta,
                 idEmpresa: idEmpresa,
                 cas1: cas1,
                 cas2: cas2,

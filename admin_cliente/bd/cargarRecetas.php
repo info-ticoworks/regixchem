@@ -12,6 +12,9 @@ $idReceta = (isset($_POST['idReceta'])) ? $_POST['idReceta'] : '';
 
 $consulta = "SELECT idReceta,
 					nombreReceta,
+					nombreFabricanteReceta,
+					direccionFabricanteReceta,
+					telefonoFabricanteReceta,
 					idEmpresa,
 					cas1,
 					cas2,

@@ -941,53 +941,54 @@
                                 <!-- Inicio de Hoja de Seguridad -->
                                 <div class="content">
                                     <div class="page-container">
-                                        <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                        <h1
-                                            style="padding-top: 4pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
-                                            Hoja de Seguridad</h1>
-                                        <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-                                        <p class="s1" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Según
-                                            Decreto Ejecutivo : 40705,
-                                            Reglamento Técnico RTCR 478:2015 de Costa Rica y en concordancia con el
-                                            GHS-SGA Naciones Unidas Revisión 6ta.
-                                        </p>
-                                        <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
-                                        <p
-                                            style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                            BASF Hoja de Seguridad</p>
-                                        <p style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;" id="fechaActualizada">
-                                            Fecha / actualizada el: 17.10.2023</p>
-                                        </p>
-                                        <p style="padding-top: 1pt;padding-left: 8pt;padding-left: 15pt;line-height: 23pt;text-align: left;">Versión: 2.0</p>
+                                        <p class="titulo1">Hoja de Seguridad</p>
+                                        <br/>
+                                        <p class="subtext">Según Decreto Ejecutivo : 40705, Reglamento Técnico RTCR 478:2015 de Costa Rica y en concordancia con el GHS-SGA Naciones Unidas Revisión 6ta.</p>
+                                        <div class="solid"></div>
+                                        <p class="leftText">BASF Hoja de Seguridad</p>
+                                        <p class="leftText" id="fechaActualizada">Fecha / actualizada el: 17.10.2023</p>
+                                        <p class="rightText">Versión: 2.0</p>
+                                        <div class="solid"></div>
+                                        <p class="rightText" id="fechaImpresion">Fecha de impresión</p>
 
-                                        <p style="padding-top: 1pt;text-indent: 0pt;text-align: right;"
-                                            id="fechaImpresion">Fecha de impresión 17.10.2023</p>
 
+                                        
                                         <ol id="l1">
-
                                             <div id="idReceta">
-                                                <h3 style="padding-top: 8pt;padding-left: 18pt;text-indent: -13pt;text-align: left;">
-                                                    1. Identificación de la sustancia o preparado y de la sociedad o empresa</h3>
-                                                    <h2 style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                        <a name="bookmark0"loaded_nombreReceta id="loaded_nombreReceta">&zwnj;</a></h2>
-                                                    <p style="padding-top: 11pt;padding-left: 18pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                        <u>Principales usos recomendados</u>:
-                                                    </p>
-                                                    <P style="padding-left: 18pt;text-indent: 0pt;line-height: 11pt;text-align: left;" id="nombreUso">
-                                                        Este ácido se usa como aditivo para soluciones limpiadoras para retirar el óxido en piezas metálicas.</p>
-                                                    <p style="text-indent: pt;text-align: left;"><br /></p>
-                                                    <p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                        Fabricantes:</p>
-                                                    
+                                                <p class="titulo2">1. Identificación de la sustancia o preparado y de la sociedad o empresa</p>
+                                                    <div class="textDIV">
+                                                        <p class="titulo" id="loaded_nombreReceta"></p>
+                                                        <p class="subtitulo">Principales usos recomendados:</p>
+                                                        <p class="leftText" id="nombreUso"></p>
+                                                        <br/>
+                                                        <p class="subtitulo">Fabricantes:</p>
+                                                        <div class="leftRightDIV">
+                                                            <div class="leftDIV">
+                                                                <p class="leftText" id="loaded_nombreFabricanteReceta"></p>
+                                                            </div>
+                                                            <div class="rightDIV">
+                                                                <p class="leftText" id="loaded_direccionFabricanteReceta"></p>
+                                                            </div>
+                                                        </div>
 
-                                                    <p style="padding-top: 6pt;text-indent: 0pt;text-align: left;">
-                                                        <br /></p>
-                                                    <p style="padding-left: 76pt;text-indent: 0pt;text-align: left;">
-                                                    </p>
-                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                    <p
-                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;">
-                                                    </p>
+
+
+
+
+
+                                                        <p style="padding-top: 6pt;text-indent: 0pt;text-align: left;">
+                                                            <br /></p>
+                                                        <p style="padding-left: 76pt;text-indent: 0pt;text-align: left;">
+                                                        </p>
+                                                        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                        <p
+                                                            style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;">
+                                                        </p>
+                                                    </div>
+
+
+
+
                                             </div>
 
                                             <div id="peligros" hidden>

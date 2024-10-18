@@ -19,6 +19,7 @@
                 </p>
                 <p style="padding-top: 2pt;text-indent: 0pt;text-align: left;"><br /></p>
                 <p style="text-indent: 0pt;text-align: left;"></p>
+                <hr class="solid">
                 <p style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">BASF Hoja de Seguridad</p>
                 <p style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Fecha / actualizada el:
                     17.10.2023</p>

@@ -177,6 +177,11 @@ $(document).ready(function () {
                 console.log('Cantidad 14: ', loaded_cantidad14);
                 console.log('Cantidad 15: ', loaded_cantidad15);
 
+                $("#loaded_nombreFabricanteReceta").text(loaded_nombreFabricanteReceta);
+                $("#loaded_direccionFabricanteReceta").text(loaded_direccionFabricanteReceta);
+
+
+
 
                 loading_timer = 600;
                 more_time = 150;
@@ -267,7 +272,6 @@ $(document).ready(function () {
 
                 if (loaded_cas1 != null) {
                     console.log("Producto 1 cargado");
-                    $("#idReceta").show();
 
                     $.ajax({
                         type: "POST",

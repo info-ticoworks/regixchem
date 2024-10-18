@@ -54,7 +54,6 @@ h1 {
     font-size: 8pt;
 }
 
-.p,
 p {
     color: black;
     font-family: Arial, sans-serif;
@@ -74,7 +73,7 @@ p {
     font-size: 10pt;
 }
 
-h3 {
+.titulo2 {
     color: black;
     font-family: Arial, sans-serif;
     font-style: normal;
@@ -184,6 +183,79 @@ table,
 tbody {
     vertical-align: top;
     overflow: visible;
+}
+
+
+/* Secciones de la hoja de seguridad */
+
+.textDIV {
+    padding-left: 20px;
+}
+
+.leftRightDIV {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftDIV{
+    width: 30%;
+}
+
+.rightDIV {
+    width: 70%;
+}
+
+.titulo1 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+.titulo {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+.subtitulo {
+    font-size: 12pt;
+    line-height: 2px;
+    text-align: left;
+    text-decoration: underline;
+    padding: 5px 0 10px 0;
+}
+
+.subtext {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 8pt;
+}
+
+.solid {
+    height: 1px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 12px;
+}
+
+.leftText {
+    font-size: 12pt;
+    line-height: 2px;
+    text-align: left;
+}
+
+.rightText {
+    font-size: 12pt;
+    line-height: 0px;
+    text-align: right;
 }
 
 

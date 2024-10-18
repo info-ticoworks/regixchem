@@ -73,15 +73,6 @@ p {
     font-size: 10pt;
 }
 
-.titulo2 {
-    color: black;
-    font-family: Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 12pt;
-}
-
 h2 {
     color: black;
     font-family: Arial, sans-serif;
@@ -214,7 +205,7 @@ tbody {
     font-size: 18pt;
 }
 
-.titulo {
+.titulo2 {
     color: black;
     font-family: Arial, sans-serif;
     font-style: normal;
@@ -223,12 +214,20 @@ tbody {
     font-size: 16pt;
 }
 
+.titulo3 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
 .subtitulo {
     font-size: 12pt;
     line-height: 2px;
     text-align: left;
     text-decoration: underline;
-    padding: 5px 0 10px 0;
 }
 
 .subtext {
@@ -247,9 +246,10 @@ tbody {
 }
 
 .leftText {
+    display: inline;
     font-size: 12pt;
     line-height: 2px;
-    text-align: left;
+    text-align: justify;
 }
 
 .rightText {

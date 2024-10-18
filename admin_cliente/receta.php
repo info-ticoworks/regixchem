@@ -950,500 +950,505 @@
                                         <p class="rightText">Versión: 2.0</p>
                                         <div class="solid"></div>
                                         <p class="rightText" id="fechaImpresion">Fecha de impresión</p>
-
-
-                                        
                                         <ol id="l1">
                                             <div id="idReceta">
-                                                <p class="titulo2">1. Identificación de la sustancia o preparado y de la sociedad o empresa</p>
-                                                    <div class="textDIV">
-                                                        <p class="titulo" id="loaded_nombreReceta"></p>
-                                                        <p class="subtitulo">Principales usos recomendados:</p>
-                                                        <p class="leftText" id="nombreUso"></p>
-                                                        <br/>
-                                                        <p class="subtitulo">Fabricantes:</p>
-                                                        <div class="leftRightDIV">
-                                                            <div class="leftDIV">
-                                                                <p class="leftText" id="loaded_nombreFabricanteReceta"></p>
-                                                            </div>
-                                                            <div class="rightDIV">
-                                                                <p class="leftText" id="loaded_direccionFabricanteReceta"></p>
-                                                            </div>
+                                                <p class="titulo3">1. Identificación de la sustancia o preparado y de la sociedad o empresa</p>
+                                                <div class="textDIV">
+                                                    <p class="titulo2" id="loaded_nombreReceta"></p>
+                                                    <br>
+                                                    <p class="subtitulo">Principales usos recomendados:</p>
+                                                    <p class="leftText" id="nombreUso"></p>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <p class="subtitulo">Fabricantes:</p>
+                                                    <div class="leftRightDIV">
+                                                        <div class="leftDIV">
+                                                            <p class="leftText" id="loaded_nombreFabricanteReceta"></p>
                                                         </div>
-
-
-
-
-
-
-                                                        <p style="padding-top: 6pt;text-indent: 0pt;text-align: left;">
-                                                            <br /></p>
-                                                        <p style="padding-left: 76pt;text-indent: 0pt;text-align: left;">
-                                                        </p>
-                                                        <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                        <p
-                                                            style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;">
-                                                        </p>
+                                                        <div class="rightDIV">
+                                                            <p class="leftText" id="loaded_direccionFabricanteReceta"></p>
+                                                            <p class="leftText">. Tel: </p>
+                                                            <p class="leftText" id="loaded_telefonoFabricanteReceta"></p>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="solid"></div>
 
 
 
 
+
+
+                                            <div id="peligros">
+                                                <p class="titulo3">2. Identificación de los peligros</p>
+                                                <div class="textDIV">
+                                                    
+                                                    
+                                                    
+                                                        <span class="s4">Clasificación de la
+                                                            sustancia o de la mezcla </span><span class="s3">De acuerdo con
+                                                            los criterios del GHS (ONU)</span>
+                                                    </h3>
+                                                    <p
+                                                        style="padding-top: 1pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">
+                                                        Sustancias y mezclas
+                                                        corrosivas para los metales. Cat 1. Toxicidad aguda. Cat 4. POR
+                                                        INGESTION Corrosion/irritacion cutaneas.
+                                                        Cat 1.</p>
+                                                    <p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
+                                                        Lesiones oculares graves/irritación ocular.
+                                                        Categoría 1</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <h4 style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
+                                                        Elementos de la etiqueta</h4>
+                                                    <p
+                                                        style="padding-top: 10pt;padding-left: 18pt;text-indent: 0pt;line-height: 200%;text-align: left;">
+                                                        <u>De
+                                                            acuerdo con los criterios del GHS (ONU)</u> Pictograma:</p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                        BASF Hoja de Seguridad
+                                                    </p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                        Fecha / actualizada el:
+                                                        17.10.2023</p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                        Producto: <b>Ácido
+                                                            fosforoso</b></p>
+                                                    <p
+                                                        style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
+                                                        Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"></p>
+                                                    <p
+                                                        style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
+                                                        Fecha de impresión
+                                                        17.10.2023</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 105pt;text-indent: 0pt;text-align: left;"> </p>
+                                                    <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br />
+                                                    </p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Palabra
+                                                        de advertencia:</p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Peligro
+                                                    </p>
+                                                    <p style="text-indent: 0pt;text-align: left;"></p>
+                                                    <p class="s5"
+                                                        style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Indicaciones
+                                                        de peligro: <span class="p">Puede ser corrosiva para los
+                                                            metales.</span></p>
+                                                    <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">Nocivo
+                                                        en caso de ingestión</p>
+                                                    <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">
+                                                        Provoca quemaduras graves en la piel y
+                                                        lesiones oculares graves Provoca lesiones oculares graves</p>
+                                                    <p style="padding-top: 10pt;text-indent: 0pt;text-align: left;"><br />
+                                                    </p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Consejos de prudencia (prevención):</p>
+                                                    <table style="border-collapse:collapse;margin-left:79.734pt"
+                                                        cellspacing="0">
+                                                        <tr style="height:23pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P210</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    Mantener alejado del calor, de superficies calientes, de
+                                                                    chispas, de</p>
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    llamas abiertas y de cualquier otra fuente de ignición.
+                                                                    No fumar.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P280</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    Llevar guantes protectores y gafas o máscara de
+                                                                    protección.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P271</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    Utilizar únicamente en exteriores o en un lugar bien
+                                                                    ventilado.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P243</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Tomar medidas de precaución contra las descargas
+                                                                    electrostáticas.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P280</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    Llevar protección ocular.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P261</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Evite respirar la niebla, vapores o aerosoles.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P273</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    Evitar su liberación al medio ambiente.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:24pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    P241</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    Utilizar un material eléctrico, de ventilación y de
+                                                                    iluminación antideflagrante.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:24pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P240</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    Toma de tierra y enlace equipotencial del recipiente y
+                                                                    del equipo receptor.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:70pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P242</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Utilizar únicamente herramientas que no produzcan
+                                                                    chispas.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:23pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    P264</p>
+                                                            </td>
+                                                            <td style="width:358pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    Tras la manipulación, lavarse concienzudamente las
+                                                                    partes del cuerpo contaminadas.</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Consejos de prudencia (respuesta):</p>
+                                                    <table style="border-collapse:collapse;margin-left:79.734pt"
+                                                        cellspacing="0">
+                                                        <tr style="height:23pt">
+                                                            <td
+                                                                style="width:105pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    P312</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    Llamar a un CENTRO DE TOXICOLOGÍA o a un médico si la
+                                                                    persona se encuentra mal.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:35pt">
+                                                            <td style="width:105pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    P305 + P351 + P338</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    EN
+                                                                    CASO DE CONTACTO CON LOS OJOS: Aclarar cuidadosamente
+                                                                </p>
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    con
+                                                                    agua durante varios minutos. Quitar las lentes de
+                                                                    contacto, si lleva y resulta fácil. Seguir
+                                                                    aclarando.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:35pt">
+                                                            <td
+                                                                style="width:105pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P303 + P361 + P353</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    EN
+                                                                    CASO DE CONTACTO CON LA PIEL (o el pelo): Quitar</p>
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    inmediatamente todas las prendas contaminadas. Aclararse
+                                                                    la piel con agua o ducharse.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:23pt">
+                                                            <td style="width:105pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P304 + P340</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    EN
+                                                                    CASO DE INHALACIÓN: Transportar a la persona al aire
+                                                                    libre y mantenerla en una posición que
+                                                                    le facilite la respiración.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td
+                                                                style="width:105pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    P370 + P378</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                                    En
+                                                                    caso de incendio, Utilizar… para la extinción.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td
+                                                                style="width:105pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P337 + P313</p>
+                                                            </td>
+                                                            <td style="width:324pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 9pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Si
+                                                                    persiste la irritación ocular: Consultar a un médico.
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Consejos de prudencia (almacenamiento):</p>
+                                                    <table style="border-collapse:collapse;margin-left:80.684pt"
+                                                        cellspacing="0">
+                                                        <tr style="height:12pt">
+                                                            <td style="width:86pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P233</p>
+                                                            </td>
+                                                            <td style="width:313pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Mantener el recipiente herméticamente cerrado.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:86pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P403 + P235</p>
+                                                            </td>
+                                                            <td style="width:313pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Almacenar en un lugar bien ventilado. Mantener en lugar
+                                                                    fresco.</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="height:12pt">
+                                                            <td style="width:86pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    P405</p>
+                                                            </td>
+                                                            <td style="width:313pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
+                                                                    Guardar bajo llave.</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Consejos de prudencia (eliminación):</p>
+                                                    <table style="border-collapse:collapse;margin-left:79.734pt"
+                                                        cellspacing="0">
+                                                        <tr style="height:23pt">
+                                                            <td
+                                                                style="width:70pt;border-left-style:solid;border-left-width:2pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    P501</p>
+                                                            </td>
+                                                            <td style="width:327pt">
+                                                                <p class="s6"
+                                                                    style="padding-left: 44pt;padding-right: 1pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                                    Eliminar el contenido y el recipiente en un punto de
+                                                                    recogida de residuos especiales o
+                                                                    peligrosos.</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                        BASF Hoja de Seguridad
+                                                    </p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+                                                        Fecha / actualizada el:
+                                                        17.10.2023</p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
+                                                        Producto: <b>Ácido
+                                                            fosforoso</b></p>
+                                                    <p
+                                                        style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
+                                                        Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"></p>
+                                                    <p
+                                                        style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
+                                                        Fecha de impresión
+                                                        17.10.2023</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p class="s3"
+                                                        style="padding-left: 20pt;text-indent: 0pt;text-align: left;">De
+                                                        acuerdo con los criterios del
+                                                        GHS (ONU)</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Etiquetado de preparados especiales:</p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">La
+                                                        exposición repetida puede provocar
+                                                        sequedad o formación de grietas en la piel.</p>
+                                                    <h4
+                                                        style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Otros peligros</h4>
+                                                    <p class="s3"
+                                                        style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        De acuerdo con
+                                                        los criterios del GHS (ONU)</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Otros
+                                                        Peligros (GHS):</p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Si es
+                                                        aplicable, se facilita en esta
+                                                        sección la información sobre otros peligros que no den lugar a la
+                                                        clasificación pero que puedan
+                                                        contribuir al peligro global de la sustancia o mezcla.</p>
+                                                    <p
+                                                        style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Ver Sección 12 -
+                                                        Resultados del ensayo de PBT y mPmB.</p>
+                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
+                                                        Valoración PBT / mPmB:</p>
+                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Según
+                                                        el Anexo XIII del Reglamento (CE) Nº
+                                                        1907/2006 relativo al registro, la evaluación, la autorización y la
+                                                        restricción de las sustancias y
+                                                        preparados químicos (REACH): El producto no cumple con los criterios
+                                                        de clasificación para sustancias
+                                                        PBT (persistente/bioacumulable/tóxico) y mPmB (muy persistente/muy
+                                                        bioacumulable).. Autoclasificación
+                                                    </p>
+                                                    <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br />
+                                                    </p>
+                                                    <p
+                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;">
+                                                    </p>
+                                                </div>
                                             </div>
 
-                                            <div id="peligros" hidden>
-                                                <h3
-                                                    style="padding-top: 5pt;padding-left: 18pt;text-indent: -5pt;line-height: 190%;text-align: left;">
-                                                    <a name="bookmark1">&zwnj;</a>2. Identificación de los peligros
-                                                    <span class="s4">Clasificación de la
-                                                        sustancia o de la mezcla </span><span class="s3">De acuerdo con
-                                                        los criterios del GHS (ONU)</span>
-                                                </h3>
-                                                <p
-                                                    style="padding-top: 1pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                    Sustancias y mezclas
-                                                    corrosivas para los metales. Cat 1. Toxicidad aguda. Cat 4. POR
-                                                    INGESTION Corrosion/irritacion cutaneas.
-                                                    Cat 1.</p>
-                                                <p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                    Lesiones oculares graves/irritación ocular.
-                                                    Categoría 1</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <h4 style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                    Elementos de la etiqueta</h4>
-                                                <p
-                                                    style="padding-top: 10pt;padding-left: 18pt;text-indent: 0pt;line-height: 200%;text-align: left;">
-                                                    <u>De
-                                                        acuerdo con los criterios del GHS (ONU)</u> Pictograma:</p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                    BASF Hoja de Seguridad
-                                                </p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                    Fecha / actualizada el:
-                                                    17.10.2023</p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                    Producto: <b>Ácido
-                                                        fosforoso</b></p>
-                                                <p
-                                                    style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
-                                                    Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                                                <p style="text-indent: 0pt;text-align: left;"></p>
-                                                <p
-                                                    style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
-                                                    Fecha de impresión
-                                                    17.10.2023</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 105pt;text-indent: 0pt;text-align: left;"> </p>
-                                                <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br />
-                                                </p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Palabra
-                                                    de advertencia:</p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Peligro
-                                                </p>
-                                                <p style="text-indent: 0pt;text-align: left;"></p>
-                                                <p class="s5"
-                                                    style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Indicaciones
-                                                    de peligro: <span class="p">Puede ser corrosiva para los
-                                                        metales.</span></p>
-                                                <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">Nocivo
-                                                    en caso de ingestión</p>
-                                                <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">
-                                                    Provoca quemaduras graves en la piel y
-                                                    lesiones oculares graves Provoca lesiones oculares graves</p>
-                                                <p style="padding-top: 10pt;text-indent: 0pt;text-align: left;"><br />
-                                                </p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Consejos de prudencia (prevención):</p>
-                                                <table style="border-collapse:collapse;margin-left:79.734pt"
-                                                    cellspacing="0">
-                                                    <tr style="height:23pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P210</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                Mantener alejado del calor, de superficies calientes, de
-                                                                chispas, de</p>
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                llamas abiertas y de cualquier otra fuente de ignición.
-                                                                No fumar.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P280</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                Llevar guantes protectores y gafas o máscara de
-                                                                protección.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P271</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                Utilizar únicamente en exteriores o en un lugar bien
-                                                                ventilado.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P243</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Tomar medidas de precaución contra las descargas
-                                                                electrostáticas.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P280</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                Llevar protección ocular.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P261</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Evite respirar la niebla, vapores o aerosoles.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P273</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                Evitar su liberación al medio ambiente.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:24pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                P241</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                Utilizar un material eléctrico, de ventilación y de
-                                                                iluminación antideflagrante.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:24pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P240</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                Toma de tierra y enlace equipotencial del recipiente y
-                                                                del equipo receptor.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:70pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P242</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Utilizar únicamente herramientas que no produzcan
-                                                                chispas.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:23pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                P264</p>
-                                                        </td>
-                                                        <td style="width:358pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                Tras la manipulación, lavarse concienzudamente las
-                                                                partes del cuerpo contaminadas.</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Consejos de prudencia (respuesta):</p>
-                                                <table style="border-collapse:collapse;margin-left:79.734pt"
-                                                    cellspacing="0">
-                                                    <tr style="height:23pt">
-                                                        <td
-                                                            style="width:105pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                P312</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                Llamar a un CENTRO DE TOXICOLOGÍA o a un médico si la
-                                                                persona se encuentra mal.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:35pt">
-                                                        <td style="width:105pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                P305 + P351 + P338</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                EN
-                                                                CASO DE CONTACTO CON LOS OJOS: Aclarar cuidadosamente
-                                                            </p>
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                con
-                                                                agua durante varios minutos. Quitar las lentes de
-                                                                contacto, si lleva y resulta fácil. Seguir
-                                                                aclarando.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:35pt">
-                                                        <td
-                                                            style="width:105pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P303 + P361 + P353</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                EN
-                                                                CASO DE CONTACTO CON LA PIEL (o el pelo): Quitar</p>
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                inmediatamente todas las prendas contaminadas. Aclararse
-                                                                la piel con agua o ducharse.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:23pt">
-                                                        <td style="width:105pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 4pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P304 + P340</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                EN
-                                                                CASO DE INHALACIÓN: Transportar a la persona al aire
-                                                                libre y mantenerla en una posición que
-                                                                le facilite la respiración.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td
-                                                            style="width:105pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                P370 + P378</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                                En
-                                                                caso de incendio, Utilizar… para la extinción.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td
-                                                            style="width:105pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P337 + P313</p>
-                                                        </td>
-                                                        <td style="width:324pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 9pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Si
-                                                                persiste la irritación ocular: Consultar a un médico.
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Consejos de prudencia (almacenamiento):</p>
-                                                <table style="border-collapse:collapse;margin-left:80.684pt"
-                                                    cellspacing="0">
-                                                    <tr style="height:12pt">
-                                                        <td style="width:86pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P233</p>
-                                                        </td>
-                                                        <td style="width:313pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Mantener el recipiente herméticamente cerrado.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:86pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P403 + P235</p>
-                                                        </td>
-                                                        <td style="width:313pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Almacenar en un lugar bien ventilado. Mantener en lugar
-                                                                fresco.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="height:12pt">
-                                                        <td style="width:86pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 2pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                P405</p>
-                                                        </td>
-                                                        <td style="width:313pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 25pt;text-indent: 0pt;line-height: 10pt;text-align: left;">
-                                                                Guardar bajo llave.</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Consejos de prudencia (eliminación):</p>
-                                                <table style="border-collapse:collapse;margin-left:79.734pt"
-                                                    cellspacing="0">
-                                                    <tr style="height:23pt">
-                                                        <td
-                                                            style="width:70pt;border-left-style:solid;border-left-width:2pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 3pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                P501</p>
-                                                        </td>
-                                                        <td style="width:327pt">
-                                                            <p class="s6"
-                                                                style="padding-left: 44pt;padding-right: 1pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                                Eliminar el contenido y el recipiente en un punto de
-                                                                recogida de residuos especiales o
-                                                                peligrosos.</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                    BASF Hoja de Seguridad
-                                                </p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                    Fecha / actualizada el:
-                                                    17.10.2023</p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                    Producto: <b>Ácido
-                                                        fosforoso</b></p>
-                                                <p
-                                                    style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
-                                                    Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                                                <p style="text-indent: 0pt;text-align: left;"></p>
-                                                <p
-                                                    style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
-                                                    Fecha de impresión
-                                                    17.10.2023</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p class="s3"
-                                                    style="padding-left: 20pt;text-indent: 0pt;text-align: left;">De
-                                                    acuerdo con los criterios del
-                                                    GHS (ONU)</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Etiquetado de preparados especiales:</p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">La
-                                                    exposición repetida puede provocar
-                                                    sequedad o formación de grietas en la piel.</p>
-                                                <h4
-                                                    style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Otros peligros</h4>
-                                                <p class="s3"
-                                                    style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    De acuerdo con
-                                                    los criterios del GHS (ONU)</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Otros
-                                                    Peligros (GHS):</p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Si es
-                                                    aplicable, se facilita en esta
-                                                    sección la información sobre otros peligros que no den lugar a la
-                                                    clasificación pero que puedan
-                                                    contribuir al peligro global de la sustancia o mezcla.</p>
-                                                <p
-                                                    style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Ver Sección 12 -
-                                                    Resultados del ensayo de PBT y mPmB.</p>
-                                                <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                    Valoración PBT / mPmB:</p>
-                                                <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Según
-                                                    el Anexo XIII del Reglamento (CE) Nº
-                                                    1907/2006 relativo al registro, la evaluación, la autorización y la
-                                                    restricción de las sustancias y
-                                                    preparados químicos (REACH): El producto no cumple con los criterios
-                                                    de clasificación para sustancias
-                                                    PBT (persistente/bioacumulable/tóxico) y mPmB (muy persistente/muy
-                                                    bioacumulable).. Autoclasificación
-                                                </p>
-                                                <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br />
-                                                </p>
-                                                <p
-                                                    style="padding-left: 15pt;text-indent: 0pt;line-height: 1pt;text-align: left;">
-                                                </p>
-                                            </div>
+
+
+
+
+
+
+
+
+
+
 
                                             <div id="composicion" hidden>
                                                 <h3

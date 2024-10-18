@@ -179,9 +179,7 @@ $(document).ready(function () {
 
                 $("#loaded_nombreFabricanteReceta").text(loaded_nombreFabricanteReceta);
                 $("#loaded_direccionFabricanteReceta").text(loaded_direccionFabricanteReceta);
-
-
-
+                $("#loaded_telefonoFabricanteReceta").text(loaded_telefonoFabricanteReceta);
 
                 loading_timer = 600;
                 more_time = 150;

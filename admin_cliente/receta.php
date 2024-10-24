@@ -976,62 +976,380 @@
                                             </div>
                                             <br>
                                             <div class="solid"></div>
-
-
-
-
-
-
                                             <div id="peligros">
                                                 <p class="titulo3">2. Identificación de los peligros</p>
                                                 <div class="textDIV">
+                                                    <p class="titulo3">Clasificación de la sustancia o de la mezcla </p>
+                                                    <p class="subtitulo">De acuerdo con los criterios del GHS (ONU)</p>
+                                                    <br>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro1-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro2-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro3-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro4-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro5-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro6-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro7-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro8-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro9-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro10-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro11-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro12-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro13-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro14-10" hidden>Categoría 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-1" hidden>Categoría 1.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-2" hidden>Categoría 2.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-3" hidden>Categoría 3.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-4" hidden>Categoría 4.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-5" hidden>Categoría 5.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-6" hidden>Categoría 6.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-7" hidden>Categoría 7.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-8" hidden>Categoría 8.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-9" hidden>Categoría 9.</p>
+                                                    <p class="leftText" id="loaded_nombreCategoriaPeligro15-10" hidden>Categoría 10.</p>
+
+
+                                                    <br>
+                                                    <br>
+                                                    <p class="titulo3">Elementos de la etiqueta</p>
+                                                    <p class="subtitulo">De acuerdo con los criterios del GHS (ONU)</u> Pictograma:</p>
+
                                                     
+                                                    <br>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-9" hidden>
+
+
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-1" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-2" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-3" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-4" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-5" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-6" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-7" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-8" hidden>
+                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-9" hidden>
+
+
                                                     
-                                                    
-                                                        <span class="s4">Clasificación de la
-                                                            sustancia o de la mezcla </span><span class="s3">De acuerdo con
-                                                            los criterios del GHS (ONU)</span>
-                                                    </h3>
-                                                    <p
-                                                        style="padding-top: 1pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                        Sustancias y mezclas
-                                                        corrosivas para los metales. Cat 1. Toxicidad aguda. Cat 4. POR
-                                                        INGESTION Corrosion/irritacion cutaneas.
-                                                        Cat 1.</p>
-                                                    <p style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                        Lesiones oculares graves/irritación ocular.
-                                                        Categoría 1</p>
-                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                    <h4 style="padding-left: 18pt;text-indent: 0pt;text-align: left;">
-                                                        Elementos de la etiqueta</h4>
-                                                    <p
-                                                        style="padding-top: 10pt;padding-left: 18pt;text-indent: 0pt;line-height: 200%;text-align: left;">
-                                                        <u>De
-                                                            acuerdo con los criterios del GHS (ONU)</u> Pictograma:</p>
-                                                    <p
-                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                        BASF Hoja de Seguridad
-                                                    </p>
-                                                    <p
-                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
-                                                        Fecha / actualizada el:
-                                                        17.10.2023</p>
-                                                    <p
-                                                        style="padding-left: 15pt;text-indent: 0pt;line-height: 12pt;text-align: left;">
-                                                        Producto: <b>Ácido
-                                                            fosforoso</b></p>
-                                                    <p
-                                                        style="padding-top: 1pt;padding-left: 18pt;padding-left: 15pt;line-height: 23pt;text-align: left;">
-                                                        Versión: 2.0 (30034745/SDS_GEN_AR/ES)</p>
-                                                    <p style="text-indent: 0pt;text-align: left;"></p>
-                                                    <p
-                                                        style="padding-top: 1pt;padding-left: 15pt;text-indent: 0pt;text-align: left;">
-                                                        Fecha de impresión
-                                                        17.10.2023</p>
-                                                    <p style="text-indent: 0pt;text-align: left;"><br /></p>
-                                                    <p style="padding-left: 105pt;text-indent: 0pt;text-align: left;"> </p>
-                                                    <p style="padding-top: 1pt;text-indent: 0pt;text-align: left;"><br />
-                                                    </p>
+
+
+
+                                                    <br>
+                                                    <br>
+                                                    <br>
+
+
+
+
+
+
+
+
+
                                                     <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Palabra
                                                         de advertencia:</p>
                                                     <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Peligro

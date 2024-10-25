@@ -1167,171 +1167,171 @@
                                                     <p class="titulo3">Elementos de la etiqueta</p>
                                                     <p class="subtitulo">De acuerdo con los criterios del GHS (ONU)</u> Pictograma:</p>
 
-                                                    
+
                                                     <br>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma1-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma1-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma2-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma2-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma3-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma3-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma4-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma4-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma5-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma5-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma6-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma6-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma7-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma7-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma8-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma8-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma9-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma9-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma10-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma10-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma11-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma11-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma12-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma12-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma13-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma13-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma14-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma14-9" hidden>
 
 
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-1" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-2" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-3" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-4" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-5" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-6" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-7" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-8" hidden>
-                                                    <img src="" width="100" height="100" id="loaded_imagenPictograma15-9" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-1" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-2" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-3" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-4" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-5" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-6" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-7" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-8" hidden>
+                                                    <img src="" width="115" height="115" id="loaded_imagenPictograma15-9" hidden>
 
 
                                                     

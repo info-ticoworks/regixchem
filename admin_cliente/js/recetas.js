@@ -2937,7 +2937,7 @@ $(document).ready(function () {
                 }
 
                 Swal.fire({
-                    title: "Cargando Información!",
+                    title: "Cargando datos de la receta!",
                     html: "Por favor espere.",
                     timer: loading_timer,
                     timerProgressBar: true,
@@ -2953,6 +2953,7 @@ $(document).ready(function () {
                     /* Read more about handling dismissals below */
                     if (result.dismiss === Swal.DismissReason.timer) {
                         //console.log("I was closed by the timer");
+                        $('#modalRecetas').modal({ backdrop: 'static', keyboard: false }, 'show');
                     }
                 });
 
@@ -3362,7 +3363,6 @@ $(document).ready(function () {
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Receta");
-        $('#modalRecetas').modal({ backdrop: 'static', keyboard: false }, 'show');
     });
 
     //Botón Eliminar Receta

@@ -300,6 +300,7 @@ $(document).ready(function () {
 
                 //Precarga de datos de Clases
 
+
                 if (loaded_cas1 != null) {
                     console.log("Producto 1 cargado");
                     $.ajax({
@@ -313,6 +314,11 @@ $(document).ready(function () {
                             console.log('Cargando CAS1...');
                             console.log(cas_loaded1);
                             $("#nombreUso").text(cas_loaded1[0].nombreUso);
+
+
+
+
+
 
                             if (cas_loaded1[0].nombreClasePeligro1 != null) {
                                 console.log(cas_loaded1[0].nombreClasePeligro1);
@@ -449,6 +455,92 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma1-9").attr("src", "pict/" + cas_loaded1[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma1-9").attr("id", "loaded_imagenPictograma" + cas_loaded1[0].idPictograma9 + "");
                             }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded1[0].nombrePalabraAdvertencia1 != null && cas_loaded1[0].nombrePalabraAdvertencia1 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia1);
+                                checkPalabraAdvertencia = cas_loaded1[0].nombrePalabraAdvertencia1;
+                                $('#loaded_nombrePalabraAdvertencia1-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-1").text(cas_loaded1[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia1-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-1").attr("id", cas_loaded1[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia2 != null && cas_loaded1[0].nombrePalabraAdvertencia2 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia1-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-2").text(cas_loaded1[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia1-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-2").attr("id", cas_loaded1[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia3 != null && cas_loaded1[0].nombrePalabraAdvertencia3 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia1-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-3").text(cas_loaded1[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia1-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-3").attr("id", cas_loaded1[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia4 != null && cas_loaded1[0].nombrePalabraAdvertencia4 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia1-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-4").text(cas_loaded1[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia1-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-4").attr("id", cas_loaded1[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia5 != null && cas_loaded1[0].nombrePalabraAdvertencia5 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia1-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-5").text(cas_loaded1[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia1-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-5").attr("id", cas_loaded1[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia6 != null && cas_loaded1[0].nombrePalabraAdvertencia6 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia1-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-6").text(cas_loaded1[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia1-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-6").attr("id", cas_loaded1[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia7 != null && cas_loaded1[0].nombrePalabraAdvertencia7 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia1-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-7").text(cas_loaded1[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia1-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-7").attr("id", cas_loaded1[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia8 != null && cas_loaded1[0].nombrePalabraAdvertencia8 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia1-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-8").text(cas_loaded1[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia1-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-8").attr("id", cas_loaded1[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia9 != null && cas_loaded1[0].nombrePalabraAdvertencia9 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia1-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-9").text(cas_loaded1[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia1-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-9").attr("id", cas_loaded1[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded1[0].nombrePalabraAdvertencia10 != null && cas_loaded1[0].nombrePalabraAdvertencia10 != "N/A") {
+                                console.log(cas_loaded1[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia1-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia1-10").text(cas_loaded1[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia1-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia1-10").attr("id", cas_loaded1[0].nombrePalabraAdvertencia10);
+                            }
+
+
 
                         },
                         error: function (textStatus, errorThrown) {
@@ -637,6 +729,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma2-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma2-9").attr("src", "pict/" + cas_loaded2[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma2-9").attr("id", "loaded_imagenPictograma" + cas_loaded2[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded2[0].nombrePalabraAdvertencia1 != null && cas_loaded2[0].nombrePalabraAdvertencia1 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia2-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-1").text(cas_loaded2[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia2-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-1").attr("id", cas_loaded2[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia2 != null && cas_loaded2[0].nombrePalabraAdvertencia2 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia2-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-2").text(cas_loaded2[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia2-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-2").attr("id", cas_loaded2[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia3 != null && cas_loaded2[0].nombrePalabraAdvertencia3 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia2-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-3").text(cas_loaded2[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia2-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-3").attr("id", cas_loaded2[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia4 != null && cas_loaded2[0].nombrePalabraAdvertencia4 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia2-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-4").text(cas_loaded2[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia2-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-4").attr("id", cas_loaded2[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia5 != null && cas_loaded2[0].nombrePalabraAdvertencia5 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia2-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-5").text(cas_loaded2[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia2-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-5").attr("id", cas_loaded2[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia6 != null && cas_loaded2[0].nombrePalabraAdvertencia6 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia2-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-6").text(cas_loaded2[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia2-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-6").attr("id", cas_loaded2[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia7 != null && cas_loaded2[0].nombrePalabraAdvertencia7 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia2-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-7").text(cas_loaded2[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia2-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-7").attr("id", cas_loaded2[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia8 != null && cas_loaded2[0].nombrePalabraAdvertencia8 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia2-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-8").text(cas_loaded2[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia2-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-8").attr("id", cas_loaded2[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia9 != null && cas_loaded2[0].nombrePalabraAdvertencia9 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia2-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-9").text(cas_loaded2[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia2-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-9").attr("id", cas_loaded2[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded2[0].nombrePalabraAdvertencia10 != null && cas_loaded2[0].nombrePalabraAdvertencia10 != "N/A") {
+                                console.log(cas_loaded2[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia2-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia2-10").text(cas_loaded2[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia2-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia2-10").attr("id", cas_loaded2[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -828,6 +1003,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma3-9").attr("id", "loaded_imagenPictograma" + cas_loaded3[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded3[0].nombrePalabraAdvertencia1 != null && cas_loaded3[0].nombrePalabraAdvertencia1 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia3-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-1").text(cas_loaded3[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia3-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-1").attr("id", cas_loaded3[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia2 != null && cas_loaded3[0].nombrePalabraAdvertencia2 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia3-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-2").text(cas_loaded3[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia3-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-2").attr("id", cas_loaded3[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia3 != null && cas_loaded3[0].nombrePalabraAdvertencia3 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia3-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-3").text(cas_loaded3[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia3-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-3").attr("id", cas_loaded3[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia4 != null && cas_loaded3[0].nombrePalabraAdvertencia4 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia3-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-4").text(cas_loaded3[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia3-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-4").attr("id", cas_loaded3[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia5 != null && cas_loaded3[0].nombrePalabraAdvertencia5 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia3-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-5").text(cas_loaded3[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia3-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-5").attr("id", cas_loaded3[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia6 != null && cas_loaded3[0].nombrePalabraAdvertencia6 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia3-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-6").text(cas_loaded3[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia3-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-6").attr("id", cas_loaded3[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia7 != null && cas_loaded3[0].nombrePalabraAdvertencia7 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia3-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-7").text(cas_loaded3[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia3-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-7").attr("id", cas_loaded3[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia8 != null && cas_loaded3[0].nombrePalabraAdvertencia8 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia3-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-8").text(cas_loaded3[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia3-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-8").attr("id", cas_loaded3[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia9 != null && cas_loaded3[0].nombrePalabraAdvertencia9 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia3-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-9").text(cas_loaded3[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia3-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-9").attr("id", cas_loaded3[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded3[0].nombrePalabraAdvertencia10 != null && cas_loaded3[0].nombrePalabraAdvertencia10 != "N/A") {
+                                console.log(cas_loaded3[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia3-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia3-10").text(cas_loaded3[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia3-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia3-10").attr("id", cas_loaded3[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -1017,6 +1275,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma4-9").attr("id", "loaded_imagenPictograma" + cas_loaded4[0].idPictograma9 + "");
                             }
 
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded4[0].nombrePalabraAdvertencia1 != null && cas_loaded4[0].nombrePalabraAdvertencia1 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia4-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-1").text(cas_loaded4[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia4-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-1").attr("id", cas_loaded4[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia2 != null && cas_loaded4[0].nombrePalabraAdvertencia2 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia4-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-2").text(cas_loaded4[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia4-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-2").attr("id", cas_loaded4[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia3 != null && cas_loaded4[0].nombrePalabraAdvertencia3 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia4-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-3").text(cas_loaded4[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia4-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-3").attr("id", cas_loaded4[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia4 != null && cas_loaded4[0].nombrePalabraAdvertencia4 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia4-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-4").text(cas_loaded4[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia4-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-4").attr("id", cas_loaded4[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia5 != null && cas_loaded4[0].nombrePalabraAdvertencia5 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia4-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-5").text(cas_loaded4[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia4-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-5").attr("id", cas_loaded4[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia6 != null && cas_loaded4[0].nombrePalabraAdvertencia6 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia4-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-6").text(cas_loaded4[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia4-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-6").attr("id", cas_loaded4[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia7 != null && cas_loaded4[0].nombrePalabraAdvertencia7 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia4-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-7").text(cas_loaded4[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia4-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-7").attr("id", cas_loaded4[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia8 != null && cas_loaded4[0].nombrePalabraAdvertencia8 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia4-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-8").text(cas_loaded4[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia4-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-8").attr("id", cas_loaded4[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia9 != null && cas_loaded4[0].nombrePalabraAdvertencia9 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia4-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-9").text(cas_loaded4[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia4-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-9").attr("id", cas_loaded4[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded4[0].nombrePalabraAdvertencia10 != null && cas_loaded4[0].nombrePalabraAdvertencia10 != "N/A") {
+                                console.log(cas_loaded4[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia4-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia4-10").text(cas_loaded4[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia4-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia4-10").attr("id", cas_loaded4[0].nombrePalabraAdvertencia10);
+                            }
+
+
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -1204,6 +1545,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma5-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma5-9").attr("src", "pict/" + cas_loaded5[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma5-9").attr("id", "loaded_imagenPictograma" + cas_loaded5[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded5[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia5-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-1").text(cas_loaded5[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia5-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-1").attr("id", cas_loaded5[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia5-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-2").text(cas_loaded5[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia5-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-2").attr("id", cas_loaded5[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia5-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-3").text(cas_loaded5[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia5-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-3").attr("id", cas_loaded5[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia5-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-4").text(cas_loaded5[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia5-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-4").attr("id", cas_loaded5[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia5-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-5").text(cas_loaded5[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia5-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-5").attr("id", cas_loaded5[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia5-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-6").text(cas_loaded5[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia5-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-6").attr("id", cas_loaded5[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia5-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-7").text(cas_loaded5[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia5-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-7").attr("id", cas_loaded5[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia5-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-8").text(cas_loaded5[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia5-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-8").attr("id", cas_loaded5[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia5-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-9").text(cas_loaded5[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia5-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-9").attr("id", cas_loaded5[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded5[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded5[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia5-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia5-10").text(cas_loaded5[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia5-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia5-10").attr("id", cas_loaded5[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -1395,6 +1819,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma6-9").attr("id", "loaded_imagenPictograma" + cas_loaded6[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded6[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia6-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-1").text(cas_loaded6[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia6-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-1").attr("id", cas_loaded6[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia6-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-2").text(cas_loaded6[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia6-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-2").attr("id", cas_loaded6[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia6-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-3").text(cas_loaded6[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia6-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-3").attr("id", cas_loaded6[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia6-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-4").text(cas_loaded6[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia6-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-4").attr("id", cas_loaded6[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia6-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-5").text(cas_loaded6[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia6-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-5").attr("id", cas_loaded6[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia6-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-6").text(cas_loaded6[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia6-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-6").attr("id", cas_loaded6[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia6-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-7").text(cas_loaded6[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia6-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-7").attr("id", cas_loaded6[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia6-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-8").text(cas_loaded6[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia6-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-8").attr("id", cas_loaded6[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia6-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-9").text(cas_loaded6[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia6-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-9").attr("id", cas_loaded6[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded6[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded6[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia6-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia6-10").text(cas_loaded6[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia6-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia6-10").attr("id", cas_loaded6[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -1582,6 +2089,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma7-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma7-9").attr("src", "pict/" + cas_loaded7[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma7-9").attr("id", "loaded_imagenPictograma" + cas_loaded7[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded7[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia7-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-1").text(cas_loaded7[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia7-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-1").attr("id", cas_loaded7[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia7-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-2").text(cas_loaded7[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia7-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-2").attr("id", cas_loaded7[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia7-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-3").text(cas_loaded7[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia7-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-3").attr("id", cas_loaded7[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia7-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-4").text(cas_loaded7[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia7-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-4").attr("id", cas_loaded7[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia7-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-5").text(cas_loaded7[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia7-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-5").attr("id", cas_loaded7[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia7-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-6").text(cas_loaded7[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia7-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-6").attr("id", cas_loaded7[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia7-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-7").text(cas_loaded7[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia7-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-7").attr("id", cas_loaded7[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia7-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-8").text(cas_loaded7[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia7-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-8").attr("id", cas_loaded7[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia7-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-9").text(cas_loaded7[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia7-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-9").attr("id", cas_loaded7[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded7[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded7[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia7-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia7-10").text(cas_loaded7[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia7-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia7-10").attr("id", cas_loaded7[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -1773,6 +2363,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma8-9").attr("id", "loaded_imagenPictograma" + cas_loaded8[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded8[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia8-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-1").text(cas_loaded8[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia8-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-1").attr("id", cas_loaded8[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia8-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-2").text(cas_loaded8[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia8-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-2").attr("id", cas_loaded8[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia8-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-3").text(cas_loaded8[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia8-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-3").attr("id", cas_loaded8[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia8-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-4").text(cas_loaded8[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia8-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-4").attr("id", cas_loaded8[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia8-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-5").text(cas_loaded8[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia8-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-5").attr("id", cas_loaded8[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia8-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-6").text(cas_loaded8[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia8-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-6").attr("id", cas_loaded8[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia8-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-7").text(cas_loaded8[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia8-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-7").attr("id", cas_loaded8[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia8-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-8").text(cas_loaded8[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia8-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-8").attr("id", cas_loaded8[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia8-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-9").text(cas_loaded8[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia8-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-9").attr("id", cas_loaded8[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded8[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded8[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia8-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia8-10").text(cas_loaded8[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia8-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia8-10").attr("id", cas_loaded8[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -1960,6 +2633,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma9-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma9-9").attr("src", "pict/" + cas_loaded9[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma9-9").attr("id", "loaded_imagenPictograma" + cas_loaded9[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded9[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia9-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-1").text(cas_loaded9[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia9-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-1").attr("id", cas_loaded9[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia9-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-2").text(cas_loaded9[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia9-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-2").attr("id", cas_loaded9[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia9-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-3").text(cas_loaded9[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia9-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-3").attr("id", cas_loaded9[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia9-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-4").text(cas_loaded9[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia9-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-4").attr("id", cas_loaded9[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia9-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-5").text(cas_loaded9[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia9-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-5").attr("id", cas_loaded9[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia9-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-6").text(cas_loaded9[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia9-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-6").attr("id", cas_loaded9[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia9-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-7").text(cas_loaded9[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia9-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-7").attr("id", cas_loaded9[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia9-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-8").text(cas_loaded9[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia9-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-8").attr("id", cas_loaded9[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia9-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-9").text(cas_loaded9[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia9-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-9").attr("id", cas_loaded9[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded9[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded9[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia9-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia9-10").text(cas_loaded9[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia9-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia9-10").attr("id", cas_loaded9[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -2151,6 +2907,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma10-9").attr("id", "loaded_imagenPictograma" + cas_loaded10[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded10[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia10-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-1").text(cas_loaded10[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia10-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-1").attr("id", cas_loaded10[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia10-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-2").text(cas_loaded10[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia10-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-2").attr("id", cas_loaded10[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia10-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-3").text(cas_loaded10[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia10-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-3").attr("id", cas_loaded10[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia10-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-4").text(cas_loaded10[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia10-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-4").attr("id", cas_loaded10[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia10-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-5").text(cas_loaded10[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia10-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-5").attr("id", cas_loaded10[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia10-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-6").text(cas_loaded10[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia10-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-6").attr("id", cas_loaded10[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia10-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-7").text(cas_loaded10[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia10-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-7").attr("id", cas_loaded10[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia10-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-8").text(cas_loaded10[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia10-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-8").attr("id", cas_loaded10[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia10-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-9").text(cas_loaded10[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia10-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-9").attr("id", cas_loaded10[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded10[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded10[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia10-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia10-10").text(cas_loaded10[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia10-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia10-10").attr("id", cas_loaded10[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -2338,6 +3177,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma11-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma11-9").attr("src", "pict/" + cas_loaded11[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma11-9").attr("id", "loaded_imagenPictograma" + cas_loaded11[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded11[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia11-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-1").text(cas_loaded11[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia11-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-1").attr("id", cas_loaded11[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia11-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-2").text(cas_loaded11[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia11-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-2").attr("id", cas_loaded11[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia11-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-3").text(cas_loaded11[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia11-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-3").attr("id", cas_loaded11[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia11-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-4").text(cas_loaded11[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia11-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-4").attr("id", cas_loaded11[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia11-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-5").text(cas_loaded11[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia11-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-5").attr("id", cas_loaded11[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia11-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-6").text(cas_loaded11[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia11-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-6").attr("id", cas_loaded11[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia11-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-7").text(cas_loaded11[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia11-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-7").attr("id", cas_loaded11[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia11-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-8").text(cas_loaded11[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia11-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-8").attr("id", cas_loaded11[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia11-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-9").text(cas_loaded11[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia11-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-9").attr("id", cas_loaded11[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded11[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded11[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia11-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia11-10").text(cas_loaded11[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia11-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia11-10").attr("id", cas_loaded11[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -2529,6 +3451,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma12-9").attr("id", "loaded_imagenPictograma" + cas_loaded12[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded12[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia12-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-1").text(cas_loaded12[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia12-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-1").attr("id", cas_loaded12[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia12-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-2").text(cas_loaded12[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia12-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-2").attr("id", cas_loaded12[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia12-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-3").text(cas_loaded12[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia12-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-3").attr("id", cas_loaded12[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia12-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-4").text(cas_loaded12[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia12-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-4").attr("id", cas_loaded12[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia12-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-5").text(cas_loaded12[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia12-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-5").attr("id", cas_loaded12[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia12-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-6").text(cas_loaded12[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia12-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-6").attr("id", cas_loaded12[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia12-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-7").text(cas_loaded12[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia12-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-7").attr("id", cas_loaded12[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia12-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-8").text(cas_loaded12[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia12-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-8").attr("id", cas_loaded12[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia12-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-9").text(cas_loaded12[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia12-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-9").attr("id", cas_loaded12[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded12[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded12[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia12-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia12-10").text(cas_loaded12[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia12-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia12-10").attr("id", cas_loaded12[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -2716,6 +3721,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma13-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma13-9").attr("src", "pict/" + cas_loaded13[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma13-9").attr("id", "loaded_imagenPictograma" + cas_loaded13[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded13[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia13-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-1").text(cas_loaded13[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia13-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-1").attr("id", cas_loaded13[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia13-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-2").text(cas_loaded13[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia13-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-2").attr("id", cas_loaded13[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia13-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-3").text(cas_loaded13[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia13-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-3").attr("id", cas_loaded13[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia13-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-4").text(cas_loaded13[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia13-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-4").attr("id", cas_loaded13[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia13-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-5").text(cas_loaded13[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia13-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-5").attr("id", cas_loaded13[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia13-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-6").text(cas_loaded13[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia13-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-6").attr("id", cas_loaded13[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia13-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-7").text(cas_loaded13[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia13-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-7").attr("id", cas_loaded13[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia13-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-8").text(cas_loaded13[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia13-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-8").attr("id", cas_loaded13[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia13-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-9").text(cas_loaded13[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia13-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-9").attr("id", cas_loaded13[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded13[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded13[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia13-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia13-10").text(cas_loaded13[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia13-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia13-10").attr("id", cas_loaded13[0].nombrePalabraAdvertencia10);
                             }
 
                         },
@@ -2907,6 +3995,89 @@ $(document).ready(function () {
                                 $("#loaded_imagenPictograma14-9").attr("id", "loaded_imagenPictograma" + cas_loaded14[0].idPictograma9 + "");
                             }
 
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded14[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia14-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-1").text(cas_loaded14[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia14-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-1").attr("id", cas_loaded14[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia14-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-2").text(cas_loaded14[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia14-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-2").attr("id", cas_loaded14[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia14-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-3").text(cas_loaded14[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia14-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-3").attr("id", cas_loaded14[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia14-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-4").text(cas_loaded14[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia14-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-4").attr("id", cas_loaded14[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia14-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-5").text(cas_loaded14[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia14-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-5").attr("id", cas_loaded14[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia14-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-6").text(cas_loaded14[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia14-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-6").attr("id", cas_loaded14[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia14-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-7").text(cas_loaded14[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia14-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-7").attr("id", cas_loaded14[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia14-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-8").text(cas_loaded14[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia14-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-8").attr("id", cas_loaded14[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia14-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-9").text(cas_loaded14[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia14-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-9").attr("id", cas_loaded14[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded14[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded14[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia14-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia14-10").text(cas_loaded14[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia14-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia14-10").attr("id", cas_loaded14[0].nombrePalabraAdvertencia10);
+                            }
+
                         },
                         error: function (textStatus, errorThrown) {
                             console.log(textStatus, errorThrown);
@@ -3094,6 +4265,89 @@ $(document).ready(function () {
                                 $('#loaded_imagenPictograma15-9').removeAttr('hidden');
                                 $("#loaded_imagenPictograma15-9").attr("src", "pict/" + cas_loaded15[0].idPictograma9 + ".png");
                                 $("#loaded_imagenPictograma15-9").attr("id", "loaded_imagenPictograma" + cas_loaded15[0].idPictograma9 + "");
+                            }
+
+
+
+                            //Aquí se muestran las palabras de advertencia
+                            if (cas_loaded15[0].nombrePalabraAdvertencia1 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia1);
+                                $('#loaded_nombrePalabraAdvertencia15-1').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-1").text(cas_loaded15[0].nombrePalabraAdvertencia1);
+                                $("#loaded_nombrePalabraAdvertencia15-1").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-1").attr("id", cas_loaded15[0].nombrePalabraAdvertencia1);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia2 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia2);
+                                $('#loaded_nombrePalabraAdvertencia15-2').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-2").text(cas_loaded15[0].nombrePalabraAdvertencia2);
+                                $("#loaded_nombrePalabraAdvertencia15-2").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-2").attr("id", cas_loaded15[0].nombrePalabraAdvertencia2);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia3 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia3);
+                                $('#loaded_nombrePalabraAdvertencia15-3').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-3").text(cas_loaded15[0].nombrePalabraAdvertencia3);
+                                $("#loaded_nombrePalabraAdvertencia15-3").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-3").attr("id", cas_loaded15[0].nombrePalabraAdvertencia3);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia4 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia4);
+                                $('#loaded_nombrePalabraAdvertencia15-4').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-4").text(cas_loaded15[0].nombrePalabraAdvertencia4);
+                                $("#loaded_nombrePalabraAdvertencia15-4").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-4").attr("id", cas_loaded15[0].nombrePalabraAdvertencia4);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia5 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia5);
+                                $('#loaded_nombrePalabraAdvertencia15-5').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-5").text(cas_loaded15[0].nombrePalabraAdvertencia5);
+                                $("#loaded_nombrePalabraAdvertencia15-5").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-5").attr("id", cas_loaded15[0].nombrePalabraAdvertencia5);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia6 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia6);
+                                $('#loaded_nombrePalabraAdvertencia15-6').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-6").text(cas_loaded15[0].nombrePalabraAdvertencia6);
+                                $("#loaded_nombrePalabraAdvertencia15-6").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-6").attr("id", cas_loaded15[0].nombrePalabraAdvertencia6);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia7 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia7);
+                                $('#loaded_nombrePalabraAdvertencia15-7').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-7").text(cas_loaded15[0].nombrePalabraAdvertencia7);
+                                $("#loaded_nombrePalabraAdvertencia15-7").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-7").attr("id", cas_loaded15[0].nombrePalabraAdvertencia7);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia8 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia8);
+                                $('#loaded_nombrePalabraAdvertencia15-8').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-8").text(cas_loaded15[0].nombrePalabraAdvertencia8);
+                                $("#loaded_nombrePalabraAdvertencia15-8").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-8").attr("id", cas_loaded15[0].nombrePalabraAdvertencia8);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia9 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia9);
+                                $('#loaded_nombrePalabraAdvertencia15-9').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-9").text(cas_loaded15[0].nombrePalabraAdvertencia9);
+                                $("#loaded_nombrePalabraAdvertencia15-9").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-9").attr("id", cas_loaded15[0].nombrePalabraAdvertencia9);
+                            }
+
+                            if (cas_loaded15[0].nombrePalabraAdvertencia10 != null) {
+                                console.log(cas_loaded15[0].nombrePalabraAdvertencia10);
+                                $('#loaded_nombrePalabraAdvertencia15-10').removeAttr('hidden');
+                                $("#loaded_nombrePalabraAdvertencia15-10").text(cas_loaded15[0].nombrePalabraAdvertencia10);
+                                $("#loaded_nombrePalabraAdvertencia15-10").append('<br />');
+                                $("#loaded_nombrePalabraAdvertencia15-10").attr("id", cas_loaded15[0].nombrePalabraAdvertencia10);
                             }
 
                         },

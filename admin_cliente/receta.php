@@ -1333,33 +1333,210 @@
                                                     <img src="" width="115" height="115" id="loaded_imagenPictograma15-8" hidden>
                                                     <img src="" width="115" height="115" id="loaded_imagenPictograma15-9" hidden>
 
+                                                    <br>
+                                                    <br>
+                                                    <br>
 
+                                                    <p class="titulo3">Palabra de advertencia:</p>
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia1-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia2-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia3-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia4-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia5-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia6-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia7-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia8-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia9-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia10-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia11-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia12-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia13-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia14-10" hidden>Advertencia 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-1" hidden>Advertencia 1.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-2" hidden>Advertencia 2.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-3" hidden>Advertencia 3.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-4" hidden>Advertencia 4.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-5" hidden>Advertencia 5.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-6" hidden>Advertencia 6.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-7" hidden>Advertencia 7.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-8" hidden>Advertencia 8.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-9" hidden>Advertencia 9.</p>
+                                                    <p class="leftText" id="loaded_nombrePalabraAdvertencia15-10" hidden>Advertencia 10.</p>
+                                                    <br>
+                                                    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    <p class="titulo3">Indicaciones de peligro:</p>
+                                                        
                                                     
-
-
-
-                                                    <br>
-                                                    <br>
-                                                    <br>
-
-
-
-
-
-
-
-
-
-                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Palabra
-                                                        de advertencia:</p>
-                                                    <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">Peligro
-                                                    </p>
-                                                    <p style="text-indent: 0pt;text-align: left;"></p>
-                                                    <p class="s5"
-                                                        style="padding-top: 11pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">
-                                                        Indicaciones
-                                                        de peligro: <span class="p">Puede ser corrosiva para los
-                                                            metales.</span></p>
+                                                    
+                                                    <span class="p">Puede ser corrosiva para los metales.</span>
                                                     <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">Nocivo
                                                         en caso de ingestión</p>
                                                     <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">

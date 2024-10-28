@@ -144,7 +144,7 @@ $consulta = "SELECT cas,
 					nombreUnidad8,
 					nombreUnidad9,
 					nombreUnidad10
-					FROM vista_productos_completa_2
+					FROM vista_productos_completa_3
 					WHERE cas='$cas'
 					ORDER BY cas DESC LIMIT 1";
 $resultado = $conexion->prepare($consulta);

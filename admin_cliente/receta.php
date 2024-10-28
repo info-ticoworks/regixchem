@@ -1339,6 +1339,8 @@
 
                                                     <p class="titulo3">Palabra de advertencia:</p>
 
+                                                    <p class="leftText" id="defaultPalabraAdvertenciaNA">N/A</p>
+                                                   
                                                     <p class="leftText" id="loaded_nombrePalabraAdvertencia1-1" hidden>Advertencia 1.</p>
                                                     <p class="leftText" id="loaded_nombrePalabraAdvertencia1-2" hidden>Advertencia 2.</p>
                                                     <p class="leftText" id="loaded_nombrePalabraAdvertencia1-3" hidden>Advertencia 3.</p>
@@ -1520,19 +1522,190 @@
                                                     <br>
                                                     <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
                                                     <p class="titulo3">Indicaciones de peligro:</p>
+
+                                                    <p class="leftText" id="defaultNombreIndicacion">N/A</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion1-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion2-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion3-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion4-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion5-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion6-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion7-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion8-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion9-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion10-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion11-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion12-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion13-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion14-10" hidden>Indicación 10.</p>
+
+
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-1" hidden>Indicación 1.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-2" hidden>Indicación 2.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-3" hidden>Indicación 3.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-4" hidden>Indicación 4.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-5" hidden>Indicación 5.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-6" hidden>Indicación 6.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-7" hidden>Indicación 7.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-8" hidden>Indicación 8.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-9" hidden>Indicación 9.</p>
+                                                    <p class="leftText" id="loaded_nombreIndicacion15-10" hidden>Indicación 10.</p>
+                                                    <br>
+                                                    <br>
+
                                                         
                                                     
                                                     

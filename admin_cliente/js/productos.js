@@ -3499,7 +3499,7 @@ $(document).ready(function () {
                 console.log('ID Pictograma 10: ', loaded_idPictograma10);
 
                 loading_timer = 1200;
-                more_time = 260;
+                more_time = 300;
 
                 if (loaded_nombreClase1 != null) {
                     loading_timer = loading_timer + more_time;
@@ -3560,6 +3560,7 @@ $(document).ready(function () {
                   /* Read more about handling dismissals below */
                   if (result.dismiss === Swal.DismissReason.timer) {
                     //console.log("I was closed by the timer");
+                    $('#modalCRUD').modal({backdrop: 'static', keyboard: false}, 'show');
                   }
                 });
 
@@ -4232,7 +4233,6 @@ $(document).ready(function () {
         $(".modal-header").css("background-color", "#4e73df");
         $(".modal-header").css("color", "white");
         $(".modal-title").text("Editar Producto");
-        $('#modalCRUD').modal({backdrop: 'static', keyboard: false}, 'show');
         //console.log("Edición de Usuario - Paso 1...");
     });
 

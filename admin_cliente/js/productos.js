@@ -3166,7 +3166,6 @@ $(document).ready(function () {
         $(tablaProductos.row(this).selector.rows).addClass("dtSelected");
     });
 
-
     //Check si producto ya existe
     $("#newcas").focusout(function () {
         //alert("hello");
@@ -3190,7 +3189,6 @@ $(document).ready(function () {
         });
         return false;
     });
-
 
     //Botón Nuevo Producto
     $("#btnNuevoProducto").click(function () {
@@ -3246,6 +3244,46 @@ $(document).ready(function () {
         nombreFabricante8 = 'null';
         nombreFabricante9 = 'null';
         nombreFabricante10 = 'null';
+        idClase1 = 'null';
+        idClase2 = 'null';
+        idClase3 = 'null';
+        idClase4 = 'null';
+        idClase5 = 'null';
+        idClase6 = 'null';
+        idClase7 = 'null';
+        idClase8 = 'null';
+        idClase9 = 'null';
+        idClase10 = 'null';
+        idCategoria1 = 'null';
+        idCategoria2 = 'null';
+        idCategoria3 = 'null';
+        idCategoria4 = 'null';
+        idCategoria5 = 'null';
+        idCategoria6 = 'null';
+        idCategoria7 = 'null';
+        idCategoria8 = 'null';
+        idCategoria9 = 'null';
+        idCategoria10 = 'null';
+        idPalabraAdvertencia1 = 'null';
+        idPalabraAdvertencia2 = 'null';
+        idPalabraAdvertencia3 = 'null';
+        idPalabraAdvertencia4 = 'null';
+        idPalabraAdvertencia5 = 'null';
+        idPalabraAdvertencia6 = 'null';
+        idPalabraAdvertencia7 = 'null';
+        idPalabraAdvertencia8 = 'null';
+        idPalabraAdvertencia9 = 'null';
+        idPalabraAdvertencia10 = 'null';
+        idIndicacion1 = 'null';
+        idIndicacion2 = 'null';
+        idIndicacion3 = 'null';
+        idIndicacion4 = 'null';
+        idIndicacion5 = 'null';
+        idIndicacion6 = 'null';
+        idIndicacion7 = 'null';
+        idIndicacion8 = 'null';
+        idIndicacion9 = 'null';
+        idIndicacion10 = 'null';
 
         //Seteo de algunas opciones al presionar el botón de Nuevo
         document.getElementById('newcas').placeholder = 'Chemical Abstracts Service Number *';

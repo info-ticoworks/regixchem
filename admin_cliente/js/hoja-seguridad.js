@@ -1,10 +1,8 @@
 $(document).ready(function () {
-
     var fila; //Capturar la fila para editar o borrar el registro
     const date = 'Fecha de impresión: ' + new Date().toLocaleDateString();
     const date2 = 'Fecha / actualizada el: ' + new Date().toLocaleDateString();
     var originalForm
-
 
     //Fórmulas
 
@@ -14,20 +12,34 @@ $(document).ready(function () {
         originalForm = originalState;
     }
 
-
-
-    function irritacion1ingrediente (idCategoria, cantidad) {
-        if (idCategoria === 70 && cantidad >= 5) {
-            idCategoria = idCategoria
-        } else if (idCategoria === 70 && cantidad >= 1 && cantidad <= 5) {
-            idCategoria = 71
-        } else if (idCategoria === 71 && cantidad >= 10) {
-            idCategoria = 71
-        } else if (idCategoria === 71 && cantidad >= 1 && cantidad <= 10) {
-            idCategoria = 72
-        } else if (idCategoria === 72 && cantidad >= 10) {
-            idCategoria = 72
+    function irritacion1ingrediente (ingrediente1, cantidad) {
+        //console.log("Categoria antes de la formula: ", ingrediente1);
+        if (ingrediente1 === 70 && cantidad >= 5) {
+            ingrediente1 = ingrediente1
+        } else if (ingrediente1 === 70 && cantidad >= 1 && cantidad <= 5) {
+            ingrediente1 = 71
+        } else {
+            ingrediente1 = "N/A"
         }
+
+        return ingrediente1;
+
+        // if (idCategoria === 71 && cantidad >= 10) {
+        //     idCategoria = 71
+        // } else if (idCategoria === 71 && cantidad >= 1 && cantidad <= 10) {
+        //     idCategoria = 72
+        // } else {
+        //     idCategoria = "N/A"
+        // } 
+        
+        // if (idCategoria === 72 && cantidad >= 10) {
+        //     idCategoria = 72
+        // } else if (idCategoria === 72 && cantidad <= 10) {
+        //     idCategoria = "N/A"
+        // } else {
+        //     idCategoria = "N/A"
+        // }
+        //console.log("Categoria despues de la formula: ", idCategoria);
     }
 
     function irritacion2ingredientes (ingrediente1, ingrediente2, cantidad) {
@@ -59,40 +71,29 @@ $(document).ready(function () {
     }
 
     function deleteDuplicatedIDs () {
-        console.log('Eliminando duplicados...');
-
+        //console.log('Eliminando duplicados...');
         $('[id]').each(function () {
-
             var ids = $('[id="' + this.id + '"]');
-
             if (ids.length>1) {                    
                 ids.not(this).remove();            
             }
-
             return;
-
         });
-
     };
 
     function deleteDuplicatedPalabraAdvertencia () {
-        console.log('Eliminando duplicados de Palabra de advertencia...');
-
+        //console.log('Eliminando duplicados de Palabra de advertencia...');
         $('[id]').each(function () {
-
             if ($("#Peligro").length) {
                 $('#defaultPalabraAdvertenciaNA').remove();
                 $('#Atención').remove();
-                console.log("El ID es Peligro.");
+                //console.log("El ID es Peligro.");
             } else if ($("#Atención").length) {
                 $('#defaultPalabraAdvertenciaNA').remove();
-                console.log("El ID es Atención.");
+                //console.log("El ID es Atención.");
             }
-
             return;
-
         });
-
     };
 
     //Botón Previsualizar Hoja de Seguridad
@@ -103,22 +104,21 @@ $(document).ready(function () {
         fila = $(this).closest("tr");
         idReceta = fila.find('td:eq(0)').text();
         nombreReceta = fila.find('td:eq(1)').text();
-        console.log('ID de Receta: ', idReceta);
-        console.log('Nombre de Receta: ', nombreReceta);
-        console.log('Fecha: ', date);
+        //console.log('ID de Receta: ', idReceta);
+        //console.log('Nombre de Receta: ', nombreReceta);
+        //console.log('Fecha: ', date);
         $("#fechaImpresion").text(date);
         $("#fechaActualizada").text(date2);
-
 
         $.ajax({
             type: "POST",
             url: "bd/cargarRecetas.php",
             data: "idReceta=" + idReceta,
             success: function (data) {
-                //console.log(data);
+                ////console.log(data);
                 dataParse = JSON.parse(data);
                 recipe_loaded = dataParse;
-                console.log(recipe_loaded);
+                //console.log(recipe_loaded);
                 loaded_idReceta = recipe_loaded[0].idReceta;
                 loaded_nombreReceta = recipe_loaded[0].nombreReceta;
                 loaded_nombreFabricanteReceta = recipe_loaded[0].nombreFabricanteReceta;
@@ -170,57 +170,57 @@ $(document).ready(function () {
                 loaded_cantidad13 = recipe_loaded[0].cantidad13;
                 loaded_cantidad14 = recipe_loaded[0].cantidad14;
                 loaded_cantidad15 = recipe_loaded[0].cantidad15;
-                console.log('ID de Receta: ', loaded_idReceta);
-                console.log('Nombre de Receta: ', loaded_nombreReceta);
-                console.log('Nombre del Fabricante de la Receta: ', loaded_nombreFabricanteReceta);
-                console.log('Direción del Fabricante de la Receta: ', loaded_direccionFabricanteReceta);
-                console.log('Teléfono del Fabricante de la Receta: ', loaded_telefonoFabricanteReceta);
-                console.log('ID de Empresa: ', loaded_idEmpresa);
-                console.log('Cas 1: ', loaded_cas1);
-                console.log('Cas 2: ', loaded_cas2);
-                console.log('Cas 3: ', loaded_cas3);
-                console.log('Cas 4: ', loaded_cas4);
-                console.log('Cas 5: ', loaded_cas5);
-                console.log('Cas 6: ', loaded_cas6);
-                console.log('Cas 7: ', loaded_cas7);
-                console.log('Cas 8: ', loaded_cas8);
-                console.log('Cas 9: ', loaded_cas9);
-                console.log('Cas 10: ', loaded_cas10);
-                console.log('Cas 11: ', loaded_cas11);
-                console.log('Cas 12: ', loaded_cas12);
-                console.log('Cas 13: ', loaded_cas13);
-                console.log('Cas 14: ', loaded_cas14);
-                console.log('Cas 15: ', loaded_cas15);
-                console.log('Onu 1: ', loaded_onu1);
-                console.log('Onu 2: ', loaded_onu2);
-                console.log('Onu 3: ', loaded_onu3);
-                console.log('Onu 4: ', loaded_onu4);
-                console.log('Onu 5: ', loaded_onu5);
-                console.log('Onu 6: ', loaded_onu6);
-                console.log('Onu 7: ', loaded_onu7);
-                console.log('Onu 8: ', loaded_onu8);
-                console.log('Onu 9: ', loaded_onu9);
-                console.log('Onu 10: ', loaded_onu10);
-                console.log('Onu 11: ', loaded_onu11);
-                console.log('Onu 12: ', loaded_onu12);
-                console.log('Onu 13: ', loaded_onu13);
-                console.log('Onu 14: ', loaded_onu14);
-                console.log('Onu 15: ', loaded_onu15);
-                console.log('Cantidad 1: ', loaded_cantidad1);
-                console.log('Cantidad 2: ', loaded_cantidad2);
-                console.log('Cantidad 3: ', loaded_cantidad3);
-                console.log('Cantidad 4: ', loaded_cantidad4);
-                console.log('Cantidad 5: ', loaded_cantidad5);
-                console.log('Cantidad 6: ', loaded_cantidad6);
-                console.log('Cantidad 7: ', loaded_cantidad7);
-                console.log('Cantidad 8: ', loaded_cantidad8);
-                console.log('Cantidad 9: ', loaded_cantidad9);
-                console.log('Cantidad 10: ', loaded_cantidad10);
-                console.log('Cantidad 11: ', loaded_cantidad11);
-                console.log('Cantidad 12: ', loaded_cantidad12);
-                console.log('Cantidad 13: ', loaded_cantidad13);
-                console.log('Cantidad 14: ', loaded_cantidad14);
-                console.log('Cantidad 15: ', loaded_cantidad15);
+                // //console.log('ID de Receta: ', loaded_idReceta);
+                // //console.log('Nombre de Receta: ', loaded_nombreReceta);
+                // //console.log('Nombre del Fabricante de la Receta: ', loaded_nombreFabricanteReceta);
+                // //console.log('Direción del Fabricante de la Receta: ', loaded_direccionFabricanteReceta);
+                // //console.log('Teléfono del Fabricante de la Receta: ', loaded_telefonoFabricanteReceta);
+                // //console.log('ID de Empresa: ', loaded_idEmpresa);
+                // //console.log('Cas 1: ', loaded_cas1);
+                // //console.log('Cas 2: ', loaded_cas2);
+                // //console.log('Cas 3: ', loaded_cas3);
+                // //console.log('Cas 4: ', loaded_cas4);
+                // //console.log('Cas 5: ', loaded_cas5);
+                // //console.log('Cas 6: ', loaded_cas6);
+                // //console.log('Cas 7: ', loaded_cas7);
+                // //console.log('Cas 8: ', loaded_cas8);
+                // //console.log('Cas 9: ', loaded_cas9);
+                // //console.log('Cas 10: ', loaded_cas10);
+                // //console.log('Cas 11: ', loaded_cas11);
+                // //console.log('Cas 12: ', loaded_cas12);
+                // //console.log('Cas 13: ', loaded_cas13);
+                // //console.log('Cas 14: ', loaded_cas14);
+                // //console.log('Cas 15: ', loaded_cas15);
+                // //console.log('Onu 1: ', loaded_onu1);
+                // //console.log('Onu 2: ', loaded_onu2);
+                // //console.log('Onu 3: ', loaded_onu3);
+                // //console.log('Onu 4: ', loaded_onu4);
+                // //console.log('Onu 5: ', loaded_onu5);
+                // //console.log('Onu 6: ', loaded_onu6);
+                // //console.log('Onu 7: ', loaded_onu7);
+                // //console.log('Onu 8: ', loaded_onu8);
+                // //console.log('Onu 9: ', loaded_onu9);
+                // //console.log('Onu 10: ', loaded_onu10);
+                // //console.log('Onu 11: ', loaded_onu11);
+                // //console.log('Onu 12: ', loaded_onu12);
+                // //console.log('Onu 13: ', loaded_onu13);
+                // //console.log('Onu 14: ', loaded_onu14);
+                // //console.log('Onu 15: ', loaded_onu15);
+                // //console.log('Cantidad 1: ', loaded_cantidad1);
+                // //console.log('Cantidad 2: ', loaded_cantidad2);
+                // //console.log('Cantidad 3: ', loaded_cantidad3);
+                // //console.log('Cantidad 4: ', loaded_cantidad4);
+                // //console.log('Cantidad 5: ', loaded_cantidad5);
+                // //console.log('Cantidad 6: ', loaded_cantidad6);
+                // //console.log('Cantidad 7: ', loaded_cantidad7);
+                // //console.log('Cantidad 8: ', loaded_cantidad8);
+                // //console.log('Cantidad 9: ', loaded_cantidad9);
+                // //console.log('Cantidad 10: ', loaded_cantidad10);
+                // //console.log('Cantidad 11: ', loaded_cantidad11);
+                // //console.log('Cantidad 12: ', loaded_cantidad12);
+                // //console.log('Cantidad 13: ', loaded_cantidad13);
+                // //console.log('Cantidad 14: ', loaded_cantidad14);
+                // //console.log('Cantidad 15: ', loaded_cantidad15);
 
                 $("#loaded_nombreFabricanteReceta").text(loaded_nombreFabricanteReceta);
                 $("#loaded_direccionFabricanteReceta").text(loaded_direccionFabricanteReceta);
@@ -312,7 +312,7 @@ $(document).ready(function () {
                 }).then((result) => {
                     /* Read more about handling dismissals below */
                     if (result.dismiss === Swal.DismissReason.timer) {
-                        //console.log("I was closed by the timer");
+                        ////console.log("I was closed by the timer");
                         deleteDuplicatedPalabraAdvertencia();
                         deleteDuplicatedIDs();
                         $('#modalHojaSeguridad').modal({ backdrop: 'static', keyboard: false }, 'show');
@@ -321,23 +321,1696 @@ $(document).ready(function () {
 
                 //Precarga de datos de Clases
 
+                irritacionCount = 0;
 
                 if (loaded_cas1 != null) {
-                    console.log("Producto 1 cargado");
+                    //console.log("Producto 1 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas1,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded1 = dataParse;
-                            console.log('Cargando CAS1...');
-                            console.log(cas_loaded1);
-                            $("#nombreUso").text(cas_loaded1[0].nombreUso);
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded1);
 
+                            if (cas_loaded1[0].idClasePeligro1 != null) {
+                                if (cas_loaded1[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro2 != null) {
+                                if (cas_loaded1[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro3 != null) {
+                                if (cas_loaded1[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro4 != null) {
+                                if (cas_loaded1[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro5 != null) {
+                                if (cas_loaded1[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro6 != null) {
+                                if (cas_loaded1[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro7 != null) {
+                                if (cas_loaded1[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro8 != null) {
+                                if (cas_loaded1[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro9 != null) {
+                                if (cas_loaded1[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded1[0].idClasePeligro10 != null) {
+                                if (cas_loaded1[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas2 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas2,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded2 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded2);
+
+                            if (cas_loaded2[0].idClasePeligro1 != null) {
+                                if (cas_loaded2[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro2 != null) {
+                                if (cas_loaded2[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro3 != null) {
+                                if (cas_loaded2[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro4 != null) {
+                                if (cas_loaded2[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro5 != null) {
+                                if (cas_loaded2[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro6 != null) {
+                                if (cas_loaded2[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro7 != null) {
+                                if (cas_loaded2[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro8 != null) {
+                                if (cas_loaded2[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro9 != null) {
+                                if (cas_loaded2[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded2[0].idClasePeligro10 != null) {
+                                if (cas_loaded2[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas3 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas3,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded3 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded3);
+
+                            if (cas_loaded3[0].idClasePeligro1 != null) {
+                                if (cas_loaded3[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro2 != null) {
+                                if (cas_loaded3[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro3 != null) {
+                                if (cas_loaded3[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro4 != null) {
+                                if (cas_loaded3[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro5 != null) {
+                                if (cas_loaded3[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro6 != null) {
+                                if (cas_loaded3[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro7 != null) {
+                                if (cas_loaded3[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro8 != null) {
+                                if (cas_loaded3[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro9 != null) {
+                                if (cas_loaded3[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded3[0].idClasePeligro10 != null) {
+                                if (cas_loaded3[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas4 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas4,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded4 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded4);
+
+                            if (cas_loaded4[0].idClasePeligro1 != null) {
+                                if (cas_loaded4[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro2 != null) {
+                                if (cas_loaded4[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro3 != null) {
+                                if (cas_loaded4[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro4 != null) {
+                                if (cas_loaded4[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro5 != null) {
+                                if (cas_loaded4[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro6 != null) {
+                                if (cas_loaded4[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro7 != null) {
+                                if (cas_loaded4[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro8 != null) {
+                                if (cas_loaded4[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro9 != null) {
+                                if (cas_loaded4[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded4[0].idClasePeligro10 != null) {
+                                if (cas_loaded4[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas5 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas5,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded5 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded5);
+
+                            if (cas_loaded5[0].idClasePeligro1 != null) {
+                                if (cas_loaded5[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro2 != null) {
+                                if (cas_loaded5[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro3 != null) {
+                                if (cas_loaded5[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro4 != null) {
+                                if (cas_loaded5[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro5 != null) {
+                                if (cas_loaded5[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro6 != null) {
+                                if (cas_loaded5[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro7 != null) {
+                                if (cas_loaded5[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro8 != null) {
+                                if (cas_loaded5[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro9 != null) {
+                                if (cas_loaded5[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded5[0].idClasePeligro10 != null) {
+                                if (cas_loaded5[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas6 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas6,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded6 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded6);
+
+                            if (cas_loaded6[0].idClasePeligro1 != null) {
+                                if (cas_loaded6[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro2 != null) {
+                                if (cas_loaded6[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro3 != null) {
+                                if (cas_loaded6[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro4 != null) {
+                                if (cas_loaded6[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro5 != null) {
+                                if (cas_loaded6[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro6 != null) {
+                                if (cas_loaded6[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro7 != null) {
+                                if (cas_loaded6[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro8 != null) {
+                                if (cas_loaded6[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro9 != null) {
+                                if (cas_loaded6[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded6[0].idClasePeligro10 != null) {
+                                if (cas_loaded6[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas7 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas7,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded7 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded7);
+
+                            if (cas_loaded7[0].idClasePeligro1 != null) {
+                                if (cas_loaded7[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro2 != null) {
+                                if (cas_loaded7[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro3 != null) {
+                                if (cas_loaded7[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro4 != null) {
+                                if (cas_loaded7[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro5 != null) {
+                                if (cas_loaded7[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro6 != null) {
+                                if (cas_loaded7[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro7 != null) {
+                                if (cas_loaded7[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro8 != null) {
+                                if (cas_loaded7[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro9 != null) {
+                                if (cas_loaded7[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded7[0].idClasePeligro10 != null) {
+                                if (cas_loaded7[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas8 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas8,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded8 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded8);
+
+                            if (cas_loaded8[0].idClasePeligro1 != null) {
+                                if (cas_loaded8[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro2 != null) {
+                                if (cas_loaded8[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro3 != null) {
+                                if (cas_loaded8[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro4 != null) {
+                                if (cas_loaded8[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro5 != null) {
+                                if (cas_loaded8[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro6 != null) {
+                                if (cas_loaded8[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro7 != null) {
+                                if (cas_loaded8[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro8 != null) {
+                                if (cas_loaded8[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro9 != null) {
+                                if (cas_loaded8[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded8[0].idClasePeligro10 != null) {
+                                if (cas_loaded8[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas9 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas9,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded9 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded9);
+
+                            if (cas_loaded9[0].idClasePeligro1 != null) {
+                                if (cas_loaded9[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro2 != null) {
+                                if (cas_loaded9[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro3 != null) {
+                                if (cas_loaded9[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro4 != null) {
+                                if (cas_loaded9[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro5 != null) {
+                                if (cas_loaded9[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro6 != null) {
+                                if (cas_loaded9[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro7 != null) {
+                                if (cas_loaded9[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro8 != null) {
+                                if (cas_loaded9[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro9 != null) {
+                                if (cas_loaded9[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded9[0].idClasePeligro10 != null) {
+                                if (cas_loaded9[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas10 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas10,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded10 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded10);
+
+                            if (cas_loaded10[0].idClasePeligro1 != null) {
+                                if (cas_loaded10[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro2 != null) {
+                                if (cas_loaded10[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro3 != null) {
+                                if (cas_loaded10[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro4 != null) {
+                                if (cas_loaded10[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro5 != null) {
+                                if (cas_loaded10[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro6 != null) {
+                                if (cas_loaded10[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro7 != null) {
+                                if (cas_loaded10[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro8 != null) {
+                                if (cas_loaded10[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro9 != null) {
+                                if (cas_loaded10[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded10[0].idClasePeligro10 != null) {
+                                if (cas_loaded10[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas11 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas11,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded11 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded11);
+
+                            if (cas_loaded11[0].idClasePeligro1 != null) {
+                                if (cas_loaded11[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro2 != null) {
+                                if (cas_loaded11[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro3 != null) {
+                                if (cas_loaded11[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro4 != null) {
+                                if (cas_loaded11[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro5 != null) {
+                                if (cas_loaded11[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro6 != null) {
+                                if (cas_loaded11[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro7 != null) {
+                                if (cas_loaded11[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro8 != null) {
+                                if (cas_loaded11[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro9 != null) {
+                                if (cas_loaded11[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded11[0].idClasePeligro10 != null) {
+                                if (cas_loaded11[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas12 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas12,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded12 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded12);
+
+                            if (cas_loaded12[0].idClasePeligro1 != null) {
+                                if (cas_loaded12[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro2 != null) {
+                                if (cas_loaded12[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro3 != null) {
+                                if (cas_loaded12[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro4 != null) {
+                                if (cas_loaded12[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro5 != null) {
+                                if (cas_loaded12[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro6 != null) {
+                                if (cas_loaded12[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro7 != null) {
+                                if (cas_loaded12[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro8 != null) {
+                                if (cas_loaded12[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro9 != null) {
+                                if (cas_loaded12[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded12[0].idClasePeligro10 != null) {
+                                if (cas_loaded12[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas13 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas13,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded13 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded13);
+
+                            if (cas_loaded13[0].idClasePeligro1 != null) {
+                                if (cas_loaded13[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro2 != null) {
+                                if (cas_loaded13[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro3 != null) {
+                                if (cas_loaded13[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro4 != null) {
+                                if (cas_loaded13[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro5 != null) {
+                                if (cas_loaded13[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro6 != null) {
+                                if (cas_loaded13[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro7 != null) {
+                                if (cas_loaded13[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro8 != null) {
+                                if (cas_loaded13[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro9 != null) {
+                                if (cas_loaded13[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded13[0].idClasePeligro10 != null) {
+                                if (cas_loaded13[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas14 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas14,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded14 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded14);
+
+                            if (cas_loaded14[0].idClasePeligro1 != null) {
+                                if (cas_loaded14[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro2 != null) {
+                                if (cas_loaded14[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro3 != null) {
+                                if (cas_loaded14[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro4 != null) {
+                                if (cas_loaded14[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro5 != null) {
+                                if (cas_loaded14[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro6 != null) {
+                                if (cas_loaded14[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro7 != null) {
+                                if (cas_loaded14[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro8 != null) {
+                                if (cas_loaded14[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro9 != null) {
+                                if (cas_loaded14[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded14[0].idClasePeligro10 != null) {
+                                if (cas_loaded14[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                if (loaded_cas15 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas15,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded15 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            ////console.log(cas_loaded15);
+
+                            if (cas_loaded15[0].idClasePeligro1 != null) {
+                                if (cas_loaded15[0].idClasePeligro1 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }     
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro2 != null) {
+                                if (cas_loaded15[0].idClasePeligro2 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro3 != null) {
+                                if (cas_loaded15[0].idClasePeligro3 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro4 != null) {
+                                if (cas_loaded15[0].idClasePeligro4 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro5 != null) {
+                                if (cas_loaded15[0].idClasePeligro5 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }  
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro6 != null) {
+                                if (cas_loaded15[0].idClasePeligro6 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro7 != null) {
+                                if (cas_loaded15[0].idClasePeligro7 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro8 != null) {
+                                if (cas_loaded15[0].idClasePeligro8 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro9 != null) {
+                                if (cas_loaded15[0].idClasePeligro9 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                            if (cas_loaded15[0].idClasePeligro10 != null) {
+                                if (cas_loaded15[0].idClasePeligro10 === 70) {
+                                    irritacionCount = irritacionCount + 1;
+                                }
+                            }
+
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    }),
+
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarOnu.php",
+                        data: "onu=" + loaded_onu1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            onu_loaded1 = dataParse;
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
+                        },
+                        error: function (textStatus, errorThrown) {
+                            //console.log(textStatus, errorThrown);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No se pudo cargar el producto.',
+                                footer: '<a href="">Why do I have this issue?</a>',
+                                timer: 3000
+                            })
+                        }
+                    });
+                }
+
+                console.log ("Categorías con el número 70: ", irritacionCount)
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                if (loaded_cas1 != null) {
+                    //console.log("Producto 1 cargado");
+                    $.ajax({
+                        type: "POST",
+                        url: "bd/cargarProducto.php",
+                        data: "cas=" + loaded_cas1,
+                        success: function (data) {
+                            ////console.log(data);
+                            dataParse = JSON.parse(data);
+                            cas_loaded1 = dataParse;
+                            //console.log('Cargando CAS1...');
+                            //console.log(cas_loaded1);
+                            $("#nombreUso").text(cas_loaded1[0].nombreUso);
                             if (cas_loaded1[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro1);
+                                //console.log(cas_loaded1[0].nombreClasePeligro1);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-1").text(cas_loaded1[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro1-1").append('<br />');
@@ -345,7 +2018,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro2);
+                                //console.log(cas_loaded1[0].nombreClasePeligro2);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-2").text(cas_loaded1[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro1-2").append('<br />');
@@ -353,7 +2027,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro3);
+                                //console.log(cas_loaded1[0].nombreClasePeligro3);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-3").text(cas_loaded1[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro1-3").append('<br />');
@@ -361,7 +2036,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro4);
+                                //console.log(cas_loaded1[0].nombreClasePeligro4);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-4").text(cas_loaded1[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro1-4").append('<br />');
@@ -369,7 +2045,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro5);
+                                //console.log(cas_loaded1[0].nombreClasePeligro5);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-5").text(cas_loaded1[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro1-5").append('<br />');
@@ -377,7 +2054,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro6);
+                                //console.log(cas_loaded1[0].nombreClasePeligro6);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-6").text(cas_loaded1[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro1-6").append('<br />');
@@ -385,7 +2063,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro7);
+                                //console.log(cas_loaded1[0].nombreClasePeligro7);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-7").text(cas_loaded1[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro1-7").append('<br />');
@@ -393,7 +2072,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro8);
+                                //console.log(cas_loaded1[0].nombreClasePeligro8);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-8").text(cas_loaded1[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro1-8").append('<br />');
@@ -401,7 +2081,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro9);
+                                //console.log(cas_loaded1[0].nombreClasePeligro9);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-9").text(cas_loaded1[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro1-9").append('<br />');
@@ -409,7 +2090,8 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded1[0].nombreClasePeligro10);
+                                //console.log(cas_loaded1[0].nombreClasePeligro10);
+                                $('#defaultNoCategoria').remove();
                                 $('#loaded_nombreCategoriaPeligro1-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro1-10").text(cas_loaded1[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro1-10").append('<br />');
@@ -419,6 +2101,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran los pictogramas
                             if (cas_loaded1[0].idPictograma1 != null && cas_loaded1[0].idPictograma1 != 10) {
+                                $('#defaultNoPictograma').remove();
                                 $('#loaded_imagenPictograma1-1').removeAttr('hidden');
                                 $("#loaded_imagenPictograma1-1").attr("src", "pict/" + cas_loaded1[0].idPictograma1 + ".png");
                                 $("#loaded_imagenPictograma1-1").attr("id", "loaded_imagenPictograma" + cas_loaded1[0].idPictograma1 + "");
@@ -476,7 +2159,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded1[0].nombrePalabraAdvertencia1 != null && cas_loaded1[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia1);
                                 //checkPalabraAdvertencia = cas_loaded1[0].nombrePalabraAdvertencia1;
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-1').removeAttr('hidden');
@@ -486,7 +2169,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia2 != null && cas_loaded1[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-2").text(cas_loaded1[0].nombrePalabraAdvertencia2);
@@ -495,7 +2178,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia3 != null && cas_loaded1[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-3").text(cas_loaded1[0].nombrePalabraAdvertencia3);
@@ -504,7 +2187,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia4 != null && cas_loaded1[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-4").text(cas_loaded1[0].nombrePalabraAdvertencia4);
@@ -513,7 +2196,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia5 != null && cas_loaded1[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-5").text(cas_loaded1[0].nombrePalabraAdvertencia5);
@@ -522,7 +2205,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia6 != null && cas_loaded1[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-6").text(cas_loaded1[0].nombrePalabraAdvertencia6);
@@ -531,7 +2214,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia7 != null && cas_loaded1[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-7").text(cas_loaded1[0].nombrePalabraAdvertencia7);
@@ -540,7 +2223,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia8 != null && cas_loaded1[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-8").text(cas_loaded1[0].nombrePalabraAdvertencia8);
@@ -549,7 +2232,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia9 != null && cas_loaded1[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-9").text(cas_loaded1[0].nombrePalabraAdvertencia9);
@@ -558,7 +2241,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombrePalabraAdvertencia10 != null && cas_loaded1[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded1[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded1[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia1-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia1-10").text(cas_loaded1[0].nombrePalabraAdvertencia10);
@@ -568,9 +2251,9 @@ $(document).ready(function () {
 
 
 
-                            //Aquí se muestran las palabras de advertencia
+                            //Aquí se muestran las indicaciones
                             if (cas_loaded1[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion1);
+                                //console.log(cas_loaded1[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-1").text(cas_loaded1[0].nombreIndicacion1);
@@ -579,7 +2262,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion2);
+                                //console.log(cas_loaded1[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-2").text(cas_loaded1[0].nombreIndicacion2);
@@ -588,7 +2271,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion3);
+                                //console.log(cas_loaded1[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-3").text(cas_loaded1[0].nombreIndicacion3);
@@ -597,7 +2280,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion4);
+                                //console.log(cas_loaded1[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-4").text(cas_loaded1[0].nombreIndicacion4);
@@ -606,7 +2289,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion5);
+                                //console.log(cas_loaded1[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-5").text(cas_loaded1[0].nombreIndicacion5);
@@ -615,7 +2298,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion6);
+                                //console.log(cas_loaded1[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-6").text(cas_loaded1[0].nombreIndicacion6);
@@ -624,7 +2307,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion7);
+                                //console.log(cas_loaded1[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-7").text(cas_loaded1[0].nombreIndicacion7);
@@ -633,7 +2316,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion8);
+                                //console.log(cas_loaded1[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-8").text(cas_loaded1[0].nombreIndicacion8);
@@ -642,7 +2325,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion9);
+                                //console.log(cas_loaded1[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-9").text(cas_loaded1[0].nombreIndicacion9);
@@ -651,7 +2334,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded1[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded1[0].nombreIndicacion10);
+                                //console.log(cas_loaded1[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion1-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion1-10").text(cas_loaded1[0].nombreIndicacion10);
@@ -661,7 +2344,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -677,14 +2360,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu1,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded1 = dataParse;
-                            console.log('Cargando ONU1...');
-                            console.log(onu_loaded1);
+                            //console.log('Cargando ONU1...');
+                            //console.log(onu_loaded1);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -698,22 +2381,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas2 != null) {
-                    console.log("Producto 2 cargado");
+                    //console.log("Producto 2 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas2,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded2 = dataParse;
-                            console.log('Cargando CAS2...');
-                            console.log(cas_loaded2);
+                            //console.log('Cargando CAS2...');
+                            //console.log(cas_loaded2);
 
                             if (cas_loaded2[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro1);
+                                //console.log(cas_loaded2[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro2-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-1").text(cas_loaded2[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro2-1").append('<br />');
@@ -721,7 +2403,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro2);
+                                //console.log(cas_loaded2[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro2-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-2").text(cas_loaded2[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro2-2").append('<br />');
@@ -729,7 +2411,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro3);
+                                //console.log(cas_loaded2[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro2-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-3").text(cas_loaded2[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro2-3").append('<br />');
@@ -737,7 +2419,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro4);
+                                //console.log(cas_loaded2[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro2-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-4").text(cas_loaded2[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro2-4").append('<br />');
@@ -745,7 +2427,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro5);
+                                //console.log(cas_loaded2[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro2-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-5").text(cas_loaded2[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro2-5").append('<br />');
@@ -753,7 +2435,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro6);
+                                //console.log(cas_loaded2[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro2-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-6").text(cas_loaded2[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro2-6").append('<br />');
@@ -761,7 +2443,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro7);
+                                //console.log(cas_loaded2[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro2-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-7").text(cas_loaded2[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro2-7").append('<br />');
@@ -769,7 +2451,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro8);
+                                //console.log(cas_loaded2[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro2-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-8").text(cas_loaded2[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro2-8").append('<br />');
@@ -777,7 +2459,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro9);
+                                //console.log(cas_loaded2[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro2-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-9").text(cas_loaded2[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro2-9").append('<br />');
@@ -785,7 +2467,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded2[0].nombreClasePeligro10);
+                                //console.log(cas_loaded2[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro2-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro2-10").text(cas_loaded2[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro2-10").append('<br />');
@@ -852,7 +2534,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded2[0].nombrePalabraAdvertencia1 != null && cas_loaded2[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-1").text(cas_loaded2[0].nombrePalabraAdvertencia1);
@@ -861,7 +2543,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia2 != null && cas_loaded2[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-2").text(cas_loaded2[0].nombrePalabraAdvertencia2);
@@ -870,7 +2552,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia3 != null && cas_loaded2[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-3").text(cas_loaded2[0].nombrePalabraAdvertencia3);
@@ -879,7 +2561,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia4 != null && cas_loaded2[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-4").text(cas_loaded2[0].nombrePalabraAdvertencia4);
@@ -888,7 +2570,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia5 != null && cas_loaded2[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-5").text(cas_loaded2[0].nombrePalabraAdvertencia5);
@@ -897,7 +2579,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia6 != null && cas_loaded2[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-6").text(cas_loaded2[0].nombrePalabraAdvertencia6);
@@ -906,7 +2588,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia7 != null && cas_loaded2[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-7").text(cas_loaded2[0].nombrePalabraAdvertencia7);
@@ -915,7 +2597,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia8 != null && cas_loaded2[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-8").text(cas_loaded2[0].nombrePalabraAdvertencia8);
@@ -924,7 +2606,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia9 != null && cas_loaded2[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-9").text(cas_loaded2[0].nombrePalabraAdvertencia9);
@@ -933,7 +2615,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombrePalabraAdvertencia10 != null && cas_loaded2[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded2[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded2[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia2-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia2-10").text(cas_loaded2[0].nombrePalabraAdvertencia10);
@@ -945,7 +2627,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded2[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion1);
+                                //console.log(cas_loaded2[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-1").text(cas_loaded2[0].nombreIndicacion1);
@@ -954,7 +2636,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion2);
+                                //console.log(cas_loaded2[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-2").text(cas_loaded2[0].nombreIndicacion2);
@@ -963,7 +2645,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion3);
+                                //console.log(cas_loaded2[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-3").text(cas_loaded2[0].nombreIndicacion3);
@@ -972,7 +2654,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion4);
+                                //console.log(cas_loaded2[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-4").text(cas_loaded2[0].nombreIndicacion4);
@@ -981,7 +2663,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion5);
+                                //console.log(cas_loaded2[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-5").text(cas_loaded2[0].nombreIndicacion5);
@@ -990,7 +2672,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion6);
+                                //console.log(cas_loaded2[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-6").text(cas_loaded2[0].nombreIndicacion6);
@@ -999,7 +2681,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion7);
+                                //console.log(cas_loaded2[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-7").text(cas_loaded2[0].nombreIndicacion7);
@@ -1008,7 +2690,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion8);
+                                //console.log(cas_loaded2[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-8").text(cas_loaded2[0].nombreIndicacion8);
@@ -1017,7 +2699,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion9);
+                                //console.log(cas_loaded2[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-9").text(cas_loaded2[0].nombreIndicacion9);
@@ -1026,7 +2708,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded2[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded2[0].nombreIndicacion10);
+                                //console.log(cas_loaded2[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion2-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion2-10").text(cas_loaded2[0].nombreIndicacion10);
@@ -1036,7 +2718,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1052,14 +2734,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu2,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded2 = dataParse;
-                            console.log('Cargando ONU2...');
-                            console.log(onu_loaded2);
+                            //console.log('Cargando ONU2...');
+                            //console.log(onu_loaded2);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1073,22 +2755,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas3 != null) {
-                    console.log("Producto 3 cargado");
+                    //console.log("Producto 3 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas3,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded3 = dataParse;
-                            console.log('Cargando CAS3...');
-                            console.log(cas_loaded3);
+                            //console.log('Cargando CAS3...');
+                            //console.log(cas_loaded3);
 
                             if (cas_loaded3[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro1);
+                                //console.log(cas_loaded3[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro3-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-1").text(cas_loaded3[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro3-1").append('<br />');
@@ -1096,7 +2777,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro2);
+                                //console.log(cas_loaded3[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro3-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-2").text(cas_loaded3[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro3-2").append('<br />');
@@ -1104,7 +2785,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro3);
+                                //console.log(cas_loaded3[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro3-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-3").text(cas_loaded3[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro3-3").append('<br />');
@@ -1112,7 +2793,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro4);
+                                //console.log(cas_loaded3[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro3-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-4").text(cas_loaded3[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro3-4").append('<br />');
@@ -1120,7 +2801,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro5);
+                                //console.log(cas_loaded3[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro3-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-5").text(cas_loaded3[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro3-5").append('<br />');
@@ -1128,7 +2809,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro6);
+                                //console.log(cas_loaded3[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro3-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-6").text(cas_loaded3[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro3-6").append('<br />');
@@ -1136,7 +2817,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro7);
+                                //console.log(cas_loaded3[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro3-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-7").text(cas_loaded3[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro3-7").append('<br />');
@@ -1144,7 +2825,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro8);
+                                //console.log(cas_loaded3[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro3-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-8").text(cas_loaded3[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro3-8").append('<br />');
@@ -1152,7 +2833,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro9);
+                                //console.log(cas_loaded3[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro3-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-9").text(cas_loaded3[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro3-9").append('<br />');
@@ -1160,7 +2841,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded3[0].nombreClasePeligro10);
+                                //console.log(cas_loaded3[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro3-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro3-10").text(cas_loaded3[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro3-10").append('<br />');
@@ -1227,7 +2908,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded3[0].nombrePalabraAdvertencia1 != null && cas_loaded3[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-1").text(cas_loaded3[0].nombrePalabraAdvertencia1);
@@ -1236,7 +2917,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia2 != null && cas_loaded3[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-2").text(cas_loaded3[0].nombrePalabraAdvertencia2);
@@ -1245,7 +2926,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia3 != null && cas_loaded3[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-3").text(cas_loaded3[0].nombrePalabraAdvertencia3);
@@ -1254,7 +2935,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia4 != null && cas_loaded3[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-4").text(cas_loaded3[0].nombrePalabraAdvertencia4);
@@ -1263,7 +2944,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia5 != null && cas_loaded3[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-5").text(cas_loaded3[0].nombrePalabraAdvertencia5);
@@ -1272,7 +2953,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia6 != null && cas_loaded3[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-6").text(cas_loaded3[0].nombrePalabraAdvertencia6);
@@ -1281,7 +2962,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia7 != null && cas_loaded3[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-7").text(cas_loaded3[0].nombrePalabraAdvertencia7);
@@ -1290,7 +2971,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia8 != null && cas_loaded3[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-8").text(cas_loaded3[0].nombrePalabraAdvertencia8);
@@ -1299,7 +2980,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia9 != null && cas_loaded3[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-9").text(cas_loaded3[0].nombrePalabraAdvertencia9);
@@ -1308,7 +2989,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombrePalabraAdvertencia10 != null && cas_loaded3[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded3[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded3[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia3-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia3-10").text(cas_loaded3[0].nombrePalabraAdvertencia10);
@@ -1320,7 +3001,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded3[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion1);
+                                //console.log(cas_loaded3[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-1").text(cas_loaded3[0].nombreIndicacion1);
@@ -1329,7 +3010,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion2);
+                                //console.log(cas_loaded3[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-2").text(cas_loaded3[0].nombreIndicacion2);
@@ -1338,7 +3019,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion3);
+                                //console.log(cas_loaded3[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-3").text(cas_loaded3[0].nombreIndicacion3);
@@ -1347,7 +3028,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion4);
+                                //console.log(cas_loaded3[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-4").text(cas_loaded3[0].nombreIndicacion4);
@@ -1356,7 +3037,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion5);
+                                //console.log(cas_loaded3[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-5").text(cas_loaded3[0].nombreIndicacion5);
@@ -1365,7 +3046,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion6);
+                                //console.log(cas_loaded3[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-6").text(cas_loaded3[0].nombreIndicacion6);
@@ -1374,7 +3055,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion7);
+                                //console.log(cas_loaded3[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-7").text(cas_loaded3[0].nombreIndicacion7);
@@ -1383,7 +3064,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion8);
+                                //console.log(cas_loaded3[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-8").text(cas_loaded3[0].nombreIndicacion8);
@@ -1392,7 +3073,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion9);
+                                //console.log(cas_loaded3[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-9").text(cas_loaded3[0].nombreIndicacion9);
@@ -1401,7 +3082,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded3[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded3[0].nombreIndicacion10);
+                                //console.log(cas_loaded3[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion3-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion3-10").text(cas_loaded3[0].nombreIndicacion10);
@@ -1411,7 +3092,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1427,14 +3108,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu3,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded3 = dataParse;
-                            console.log('Cargando ONU3...');
-                            console.log(onu_loaded3);
+                            //console.log('Cargando ONU3...');
+                            //console.log(onu_loaded3);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1448,22 +3129,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas4 != null) {
-                    console.log("Producto 4 cargado");
+                    //console.log("Producto 4 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas4,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded4 = dataParse;
-                            console.log('Cargando CAS4...');
-                            console.log(cas_loaded4);
+                            //console.log('Cargando CAS4...');
+                            //console.log(cas_loaded4);
 
                             if (cas_loaded4[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro1);
+                                //console.log(cas_loaded4[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro4-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-1").text(cas_loaded4[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro4-1").append('<br />');
@@ -1471,7 +3151,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro2);
+                                //console.log(cas_loaded4[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro4-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-2").text(cas_loaded4[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro4-2").append('<br />');
@@ -1479,7 +3159,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro3);
+                                //console.log(cas_loaded4[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro4-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-3").text(cas_loaded4[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro4-3").append('<br />');
@@ -1487,7 +3167,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro4);
+                                //console.log(cas_loaded4[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro4-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-4").text(cas_loaded4[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro4-4").append('<br />');
@@ -1495,7 +3175,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro5);
+                                //console.log(cas_loaded4[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro4-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-5").text(cas_loaded4[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro4-5").append('<br />');
@@ -1503,7 +3183,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro6);
+                                //console.log(cas_loaded4[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro4-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-6").text(cas_loaded4[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro4-6").append('<br />');
@@ -1511,7 +3191,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro7);
+                                //console.log(cas_loaded4[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro4-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-7").text(cas_loaded4[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro4-7").append('<br />');
@@ -1519,7 +3199,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro8);
+                                //console.log(cas_loaded4[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro4-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-8").text(cas_loaded4[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro4-8").append('<br />');
@@ -1527,7 +3207,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro9);
+                                //console.log(cas_loaded4[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro4-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-9").text(cas_loaded4[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro4-9").append('<br />');
@@ -1535,7 +3215,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded4[0].nombreClasePeligro10);
+                                //console.log(cas_loaded4[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro4-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro4-10").text(cas_loaded4[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro4-10").append('<br />');
@@ -1600,7 +3280,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded4[0].nombrePalabraAdvertencia1 != null && cas_loaded4[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-1").text(cas_loaded4[0].nombrePalabraAdvertencia1);
@@ -1609,7 +3289,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia2 != null && cas_loaded4[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-2").text(cas_loaded4[0].nombrePalabraAdvertencia2);
@@ -1618,7 +3298,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia3 != null && cas_loaded4[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-3").text(cas_loaded4[0].nombrePalabraAdvertencia3);
@@ -1627,7 +3307,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia4 != null && cas_loaded4[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-4").text(cas_loaded4[0].nombrePalabraAdvertencia4);
@@ -1636,7 +3316,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia5 != null && cas_loaded4[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-5").text(cas_loaded4[0].nombrePalabraAdvertencia5);
@@ -1645,7 +3325,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia6 != null && cas_loaded4[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-6").text(cas_loaded4[0].nombrePalabraAdvertencia6);
@@ -1654,7 +3334,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia7 != null && cas_loaded4[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-7").text(cas_loaded4[0].nombrePalabraAdvertencia7);
@@ -1663,7 +3343,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia8 != null && cas_loaded4[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-8").text(cas_loaded4[0].nombrePalabraAdvertencia8);
@@ -1672,7 +3352,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia9 != null && cas_loaded4[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-9").text(cas_loaded4[0].nombrePalabraAdvertencia9);
@@ -1681,7 +3361,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombrePalabraAdvertencia10 != null && cas_loaded4[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded4[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded4[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia4-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia4-10").text(cas_loaded4[0].nombrePalabraAdvertencia10);
@@ -1693,7 +3373,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded4[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion1);
+                                //console.log(cas_loaded4[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-1").text(cas_loaded4[0].nombreIndicacion1);
@@ -1702,7 +3382,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion2);
+                                //console.log(cas_loaded4[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-2").text(cas_loaded4[0].nombreIndicacion2);
@@ -1711,7 +3391,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion3);
+                                //console.log(cas_loaded4[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-3").text(cas_loaded4[0].nombreIndicacion3);
@@ -1720,7 +3400,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion4);
+                                //console.log(cas_loaded4[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-4").text(cas_loaded4[0].nombreIndicacion4);
@@ -1729,7 +3409,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion5);
+                                //console.log(cas_loaded4[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-5").text(cas_loaded4[0].nombreIndicacion5);
@@ -1738,7 +3418,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion6);
+                                //console.log(cas_loaded4[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-6").text(cas_loaded4[0].nombreIndicacion6);
@@ -1747,7 +3427,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion7);
+                                //console.log(cas_loaded4[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-7").text(cas_loaded4[0].nombreIndicacion7);
@@ -1756,7 +3436,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion8);
+                                //console.log(cas_loaded4[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-8").text(cas_loaded4[0].nombreIndicacion8);
@@ -1765,7 +3445,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion9);
+                                //console.log(cas_loaded4[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-9").text(cas_loaded4[0].nombreIndicacion9);
@@ -1774,7 +3454,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded4[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded4[0].nombreIndicacion10);
+                                //console.log(cas_loaded4[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion4-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion4-10").text(cas_loaded4[0].nombreIndicacion10);
@@ -1784,7 +3464,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1800,14 +3480,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu4,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded4 = dataParse;
-                            console.log('Cargando ONU4...');
-                            console.log(onu_loaded4);
+                            //console.log('Cargando ONU4...');
+                            //console.log(onu_loaded4);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -1821,22 +3501,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas5 != null) {
-                    console.log("Producto 5 cargado");
+                    //console.log("Producto 5 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas5,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded5 = dataParse;
-                            console.log('Cargando CAS5...');
-                            console.log(cas_loaded5);
+                            //console.log('Cargando CAS5...');
+                            //console.log(cas_loaded5);
 
                             if (cas_loaded5[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro1);
+                                //console.log(cas_loaded5[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro5-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-1").text(cas_loaded5[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro5-1").append('<br />');
@@ -1844,7 +3523,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro2);
+                                //console.log(cas_loaded5[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro5-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-2").text(cas_loaded5[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro5-2").append('<br />');
@@ -1852,7 +3531,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro3);
+                                //console.log(cas_loaded5[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro5-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-3").text(cas_loaded5[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro5-3").append('<br />');
@@ -1860,7 +3539,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro4);
+                                //console.log(cas_loaded5[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro5-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-4").text(cas_loaded5[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro5-4").append('<br />');
@@ -1868,7 +3547,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro5);
+                                //console.log(cas_loaded5[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro5-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-5").text(cas_loaded5[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro5-5").append('<br />');
@@ -1876,7 +3555,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro6);
+                                //console.log(cas_loaded5[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro5-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-6").text(cas_loaded5[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro5-6").append('<br />');
@@ -1884,7 +3563,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro7);
+                                //console.log(cas_loaded5[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro5-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-7").text(cas_loaded5[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro5-7").append('<br />');
@@ -1892,7 +3571,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro8);
+                                //console.log(cas_loaded5[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro5-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-8").text(cas_loaded5[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro5-8").append('<br />');
@@ -1900,7 +3579,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro9);
+                                //console.log(cas_loaded5[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro5-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-9").text(cas_loaded5[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro5-9").append('<br />');
@@ -1908,7 +3587,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded5[0].nombreClasePeligro10);
+                                //console.log(cas_loaded5[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro5-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro5-10").text(cas_loaded5[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro5-10").append('<br />');
@@ -1975,7 +3654,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded5[0].nombrePalabraAdvertencia1 != null && cas_loaded5[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-1").text(cas_loaded5[0].nombrePalabraAdvertencia1);
@@ -1984,7 +3663,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia2 != null && cas_loaded5[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-2").text(cas_loaded5[0].nombrePalabraAdvertencia2);
@@ -1993,7 +3672,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia3 != null && cas_loaded5[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-3").text(cas_loaded5[0].nombrePalabraAdvertencia3);
@@ -2002,7 +3681,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia4 != null && cas_loaded5[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-4").text(cas_loaded5[0].nombrePalabraAdvertencia4);
@@ -2011,7 +3690,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia5 != null && cas_loaded5[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-5").text(cas_loaded5[0].nombrePalabraAdvertencia5);
@@ -2020,7 +3699,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia6 != null && cas_loaded5[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-6").text(cas_loaded5[0].nombrePalabraAdvertencia6);
@@ -2029,7 +3708,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia7 != null && cas_loaded5[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-7").text(cas_loaded5[0].nombrePalabraAdvertencia7);
@@ -2038,7 +3717,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia8 != null && cas_loaded5[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-8").text(cas_loaded5[0].nombrePalabraAdvertencia8);
@@ -2047,7 +3726,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia9 != null && cas_loaded5[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-9").text(cas_loaded5[0].nombrePalabraAdvertencia9);
@@ -2056,7 +3735,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombrePalabraAdvertencia10 != null && cas_loaded5[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded5[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded5[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia5-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia5-10").text(cas_loaded5[0].nombrePalabraAdvertencia10);
@@ -2068,7 +3747,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded5[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion1);
+                                //console.log(cas_loaded5[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-1").text(cas_loaded5[0].nombreIndicacion1);
@@ -2077,7 +3756,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion2);
+                                //console.log(cas_loaded5[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-2").text(cas_loaded5[0].nombreIndicacion2);
@@ -2086,7 +3765,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion3);
+                                //console.log(cas_loaded5[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-3").text(cas_loaded5[0].nombreIndicacion3);
@@ -2095,7 +3774,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion4);
+                                //console.log(cas_loaded5[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-4").text(cas_loaded5[0].nombreIndicacion4);
@@ -2104,7 +3783,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion5);
+                                //console.log(cas_loaded5[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-5").text(cas_loaded5[0].nombreIndicacion5);
@@ -2113,7 +3792,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion6);
+                                //console.log(cas_loaded5[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-6").text(cas_loaded5[0].nombreIndicacion6);
@@ -2122,7 +3801,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion7);
+                                //console.log(cas_loaded5[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-7").text(cas_loaded5[0].nombreIndicacion7);
@@ -2131,7 +3810,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion8);
+                                //console.log(cas_loaded5[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-8").text(cas_loaded5[0].nombreIndicacion8);
@@ -2140,7 +3819,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion9);
+                                //console.log(cas_loaded5[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-9").text(cas_loaded5[0].nombreIndicacion9);
@@ -2149,7 +3828,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded5[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded5[0].nombreIndicacion10);
+                                //console.log(cas_loaded5[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion5-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion5-10").text(cas_loaded5[0].nombreIndicacion10);
@@ -2159,7 +3838,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2175,14 +3854,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu5,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded5 = dataParse;
-                            console.log('Cargando ONU5...');
-                            console.log(onu_loaded5);
+                            //console.log('Cargando ONU5...');
+                            //console.log(onu_loaded5);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2196,22 +3875,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas6 != null) {
-                    console.log("Producto 6 cargado");
+                    //console.log("Producto 6 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas6,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded6 = dataParse;
-                            console.log('Cargando CAS6...');
-                            console.log(cas_loaded6);
+                            //console.log('Cargando CAS6...');
+                            //console.log(cas_loaded6);
 
                             if (cas_loaded6[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro1);
+                                //console.log(cas_loaded6[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro6-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-1").text(cas_loaded6[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro6-1").append('<br />');
@@ -2219,7 +3897,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro2);
+                                //console.log(cas_loaded6[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro6-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-2").text(cas_loaded6[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro6-2").append('<br />');
@@ -2227,7 +3905,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro3);
+                                //console.log(cas_loaded6[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro6-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-3").text(cas_loaded6[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro6-3").append('<br />');
@@ -2235,7 +3913,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro4);
+                                //console.log(cas_loaded6[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro6-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-4").text(cas_loaded6[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro6-4").append('<br />');
@@ -2243,7 +3921,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro5);
+                                //console.log(cas_loaded6[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro6-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-5").text(cas_loaded6[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro6-5").append('<br />');
@@ -2251,7 +3929,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro6);
+                                //console.log(cas_loaded6[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro6-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-6").text(cas_loaded6[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro6-6").append('<br />');
@@ -2259,7 +3937,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro7);
+                                //console.log(cas_loaded6[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro6-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-7").text(cas_loaded6[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro6-7").append('<br />');
@@ -2267,7 +3945,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro8);
+                                //console.log(cas_loaded6[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro6-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-8").text(cas_loaded6[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro6-8").append('<br />');
@@ -2275,7 +3953,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro9);
+                                //console.log(cas_loaded6[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro6-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-9").text(cas_loaded6[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro6-9").append('<br />');
@@ -2283,7 +3961,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded6[0].nombreClasePeligro10);
+                                //console.log(cas_loaded6[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro6-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro6-10").text(cas_loaded6[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro6-10").append('<br />');
@@ -2350,7 +4028,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded6[0].nombrePalabraAdvertencia1 != null && cas_loaded6[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-1").text(cas_loaded6[0].nombrePalabraAdvertencia1);
@@ -2359,7 +4037,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia2 != null && cas_loaded6[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-2").text(cas_loaded6[0].nombrePalabraAdvertencia2);
@@ -2368,7 +4046,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia3 != null && cas_loaded6[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-3").text(cas_loaded6[0].nombrePalabraAdvertencia3);
@@ -2377,7 +4055,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia4 != null && cas_loaded6[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-4").text(cas_loaded6[0].nombrePalabraAdvertencia4);
@@ -2386,7 +4064,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia5 != null && cas_loaded6[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-5").text(cas_loaded6[0].nombrePalabraAdvertencia5);
@@ -2395,7 +4073,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia6 != null && cas_loaded6[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-6").text(cas_loaded6[0].nombrePalabraAdvertencia6);
@@ -2404,7 +4082,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia7 != null && cas_loaded6[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-7").text(cas_loaded6[0].nombrePalabraAdvertencia7);
@@ -2413,7 +4091,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia8 != null && cas_loaded6[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-8").text(cas_loaded6[0].nombrePalabraAdvertencia8);
@@ -2422,7 +4100,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia9 != null && cas_loaded6[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-9").text(cas_loaded6[0].nombrePalabraAdvertencia9);
@@ -2431,7 +4109,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombrePalabraAdvertencia10 != null && cas_loaded6[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded6[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded6[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia6-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia6-10").text(cas_loaded6[0].nombrePalabraAdvertencia10);
@@ -2443,7 +4121,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded6[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion1);
+                                //console.log(cas_loaded6[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-1").text(cas_loaded6[0].nombreIndicacion1);
@@ -2452,7 +4130,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion2);
+                                //console.log(cas_loaded6[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-2").text(cas_loaded6[0].nombreIndicacion2);
@@ -2461,7 +4139,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion3);
+                                //console.log(cas_loaded6[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-3").text(cas_loaded6[0].nombreIndicacion3);
@@ -2470,7 +4148,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion4);
+                                //console.log(cas_loaded6[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-4").text(cas_loaded6[0].nombreIndicacion4);
@@ -2479,7 +4157,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion5);
+                                //console.log(cas_loaded6[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-5").text(cas_loaded6[0].nombreIndicacion5);
@@ -2488,7 +4166,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion6);
+                                //console.log(cas_loaded6[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-6").text(cas_loaded6[0].nombreIndicacion6);
@@ -2497,7 +4175,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion7);
+                                //console.log(cas_loaded6[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-7").text(cas_loaded6[0].nombreIndicacion7);
@@ -2506,7 +4184,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion8);
+                                //console.log(cas_loaded6[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-8").text(cas_loaded6[0].nombreIndicacion8);
@@ -2515,7 +4193,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion9);
+                                //console.log(cas_loaded6[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-9").text(cas_loaded6[0].nombreIndicacion9);
@@ -2524,7 +4202,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded6[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded6[0].nombreIndicacion10);
+                                //console.log(cas_loaded6[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion6-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion6-10").text(cas_loaded6[0].nombreIndicacion10);
@@ -2534,7 +4212,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2550,14 +4228,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu6,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded6 = dataParse;
-                            console.log('Cargando ONU6...');
-                            console.log(onu_loaded6);
+                            //console.log('Cargando ONU6...');
+                            //console.log(onu_loaded6);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2571,22 +4249,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas7 != null) {
-                    console.log("Producto 7 cargado");
+                    //console.log("Producto 7 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas7,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded7 = dataParse;
-                            console.log('Cargando CAS7...');
-                            console.log(cas_loaded7);
+                            //console.log('Cargando CAS7...');
+                            //console.log(cas_loaded7);
 
                             if (cas_loaded7[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro1);
+                                //console.log(cas_loaded7[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro7-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-1").text(cas_loaded7[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro7-1").append('<br />');
@@ -2594,7 +4271,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro2);
+                                //console.log(cas_loaded7[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro7-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-2").text(cas_loaded7[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro7-2").append('<br />');
@@ -2602,7 +4279,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro3);
+                                //console.log(cas_loaded7[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro7-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-3").text(cas_loaded7[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro7-3").append('<br />');
@@ -2610,7 +4287,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro4);
+                                //console.log(cas_loaded7[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro7-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-4").text(cas_loaded7[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro7-4").append('<br />');
@@ -2618,7 +4295,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro5);
+                                //console.log(cas_loaded7[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro7-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-5").text(cas_loaded7[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro7-5").append('<br />');
@@ -2626,7 +4303,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro6);
+                                //console.log(cas_loaded7[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro7-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-6").text(cas_loaded7[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro7-6").append('<br />');
@@ -2634,7 +4311,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro7);
+                                //console.log(cas_loaded7[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro7-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-7").text(cas_loaded7[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro7-7").append('<br />');
@@ -2642,7 +4319,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro8);
+                                //console.log(cas_loaded7[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro7-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-8").text(cas_loaded7[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro7-8").append('<br />');
@@ -2650,7 +4327,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro9);
+                                //console.log(cas_loaded7[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro7-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-9").text(cas_loaded7[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro7-9").append('<br />');
@@ -2658,7 +4335,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded7[0].nombreClasePeligro10);
+                                //console.log(cas_loaded7[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro7-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro7-10").text(cas_loaded7[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro7-10").append('<br />');
@@ -2725,7 +4402,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded7[0].nombrePalabraAdvertencia1 != null && cas_loaded7[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-1").text(cas_loaded7[0].nombrePalabraAdvertencia1);
@@ -2734,7 +4411,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia2 != null && cas_loaded7[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-2").text(cas_loaded7[0].nombrePalabraAdvertencia2);
@@ -2743,7 +4420,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia3 != null && cas_loaded7[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-3").text(cas_loaded7[0].nombrePalabraAdvertencia3);
@@ -2752,7 +4429,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia4 != null && cas_loaded7[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-4").text(cas_loaded7[0].nombrePalabraAdvertencia4);
@@ -2761,7 +4438,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia5 != null && cas_loaded7[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-5").text(cas_loaded7[0].nombrePalabraAdvertencia5);
@@ -2770,7 +4447,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia6 != null && cas_loaded7[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-6").text(cas_loaded7[0].nombrePalabraAdvertencia6);
@@ -2779,7 +4456,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia7 != null && cas_loaded7[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-7").text(cas_loaded7[0].nombrePalabraAdvertencia7);
@@ -2788,7 +4465,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia8 != null && cas_loaded7[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-8").text(cas_loaded7[0].nombrePalabraAdvertencia8);
@@ -2797,7 +4474,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia9 != null && cas_loaded7[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-9").text(cas_loaded7[0].nombrePalabraAdvertencia9);
@@ -2806,7 +4483,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombrePalabraAdvertencia10 != null && cas_loaded7[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded7[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded7[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia7-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia7-10").text(cas_loaded7[0].nombrePalabraAdvertencia10);
@@ -2818,7 +4495,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded7[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion1);
+                                //console.log(cas_loaded7[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-1").text(cas_loaded7[0].nombreIndicacion1);
@@ -2827,7 +4504,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion2);
+                                //console.log(cas_loaded7[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-2").text(cas_loaded7[0].nombreIndicacion2);
@@ -2836,7 +4513,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion3);
+                                //console.log(cas_loaded7[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-3").text(cas_loaded7[0].nombreIndicacion3);
@@ -2845,7 +4522,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion4);
+                                //console.log(cas_loaded7[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-4").text(cas_loaded7[0].nombreIndicacion4);
@@ -2854,7 +4531,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion5);
+                                //console.log(cas_loaded7[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-5").text(cas_loaded7[0].nombreIndicacion5);
@@ -2863,7 +4540,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion6);
+                                //console.log(cas_loaded7[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-6").text(cas_loaded7[0].nombreIndicacion6);
@@ -2872,7 +4549,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion7);
+                                //console.log(cas_loaded7[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-7").text(cas_loaded7[0].nombreIndicacion7);
@@ -2881,7 +4558,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion8);
+                                //console.log(cas_loaded7[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-8").text(cas_loaded7[0].nombreIndicacion8);
@@ -2890,7 +4567,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion9);
+                                //console.log(cas_loaded7[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-9").text(cas_loaded7[0].nombreIndicacion9);
@@ -2899,7 +4576,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded7[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded7[0].nombreIndicacion10);
+                                //console.log(cas_loaded7[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion7-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion7-10").text(cas_loaded7[0].nombreIndicacion10);
@@ -2909,7 +4586,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2925,14 +4602,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu7,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded7 = dataParse;
-                            console.log('Cargando ONU7...');
-                            console.log(onu_loaded7);
+                            //console.log('Cargando ONU7...');
+                            //console.log(onu_loaded7);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -2946,22 +4623,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas8 != null) {
-                    console.log("Producto 8 cargado");
+                    //console.log("Producto 8 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas8,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded8 = dataParse;
-                            console.log('Cargando CAS8...');
-                            console.log(cas_loaded8);
+                            //console.log('Cargando CAS8...');
+                            //console.log(cas_loaded8);
 
                             if (cas_loaded8[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro1);
+                                //console.log(cas_loaded8[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro8-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-1").text(cas_loaded8[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro8-1").append('<br />');
@@ -2969,7 +4645,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro2);
+                                //console.log(cas_loaded8[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro8-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-2").text(cas_loaded8[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro8-2").append('<br />');
@@ -2977,7 +4653,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro3);
+                                //console.log(cas_loaded8[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro8-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-3").text(cas_loaded8[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro8-3").append('<br />');
@@ -2985,7 +4661,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro4);
+                                //console.log(cas_loaded8[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro8-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-4").text(cas_loaded8[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro8-4").append('<br />');
@@ -2993,7 +4669,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro5);
+                                //console.log(cas_loaded8[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro8-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-5").text(cas_loaded8[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro8-5").append('<br />');
@@ -3001,7 +4677,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro6);
+                                //console.log(cas_loaded8[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro8-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-6").text(cas_loaded8[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro8-6").append('<br />');
@@ -3009,7 +4685,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro7);
+                                //console.log(cas_loaded8[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro8-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-7").text(cas_loaded8[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro8-7").append('<br />');
@@ -3017,7 +4693,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro8);
+                                //console.log(cas_loaded8[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro8-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-8").text(cas_loaded8[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro8-8").append('<br />');
@@ -3025,7 +4701,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro9);
+                                //console.log(cas_loaded8[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro8-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-9").text(cas_loaded8[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro8-9").append('<br />');
@@ -3033,7 +4709,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded8[0].nombreClasePeligro10);
+                                //console.log(cas_loaded8[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro8-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro8-10").text(cas_loaded8[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro8-10").append('<br />');
@@ -3100,7 +4776,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded8[0].nombrePalabraAdvertencia1 != null && cas_loaded8[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-1").text(cas_loaded8[0].nombrePalabraAdvertencia1);
@@ -3109,7 +4785,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia2 != null && cas_loaded8[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-2").text(cas_loaded8[0].nombrePalabraAdvertencia2);
@@ -3118,7 +4794,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia3 != null && cas_loaded8[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-3").text(cas_loaded8[0].nombrePalabraAdvertencia3);
@@ -3127,7 +4803,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia4 != null && cas_loaded8[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-4").text(cas_loaded8[0].nombrePalabraAdvertencia4);
@@ -3136,7 +4812,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia5 != null && cas_loaded8[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-5").text(cas_loaded8[0].nombrePalabraAdvertencia5);
@@ -3145,7 +4821,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia6 != null && cas_loaded8[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-6").text(cas_loaded8[0].nombrePalabraAdvertencia6);
@@ -3154,7 +4830,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia7 != null && cas_loaded8[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-7").text(cas_loaded8[0].nombrePalabraAdvertencia7);
@@ -3163,7 +4839,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia8 != null && cas_loaded8[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-8").text(cas_loaded8[0].nombrePalabraAdvertencia8);
@@ -3172,7 +4848,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia9 != null && cas_loaded8[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-9").text(cas_loaded8[0].nombrePalabraAdvertencia9);
@@ -3181,7 +4857,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombrePalabraAdvertencia10 != null && cas_loaded8[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded8[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded8[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia8-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia8-10").text(cas_loaded8[0].nombrePalabraAdvertencia10);
@@ -3193,7 +4869,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded8[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion1);
+                                //console.log(cas_loaded8[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-1").text(cas_loaded8[0].nombreIndicacion1);
@@ -3202,7 +4878,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion2);
+                                //console.log(cas_loaded8[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-2").text(cas_loaded8[0].nombreIndicacion2);
@@ -3211,7 +4887,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion3);
+                                //console.log(cas_loaded8[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-3").text(cas_loaded8[0].nombreIndicacion3);
@@ -3220,7 +4896,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion4);
+                                //console.log(cas_loaded8[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-4").text(cas_loaded8[0].nombreIndicacion4);
@@ -3229,7 +4905,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion5);
+                                //console.log(cas_loaded8[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-5").text(cas_loaded8[0].nombreIndicacion5);
@@ -3238,7 +4914,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion6);
+                                //console.log(cas_loaded8[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-6").text(cas_loaded8[0].nombreIndicacion6);
@@ -3247,7 +4923,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion7);
+                                //console.log(cas_loaded8[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-7").text(cas_loaded8[0].nombreIndicacion7);
@@ -3256,7 +4932,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion8);
+                                //console.log(cas_loaded8[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-8").text(cas_loaded8[0].nombreIndicacion8);
@@ -3265,7 +4941,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion9);
+                                //console.log(cas_loaded8[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-9").text(cas_loaded8[0].nombreIndicacion9);
@@ -3274,7 +4950,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded8[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded8[0].nombreIndicacion10);
+                                //console.log(cas_loaded8[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion8-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion8-10").text(cas_loaded8[0].nombreIndicacion10);
@@ -3284,7 +4960,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -3300,14 +4976,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu8,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded8 = dataParse;
-                            console.log('Cargando ONU8...');
-                            console.log(onu_loaded8);
+                            //console.log('Cargando ONU8...');
+                            //console.log(onu_loaded8);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -3321,22 +4997,21 @@ $(document).ready(function () {
  
                 }
 
-
                 if (loaded_cas9 != null) {
-                    console.log("Producto 9 cargado");
+                    //console.log("Producto 9 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas9,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded9 = dataParse;
-                            console.log('Cargando CAS9...');
-                            console.log(cas_loaded9);
+                            //console.log('Cargando CAS9...');
+                            //console.log(cas_loaded9);
 
                             if (cas_loaded9[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro1);
+                                //console.log(cas_loaded9[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro9-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-1").text(cas_loaded9[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro9-1").append('<br />');
@@ -3344,7 +5019,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro2);
+                                //console.log(cas_loaded9[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro9-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-2").text(cas_loaded9[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro9-2").append('<br />');
@@ -3352,7 +5027,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro3);
+                                //console.log(cas_loaded9[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro9-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-3").text(cas_loaded9[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro9-3").append('<br />');
@@ -3360,7 +5035,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro4);
+                                //console.log(cas_loaded9[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro9-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-4").text(cas_loaded9[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro9-4").append('<br />');
@@ -3368,7 +5043,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro5);
+                                //console.log(cas_loaded9[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro9-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-5").text(cas_loaded9[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro9-5").append('<br />');
@@ -3376,7 +5051,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro6);
+                                //console.log(cas_loaded9[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro9-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-6").text(cas_loaded9[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro9-6").append('<br />');
@@ -3384,7 +5059,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro7);
+                                //console.log(cas_loaded9[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro9-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-7").text(cas_loaded9[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro9-7").append('<br />');
@@ -3392,7 +5067,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro8);
+                                //console.log(cas_loaded9[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro9-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-8").text(cas_loaded9[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro9-8").append('<br />');
@@ -3400,7 +5075,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro9);
+                                //console.log(cas_loaded9[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro9-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-9").text(cas_loaded9[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro9-9").append('<br />');
@@ -3408,7 +5083,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded9[0].nombreClasePeligro10);
+                                //console.log(cas_loaded9[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro9-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro9-10").text(cas_loaded9[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro9-10").append('<br />');
@@ -3475,7 +5150,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded9[0].nombrePalabraAdvertencia1 != null && cas_loaded9[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-1").text(cas_loaded9[0].nombrePalabraAdvertencia1);
@@ -3484,7 +5159,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia2 != null && cas_loaded9[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-2").text(cas_loaded9[0].nombrePalabraAdvertencia2);
@@ -3493,7 +5168,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia3 != null && cas_loaded9[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-3").text(cas_loaded9[0].nombrePalabraAdvertencia3);
@@ -3502,7 +5177,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia4 != null && cas_loaded9[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-4").text(cas_loaded9[0].nombrePalabraAdvertencia4);
@@ -3511,7 +5186,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia5 != null && cas_loaded9[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-5").text(cas_loaded9[0].nombrePalabraAdvertencia5);
@@ -3520,7 +5195,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia6 != null && cas_loaded9[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-6").text(cas_loaded9[0].nombrePalabraAdvertencia6);
@@ -3529,7 +5204,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia7 != null && cas_loaded9[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-7").text(cas_loaded9[0].nombrePalabraAdvertencia7);
@@ -3538,7 +5213,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia8 != null && cas_loaded9[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-8").text(cas_loaded9[0].nombrePalabraAdvertencia8);
@@ -3547,7 +5222,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia9 != null && cas_loaded9[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-9").text(cas_loaded9[0].nombrePalabraAdvertencia9);
@@ -3556,7 +5231,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombrePalabraAdvertencia10 != null && cas_loaded9[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded9[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded9[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia9-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia9-10").text(cas_loaded9[0].nombrePalabraAdvertencia10);
@@ -3568,7 +5243,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded9[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion1);
+                                //console.log(cas_loaded9[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-1").text(cas_loaded9[0].nombreIndicacion1);
@@ -3577,7 +5252,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion2);
+                                //console.log(cas_loaded9[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-2").text(cas_loaded9[0].nombreIndicacion2);
@@ -3586,7 +5261,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion3);
+                                //console.log(cas_loaded9[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-3").text(cas_loaded9[0].nombreIndicacion3);
@@ -3595,7 +5270,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion4);
+                                //console.log(cas_loaded9[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-4").text(cas_loaded9[0].nombreIndicacion4);
@@ -3604,7 +5279,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion5);
+                                //console.log(cas_loaded9[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-5").text(cas_loaded9[0].nombreIndicacion5);
@@ -3613,7 +5288,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion6);
+                                //console.log(cas_loaded9[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-6").text(cas_loaded9[0].nombreIndicacion6);
@@ -3622,7 +5297,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion7);
+                                //console.log(cas_loaded9[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-7").text(cas_loaded9[0].nombreIndicacion7);
@@ -3631,7 +5306,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion8);
+                                //console.log(cas_loaded9[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-8").text(cas_loaded9[0].nombreIndicacion8);
@@ -3640,7 +5315,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion9);
+                                //console.log(cas_loaded9[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-9").text(cas_loaded9[0].nombreIndicacion9);
@@ -3649,7 +5324,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded9[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded9[0].nombreIndicacion10);
+                                //console.log(cas_loaded9[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion9-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion9-10").text(cas_loaded9[0].nombreIndicacion10);
@@ -3659,7 +5334,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -3675,14 +5350,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu9,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded9 = dataParse;
-                            console.log('Cargando ONU9...');
-                            console.log(onu_loaded9);
+                            //console.log('Cargando ONU9...');
+                            //console.log(onu_loaded9);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -3696,22 +5371,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas10 != null) {
-                    console.log("Producto 10 cargado");
+                    //console.log("Producto 10 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas10,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded10 = dataParse;
-                            console.log('Cargando CAS10...');
-                            console.log(cas_loaded10);
+                            //console.log('Cargando CAS10...');
+                            //console.log(cas_loaded10);
 
                             if (cas_loaded10[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro1);
+                                //console.log(cas_loaded10[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro10-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-1").text(cas_loaded10[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro10-1").append('<br />');
@@ -3719,7 +5393,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro2);
+                                //console.log(cas_loaded10[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro10-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-2").text(cas_loaded10[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro10-2").append('<br />');
@@ -3727,7 +5401,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro3);
+                                //console.log(cas_loaded10[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro10-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-3").text(cas_loaded10[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro10-3").append('<br />');
@@ -3735,7 +5409,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro4);
+                                //console.log(cas_loaded10[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro10-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-4").text(cas_loaded10[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro10-4").append('<br />');
@@ -3743,7 +5417,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro5);
+                                //console.log(cas_loaded10[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro10-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-5").text(cas_loaded10[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro10-5").append('<br />');
@@ -3751,7 +5425,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro6);
+                                //console.log(cas_loaded10[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro10-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-6").text(cas_loaded10[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro10-6").append('<br />');
@@ -3759,7 +5433,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro7);
+                                //console.log(cas_loaded10[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro10-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-7").text(cas_loaded10[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro10-7").append('<br />');
@@ -3767,7 +5441,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro8);
+                                //console.log(cas_loaded10[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro10-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-8").text(cas_loaded10[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro10-8").append('<br />');
@@ -3775,7 +5449,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro9);
+                                //console.log(cas_loaded10[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro10-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-9").text(cas_loaded10[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro10-9").append('<br />');
@@ -3783,7 +5457,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded10[0].nombreClasePeligro10);
+                                //console.log(cas_loaded10[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro10-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro10-10").text(cas_loaded10[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro10-10").append('<br />');
@@ -3850,7 +5524,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded10[0].nombrePalabraAdvertencia1 != null && cas_loaded10[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-1").text(cas_loaded10[0].nombrePalabraAdvertencia1);
@@ -3859,7 +5533,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia2 != null && cas_loaded10[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-2").text(cas_loaded10[0].nombrePalabraAdvertencia2);
@@ -3868,7 +5542,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia3 != null && cas_loaded10[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-3").text(cas_loaded10[0].nombrePalabraAdvertencia3);
@@ -3877,7 +5551,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia4 != null && cas_loaded10[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-4").text(cas_loaded10[0].nombrePalabraAdvertencia4);
@@ -3886,7 +5560,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia5 != null && cas_loaded10[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-5").text(cas_loaded10[0].nombrePalabraAdvertencia5);
@@ -3895,7 +5569,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia6 != null && cas_loaded10[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-6").text(cas_loaded10[0].nombrePalabraAdvertencia6);
@@ -3904,7 +5578,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia7 != null && cas_loaded10[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-7").text(cas_loaded10[0].nombrePalabraAdvertencia7);
@@ -3913,7 +5587,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia8 != null && cas_loaded10[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-8").text(cas_loaded10[0].nombrePalabraAdvertencia8);
@@ -3922,7 +5596,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia9 != null && cas_loaded10[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-9").text(cas_loaded10[0].nombrePalabraAdvertencia9);
@@ -3931,7 +5605,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombrePalabraAdvertencia10 != null && cas_loaded10[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded10[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded10[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia10-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia10-10").text(cas_loaded10[0].nombrePalabraAdvertencia10);
@@ -3943,7 +5617,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded10[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion1);
+                                //console.log(cas_loaded10[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-1").text(cas_loaded10[0].nombreIndicacion1);
@@ -3952,7 +5626,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion2);
+                                //console.log(cas_loaded10[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-2").text(cas_loaded10[0].nombreIndicacion2);
@@ -3961,7 +5635,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion3);
+                                //console.log(cas_loaded10[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-3").text(cas_loaded10[0].nombreIndicacion3);
@@ -3970,7 +5644,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion4);
+                                //console.log(cas_loaded10[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-4").text(cas_loaded10[0].nombreIndicacion4);
@@ -3979,7 +5653,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion5);
+                                //console.log(cas_loaded10[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-5").text(cas_loaded10[0].nombreIndicacion5);
@@ -3988,7 +5662,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion6);
+                                //console.log(cas_loaded10[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-6").text(cas_loaded10[0].nombreIndicacion6);
@@ -3997,7 +5671,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion7);
+                                //console.log(cas_loaded10[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-7").text(cas_loaded10[0].nombreIndicacion7);
@@ -4006,7 +5680,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion8);
+                                //console.log(cas_loaded10[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-8").text(cas_loaded10[0].nombreIndicacion8);
@@ -4015,7 +5689,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion9);
+                                //console.log(cas_loaded10[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-9").text(cas_loaded10[0].nombreIndicacion9);
@@ -4024,7 +5698,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded10[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded10[0].nombreIndicacion10);
+                                //console.log(cas_loaded10[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion10-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion10-10").text(cas_loaded10[0].nombreIndicacion10);
@@ -4034,7 +5708,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4050,14 +5724,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu10,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded10 = dataParse;
-                            console.log('Cargando ONU10...');
-                            console.log(onu_loaded10);
+                            //console.log('Cargando ONU10...');
+                            //console.log(onu_loaded10);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4071,22 +5745,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas11 != null) {
-                    console.log("Producto 11 cargado");
+                    //console.log("Producto 11 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas11,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded11 = dataParse;
-                            console.log('Cargando CAS11...');
-                            console.log(cas_loaded11);
+                            //console.log('Cargando CAS11...');
+                            //console.log(cas_loaded11);
 
                             if (cas_loaded11[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro1);
+                                //console.log(cas_loaded11[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro11-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-1").text(cas_loaded11[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro11-1").append('<br />');
@@ -4094,7 +5767,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro2);
+                                //console.log(cas_loaded11[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro11-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-2").text(cas_loaded11[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro11-2").append('<br />');
@@ -4102,7 +5775,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro3);
+                                //console.log(cas_loaded11[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro11-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-3").text(cas_loaded11[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro11-3").append('<br />');
@@ -4110,7 +5783,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro4);
+                                //console.log(cas_loaded11[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro11-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-4").text(cas_loaded11[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro11-4").append('<br />');
@@ -4118,7 +5791,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro5);
+                                //console.log(cas_loaded11[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro11-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-5").text(cas_loaded11[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro11-5").append('<br />');
@@ -4126,7 +5799,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro6);
+                                //console.log(cas_loaded11[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro11-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-6").text(cas_loaded11[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro11-6").append('<br />');
@@ -4134,7 +5807,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro7);
+                                //console.log(cas_loaded11[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro11-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-7").text(cas_loaded11[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro11-7").append('<br />');
@@ -4142,7 +5815,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro8);
+                                //console.log(cas_loaded11[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro11-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-8").text(cas_loaded11[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro11-8").append('<br />');
@@ -4150,7 +5823,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro9);
+                                //console.log(cas_loaded11[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro11-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-9").text(cas_loaded11[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro11-9").append('<br />');
@@ -4158,7 +5831,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded11[0].nombreClasePeligro10);
+                                //console.log(cas_loaded11[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro11-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro11-10").text(cas_loaded11[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro11-10").append('<br />');
@@ -4225,7 +5898,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded11[0].nombrePalabraAdvertencia1 != null && cas_loaded11[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-1").text(cas_loaded11[0].nombrePalabraAdvertencia1);
@@ -4234,7 +5907,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia2 != null && cas_loaded11[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-2").text(cas_loaded11[0].nombrePalabraAdvertencia2);
@@ -4243,7 +5916,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia3 != null && cas_loaded11[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-3").text(cas_loaded11[0].nombrePalabraAdvertencia3);
@@ -4252,7 +5925,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia4 != null && cas_loaded11[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-4").text(cas_loaded11[0].nombrePalabraAdvertencia4);
@@ -4261,7 +5934,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia5 != null && cas_loaded11[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-5").text(cas_loaded11[0].nombrePalabraAdvertencia5);
@@ -4270,7 +5943,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia6 != null && cas_loaded11[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-6").text(cas_loaded11[0].nombrePalabraAdvertencia6);
@@ -4279,7 +5952,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia7 != null && cas_loaded11[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-7").text(cas_loaded11[0].nombrePalabraAdvertencia7);
@@ -4288,7 +5961,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia8 != null && cas_loaded11[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-8").text(cas_loaded11[0].nombrePalabraAdvertencia8);
@@ -4297,7 +5970,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia9 != null && cas_loaded11[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-9").text(cas_loaded11[0].nombrePalabraAdvertencia9);
@@ -4306,7 +5979,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombrePalabraAdvertencia10 != null && cas_loaded11[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded11[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded11[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia11-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia11-10").text(cas_loaded11[0].nombrePalabraAdvertencia10);
@@ -4318,7 +5991,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded11[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion1);
+                                //console.log(cas_loaded11[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-1").text(cas_loaded11[0].nombreIndicacion1);
@@ -4327,7 +6000,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion2);
+                                //console.log(cas_loaded11[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-2").text(cas_loaded11[0].nombreIndicacion2);
@@ -4336,7 +6009,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion3);
+                                //console.log(cas_loaded11[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-3").text(cas_loaded11[0].nombreIndicacion3);
@@ -4345,7 +6018,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion4);
+                                //console.log(cas_loaded11[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-4").text(cas_loaded11[0].nombreIndicacion4);
@@ -4354,7 +6027,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion5);
+                                //console.log(cas_loaded11[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-5").text(cas_loaded11[0].nombreIndicacion5);
@@ -4363,7 +6036,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion6);
+                                //console.log(cas_loaded11[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-6").text(cas_loaded11[0].nombreIndicacion6);
@@ -4372,7 +6045,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion7);
+                                //console.log(cas_loaded11[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-7").text(cas_loaded11[0].nombreIndicacion7);
@@ -4381,7 +6054,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion8);
+                                //console.log(cas_loaded11[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-8").text(cas_loaded11[0].nombreIndicacion8);
@@ -4390,7 +6063,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion9);
+                                //console.log(cas_loaded11[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-9").text(cas_loaded11[0].nombreIndicacion9);
@@ -4399,7 +6072,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded11[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded11[0].nombreIndicacion10);
+                                //console.log(cas_loaded11[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion11-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion11-10").text(cas_loaded11[0].nombreIndicacion10);
@@ -4409,7 +6082,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4425,14 +6098,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu11,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded11 = dataParse;
-                            console.log('Cargando ONU11...');
-                            console.log(onu_loaded11);
+                            //console.log('Cargando ONU11...');
+                            //console.log(onu_loaded11);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4446,22 +6119,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas12 != null) {
-                    console.log("Producto 12 cargado");
+                    //console.log("Producto 12 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas12,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded12 = dataParse;
-                            console.log('Cargando CAS12...');
-                            console.log(cas_loaded12);
+                            //console.log('Cargando CAS12...');
+                            //console.log(cas_loaded12);
 
                             if (cas_loaded12[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro1);
+                                //console.log(cas_loaded12[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro12-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-1").text(cas_loaded12[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro12-1").append('<br />');
@@ -4469,7 +6141,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro2);
+                                //console.log(cas_loaded12[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro12-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-2").text(cas_loaded12[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro12-2").append('<br />');
@@ -4477,7 +6149,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro3);
+                                //console.log(cas_loaded12[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro12-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-3").text(cas_loaded12[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro12-3").append('<br />');
@@ -4485,7 +6157,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro4);
+                                //console.log(cas_loaded12[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro12-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-4").text(cas_loaded12[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro12-4").append('<br />');
@@ -4493,7 +6165,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro5);
+                                //console.log(cas_loaded12[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro12-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-5").text(cas_loaded12[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro12-5").append('<br />');
@@ -4501,7 +6173,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro6);
+                                //console.log(cas_loaded12[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro12-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-6").text(cas_loaded12[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro12-6").append('<br />');
@@ -4509,7 +6181,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro7);
+                                //console.log(cas_loaded12[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro12-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-7").text(cas_loaded12[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro12-7").append('<br />');
@@ -4517,7 +6189,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro8);
+                                //console.log(cas_loaded12[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro12-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-8").text(cas_loaded12[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro12-8").append('<br />');
@@ -4525,7 +6197,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro9);
+                                //console.log(cas_loaded12[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro12-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-9").text(cas_loaded12[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro12-9").append('<br />');
@@ -4533,7 +6205,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded12[0].nombreClasePeligro10);
+                                //console.log(cas_loaded12[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro12-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro12-10").text(cas_loaded12[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro12-10").append('<br />');
@@ -4600,7 +6272,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded12[0].nombrePalabraAdvertencia1 != null && cas_loaded12[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-1").text(cas_loaded12[0].nombrePalabraAdvertencia1);
@@ -4609,7 +6281,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia2 != null && cas_loaded12[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-2").text(cas_loaded12[0].nombrePalabraAdvertencia2);
@@ -4618,7 +6290,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia3 != null && cas_loaded12[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-3").text(cas_loaded12[0].nombrePalabraAdvertencia3);
@@ -4627,7 +6299,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia4 != null && cas_loaded12[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-4").text(cas_loaded12[0].nombrePalabraAdvertencia4);
@@ -4636,7 +6308,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia5 != null && cas_loaded12[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-5").text(cas_loaded12[0].nombrePalabraAdvertencia5);
@@ -4645,7 +6317,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia6 != null && cas_loaded12[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-6").text(cas_loaded12[0].nombrePalabraAdvertencia6);
@@ -4654,7 +6326,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia7 != null && cas_loaded12[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-7").text(cas_loaded12[0].nombrePalabraAdvertencia7);
@@ -4663,7 +6335,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia8 != null && cas_loaded12[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-8").text(cas_loaded12[0].nombrePalabraAdvertencia8);
@@ -4672,7 +6344,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia9 != null && cas_loaded12[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-9").text(cas_loaded12[0].nombrePalabraAdvertencia9);
@@ -4681,7 +6353,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombrePalabraAdvertencia10 != null && cas_loaded12[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded12[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded12[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia12-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia12-10").text(cas_loaded12[0].nombrePalabraAdvertencia10);
@@ -4693,7 +6365,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded12[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion1);
+                                //console.log(cas_loaded12[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-1").text(cas_loaded12[0].nombreIndicacion1);
@@ -4702,7 +6374,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion2);
+                                //console.log(cas_loaded12[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-2").text(cas_loaded12[0].nombreIndicacion2);
@@ -4711,7 +6383,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion3);
+                                //console.log(cas_loaded12[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-3").text(cas_loaded12[0].nombreIndicacion3);
@@ -4720,7 +6392,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion4);
+                                //console.log(cas_loaded12[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-4").text(cas_loaded12[0].nombreIndicacion4);
@@ -4729,7 +6401,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion5);
+                                //console.log(cas_loaded12[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-5").text(cas_loaded12[0].nombreIndicacion5);
@@ -4738,7 +6410,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion6);
+                                //console.log(cas_loaded12[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-6").text(cas_loaded12[0].nombreIndicacion6);
@@ -4747,7 +6419,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion7);
+                                //console.log(cas_loaded12[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-7").text(cas_loaded12[0].nombreIndicacion7);
@@ -4756,7 +6428,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion8);
+                                //console.log(cas_loaded12[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-8").text(cas_loaded12[0].nombreIndicacion8);
@@ -4765,7 +6437,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion9);
+                                //console.log(cas_loaded12[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-9").text(cas_loaded12[0].nombreIndicacion9);
@@ -4774,7 +6446,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded12[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded12[0].nombreIndicacion10);
+                                //console.log(cas_loaded12[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion12-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion12-10").text(cas_loaded12[0].nombreIndicacion10);
@@ -4784,7 +6456,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4800,14 +6472,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu12,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded12 = dataParse;
-                            console.log('Cargando ONU12...');
-                            console.log(onu_loaded12);
+                            //console.log('Cargando ONU12...');
+                            //console.log(onu_loaded12);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -4821,22 +6493,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas13 != null) {
-                    console.log("Producto 13 cargado");
+                    //console.log("Producto 13 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas13,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded13 = dataParse;
-                            console.log('Cargando CAS13...');
-                            console.log(cas_loaded13);
+                            //console.log('Cargando CAS13...');
+                            //console.log(cas_loaded13);
 
                             if (cas_loaded13[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro1);
+                                //console.log(cas_loaded13[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro13-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-1").text(cas_loaded13[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro13-1").append('<br />');
@@ -4844,7 +6515,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro2);
+                                //console.log(cas_loaded13[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro13-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-2").text(cas_loaded13[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro13-2").append('<br />');
@@ -4852,7 +6523,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro3);
+                                //console.log(cas_loaded13[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro13-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-3").text(cas_loaded13[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro13-3").append('<br />');
@@ -4860,7 +6531,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro4);
+                                //console.log(cas_loaded13[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro13-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-4").text(cas_loaded13[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro13-4").append('<br />');
@@ -4868,7 +6539,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro5);
+                                //console.log(cas_loaded13[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro13-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-5").text(cas_loaded13[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro13-5").append('<br />');
@@ -4876,7 +6547,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro6);
+                                //console.log(cas_loaded13[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro13-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-6").text(cas_loaded13[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro13-6").append('<br />');
@@ -4884,7 +6555,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro7);
+                                //console.log(cas_loaded13[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro13-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-7").text(cas_loaded13[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro13-7").append('<br />');
@@ -4892,7 +6563,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro8);
+                                //console.log(cas_loaded13[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro13-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-8").text(cas_loaded13[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro13-8").append('<br />');
@@ -4900,7 +6571,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro9);
+                                //console.log(cas_loaded13[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro13-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-9").text(cas_loaded13[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro13-9").append('<br />');
@@ -4908,7 +6579,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded13[0].nombreClasePeligro10);
+                                //console.log(cas_loaded13[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro13-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro13-10").text(cas_loaded13[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro13-10").append('<br />');
@@ -4975,7 +6646,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded13[0].nombrePalabraAdvertencia1 != null && cas_loaded13[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-1").text(cas_loaded13[0].nombrePalabraAdvertencia1);
@@ -4984,7 +6655,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia2 != null && cas_loaded13[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-2").text(cas_loaded13[0].nombrePalabraAdvertencia2);
@@ -4993,7 +6664,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia3 != null && cas_loaded13[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-3").text(cas_loaded13[0].nombrePalabraAdvertencia3);
@@ -5002,7 +6673,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia4 != null && cas_loaded13[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-4").text(cas_loaded13[0].nombrePalabraAdvertencia4);
@@ -5011,7 +6682,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia5 != null && cas_loaded13[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-5").text(cas_loaded13[0].nombrePalabraAdvertencia5);
@@ -5020,7 +6691,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia6 != null && cas_loaded13[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-6").text(cas_loaded13[0].nombrePalabraAdvertencia6);
@@ -5029,7 +6700,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia7 != null && cas_loaded13[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-7").text(cas_loaded13[0].nombrePalabraAdvertencia7);
@@ -5038,7 +6709,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia8 != null && cas_loaded13[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-8").text(cas_loaded13[0].nombrePalabraAdvertencia8);
@@ -5047,7 +6718,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia9 != null && cas_loaded13[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-9").text(cas_loaded13[0].nombrePalabraAdvertencia9);
@@ -5056,7 +6727,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombrePalabraAdvertencia10 != null && cas_loaded13[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded13[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded13[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia13-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia13-10").text(cas_loaded13[0].nombrePalabraAdvertencia10);
@@ -5068,7 +6739,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded13[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion1);
+                                //console.log(cas_loaded13[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-1").text(cas_loaded13[0].nombreIndicacion1);
@@ -5077,7 +6748,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion2);
+                                //console.log(cas_loaded13[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-2").text(cas_loaded13[0].nombreIndicacion2);
@@ -5086,7 +6757,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion3);
+                                //console.log(cas_loaded13[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-3").text(cas_loaded13[0].nombreIndicacion3);
@@ -5095,7 +6766,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion4);
+                                //console.log(cas_loaded13[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-4").text(cas_loaded13[0].nombreIndicacion4);
@@ -5104,7 +6775,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion5);
+                                //console.log(cas_loaded13[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-5").text(cas_loaded13[0].nombreIndicacion5);
@@ -5113,7 +6784,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion6);
+                                //console.log(cas_loaded13[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-6").text(cas_loaded13[0].nombreIndicacion6);
@@ -5122,7 +6793,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion7);
+                                //console.log(cas_loaded13[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-7").text(cas_loaded13[0].nombreIndicacion7);
@@ -5131,7 +6802,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion8);
+                                //console.log(cas_loaded13[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-8").text(cas_loaded13[0].nombreIndicacion8);
@@ -5140,7 +6811,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion9);
+                                //console.log(cas_loaded13[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-9").text(cas_loaded13[0].nombreIndicacion9);
@@ -5149,7 +6820,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded13[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded13[0].nombreIndicacion10);
+                                //console.log(cas_loaded13[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion13-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion13-10").text(cas_loaded13[0].nombreIndicacion10);
@@ -5159,7 +6830,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5175,14 +6846,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu13,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded13 = dataParse;
-                            console.log('Cargando ONU13...');
-                            console.log(onu_loaded13);
+                            //console.log('Cargando ONU13...');
+                            //console.log(onu_loaded13);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5196,22 +6867,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas14 != null) {
-                    console.log("Producto 14 cargado");
+                    //console.log("Producto 14 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas14,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded14 = dataParse;
-                            console.log('Cargando CAS14...');
-                            console.log(cas_loaded14);
+                            //console.log('Cargando CAS14...');
+                            //console.log(cas_loaded14);
 
                             if (cas_loaded14[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro1);
+                                //console.log(cas_loaded14[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro14-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-1").text(cas_loaded14[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro14-1").append('<br />');
@@ -5219,7 +6889,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro2);
+                                //console.log(cas_loaded14[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro14-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-2").text(cas_loaded14[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro14-2").append('<br />');
@@ -5227,7 +6897,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro3);
+                                //console.log(cas_loaded14[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro14-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-3").text(cas_loaded14[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro14-3").append('<br />');
@@ -5235,7 +6905,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro4);
+                                //console.log(cas_loaded14[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro14-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-4").text(cas_loaded14[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro14-4").append('<br />');
@@ -5243,7 +6913,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro5);
+                                //console.log(cas_loaded14[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro14-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-5").text(cas_loaded14[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro14-5").append('<br />');
@@ -5251,7 +6921,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro6);
+                                //console.log(cas_loaded14[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro14-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-6").text(cas_loaded14[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro14-6").append('<br />');
@@ -5259,7 +6929,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro7);
+                                //console.log(cas_loaded14[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro14-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-7").text(cas_loaded14[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro14-7").append('<br />');
@@ -5267,7 +6937,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro8);
+                                //console.log(cas_loaded14[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro14-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-8").text(cas_loaded14[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro14-8").append('<br />');
@@ -5275,7 +6945,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro9);
+                                //console.log(cas_loaded14[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro14-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-9").text(cas_loaded14[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro14-9").append('<br />');
@@ -5283,7 +6953,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded14[0].nombreClasePeligro10);
+                                //console.log(cas_loaded14[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro14-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro14-10").text(cas_loaded14[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro14-10").append('<br />');
@@ -5350,7 +7020,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded14[0].nombrePalabraAdvertencia1 != null && cas_loaded14[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-1").text(cas_loaded14[0].nombrePalabraAdvertencia1);
@@ -5359,7 +7029,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia2 != null && cas_loaded14[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-2").text(cas_loaded14[0].nombrePalabraAdvertencia2);
@@ -5368,7 +7038,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia3 != null && cas_loaded14[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-3").text(cas_loaded14[0].nombrePalabraAdvertencia3);
@@ -5377,7 +7047,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia4 != null && cas_loaded14[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-4").text(cas_loaded14[0].nombrePalabraAdvertencia4);
@@ -5386,7 +7056,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia5 != null && cas_loaded14[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-5").text(cas_loaded14[0].nombrePalabraAdvertencia5);
@@ -5395,7 +7065,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia6 != null && cas_loaded14[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-6").text(cas_loaded14[0].nombrePalabraAdvertencia6);
@@ -5404,7 +7074,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia7 != null && cas_loaded14[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-7").text(cas_loaded14[0].nombrePalabraAdvertencia7);
@@ -5413,7 +7083,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia8 != null && cas_loaded14[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-8").text(cas_loaded14[0].nombrePalabraAdvertencia8);
@@ -5422,7 +7092,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia9 != null && cas_loaded14[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-9").text(cas_loaded14[0].nombrePalabraAdvertencia9);
@@ -5431,7 +7101,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombrePalabraAdvertencia10 != null && cas_loaded14[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded14[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded14[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia14-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia14-10").text(cas_loaded14[0].nombrePalabraAdvertencia10);
@@ -5443,7 +7113,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded14[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion1);
+                                //console.log(cas_loaded14[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-1").text(cas_loaded14[0].nombreIndicacion1);
@@ -5452,7 +7122,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion2);
+                                //console.log(cas_loaded14[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-2").text(cas_loaded14[0].nombreIndicacion2);
@@ -5461,7 +7131,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion3);
+                                //console.log(cas_loaded14[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-3").text(cas_loaded14[0].nombreIndicacion3);
@@ -5470,7 +7140,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion4);
+                                //console.log(cas_loaded14[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-4").text(cas_loaded14[0].nombreIndicacion4);
@@ -5479,7 +7149,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion5);
+                                //console.log(cas_loaded14[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-5").text(cas_loaded14[0].nombreIndicacion5);
@@ -5488,7 +7158,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion6);
+                                //console.log(cas_loaded14[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-6").text(cas_loaded14[0].nombreIndicacion6);
@@ -5497,7 +7167,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion7);
+                                //console.log(cas_loaded14[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-7").text(cas_loaded14[0].nombreIndicacion7);
@@ -5506,7 +7176,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion8);
+                                //console.log(cas_loaded14[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-8").text(cas_loaded14[0].nombreIndicacion8);
@@ -5515,7 +7185,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion9);
+                                //console.log(cas_loaded14[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-9").text(cas_loaded14[0].nombreIndicacion9);
@@ -5524,7 +7194,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded14[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded14[0].nombreIndicacion10);
+                                //console.log(cas_loaded14[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion14-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion14-10").text(cas_loaded14[0].nombreIndicacion10);
@@ -5534,7 +7204,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5550,14 +7220,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu14,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded14 = dataParse;
-                            console.log('Cargando ONU14...');
-                            console.log(onu_loaded14);
+                            //console.log('Cargando ONU14...');
+                            //console.log(onu_loaded14);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5571,22 +7241,21 @@ $(document).ready(function () {
 
                 }
 
-
                 if (loaded_cas15 != null) {
-                    console.log("Producto 15 cargado");
+                    //console.log("Producto 15 cargado");
                     $.ajax({
                         type: "POST",
                         url: "bd/cargarProducto.php",
                         data: "cas=" + loaded_cas15,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             cas_loaded15 = dataParse;
-                            console.log('Cargando CAS14...');
-                            console.log(cas_loaded15);
+                            //console.log('Cargando CAS14...');
+                            //console.log(cas_loaded15);
 
                             if (cas_loaded15[0].nombreClasePeligro1 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro1);
+                                //console.log(cas_loaded15[0].nombreClasePeligro1);
                                 $('#loaded_nombreCategoriaPeligro15-1').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-1").text(cas_loaded15[0].nombreClasePeligro1);
                                 $("#loaded_nombreCategoriaPeligro15-1").append('<br />');
@@ -5594,7 +7263,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro2 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro2);
+                                //console.log(cas_loaded15[0].nombreClasePeligro2);
                                 $('#loaded_nombreCategoriaPeligro15-2').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-2").text(cas_loaded15[0].nombreClasePeligro2);
                                 $("#loaded_nombreCategoriaPeligro15-2").append('<br />');
@@ -5602,7 +7271,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro3 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro3);
+                                //console.log(cas_loaded15[0].nombreClasePeligro3);
                                 $('#loaded_nombreCategoriaPeligro15-3').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-3").text(cas_loaded15[0].nombreClasePeligro3);
                                 $("#loaded_nombreCategoriaPeligro15-3").append('<br />');
@@ -5610,7 +7279,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro4 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro4);
+                                //console.log(cas_loaded15[0].nombreClasePeligro4);
                                 $('#loaded_nombreCategoriaPeligro15-4').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-4").text(cas_loaded15[0].nombreClasePeligro4);
                                 $("#loaded_nombreCategoriaPeligro15-4").append('<br />');
@@ -5618,7 +7287,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro5 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro5);
+                                //console.log(cas_loaded15[0].nombreClasePeligro5);
                                 $('#loaded_nombreCategoriaPeligro15-5').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-5").text(cas_loaded15[0].nombreClasePeligro5);
                                 $("#loaded_nombreCategoriaPeligro15-5").append('<br />');
@@ -5626,7 +7295,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro6 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro6);
+                                //console.log(cas_loaded15[0].nombreClasePeligro6);
                                 $('#loaded_nombreCategoriaPeligro15-6').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-6").text(cas_loaded15[0].nombreClasePeligro6);
                                 $("#loaded_nombreCategoriaPeligro15-6").append('<br />');
@@ -5634,7 +7303,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro7 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro7);
+                                //console.log(cas_loaded15[0].nombreClasePeligro7);
                                 $('#loaded_nombreCategoriaPeligro15-7').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-7").text(cas_loaded15[0].nombreClasePeligro7);
                                 $("#loaded_nombreCategoriaPeligro15-7").append('<br />');
@@ -5642,7 +7311,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro8 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro8);
+                                //console.log(cas_loaded15[0].nombreClasePeligro8);
                                 $('#loaded_nombreCategoriaPeligro15-8').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-8").text(cas_loaded15[0].nombreClasePeligro8);
                                 $("#loaded_nombreCategoriaPeligro15-8").append('<br />');
@@ -5650,7 +7319,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro9 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro9);
+                                //console.log(cas_loaded15[0].nombreClasePeligro9);
                                 $('#loaded_nombreCategoriaPeligro15-9').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-9").text(cas_loaded15[0].nombreClasePeligro9);
                                 $("#loaded_nombreCategoriaPeligro15-9").append('<br />');
@@ -5658,7 +7327,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreClasePeligro10 != null) {
-                                console.log(cas_loaded15[0].nombreClasePeligro10);
+                                //console.log(cas_loaded15[0].nombreClasePeligro10);
                                 $('#loaded_nombreCategoriaPeligro15-10').removeAttr('hidden');
                                 $("#loaded_nombreCategoriaPeligro15-10").text(cas_loaded15[0].nombreClasePeligro10);
                                 $("#loaded_nombreCategoriaPeligro15-10").append('<br />');
@@ -5725,7 +7394,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded15[0].nombrePalabraAdvertencia1 != null && cas_loaded15[0].nombrePalabraAdvertencia1 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia1);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia1);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-1').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-1").text(cas_loaded15[0].nombrePalabraAdvertencia1);
@@ -5734,7 +7403,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia2 != null && cas_loaded15[0].nombrePalabraAdvertencia2 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia2);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia2);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-2').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-2").text(cas_loaded15[0].nombrePalabraAdvertencia2);
@@ -5743,7 +7412,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia3 != null && cas_loaded15[0].nombrePalabraAdvertencia3 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia3);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia3);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-3').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-3").text(cas_loaded15[0].nombrePalabraAdvertencia3);
@@ -5752,7 +7421,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia4 != null && cas_loaded15[0].nombrePalabraAdvertencia4 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia4);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia4);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-4').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-4").text(cas_loaded15[0].nombrePalabraAdvertencia4);
@@ -5761,7 +7430,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia5 != null && cas_loaded15[0].nombrePalabraAdvertencia5 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia5);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia5);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-5').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-5").text(cas_loaded15[0].nombrePalabraAdvertencia5);
@@ -5770,7 +7439,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia6 != null && cas_loaded15[0].nombrePalabraAdvertencia6 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia6);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia6);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-6').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-6").text(cas_loaded15[0].nombrePalabraAdvertencia6);
@@ -5779,7 +7448,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia7 != null && cas_loaded15[0].nombrePalabraAdvertencia7 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia7);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia7);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-7').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-7").text(cas_loaded15[0].nombrePalabraAdvertencia7);
@@ -5788,7 +7457,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia8 != null && cas_loaded15[0].nombrePalabraAdvertencia8 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia8);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia8);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-8').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-8").text(cas_loaded15[0].nombrePalabraAdvertencia8);
@@ -5797,7 +7466,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia9 != null && cas_loaded15[0].nombrePalabraAdvertencia9 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia9);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia9);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-9').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-9").text(cas_loaded15[0].nombrePalabraAdvertencia9);
@@ -5806,7 +7475,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombrePalabraAdvertencia10 != null && cas_loaded15[0].nombrePalabraAdvertencia10 != "N/A") {
-                                console.log(cas_loaded15[0].nombrePalabraAdvertencia10);
+                                //console.log(cas_loaded15[0].nombrePalabraAdvertencia10);
                                 $('#defaultPalabraAdvertenciaNA').remove();
                                 $('#loaded_nombrePalabraAdvertencia15-10').removeAttr('hidden');
                                 $("#loaded_nombrePalabraAdvertencia15-10").text(cas_loaded15[0].nombrePalabraAdvertencia10);
@@ -5818,7 +7487,7 @@ $(document).ready(function () {
 
                             //Aquí se muestran las palabras de advertencia
                             if (cas_loaded15[0].nombreIndicacion1 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion1);
+                                //console.log(cas_loaded15[0].nombreIndicacion1);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-1').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-1").text(cas_loaded15[0].nombreIndicacion1);
@@ -5827,7 +7496,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion2 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion2);
+                                //console.log(cas_loaded15[0].nombreIndicacion2);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-2').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-2").text(cas_loaded15[0].nombreIndicacion2);
@@ -5836,7 +7505,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion3 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion3);
+                                //console.log(cas_loaded15[0].nombreIndicacion3);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-3').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-3").text(cas_loaded15[0].nombreIndicacion3);
@@ -5845,7 +7514,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion4 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion4);
+                                //console.log(cas_loaded15[0].nombreIndicacion4);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-4').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-4").text(cas_loaded15[0].nombreIndicacion4);
@@ -5854,7 +7523,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion5 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion5);
+                                //console.log(cas_loaded15[0].nombreIndicacion5);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-5').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-5").text(cas_loaded15[0].nombreIndicacion5);
@@ -5863,7 +7532,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion6 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion6);
+                                //console.log(cas_loaded15[0].nombreIndicacion6);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-6').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-6").text(cas_loaded15[0].nombreIndicacion6);
@@ -5872,7 +7541,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion7 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion7);
+                                //console.log(cas_loaded15[0].nombreIndicacion7);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-7').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-7").text(cas_loaded15[0].nombreIndicacion7);
@@ -5881,7 +7550,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion8 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion8);
+                                //console.log(cas_loaded15[0].nombreIndicacion8);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-8').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-8").text(cas_loaded15[0].nombreIndicacion8);
@@ -5890,7 +7559,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion9 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion9);
+                                //console.log(cas_loaded15[0].nombreIndicacion9);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-9').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-9").text(cas_loaded15[0].nombreIndicacion9);
@@ -5899,7 +7568,7 @@ $(document).ready(function () {
                             }
 
                             if (cas_loaded15[0].nombreIndicacion10 != null) {
-                                console.log(cas_loaded15[0].nombreIndicacion10);
+                                //console.log(cas_loaded15[0].nombreIndicacion10);
                                 $('#defaultNombreIndicacion').remove();
                                 $('#loaded_nombreIndicacion15-10').removeAttr('hidden');
                                 $("#loaded_nombreIndicacion15-10").text(cas_loaded15[0].nombreIndicacion10);
@@ -5909,7 +7578,7 @@ $(document).ready(function () {
 
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5925,14 +7594,14 @@ $(document).ready(function () {
                         url: "bd/cargarOnu.php",
                         data: "onu=" + loaded_onu15,
                         success: function (data) {
-                            //console.log(data);
+                            ////console.log(data);
                             dataParse = JSON.parse(data);
                             onu_loaded15 = dataParse;
-                            console.log('Cargando ONU15...');
-                            console.log(onu_loaded15);
+                            //console.log('Cargando ONU15...');
+                            //console.log(onu_loaded15);
                         },
                         error: function (textStatus, errorThrown) {
-                            console.log(textStatus, errorThrown);
+                            //console.log(textStatus, errorThrown);
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Oops...',
@@ -5947,7 +7616,7 @@ $(document).ready(function () {
                 }
             },
             error: function (textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
+                //console.log(textStatus, errorThrown);
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',

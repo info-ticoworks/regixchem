@@ -982,6 +982,7 @@
                                                     <p class="titulo3">Clasificación de la sustancia o de la mezcla </p>
                                                     <p class="subtitulo">De acuerdo con los criterios del GHS (ONU)</p>
                                                     <br>
+                                                    <p class="leftText" id="defaultNoCategoria">Este producto es clasificado como no peligroso</p>
                                                     <p class="leftText" id="loaded_nombreCategoriaPeligro1-1" hidden>Categoría 1.</p>
                                                     <p class="leftText" id="loaded_nombreCategoriaPeligro1-2" hidden>Categoría 2.</p>
                                                     <p class="leftText" id="loaded_nombreCategoriaPeligro1-3" hidden>Categoría 3.</p>
@@ -1169,6 +1170,7 @@
 
 
                                                     <br>
+                                                    <p class="leftText" id="defaultNoPictograma">Este producto es clasificado como no peligroso</p>
                                                     <img src="" width="115" height="115" id="loaded_imagenPictograma1-1" hidden>
                                                     <img src="" width="115" height="115" id="loaded_imagenPictograma1-2" hidden>
                                                     <img src="" width="115" height="115" id="loaded_imagenPictograma1-3" hidden>
@@ -1705,18 +1707,16 @@
                                                     <p class="leftText" id="loaded_nombreIndicacion15-10" hidden>Indicación 10.</p>
                                                     <br>
                                                     <br>
+                                                    <br>
 
                                                         
                                                     
-                                                    
-                                                    <span class="p">Puede ser corrosiva para los metales.</span>
-                                                    <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">Nocivo
-                                                        en caso de ingestión</p>
-                                                    <p style="padding-left: 198pt;text-indent: 0pt;text-align: left;">
-                                                        Provoca quemaduras graves en la piel y
-                                                        lesiones oculares graves Provoca lesiones oculares graves</p>
-                                                    <p style="padding-top: 10pt;text-indent: 0pt;text-align: left;"><br />
-                                                    </p>
+
+
+
+
+
+
                                                     <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;">
                                                         Consejos de prudencia (prevención):</p>
                                                     <table style="border-collapse:collapse;margin-left:79.734pt"

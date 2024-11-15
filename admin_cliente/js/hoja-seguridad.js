@@ -7,12 +7,37 @@ $(document).ready(function () {
     //Fórmulas
 
     //Precarga de tablas.
-    window.onload = function() {
+    window.onload = function () {
         var originalState = $("#formHojaSeguridad").clone();
         originalForm = originalState;
     }
 
-    function irritacion1ingrediente (ingrediente1, cantidad) {
+
+    let miPromesa = new Promise((resolve, reject) => {
+        let condicion = true;
+        if(condicion){
+            resolve('Resolvio correctamente');
+        } else {
+            reject('Se produjo un error');
+        }
+    });
+
+    miPromesa.then(valor => {
+        console.log(valor);
+    }).catch(valor => {
+        console.log(valor);
+    })
+
+
+    irritacion70Check = 0;
+    cantidad70 = 0;
+    irritacion71Check = 0;
+    cantidad71 = 0;
+    irritacion72Check = 0;
+    cantidad72 = 0;
+
+
+    function irritacion1ingrediente(ingrediente1, cantidad) {
         //console.log("Categoria antes de la formula: ", ingrediente1);
         if (ingrediente1 === 70 && cantidad >= 5) {
             ingrediente1 = ingrediente1
@@ -31,7 +56,7 @@ $(document).ready(function () {
         // } else {
         //     idCategoria = "N/A"
         // } 
-        
+
         // if (idCategoria === 72 && cantidad >= 10) {
         //     idCategoria = 72
         // } else if (idCategoria === 72 && cantidad <= 10) {
@@ -42,7 +67,7 @@ $(document).ready(function () {
         //console.log("Categoria despues de la formula: ", idCategoria);
     }
 
-    function irritacion2ingredientes (ingrediente1, ingrediente2, cantidad) {
+    function irritacion2ingredientes(ingrediente1, ingrediente2, cantidad) {
         if (idCategoria === 70 && cantidad >= 5) {
             idCategoria = idCategoria
         } else if (idCategoria === 70 && cantidad >= 1 && cantidad <= 5) {
@@ -56,7 +81,7 @@ $(document).ready(function () {
         }
     }
 
-    function irritacion3ingredientes (ingrediente1, ingrediente2, ingrediente3, cantidad) {
+    function irritacion3ingredientes(ingrediente1, ingrediente2, ingrediente3, cantidad) {
         if (idCategoria === 70 && cantidad >= 5) {
             idCategoria = idCategoria
         } else if (idCategoria === 70 && cantidad >= 1 && cantidad <= 5) {
@@ -70,18 +95,18 @@ $(document).ready(function () {
         }
     }
 
-    function deleteDuplicatedIDs () {
+    function deleteDuplicatedIDs() {
         //console.log('Eliminando duplicados...');
         $('[id]').each(function () {
             var ids = $('[id="' + this.id + '"]');
-            if (ids.length>1) {                    
-                ids.not(this).remove();            
+            if (ids.length > 1) {
+                ids.not(this).remove();
             }
             return;
         });
     };
 
-    function deleteDuplicatedPalabraAdvertencia () {
+    function deleteDuplicatedPalabraAdvertencia() {
         //console.log('Eliminando duplicados de Palabra de advertencia...');
         $('[id]').each(function () {
             if ($("#Peligro").length) {
@@ -321,1677 +346,4765 @@ $(document).ready(function () {
 
                 //Precarga de datos de Clases
 
-                irritacionCount = 0;
-
-                if (loaded_cas1 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded1 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded1);
-
-                            if (cas_loaded1[0].idClasePeligro1 != null) {
-                                if (cas_loaded1[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro2 != null) {
-                                if (cas_loaded1[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro3 != null) {
-                                if (cas_loaded1[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro4 != null) {
-                                if (cas_loaded1[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro5 != null) {
-                                if (cas_loaded1[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro6 != null) {
-                                if (cas_loaded1[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro7 != null) {
-                                if (cas_loaded1[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro8 != null) {
-                                if (cas_loaded1[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro9 != null) {
-                                if (cas_loaded1[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded1[0].idClasePeligro10 != null) {
-                                if (cas_loaded1[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas2 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas2,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded2 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded2);
-
-                            if (cas_loaded2[0].idClasePeligro1 != null) {
-                                if (cas_loaded2[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro2 != null) {
-                                if (cas_loaded2[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro3 != null) {
-                                if (cas_loaded2[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro4 != null) {
-                                if (cas_loaded2[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro5 != null) {
-                                if (cas_loaded2[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro6 != null) {
-                                if (cas_loaded2[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro7 != null) {
-                                if (cas_loaded2[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro8 != null) {
-                                if (cas_loaded2[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro9 != null) {
-                                if (cas_loaded2[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded2[0].idClasePeligro10 != null) {
-                                if (cas_loaded2[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas3 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas3,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded3 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded3);
-
-                            if (cas_loaded3[0].idClasePeligro1 != null) {
-                                if (cas_loaded3[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro2 != null) {
-                                if (cas_loaded3[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro3 != null) {
-                                if (cas_loaded3[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro4 != null) {
-                                if (cas_loaded3[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro5 != null) {
-                                if (cas_loaded3[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro6 != null) {
-                                if (cas_loaded3[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro7 != null) {
-                                if (cas_loaded3[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro8 != null) {
-                                if (cas_loaded3[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro9 != null) {
-                                if (cas_loaded3[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded3[0].idClasePeligro10 != null) {
-                                if (cas_loaded3[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas4 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas4,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded4 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded4);
-
-                            if (cas_loaded4[0].idClasePeligro1 != null) {
-                                if (cas_loaded4[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro2 != null) {
-                                if (cas_loaded4[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro3 != null) {
-                                if (cas_loaded4[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro4 != null) {
-                                if (cas_loaded4[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro5 != null) {
-                                if (cas_loaded4[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro6 != null) {
-                                if (cas_loaded4[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro7 != null) {
-                                if (cas_loaded4[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro8 != null) {
-                                if (cas_loaded4[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro9 != null) {
-                                if (cas_loaded4[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded4[0].idClasePeligro10 != null) {
-                                if (cas_loaded4[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas5 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas5,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded5 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded5);
-
-                            if (cas_loaded5[0].idClasePeligro1 != null) {
-                                if (cas_loaded5[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro2 != null) {
-                                if (cas_loaded5[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro3 != null) {
-                                if (cas_loaded5[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro4 != null) {
-                                if (cas_loaded5[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro5 != null) {
-                                if (cas_loaded5[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro6 != null) {
-                                if (cas_loaded5[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro7 != null) {
-                                if (cas_loaded5[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro8 != null) {
-                                if (cas_loaded5[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro9 != null) {
-                                if (cas_loaded5[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded5[0].idClasePeligro10 != null) {
-                                if (cas_loaded5[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas6 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas6,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded6 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded6);
-
-                            if (cas_loaded6[0].idClasePeligro1 != null) {
-                                if (cas_loaded6[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro2 != null) {
-                                if (cas_loaded6[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro3 != null) {
-                                if (cas_loaded6[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro4 != null) {
-                                if (cas_loaded6[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro5 != null) {
-                                if (cas_loaded6[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro6 != null) {
-                                if (cas_loaded6[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro7 != null) {
-                                if (cas_loaded6[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro8 != null) {
-                                if (cas_loaded6[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro9 != null) {
-                                if (cas_loaded6[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded6[0].idClasePeligro10 != null) {
-                                if (cas_loaded6[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas7 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas7,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded7 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded7);
-
-                            if (cas_loaded7[0].idClasePeligro1 != null) {
-                                if (cas_loaded7[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro2 != null) {
-                                if (cas_loaded7[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro3 != null) {
-                                if (cas_loaded7[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro4 != null) {
-                                if (cas_loaded7[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro5 != null) {
-                                if (cas_loaded7[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro6 != null) {
-                                if (cas_loaded7[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro7 != null) {
-                                if (cas_loaded7[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro8 != null) {
-                                if (cas_loaded7[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro9 != null) {
-                                if (cas_loaded7[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded7[0].idClasePeligro10 != null) {
-                                if (cas_loaded7[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas8 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas8,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded8 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded8);
-
-                            if (cas_loaded8[0].idClasePeligro1 != null) {
-                                if (cas_loaded8[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro2 != null) {
-                                if (cas_loaded8[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro3 != null) {
-                                if (cas_loaded8[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro4 != null) {
-                                if (cas_loaded8[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro5 != null) {
-                                if (cas_loaded8[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro6 != null) {
-                                if (cas_loaded8[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro7 != null) {
-                                if (cas_loaded8[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro8 != null) {
-                                if (cas_loaded8[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro9 != null) {
-                                if (cas_loaded8[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded8[0].idClasePeligro10 != null) {
-                                if (cas_loaded8[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas9 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas9,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded9 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded9);
-
-                            if (cas_loaded9[0].idClasePeligro1 != null) {
-                                if (cas_loaded9[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro2 != null) {
-                                if (cas_loaded9[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro3 != null) {
-                                if (cas_loaded9[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro4 != null) {
-                                if (cas_loaded9[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro5 != null) {
-                                if (cas_loaded9[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro6 != null) {
-                                if (cas_loaded9[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro7 != null) {
-                                if (cas_loaded9[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro8 != null) {
-                                if (cas_loaded9[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro9 != null) {
-                                if (cas_loaded9[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded9[0].idClasePeligro10 != null) {
-                                if (cas_loaded9[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas10 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas10,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded10 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded10);
-
-                            if (cas_loaded10[0].idClasePeligro1 != null) {
-                                if (cas_loaded10[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro2 != null) {
-                                if (cas_loaded10[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro3 != null) {
-                                if (cas_loaded10[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro4 != null) {
-                                if (cas_loaded10[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro5 != null) {
-                                if (cas_loaded10[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro6 != null) {
-                                if (cas_loaded10[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro7 != null) {
-                                if (cas_loaded10[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro8 != null) {
-                                if (cas_loaded10[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro9 != null) {
-                                if (cas_loaded10[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded10[0].idClasePeligro10 != null) {
-                                if (cas_loaded10[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas11 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas11,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded11 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded11);
-
-                            if (cas_loaded11[0].idClasePeligro1 != null) {
-                                if (cas_loaded11[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro2 != null) {
-                                if (cas_loaded11[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro3 != null) {
-                                if (cas_loaded11[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro4 != null) {
-                                if (cas_loaded11[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro5 != null) {
-                                if (cas_loaded11[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro6 != null) {
-                                if (cas_loaded11[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro7 != null) {
-                                if (cas_loaded11[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro8 != null) {
-                                if (cas_loaded11[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro9 != null) {
-                                if (cas_loaded11[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded11[0].idClasePeligro10 != null) {
-                                if (cas_loaded11[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas12 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas12,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded12 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded12);
-
-                            if (cas_loaded12[0].idClasePeligro1 != null) {
-                                if (cas_loaded12[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro2 != null) {
-                                if (cas_loaded12[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro3 != null) {
-                                if (cas_loaded12[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro4 != null) {
-                                if (cas_loaded12[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro5 != null) {
-                                if (cas_loaded12[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro6 != null) {
-                                if (cas_loaded12[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro7 != null) {
-                                if (cas_loaded12[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro8 != null) {
-                                if (cas_loaded12[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro9 != null) {
-                                if (cas_loaded12[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded12[0].idClasePeligro10 != null) {
-                                if (cas_loaded12[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas13 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas13,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded13 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded13);
-
-                            if (cas_loaded13[0].idClasePeligro1 != null) {
-                                if (cas_loaded13[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro2 != null) {
-                                if (cas_loaded13[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro3 != null) {
-                                if (cas_loaded13[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro4 != null) {
-                                if (cas_loaded13[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro5 != null) {
-                                if (cas_loaded13[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro6 != null) {
-                                if (cas_loaded13[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro7 != null) {
-                                if (cas_loaded13[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro8 != null) {
-                                if (cas_loaded13[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro9 != null) {
-                                if (cas_loaded13[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded13[0].idClasePeligro10 != null) {
-                                if (cas_loaded13[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas14 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas14,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded14 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded14);
-
-                            if (cas_loaded14[0].idClasePeligro1 != null) {
-                                if (cas_loaded14[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro2 != null) {
-                                if (cas_loaded14[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro3 != null) {
-                                if (cas_loaded14[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro4 != null) {
-                                if (cas_loaded14[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro5 != null) {
-                                if (cas_loaded14[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro6 != null) {
-                                if (cas_loaded14[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro7 != null) {
-                                if (cas_loaded14[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro8 != null) {
-                                if (cas_loaded14[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro9 != null) {
-                                if (cas_loaded14[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded14[0].idClasePeligro10 != null) {
-                                if (cas_loaded14[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                if (loaded_cas15 != null) {
-                    //console.log("Producto 1 cargado");
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarProducto.php",
-                        data: "cas=" + loaded_cas15,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            cas_loaded15 = dataParse;
-                            //console.log('Cargando CAS1...');
-                            ////console.log(cas_loaded15);
-
-                            if (cas_loaded15[0].idClasePeligro1 != null) {
-                                if (cas_loaded15[0].idClasePeligro1 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }     
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro2 != null) {
-                                if (cas_loaded15[0].idClasePeligro2 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro3 != null) {
-                                if (cas_loaded15[0].idClasePeligro3 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro4 != null) {
-                                if (cas_loaded15[0].idClasePeligro4 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro5 != null) {
-                                if (cas_loaded15[0].idClasePeligro5 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }  
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro6 != null) {
-                                if (cas_loaded15[0].idClasePeligro6 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro7 != null) {
-                                if (cas_loaded15[0].idClasePeligro7 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro8 != null) {
-                                if (cas_loaded15[0].idClasePeligro8 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro9 != null) {
-                                if (cas_loaded15[0].idClasePeligro9 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                            if (cas_loaded15[0].idClasePeligro10 != null) {
-                                if (cas_loaded15[0].idClasePeligro10 === 70) {
-                                    irritacionCount = irritacionCount + 1;
-                                }
-                            }
-
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    }),
-
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
-                }
-
-                console.log ("Categorías con el número 70: ", irritacionCount)
-
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                //checkCategorias();
+
+                let checkCategorias = new Promise((resolve, reject) => {
+
+                    if (loaded_cas1 != null) {
+                        console.log("Producto 1 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas1,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded1 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded1);
+            
+                                // console.log(cas_loaded1[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded1[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded1[0].idCategoriaPeligro1 != null && cas_loaded1[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro2 != null && cas_loaded1[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro3 != null && cas_loaded1[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro4 != null && cas_loaded1[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro5 != null && cas_loaded1[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro6 != null && cas_loaded1[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro7 != null && cas_loaded1[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro8 != null && cas_loaded1[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro9 != null && cas_loaded1[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro10 != null && cas_loaded1[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad1 > cantidad70) {
+                                        cantidad70 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded1[0].idCategoriaPeligro1 != null && cas_loaded1[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro2 != null && cas_loaded1[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro3 != null && cas_loaded1[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro4 != null && cas_loaded1[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro5 != null && cas_loaded1[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro6 != null && cas_loaded1[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro7 != null && cas_loaded1[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro8 != null && cas_loaded1[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro9 != null && cas_loaded1[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro10 != null && cas_loaded1[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad1 > cantidad71) {
+                                        cantidad71 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded1[0].idCategoriaPeligro1 != null && cas_loaded1[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro2 != null && cas_loaded1[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro3 != null && cas_loaded1[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro4 != null && cas_loaded1[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro5 != null && cas_loaded1[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro6 != null && cas_loaded1[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro7 != null && cas_loaded1[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro8 != null && cas_loaded1[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro9 != null && cas_loaded1[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded1[0].idCategoriaPeligro10 != null && cas_loaded1[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad1 > cantidad72) {
+                                        cantidad72 = loaded_cantidad1
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+            
+                    }
+            
+                    if (loaded_cas2 != null) {
+                        console.log("Producto 2 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas2,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded2 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded2);
+            
+                                // console.log(cas_loaded2[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded2[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded2[0].idCategoriaPeligro1 != null && cas_loaded2[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro2 != null && cas_loaded2[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro3 != null && cas_loaded2[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro4 != null && cas_loaded2[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro5 != null && cas_loaded2[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro6 != null && cas_loaded2[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro7 != null && cas_loaded2[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro8 != null && cas_loaded2[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro9 != null && cas_loaded2[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro10 != null && cas_loaded2[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad2 > cantidad70) {
+                                        cantidad70 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded2[0].idCategoriaPeligro1 != null && cas_loaded2[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro2 != null && cas_loaded2[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro3 != null && cas_loaded2[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro4 != null && cas_loaded2[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro5 != null && cas_loaded2[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro6 != null && cas_loaded2[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro7 != null && cas_loaded2[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro8 != null && cas_loaded2[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro9 != null && cas_loaded2[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro10 != null && cas_loaded2[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad2 > cantidad71) {
+                                        cantidad71 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded2[0].idCategoriaPeligro1 != null && cas_loaded2[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro2 != null && cas_loaded2[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro3 != null && cas_loaded2[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro4 != null && cas_loaded2[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro5 != null && cas_loaded2[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro6 != null && cas_loaded2[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro7 != null && cas_loaded2[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro8 != null && cas_loaded2[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro9 != null && cas_loaded2[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded2[0].idCategoriaPeligro10 != null && cas_loaded2[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad2 > cantidad72) {
+                                        cantidad72 = loaded_cantidad2
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas3 != null) {
+                        console.log("Producto 3 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas3,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded3 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded3);
+            
+                                // console.log(cas_loaded3[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded3[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded3[0].idCategoriaPeligro1 != null && cas_loaded3[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro2 != null && cas_loaded3[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro3 != null && cas_loaded3[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro4 != null && cas_loaded3[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro5 != null && cas_loaded3[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro6 != null && cas_loaded3[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro7 != null && cas_loaded3[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro8 != null && cas_loaded3[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro9 != null && cas_loaded3[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro10 != null && cas_loaded3[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad3 > cantidad70) {
+                                        cantidad70 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded3[0].idCategoriaPeligro1 != null && cas_loaded3[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro2 != null && cas_loaded3[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro3 != null && cas_loaded3[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro4 != null && cas_loaded3[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro5 != null && cas_loaded3[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro6 != null && cas_loaded3[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro7 != null && cas_loaded3[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro8 != null && cas_loaded3[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro9 != null && cas_loaded3[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro10 != null && cas_loaded3[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad3 > cantidad71) {
+                                        cantidad71 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded3[0].idCategoriaPeligro1 != null && cas_loaded3[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro2 != null && cas_loaded3[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro3 != null && cas_loaded3[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro4 != null && cas_loaded3[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro5 != null && cas_loaded3[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro6 != null && cas_loaded3[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro7 != null && cas_loaded3[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro8 != null && cas_loaded3[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro9 != null && cas_loaded3[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded3[0].idCategoriaPeligro10 != null && cas_loaded3[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad3 > cantidad72) {
+                                        cantidad72 = loaded_cantidad3
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas4 != null) {
+                        console.log("Producto 4 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas4,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded4 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded4);
+            
+                                // console.log(cas_loaded4[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded4[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded4[0].idCategoriaPeligro1 != null && cas_loaded4[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro2 != null && cas_loaded4[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro3 != null && cas_loaded4[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro4 != null && cas_loaded4[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro5 != null && cas_loaded4[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro6 != null && cas_loaded4[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro7 != null && cas_loaded4[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro8 != null && cas_loaded4[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro9 != null && cas_loaded4[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro10 != null && cas_loaded4[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad4 > cantidad70) {
+                                        cantidad70 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded4[0].idCategoriaPeligro1 != null && cas_loaded4[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro2 != null && cas_loaded4[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro3 != null && cas_loaded4[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro4 != null && cas_loaded4[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro5 != null && cas_loaded4[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro6 != null && cas_loaded4[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro7 != null && cas_loaded4[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro8 != null && cas_loaded4[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro9 != null && cas_loaded4[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro10 != null && cas_loaded4[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad4 > cantidad71) {
+                                        cantidad71 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded4[0].idCategoriaPeligro1 != null && cas_loaded4[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro2 != null && cas_loaded4[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro3 != null && cas_loaded4[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro4 != null && cas_loaded4[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro5 != null && cas_loaded4[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro6 != null && cas_loaded4[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro7 != null && cas_loaded4[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro8 != null && cas_loaded4[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro9 != null && cas_loaded4[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded4[0].idCategoriaPeligro10 != null && cas_loaded4[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad4 > cantidad72) {
+                                        cantidad72 = loaded_cantidad4
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas5 != null) {
+                        console.log("Producto 5 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas5,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded5 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded5);
+            
+                                // console.log(cas_loaded5[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded5[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded5[0].idCategoriaPeligro1 != null && cas_loaded5[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro2 != null && cas_loaded5[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro3 != null && cas_loaded5[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro4 != null && cas_loaded5[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro5 != null && cas_loaded5[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro6 != null && cas_loaded5[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro7 != null && cas_loaded5[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro8 != null && cas_loaded5[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro9 != null && cas_loaded5[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro10 != null && cas_loaded5[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad5 > cantidad70) {
+                                        cantidad70 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded5[0].idCategoriaPeligro1 != null && cas_loaded5[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro2 != null && cas_loaded5[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro3 != null && cas_loaded5[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro4 != null && cas_loaded5[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro5 != null && cas_loaded5[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro6 != null && cas_loaded5[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro7 != null && cas_loaded5[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro8 != null && cas_loaded5[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro9 != null && cas_loaded5[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro10 != null && cas_loaded5[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad5 > cantidad71) {
+                                        cantidad71 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded5[0].idCategoriaPeligro1 != null && cas_loaded5[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro2 != null && cas_loaded5[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro3 != null && cas_loaded5[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro4 != null && cas_loaded5[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro5 != null && cas_loaded5[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro6 != null && cas_loaded5[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro7 != null && cas_loaded5[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro8 != null && cas_loaded5[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro9 != null && cas_loaded5[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded5[0].idCategoriaPeligro10 != null && cas_loaded5[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad5 > cantidad72) {
+                                        cantidad72 = loaded_cantidad5
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas6 != null) {
+                        console.log("Producto 6 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas6,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded6 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded6);
+            
+                                // console.log(cas_loaded6[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded6[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded6[0].idCategoriaPeligro1 != null && cas_loaded6[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro2 != null && cas_loaded6[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro3 != null && cas_loaded6[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro4 != null && cas_loaded6[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro5 != null && cas_loaded6[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro6 != null && cas_loaded6[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro7 != null && cas_loaded6[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro8 != null && cas_loaded6[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro9 != null && cas_loaded6[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro10 != null && cas_loaded6[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad6 > cantidad70) {
+                                        cantidad70 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded6[0].idCategoriaPeligro1 != null && cas_loaded6[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro2 != null && cas_loaded6[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro3 != null && cas_loaded6[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro4 != null && cas_loaded6[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro5 != null && cas_loaded6[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro6 != null && cas_loaded6[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro7 != null && cas_loaded6[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro8 != null && cas_loaded6[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro9 != null && cas_loaded6[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro10 != null && cas_loaded6[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad6 > cantidad71) {
+                                        cantidad71 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded6[0].idCategoriaPeligro1 != null && cas_loaded6[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro2 != null && cas_loaded6[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro3 != null && cas_loaded6[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro4 != null && cas_loaded6[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro5 != null && cas_loaded6[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro6 != null && cas_loaded6[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro7 != null && cas_loaded6[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro8 != null && cas_loaded6[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro9 != null && cas_loaded6[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded6[0].idCategoriaPeligro10 != null && cas_loaded6[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad6 > cantidad72) {
+                                        cantidad72 = loaded_cantidad6
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas7 != null) {
+                        console.log("Producto 7 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas7,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded7 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded7);
+            
+                                // console.log(cas_loaded7[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded7[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded7[0].idCategoriaPeligro1 != null && cas_loaded7[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro2 != null && cas_loaded7[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro3 != null && cas_loaded7[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro4 != null && cas_loaded7[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro5 != null && cas_loaded7[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro6 != null && cas_loaded7[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro7 != null && cas_loaded7[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro8 != null && cas_loaded7[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro9 != null && cas_loaded7[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro10 != null && cas_loaded7[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad7 > cantidad70) {
+                                        cantidad70 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded7[0].idCategoriaPeligro1 != null && cas_loaded7[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro2 != null && cas_loaded7[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro3 != null && cas_loaded7[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro4 != null && cas_loaded7[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro5 != null && cas_loaded7[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro6 != null && cas_loaded7[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro7 != null && cas_loaded7[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro8 != null && cas_loaded7[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro9 != null && cas_loaded7[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro10 != null && cas_loaded7[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad7 > cantidad71) {
+                                        cantidad71 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded7[0].idCategoriaPeligro1 != null && cas_loaded7[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro2 != null && cas_loaded7[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro3 != null && cas_loaded7[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro4 != null && cas_loaded7[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro5 != null && cas_loaded7[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro6 != null && cas_loaded7[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro7 != null && cas_loaded7[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro8 != null && cas_loaded7[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro9 != null && cas_loaded7[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded7[0].idCategoriaPeligro10 != null && cas_loaded7[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad7 > cantidad72) {
+                                        cantidad72 = loaded_cantidad7
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas8 != null) {
+                        console.log("Producto 8 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas8,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded8 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded8);
+            
+                                // console.log(cas_loaded8[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded8[0].idCategoriaPeligro10)
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded8[0].idCategoriaPeligro1 != null && cas_loaded8[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro2 != null && cas_loaded8[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro3 != null && cas_loaded8[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro4 != null && cas_loaded8[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro5 != null && cas_loaded8[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro6 != null && cas_loaded8[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro7 != null && cas_loaded8[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro8 != null && cas_loaded8[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro9 != null && cas_loaded8[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro10 != null && cas_loaded8[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad8 > cantidad70) {
+                                        cantidad70 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded8[0].idCategoriaPeligro1 != null && cas_loaded8[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro2 != null && cas_loaded8[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro3 != null && cas_loaded8[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro4 != null && cas_loaded8[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro5 != null && cas_loaded8[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro6 != null && cas_loaded8[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro7 != null && cas_loaded8[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro8 != null && cas_loaded8[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro9 != null && cas_loaded8[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro10 != null && cas_loaded8[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad8 > cantidad71) {
+                                        cantidad71 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded8[0].idCategoriaPeligro1 != null && cas_loaded8[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro2 != null && cas_loaded8[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro3 != null && cas_loaded8[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro4 != null && cas_loaded8[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro5 != null && cas_loaded8[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro6 != null && cas_loaded8[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro7 != null && cas_loaded8[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro8 != null && cas_loaded8[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro9 != null && cas_loaded8[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded8[0].idCategoriaPeligro10 != null && cas_loaded8[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad8 > cantidad72) {
+                                        cantidad72 = loaded_cantidad8
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas9 != null) {
+                        console.log("Producto 9 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas9,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded9 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded9);
+            
+                                // console.log(cas_loaded9[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded9[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded9[0].idCategoriaPeligro1 != null && cas_loaded9[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro2 != null && cas_loaded9[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro3 != null && cas_loaded9[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro4 != null && cas_loaded9[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro5 != null && cas_loaded9[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro6 != null && cas_loaded9[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro7 != null && cas_loaded9[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro8 != null && cas_loaded9[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro9 != null && cas_loaded9[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro10 != null && cas_loaded9[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad9 > cantidad70) {
+                                        cantidad70 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded9[0].idCategoriaPeligro1 != null && cas_loaded9[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro2 != null && cas_loaded9[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro3 != null && cas_loaded9[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro4 != null && cas_loaded9[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro5 != null && cas_loaded9[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro6 != null && cas_loaded9[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro7 != null && cas_loaded9[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro8 != null && cas_loaded9[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro9 != null && cas_loaded9[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro10 != null && cas_loaded9[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad9 > cantidad71) {
+                                        cantidad71 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded9[0].idCategoriaPeligro1 != null && cas_loaded9[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro2 != null && cas_loaded9[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro3 != null && cas_loaded9[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro4 != null && cas_loaded9[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro5 != null && cas_loaded9[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro6 != null && cas_loaded9[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro7 != null && cas_loaded9[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro8 != null && cas_loaded9[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro9 != null && cas_loaded9[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded9[0].idCategoriaPeligro10 != null && cas_loaded9[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad9 > cantidad72) {
+                                        cantidad72 = loaded_cantidad9
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas10 != null) {
+                        console.log("Producto 10 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas10,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded10 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded10);
+            
+                                // console.log(cas_loaded10[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded10[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded10[0].idCategoriaPeligro1 != null && cas_loaded10[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro2 != null && cas_loaded10[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro3 != null && cas_loaded10[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro4 != null && cas_loaded10[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro5 != null && cas_loaded10[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro6 != null && cas_loaded10[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro7 != null && cas_loaded10[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro8 != null && cas_loaded10[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro9 != null && cas_loaded10[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro10 != null && cas_loaded10[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad10 > cantidad70) {
+                                        cantidad70 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded10[0].idCategoriaPeligro1 != null && cas_loaded10[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro2 != null && cas_loaded10[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro3 != null && cas_loaded10[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro4 != null && cas_loaded10[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro5 != null && cas_loaded10[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro6 != null && cas_loaded10[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro7 != null && cas_loaded10[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro8 != null && cas_loaded10[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro9 != null && cas_loaded10[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro10 != null && cas_loaded10[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad10 > cantidad71) {
+                                        cantidad71 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded10[0].idCategoriaPeligro1 != null && cas_loaded10[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro2 != null && cas_loaded10[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro3 != null && cas_loaded10[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro4 != null && cas_loaded10[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro5 != null && cas_loaded10[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro6 != null && cas_loaded10[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro7 != null && cas_loaded10[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro8 != null && cas_loaded10[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro9 != null && cas_loaded10[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded10[0].idCategoriaPeligro10 != null && cas_loaded10[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad10 > cantidad72) {
+                                        cantidad72 = loaded_cantidad10
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas11 != null) {
+                        console.log("Producto 11 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas11,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded11 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded11);
+            
+                                // console.log(cas_loaded11[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded11[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded11[0].idCategoriaPeligro1 != null && cas_loaded11[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro2 != null && cas_loaded11[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro3 != null && cas_loaded11[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro4 != null && cas_loaded11[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro5 != null && cas_loaded11[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro6 != null && cas_loaded11[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro7 != null && cas_loaded11[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro8 != null && cas_loaded11[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro9 != null && cas_loaded11[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro10 != null && cas_loaded11[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad11 > cantidad70) {
+                                        cantidad70 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded11[0].idCategoriaPeligro1 != null && cas_loaded11[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro2 != null && cas_loaded11[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro3 != null && cas_loaded11[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro4 != null && cas_loaded11[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro5 != null && cas_loaded11[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro6 != null && cas_loaded11[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro7 != null && cas_loaded11[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro8 != null && cas_loaded11[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro9 != null && cas_loaded11[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro10 != null && cas_loaded11[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad11 > cantidad71) {
+                                        cantidad71 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded11[0].idCategoriaPeligro1 != null && cas_loaded11[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro2 != null && cas_loaded11[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro3 != null && cas_loaded11[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro4 != null && cas_loaded11[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro5 != null && cas_loaded11[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro6 != null && cas_loaded11[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro7 != null && cas_loaded11[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro8 != null && cas_loaded11[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro9 != null && cas_loaded11[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded11[0].idCategoriaPeligro10 != null && cas_loaded11[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad11 > cantidad72) {
+                                        cantidad72 = loaded_cantidad11
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas12 != null) {
+                        console.log("Producto 12 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas12,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded12 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded12);
+            
+                                // console.log(cas_loaded12[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded12[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded12[0].idCategoriaPeligro1 != null && cas_loaded12[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro2 != null && cas_loaded12[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro3 != null && cas_loaded12[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro4 != null && cas_loaded12[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro5 != null && cas_loaded12[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro6 != null && cas_loaded12[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro7 != null && cas_loaded12[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro8 != null && cas_loaded12[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro9 != null && cas_loaded12[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro10 != null && cas_loaded12[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad12 > cantidad70) {
+                                        cantidad70 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded12[0].idCategoriaPeligro1 != null && cas_loaded12[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro2 != null && cas_loaded12[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro3 != null && cas_loaded12[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro4 != null && cas_loaded12[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro5 != null && cas_loaded12[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro6 != null && cas_loaded12[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro7 != null && cas_loaded12[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro8 != null && cas_loaded12[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro9 != null && cas_loaded12[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro10 != null && cas_loaded12[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad12 > cantidad71) {
+                                        cantidad71 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded12[0].idCategoriaPeligro1 != null && cas_loaded12[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro2 != null && cas_loaded12[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro3 != null && cas_loaded12[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro4 != null && cas_loaded12[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro5 != null && cas_loaded12[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro6 != null && cas_loaded12[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro7 != null && cas_loaded12[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro8 != null && cas_loaded12[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro9 != null && cas_loaded12[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded12[0].idCategoriaPeligro10 != null && cas_loaded12[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad12 > cantidad72) {
+                                        cantidad72 = loaded_cantidad12
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas13 != null) {
+                        console.log("Producto 13 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas13,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded13 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded13);
+            
+                                // console.log(cas_loaded13[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded13[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded13[0].idCategoriaPeligro1 != null && cas_loaded13[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro2 != null && cas_loaded13[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro3 != null && cas_loaded13[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro4 != null && cas_loaded13[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro5 != null && cas_loaded13[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro6 != null && cas_loaded13[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro7 != null && cas_loaded13[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro8 != null && cas_loaded13[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro9 != null && cas_loaded13[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro10 != null && cas_loaded13[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad13 > cantidad70) {
+                                        cantidad70 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded13[0].idCategoriaPeligro1 != null && cas_loaded13[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro2 != null && cas_loaded13[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro3 != null && cas_loaded13[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro4 != null && cas_loaded13[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro5 != null && cas_loaded13[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro6 != null && cas_loaded13[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro7 != null && cas_loaded13[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro8 != null && cas_loaded13[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro9 != null && cas_loaded13[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro10 != null && cas_loaded13[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad13 > cantidad71) {
+                                        cantidad71 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded13[0].idCategoriaPeligro1 != null && cas_loaded13[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro2 != null && cas_loaded13[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro3 != null && cas_loaded13[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro4 != null && cas_loaded13[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro5 != null && cas_loaded13[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro6 != null && cas_loaded13[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro7 != null && cas_loaded13[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro8 != null && cas_loaded13[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro9 != null && cas_loaded13[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded13[0].idCategoriaPeligro10 != null && cas_loaded13[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad13 > cantidad72) {
+                                        cantidad72 = loaded_cantidad13
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas14 != null) {
+                        console.log("Producto 14 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas14,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded14 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded14);
+            
+                                // console.log(cas_loaded14[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded14[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded14[0].idCategoriaPeligro1 != null && cas_loaded14[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro2 != null && cas_loaded14[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro3 != null && cas_loaded14[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro4 != null && cas_loaded14[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro5 != null && cas_loaded14[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro6 != null && cas_loaded14[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro7 != null && cas_loaded14[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro8 != null && cas_loaded14[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro9 != null && cas_loaded14[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro10 != null && cas_loaded14[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad14 > cantidad70) {
+                                        cantidad70 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded14[0].idCategoriaPeligro1 != null && cas_loaded14[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro2 != null && cas_loaded14[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro3 != null && cas_loaded14[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro4 != null && cas_loaded14[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro5 != null && cas_loaded14[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro6 != null && cas_loaded14[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro7 != null && cas_loaded14[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro8 != null && cas_loaded14[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro9 != null && cas_loaded14[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro10 != null && cas_loaded14[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad14 > cantidad71) {
+                                        cantidad71 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded14[0].idCategoriaPeligro1 != null && cas_loaded14[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro2 != null && cas_loaded14[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro3 != null && cas_loaded14[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro4 != null && cas_loaded14[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro5 != null && cas_loaded14[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro6 != null && cas_loaded14[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro7 != null && cas_loaded14[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro8 != null && cas_loaded14[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro9 != null && cas_loaded14[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded14[0].idCategoriaPeligro10 != null && cas_loaded14[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad14 > cantidad72) {
+                                        cantidad72 = loaded_cantidad14
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    if (loaded_cas15 != null) {
+                        console.log("Producto 15 cargado");
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarProducto.php",
+                            data: "cas=" + loaded_cas15,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                cas_loaded15 = dataParse;
+                                //console.log('Cargando CAS1...');
+                                ////console.log(cas_loaded15);
+            
+                                // console.log(cas_loaded15[0].idCategoriaPeligro1)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro2)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro3)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro4)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro5)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro6)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro7)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro8)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro9)
+                                // console.log(cas_loaded15[0].idCategoriaPeligro10)
+            
+            
+                                //Identificar ID de categoría 70
+            
+                                if (cas_loaded15[0].idCategoriaPeligro1 != null && cas_loaded15[0].idCategoriaPeligro1 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro2 != null && cas_loaded15[0].idCategoriaPeligro2 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro3 != null && cas_loaded15[0].idCategoriaPeligro3 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro4 != null && cas_loaded15[0].idCategoriaPeligro4 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro5 != null && cas_loaded15[0].idCategoriaPeligro5 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro6 != null && cas_loaded15[0].idCategoriaPeligro6 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro7 != null && cas_loaded15[0].idCategoriaPeligro7 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro8 != null && cas_loaded15[0].idCategoriaPeligro8 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro9 != null && cas_loaded15[0].idCategoriaPeligro9 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro10 != null && cas_loaded15[0].idCategoriaPeligro10 === 70) {
+                                    irritacion70Check = 1;
+                                    if (loaded_cantidad15 > cantidad70) {
+                                        cantidad70 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 70: ", irritacion70Check);
+                                    console.log("Cantidad más alta de a categoría 70: ", cantidad70);
+                                }
+            
+            
+                                //Identificar ID de categoría 71
+            
+                                if (cas_loaded15[0].idCategoriaPeligro1 != null && cas_loaded15[0].idCategoriaPeligro1 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro2 != null && cas_loaded15[0].idCategoriaPeligro2 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro3 != null && cas_loaded15[0].idCategoriaPeligro3 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro4 != null && cas_loaded15[0].idCategoriaPeligro4 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro5 != null && cas_loaded15[0].idCategoriaPeligro5 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro6 != null && cas_loaded15[0].idCategoriaPeligro6 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro7 != null && cas_loaded15[0].idCategoriaPeligro7 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro8 != null && cas_loaded15[0].idCategoriaPeligro8 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro9 != null && cas_loaded15[0].idCategoriaPeligro9 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro10 != null && cas_loaded15[0].idCategoriaPeligro10 === 71) {
+                                    irritacion71Check = 1;
+                                    if (loaded_cantidad15 > cantidad71) {
+                                        cantidad71 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 71: ", irritacion71Check);
+                                    console.log("Cantidad más alta de a categoría 71: ", cantidad71);
+                                }
+            
+                                //Identificar ID de categoría 72
+            
+                                if (cas_loaded15[0].idCategoriaPeligro1 != null && cas_loaded15[0].idCategoriaPeligro1 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro2 != null && cas_loaded15[0].idCategoriaPeligro2 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro3 != null && cas_loaded15[0].idCategoriaPeligro3 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro4 != null && cas_loaded15[0].idCategoriaPeligro4 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro5 != null && cas_loaded15[0].idCategoriaPeligro5 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro6 != null && cas_loaded15[0].idCategoriaPeligro6 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro7 != null && cas_loaded15[0].idCategoriaPeligro7 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro8 != null && cas_loaded15[0].idCategoriaPeligro8 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro9 != null && cas_loaded15[0].idCategoriaPeligro9 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                                if (cas_loaded15[0].idCategoriaPeligro10 != null && cas_loaded15[0].idCategoriaPeligro10 === 72) {
+                                    irritacion72Check = 1;
+                                    if (loaded_cantidad15 > cantidad72) {
+                                        cantidad72 = loaded_cantidad15
+                                    }
+                                    console.log("Categorías con el número 72: ", irritacion72Check);
+                                    console.log("Cantidad más alta de a categoría 72: ", cantidad72);
+                                }
+            
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        })
+                    }
+            
+                    resolve('Final de procesamiento');
+            
+                });
+
+                checkCategorias.then(success => {
+                    console.log(success);
+                    console.log('Check de categoría 70: ', irritacion70Check);
+                    console.log('cantidad máxima de categoría 70: ', cantidad70);
+                    console.log('Check de categoría 71: ', irritacion71Check);
+                    console.log('cantidad máxima de categoría 71: ', cantidad71);
+                    console.log('Check de categoría 72: ', irritacion72Check);
+                    console.log('cantidad máxima de categoría 72: ', cantidad72);
+                }).catch(fail => {
+                    console.log(fail);
+                })
 
 
 
@@ -2355,28 +5468,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu1,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded1 = dataParse;
-                            //console.log('Cargando ONU1...');
-                            //console.log(onu_loaded1);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu1,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded1 = dataParse;
+                                //console.log('Cargando ONU1...');
+                                //console.log(onu_loaded1);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -2729,28 +5842,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu2,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded2 = dataParse;
-                            //console.log('Cargando ONU2...');
-                            //console.log(onu_loaded2);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu2,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded2 = dataParse;
+                                //console.log('Cargando ONU2...');
+                                //console.log(onu_loaded2);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -3103,28 +6216,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu3,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded3 = dataParse;
-                            //console.log('Cargando ONU3...');
-                            //console.log(onu_loaded3);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu3,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded3 = dataParse;
+                                //console.log('Cargando ONU3...');
+                                //console.log(onu_loaded3);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -3475,28 +6588,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu4,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded4 = dataParse;
-                            //console.log('Cargando ONU4...');
-                            //console.log(onu_loaded4);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu4,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded4 = dataParse;
+                                //console.log('Cargando ONU4...');
+                                //console.log(onu_loaded4);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -3849,28 +6962,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu5,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded5 = dataParse;
-                            //console.log('Cargando ONU5...');
-                            //console.log(onu_loaded5);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu5,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded5 = dataParse;
+                                //console.log('Cargando ONU5...');
+                                //console.log(onu_loaded5);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -4223,28 +7336,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu6,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded6 = dataParse;
-                            //console.log('Cargando ONU6...');
-                            //console.log(onu_loaded6);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu6,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded6 = dataParse;
+                                //console.log('Cargando ONU6...');
+                                //console.log(onu_loaded6);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -4597,28 +7710,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu7,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded7 = dataParse;
-                            //console.log('Cargando ONU7...');
-                            //console.log(onu_loaded7);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu7,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded7 = dataParse;
+                                //console.log('Cargando ONU7...');
+                                //console.log(onu_loaded7);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -4971,30 +8084,30 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu8,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded8 = dataParse;
-                            //console.log('Cargando ONU8...');
-                            //console.log(onu_loaded8);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu8,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded8 = dataParse;
+                                //console.log('Cargando ONU8...');
+                                //console.log(onu_loaded8);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
- 
+
                 }
 
                 if (loaded_cas9 != null) {
@@ -5345,28 +8458,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu9,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded9 = dataParse;
-                            //console.log('Cargando ONU9...');
-                            //console.log(onu_loaded9);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu9,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded9 = dataParse;
+                                //console.log('Cargando ONU9...');
+                                //console.log(onu_loaded9);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -5719,28 +8832,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu10,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded10 = dataParse;
-                            //console.log('Cargando ONU10...');
-                            //console.log(onu_loaded10);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu10,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded10 = dataParse;
+                                //console.log('Cargando ONU10...');
+                                //console.log(onu_loaded10);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -6093,28 +9206,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu11,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded11 = dataParse;
-                            //console.log('Cargando ONU11...');
-                            //console.log(onu_loaded11);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu11,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded11 = dataParse;
+                                //console.log('Cargando ONU11...');
+                                //console.log(onu_loaded11);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -6467,28 +9580,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu12,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded12 = dataParse;
-                            //console.log('Cargando ONU12...');
-                            //console.log(onu_loaded12);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu12,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded12 = dataParse;
+                                //console.log('Cargando ONU12...');
+                                //console.log(onu_loaded12);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -6841,28 +9954,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu13,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded13 = dataParse;
-                            //console.log('Cargando ONU13...');
-                            //console.log(onu_loaded13);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu13,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded13 = dataParse;
+                                //console.log('Cargando ONU13...');
+                                //console.log(onu_loaded13);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -7215,28 +10328,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu14,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded14 = dataParse;
-                            //console.log('Cargando ONU14...');
-                            //console.log(onu_loaded14);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu14,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded14 = dataParse;
+                                //console.log('Cargando ONU14...');
+                                //console.log(onu_loaded14);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
@@ -7589,28 +10702,28 @@ $(document).ready(function () {
                         }
                     }),
 
-                    $.ajax({
-                        type: "POST",
-                        url: "bd/cargarOnu.php",
-                        data: "onu=" + loaded_onu15,
-                        success: function (data) {
-                            ////console.log(data);
-                            dataParse = JSON.parse(data);
-                            onu_loaded15 = dataParse;
-                            //console.log('Cargando ONU15...');
-                            //console.log(onu_loaded15);
-                        },
-                        error: function (textStatus, errorThrown) {
-                            //console.log(textStatus, errorThrown);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No se pudo cargar el producto.',
-                                footer: '<a href="">Why do I have this issue?</a>',
-                                timer: 3000
-                            })
-                        }
-                    });
+                        $.ajax({
+                            type: "POST",
+                            url: "bd/cargarOnu.php",
+                            data: "onu=" + loaded_onu15,
+                            success: function (data) {
+                                ////console.log(data);
+                                dataParse = JSON.parse(data);
+                                onu_loaded15 = dataParse;
+                                //console.log('Cargando ONU15...');
+                                //console.log(onu_loaded15);
+                            },
+                            error: function (textStatus, errorThrown) {
+                                //console.log(textStatus, errorThrown);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'No se pudo cargar el producto.',
+                                    footer: '<a href="">Why do I have this issue?</a>',
+                                    timer: 3000
+                                })
+                            }
+                        });
                 } else {
 
                 }
